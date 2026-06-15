@@ -11,16 +11,17 @@ class Move:
     move_type: str
     damage_class: str
 
-    pp: int
+    pp: Optional[int]
+    max_pp: int
     priority: int
 
     attacking_stat: str
     defending_stat: str
 
-    stat_changes: list[dict] = field(default_factory=list)
+    secondary_effects: list[dict] = field(default_factory=list)
 
-    target: str = "selected-pokemon"
+    target: str = "selected-pokemon" # selected-pokemon, user, all-opponents, field
 
-    tags: set[str] = field(default_factory=set)
+    tags: set[str] = field(default_factory=set) # Freeze-dry, Body Press, Sound, Biting
 
 

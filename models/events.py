@@ -1,49 +1,38 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from typing import Optional
 
 from models.move import Move
 from models.pokemon import BattlePokemon
 
+# TODO: Maybe make field events a separate thing, same with player events (switching)
+# Maybe make a subset 
 
 @dataclass
-class DamageEvent:
+class Event:
     target: BattlePokemon
+    message:str
+
+@dataclass
+class DamageEvent(Event):
     amount: int
 
 
 @dataclass
-class StatChangeEvent:
-    target: BattlePokemon
+class StatChangeEvent(Event):
     stat: str
     stages: int
+    chance: Optional[float]
 
 
 @dataclass
-class StatusEvent:
-    target: BattlePokemon
+class StatusEvent(Event):
     status: str
-    
+    chance: Optional[float]
 
 @dataclass
-class MoveResult:
+class MoveResult(Event):
     move: Move
 
     user: BattlePokemon
-    targets: list[BattlePokemon]
-
     success: bool
-
-    damage_events: list[DamageEvent] = field(
-        default_factory=list
-    )
-
-    stat_change_events: list[StatChangeEvent] = field(
-        default_factory=list
-    )
-
-    status_events: list[StatusEvent] = field(
-        default_factory=list
-    )
-
-    messages: list[str] = field(
-        default_factory=list
-    )
+    events: list[Event]

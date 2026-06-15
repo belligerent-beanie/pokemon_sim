@@ -2,6 +2,7 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 from models.move import Move
+from utils.stat_calculations import get_battle_stats
 
 
 @dataclass
@@ -33,9 +34,7 @@ class BattleStat:
 
     stage: int = 0
 
-    modifiers: dict[str, float] = field(
-        default_factory=dict
-    )
+    modifiers: dict[str, float] = field(default_factory=dict) # Rain and such
 
     def value(
         self,

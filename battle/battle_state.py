@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional
 
 from models.move import Move
@@ -87,41 +87,26 @@ class Battle:
             team_2=team_2,
 
             active_1=team_1[0],
-            active_2=team_2[0],
-        )
+            active_2=team_2[0])
     
     def determine_order(self, move_1: Move, move_2: Move):
         pokemon_1 = self.active_1
         pokemon_2 = self.active_2
 
         if move_1.priority != move_2.priority:
-            first = (pokemon_1, pokemon_2, move_1) if move_1.priority > move_2.priority else (pokemon_2, pokemon_1, move_2)
+            if move_1.priority > move_2.priority:
+                first = (pokemon_1, pokemon_2, move_1)
+            else:
+                first = (pokemon_2, pokemon_1, move_2)
 
-        elif (
-            pokemon_1.speed.value()
-            >=
-            pokemon_2.speed.value()
-        ):
-            first = (
-                pokemon_1,
-                pokemon_2,
-                move_1,
-            )
+        elif pokemon_1.speed.value() >= pokemon_2.speed.value():
+            first = (pokemon_1, pokemon_2, move_1)
         else:
-            first = (
-                pokemon_2,
-                pokemon_1,
-                move_2,
-            )
-
-        second = (
-            pokemon_2,
-            pokemon_1,
-            move_2,
-        ) if first[0] is pokemon_1 else (
-            pokemon_1,
-            pokemon_2,
-            move_1,
-        )
+            first = (pokemon_2, pokemon_1, move_2)
+        
+        if first[0] is pokemon_1:
+            second = (pokemon_2, pokemon_1, move_2)
+        else:
+            second = (pokemon_1, pokemon_2, move_1)
 
         return [first, second]
