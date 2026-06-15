@@ -1,6 +1,6 @@
 import requests
 from tqdm import tqdm
-from utils.io import save_json
+from utils.data import save_json
 from utils.constants import POKEAPI_BASE_URL, NATURES_FILE
 
 natures = requests.get(

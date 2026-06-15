@@ -2,7 +2,7 @@
 
 import requests
 from tqdm import tqdm
-from utils.io import save_json
+from utils.data import save_json
 from concurrent.futures import as_completed
 from concurrent.futures import ThreadPoolExecutor
 from utils.constants import GENS, MOVE_NAMES_FILE, POKEAPI_BASE_URL, POKEMON_FILE, TYPES_FILE
@@ -181,8 +181,7 @@ def main():
 
             all_types.update(pokemon["types"])
 
-    save_json(
-        dict(sorted(pokemon_db.items())), POKEMON_FILE)
+    save_json(dict(sorted(pokemon_db.items())), POKEMON_FILE)
 
     save_json(sorted(all_types), TYPES_FILE)
 

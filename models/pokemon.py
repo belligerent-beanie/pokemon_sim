@@ -2,7 +2,8 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 from models.move import Move
-from utils.stat_calculations import get_battle_stats
+from models.battlestat import BattleStat
+from utils.data import calc_hp, calc_stat
 
 
 @dataclass
@@ -26,55 +27,35 @@ class Pokemon:
 
     sprite: Optional[str] = None
     nature: str = "hardy"
+    
+    def get_battle_stats(self) -> tuple[int, dict[str, BattleStat]]:
 
+        hp = calc_hp(
+            self.base_hp,
+            self.ivs.get("hp", 31),
+            self.evs.get("hp", 0),
+            self.level,
+        )
 
-@dataclass
-class BattleStat:
-    raw_value: int
+        stats = {
+            "attack": BattleStat(
+                raw_value=calc_stat(
+                    self.base_attack,
+                    self.ivs.get("attack", 31),
+                    self.evs.get("attack", 0),
+                    self.level,
+                    "attack",
+                    self.nature
+                )
+            ),
+            "defense": BattleStat(raw_value=calc_stat(self.base_defense, self.ivs.get("defense", 31), self.evs.get("defense", 0), self.level, "defense", self.nature)),
+            "special_attack": BattleStat(raw_value=calc_stat(self.base_special_attack, self.ivs.get("special_attack", 31), self.evs.get("special_attack", 0), self.level, "special_attack", self.nature)),
+            "special_defense": BattleStat(raw_value=calc_stat(self.base_special_defense, self.ivs.get("special_defense", 31), self.evs.get("special_defense", 0), self.level, "special_defense", self.nature)),
+            "speed": BattleStat(raw_value=calc_stat(self.base_speed,self.ivs.get("speed", 31),self.evs.get("speed", 0),self.level,"speed",self.nature)),
+        }
 
-    stage: int = 0
+        return hp, stats
 
-    modifiers: dict[str, float] = field(default_factory=dict) # Rain and such
-
-    def value(
-        self,
-        ignore_stage: bool = False,
-        ignored_modifiers: Optional[set[str]] = None,
-    ) -> float:
-
-        ignored_modifiers = ignored_modifiers or set()
-
-        value = self.raw_value
-
-        if not ignore_stage:
-            value *= self._apply_modifier()
-
-        for source, modifier in self.modifiers.items():
-            if source not in ignored_modifiers:
-                value *= modifier
-
-        return value
-
-    def add_modifier(
-        self,
-        source: str,
-        multiplier: float,
-    ):
-        self.modifiers[source] = multiplier
-
-    def remove_modifier(
-        self,
-        source: str,
-    ):
-        self.modifiers.pop(source, None)
-
-    def reset_stage(self):
-        self.stage = 0
-
-    def _apply_modifier(self) -> float:
-        if self.stage >= 0:
-            return (2 + self.stage) / 2
-        return 2 / (2 - self.stage)
 
 
 @dataclass
@@ -109,12 +90,8 @@ class BattlePokemon:
     def from_pokemon(
         cls,
         pokemon: Pokemon,
-        nature_db: dict,
     ):
-        hp, stats = get_battle_stats(
-            pokemon,
-            nature_db,
-        )
+        hp, stats = pokemon.get_battle_stats()
 
         return cls(
             pokemon=pokemon,
@@ -124,11 +101,8 @@ class BattlePokemon:
 
             attack=stats["attack"],
             defense=stats["defense"],
-
             special_attack=stats["special_attack"],
             special_defense=stats["special_defense"],
-
-            speed=stats["speed"],
+            speed=stats["speed"]
         )
-        
 

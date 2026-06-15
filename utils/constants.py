@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -33,3 +34,5 @@ GENS = {
 }
 
 POKEAPI_BASE_URL = "https://pokeapi.co/api/v2"
+
+

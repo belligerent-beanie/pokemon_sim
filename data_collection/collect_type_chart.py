@@ -1,7 +1,7 @@
 import requests
 from tqdm import tqdm
 from utils.constants import TYPES_FILE, POKEAPI_BASE_URL, TYPE_CHART_FILE
-from utils.io import load_json, save_json
+from utils.data import load_json, save_json
 
 
 

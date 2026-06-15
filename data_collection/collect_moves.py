@@ -1,7 +1,7 @@
 import requests
 from tqdm import tqdm
 
-from utils.io import load_json, save_json
+from utils.data import load_json, save_json
 from utils.constants import MOVE_DATA_FILE, MOVE_NAMES_FILE, POKEAPI_BASE_URL
 
 try:
