@@ -1,10 +1,13 @@
 from dataclasses import dataclass
-from models.move import Move
+
+from models.action import Action
 from models.pokemon import BattlePokemon
 
 
 @dataclass
-class TurnAction:
-    attacker: BattlePokemon
-    defender: BattlePokemon
-    move: Move
+class TurnOrder:
+    """Ordered list of (action, acting_pokemon) pairs for one turn."""
+    actions: list[tuple[Action, BattlePokemon]]
+
+    def __iter__(self):
+        return iter(self.actions)
