@@ -8,14 +8,16 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import requests as http
 from flask import Flask, jsonify, render_template
-from utils.constants import POKEMON_FILE, MOVE_DATA_FILE, NATURES_FILE, TYPE_CHART_FILE
+from utils.constants import POKEMON_FILE, NATURES_FILE
 from utils.data import load_json
 
 app = Flask(__name__)
 
 pokemon_db: dict = load_json(POKEMON_FILE)
 nature_db: dict = load_json(NATURES_FILE)
+ability_cache: dict = {}   # name → list[{name, hidden}]
 
 
 @app.route("/")
@@ -31,6 +33,25 @@ def get_all_pokemon():
 @app.route("/api/natures")
 def get_natures():
     return jsonify(nature_db)
+
+
+@app.route("/api/abilities/<name>")
+def get_abilities(name: str):
+    if name in ability_cache:
+        return jsonify(ability_cache[name])
+    try:
+        data = http.get(
+            f"https://pokeapi.co/api/v2/pokemon/{name}",
+            timeout=6,
+        ).json()
+        abilities = [
+            {"name": ab["ability"]["name"], "hidden": ab["is_hidden"]}
+            for ab in data.get("abilities", [])
+        ]
+        ability_cache[name] = abilities
+        return jsonify(abilities)
+    except Exception:
+        return jsonify([])
 
 
 if __name__ == "__main__":

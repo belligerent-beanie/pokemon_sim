@@ -207,6 +207,28 @@ function renderList(names) {
   }
 }
 
+// ── Abilities ──────────────────────────────────────────────────────────────
+
+async function loadAbilities(name) {
+  const sel = $('ability');
+  sel.innerHTML = '<option value="">Loading…</option>';
+  try {
+    const abilities = await fetch(`/api/abilities/${name}`).then(r => r.json());
+    sel.innerHTML = '';
+    for (const ab of abilities) {
+      const opt = document.createElement('option');
+      opt.value = ab.name;
+      let label = ab.name.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      if (ab.hidden) label += ' (Hidden)';
+      opt.textContent = label;
+      sel.appendChild(opt);
+    }
+    if (!sel.options.length) sel.innerHTML = '<option value="">—</option>';
+  } catch {
+    sel.innerHTML = '<option value="">—</option>';
+  }
+}
+
 // ── Select a pokemon ───────────────────────────────────────────────────────
 
 function selectPokemon(name) {
@@ -237,6 +259,9 @@ function selectPokemon(name) {
 
   // Build stat sliders
   buildStatRows(data);
+
+  // Fetch abilities (async, fire-and-forget)
+  loadAbilities(name);
 
   // Highlight in sidebar
   document.querySelectorAll('#pokemon-list li').forEach(li => {

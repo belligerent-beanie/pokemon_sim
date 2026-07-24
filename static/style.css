@@ -205,7 +205,8 @@ body {
 .type-steel    { background: #60a1b8; }
 .type-fairy    { background: #ef70ef; }
 
-#controls-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
+.controls-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; margin-top: 10px; }
+.controls-row:first-of-type { margin-top: 0; }
 
 .ctrl-label { display: flex; flex-direction: column; gap: 4px; }
 .ctrl-title {
@@ -228,7 +229,17 @@ body {
 }
 #level:focus, #nature:focus { border-color: var(--accent); }
 #level { width: 68px; }
-#nature { width: 200px; }
+#nature, #ability { width: 200px; }
+
+.item-slot {
+  width: 200px;
+  padding: 6px 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--faint);
+  font-size: 13px;
+}
 
 /* ── Stats section ─────────────────────────────────────────────────────────── */
 #stats-section {
