@@ -142,9 +142,8 @@ function buildStatRows(data) {
       <span class="stat-base">${base}</span>
 
       <div class="iv-cell">
-        <input class="stat-slider" type="range" min="0" max="31" value="${iv}"
-               data-stat="${s}" data-kind="iv" style="color:${color}">
-        <span class="slider-val iv-val" data-stat="${s}">${iv}</span>
+        <input class="iv-input" type="number" min="0" max="31" value="${iv}"
+               data-stat="${s}">
       </div>
 
       <div class="ev-cell">
@@ -164,25 +163,29 @@ function buildStatRows(data) {
     container.appendChild(row);
   }
 
-  // Slider event listeners
+  // IV number inputs
+  container.querySelectorAll('.iv-input').forEach(input => {
+    input.addEventListener('input', () => {
+      const s   = input.dataset.stat;
+      let val   = parseInt(input.value);
+      if (isNaN(val)) return;
+      val       = Math.max(0, Math.min(31, val));
+      ivs[s]    = val;
+      input.value = val;
+      updateStatDisplay();
+    });
+  });
+
+  // EV sliders
   container.querySelectorAll('.stat-slider').forEach(slider => {
     slider.addEventListener('input', () => {
-      const s    = slider.dataset.stat;
-      const kind = slider.dataset.kind;
-      const val  = parseInt(slider.value);
-
-      if (kind === 'iv') {
-        ivs[s] = val;
-        document.querySelector(`.iv-val[data-stat="${s}"]`).textContent = val;
-      } else {
-        // Enforce 510 total cap
-        const otherTotal = STATS.filter(x => x !== s).reduce((sum, x) => sum + (evs[x] ?? 0), 0);
-        const capped     = Math.min(val, MAX_EV_TOTAL - otherTotal, MAX_EV_STAT);
-        evs[s]           = capped;
-        slider.value     = capped;
-        document.querySelector(`.ev-val[data-stat="${s}"]`).textContent = capped;
-      }
-
+      const s          = slider.dataset.stat;
+      const val        = parseInt(slider.value);
+      const otherTotal = STATS.filter(x => x !== s).reduce((sum, x) => sum + (evs[x] ?? 0), 0);
+      const capped     = Math.min(val, MAX_EV_TOTAL - otherTotal, MAX_EV_STAT);
+      evs[s]           = capped;
+      slider.value     = capped;
+      document.querySelector(`.ev-val[data-stat="${s}"]`).textContent = capped;
       updateStatDisplay();
     });
   });

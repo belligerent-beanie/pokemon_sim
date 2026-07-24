@@ -278,6 +278,23 @@ body {
   gap: 2px;
 }
 
+.iv-input {
+  width: 100%;
+  padding: 4px 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text);
+  font-size: 13px;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.15s;
+  -moz-appearance: textfield;
+}
+.iv-input::-webkit-outer-spin-button,
+.iv-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.iv-input:focus { border-color: var(--accent); }
+
 .stat-slider {
   width: 100%;
   cursor: pointer;
