@@ -281,7 +281,15 @@ $('search').addEventListener('input', e => {
   renderList(filtered);
 });
 
-$('level').addEventListener('input', updateStatDisplay);
+$('level').addEventListener('input', () => {
+  const el = $('level');
+  let val = parseInt(el.value);
+  if (!isNaN(val)) {
+    if (val > 100) el.value = 100;
+    if (val < 1)   el.value = 1;
+  }
+  updateStatDisplay();
+});
 
 // ── Boot ───────────────────────────────────────────────────────────────────
 
