@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Team Builder</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- ── Sidebar ───────────────────────────────────────────── -->
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <span class="logo">⚡ Team Builder</span>
+        <input id="search" type="text" placeholder="Search Pokémon…" autocomplete="off" spellcheck="false">
+      </div>
+      <ul id="pokemon-list"></ul>
+    </aside>
+
+    <!-- ── Main panel ────────────────────────────────────────── -->
+    <main id="main">
+      <div id="empty-state">
+        <div class="empty-icon">◎</div>
+        <p>Select a Pokémon from the list</p>
+      </div>
+
+      <div id="pokemon-card" class="hidden">
+
+        <!-- Header row: sprite + meta -->
+        <section id="pokemon-header">
+          <div id="sprite-wrap">
+            <img id="sprite" alt="" draggable="false">
+          </div>
+
+          <div id="pokemon-meta">
+            <h2 id="pokemon-name">—</h2>
+            <div id="type-badges"></div>
+
+            <div class="controls-row">
+              <label class="ctrl-label">
+                <span class="ctrl-title">LEVEL</span>
+                <input id="level" type="number" min="1" max="100" value="100">
+              </label>
+              <label class="ctrl-label">
+                <span class="ctrl-title">NATURE</span>
+                <select id="nature"></select>
+              </label>
+            </div>
+            <div class="controls-row">
+              <label class="ctrl-label">
+                <span class="ctrl-title">ABILITY</span>
+                <select id="ability"><option value="">—</option></select>
+              </label>
+              <div class="ctrl-label">
+                <span class="ctrl-title">ITEM</span>
+                <div class="item-slot">— No Item —</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats -->
+        <section id="stats-section">
+          <div class="stats-header">
+            <span>STAT</span>
+            <span class="col-base">BASE</span>
+            <span class="col-iv">IV</span>
+            <span class="col-ev">EV</span>
+            <span class="col-total">TOTAL</span>
+            <span class="col-bar"></span>
+          </div>
+          <div id="stats-rows"></div>
+          <div id="ev-footer">
+            Total EVs: <span id="ev-count">0</span> <span class="ev-max">/ 510</span>
+          </div>
+        </section>
+
+        <!-- Move slots (static) -->
+        <section id="moves-section">
+          <div class="section-title">MOVES</div>
+          <div class="move-grid">
+            <div class="move-slot">— Move 1 —</div>
+            <div class="move-slot">— Move 2 —</div>
+            <div class="move-slot">— Move 3 —</div>
+            <div class="move-slot">— Move 4 —</div>
+          </div>
+        </section>
+
+      </div><!-- /pokemon-card -->
+    </main>
+
+  </div><!-- /app -->
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
