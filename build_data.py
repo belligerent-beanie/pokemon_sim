@@ -4,10 +4,10 @@ import subprocess
 import sys
 
 scripts = [
-    "data_collection.collect_basic_data",
-    "data_collection.collect_moves",
-    "data_collection.collect_type_chart",
-    "data_collection.collect_natures",
+    "pokemon_sim.data_collection.collect_basic_data",
+    "pokemon_sim.data_collection.collect_moves",
+    "pokemon_sim.data_collection.collect_type_chart",
+    "pokemon_sim.data_collection.collect_natures",
 ]
 
 for script in scripts:

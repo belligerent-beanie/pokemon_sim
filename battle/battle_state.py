@@ -1,10 +1,12 @@
 from dataclasses import dataclass, field
 from typing import Optional
 
-from models.pokemon import BattlePokemon
-from models.field import Field
-from utils.data import load_json
-from utils.constants import TYPE_CHART_FILE
+from pokemon_sim.models.pokemon import BattlePokemon
+from pokemon_sim.models.field import Field
+from pokemon_sim.utils.data import load_json
+from pokemon_sim.utils.constants import TYPE_CHART_FILE
+from pokemon_sim.engine.queue import EventQueue
+from pokemon_sim.engine.listener import ListenerRegistry
 
 
 @dataclass
@@ -20,6 +22,14 @@ class Battle:
 
     turn_number: int = 1
     winner: Optional[int] = None
+
+    # Event system
+    listener_registry: ListenerRegistry = field(default_factory=ListenerRegistry)
+    event_queue: Optional[EventQueue] = field(default=None, init=False)
+
+    def __post_init__(self):
+        """Initialize event queue with listener registry."""
+        self.event_queue = EventQueue(self.listener_registry)
 
     def get_active(self, player: int) -> BattlePokemon:
         return self.active_1 if player == 1 else self.active_2
@@ -42,7 +52,7 @@ class Battle:
         return self.winner
 
     def determine_order(self, action_1, action_2) -> list:
-        from models.action import MoveAction, SwitchAction
+        from pokemon_sim.models.action import MoveAction, SwitchAction
 
         # Switches always go before moves
         a1_switch = isinstance(action_1, SwitchAction)

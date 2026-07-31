@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from utils.constants import NATURES_FILE
+from pokemon_sim.utils.constants import NATURES_FILE
 
 
 def load_json(path: Path) -> dict:

@@ -2,10 +2,10 @@
 
 import requests
 from tqdm import tqdm
-from utils.data import save_json
+from pokemon_sim.utils.data import save_json
 from concurrent.futures import as_completed
 from concurrent.futures import ThreadPoolExecutor
-from utils.constants import GENS, MOVE_NAMES_FILE, POKEAPI_BASE_URL, POKEMON_FILE, TYPES_FILE
+from pokemon_sim.utils.constants import GENS, MOVE_NAMES_FILE, POKEAPI_BASE_URL, POKEMON_FILE, TYPES_FILE
 
 def collect_family_species(node, family_species: set[str]):
     family_species.add(node["species"]["name"])

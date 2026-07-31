@@ -1,7 +1,7 @@
 import requests
 from tqdm import tqdm
-from utils.data import save_json
-from utils.constants import POKEAPI_BASE_URL, NATURES_FILE
+from pokemon_sim.utils.data import save_json
+from pokemon_sim.utils.constants import POKEAPI_BASE_URL, NATURES_FILE
 
 natures = requests.get(
     f"{POKEAPI_BASE_URL}/nature?limit=100"

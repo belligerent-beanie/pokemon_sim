@@ -1,8 +1,8 @@
 import requests
 from tqdm import tqdm
 
-from utils.data import load_json, save_json
-from utils.constants import MOVE_DATA_FILE, MOVE_NAMES_FILE, POKEAPI_BASE_URL
+from pokemon_sim.utils.data import load_json, save_json
+from pokemon_sim.utils.constants import MOVE_DATA_FILE, MOVE_NAMES_FILE, POKEAPI_BASE_URL
 
 try:
     all_moves = load_json(MOVE_NAMES_FILE)
