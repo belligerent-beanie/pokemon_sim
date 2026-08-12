@@ -27,7 +27,24 @@ Every subsequent launch serves from the cache instantly.
 | `move_cache.json` | Processed move data from PokeAPI                      | ✅ Yes  |
 | `move_events.db`  | SQLite — events, conditions, presets per move         | ❌ No   |
 
-Add `move_events.db` to `.gitignore`. The Export JSON button is the portable backup.
+Add `move_events.db` to `.gitignore`.
+
+## Working across multiple machines
+
+`move_events.db` is local and not committed to git, so you need to sync it manually when switching machines.
+
+**Option A — Manual export/import (recommended)**
+1. Before switching, click **Export JSON** in the editor and commit the file.
+2. On the other machine, pull, run `server.py`, then click **Import JSON**.
+
+**Option B — Shared folder (seamless)**
+Point `DB_FILE` in `server.py` to a path that's automatically synced (Dropbox, OneDrive, etc.):
+
+```python
+DB_FILE = Path('/path/to/your/synced/folder/move_events.db')
+```
+
+The database stays in sync without any manual steps. Git still handles the code and move cache.
 
 ## Reading from Python (pub-sub system)
 
