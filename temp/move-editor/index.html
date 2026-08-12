@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Event Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-mark"></div>
+    <h1>Move Event Editor</h1>
+    <div class="topbar-spacer"></div>
+    <div class="topbar-actions">
+      <button class="btn btn-ghost btn-sm" id="exportBtn">↓ Export JSON</button>
+      <label class="btn btn-ghost btn-sm" style="cursor:pointer;">
+        ↑ Import JSON
+        <input type="file" id="importFile" accept=".json" style="display:none">
+      </label>
+    </div>
+  </div>
+
+  <div class="layout">
+    <!-- LEFT: move list -->
+    <div class="movelist-panel">
+      <div class="movelist-controls">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+            <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input id="searchInput" type="text" placeholder="Search moves…">
+        </div>
+        <select id="genFilter" class="filter-sel">
+          <option value="all">ALL</option>
+          <option value="1">GEN 1</option>
+          <option value="2">GEN 2</option>
+          <option value="3">GEN 3</option>
+          <option value="4">GEN 4</option>
+          <option value="5">GEN 5</option>
+          <option value="6">GEN 6</option>
+          <option value="7">GEN 7</option>
+          <option value="8">GEN 8</option>
+          <option value="9">GEN 9</option>
+        </select>
+      </div>
+      <div class="movelist-filters">
+        <select id="typeFilter" class="filter-sel">
+          <option value="all">All Types</option>
+        </select>
+        <select id="catFilter" class="filter-sel">
+          <option value="all">All Moves</option>
+          <option value="standard">Standard</option>
+          <option value="z">Z-Moves</option>
+          <option value="max">Max / G-Max</option>
+          <option value="partner">Partner Moves</option>
+        </select>
+      </div>
+      <div class="movelist" id="moveList">
+        <div class="loading-state">
+          Connecting to server…
+          <div class="loading-progress" id="loadProgress">
+            Make sure <code>server.py</code> is running.
+          </div>
+        </div>
+      </div>
+      <div class="movelist-footer mono" id="moveCount">— moves</div>
+    </div>
+
+    <!-- RIGHT: editor -->
+    <div class="editor" id="editorPanel">
+      <div class="editor-empty mono">← Select a move to begin</div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Create / Edit Event -->
+<div class="modal-overlay" id="eventModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="eventModalTitle">Create Event</h3>
+      <button class="close" data-close="eventModal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="two-col">
+        <div class="form-row">
+          <label>Target</label>
+          <select id="targetSelect">
+            <option>Self</option>
+            <option>Target</option>
+            <option>All Pokémon</option>
+            <option>Opposite Field</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Priority</label>
+          <input type="number" id="eventPriority" value="0">
+        </div>
+      </div>
+      <div class="param-head"><label>Additional Parameters</label></div>
+      <div id="eventParamRows"></div>
+      <button class="add-param-btn" id="addEventParamBtn">+ Add Parameter</button>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" data-close="eventModal">Cancel</button>
+      <button class="btn btn-primary" id="saveEventBtn">Save Event</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Create / Edit Condition -->
+<div class="modal-overlay" id="condModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="condModalTitle">Create Condition</h3>
+      <button class="close" data-close="condModal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="param-head"><label>Condition Parameters</label></div>
+      <div id="condParamRows"></div>
+      <button class="add-param-btn" id="addCondParamBtn">+ Add Parameter</button>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" data-close="condModal">Cancel</button>
+      <button class="btn btn-primary" id="saveCondBtn">Save Condition</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Save as Preset -->
+<div class="modal-overlay" id="presetModal">
+  <div class="modal" style="width:460px;">
+    <div class="modal-head">
+      <h3>Save as Preset</h3>
+      <button class="close" data-close="presetModal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="savepage-section">
+        <span class="sp-label">Name <span style="color:var(--accent)">*</span></span>
+        <input class="preset-name-input" type="text" id="presetNameInput" placeholder="Name this preset…">
+        <div class="error-msg" id="presetNameError">A name is required.</div>
+      </div>
+      <div class="savepage-section">
+        <span class="sp-label">Events</span>
+        <div class="chip-row" id="presetEventChips"></div>
+      </div>
+      <div class="savepage-section" style="margin-bottom:0">
+        <span class="sp-label">Conditions</span>
+        <div class="chip-row" id="presetCondChips"></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" data-close="presetModal">Cancel</button>
+      <button class="btn btn-gold" id="confirmPresetBtn">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
