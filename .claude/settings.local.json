@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Artifact",
+      "Bash(python3)",
+      "WebSearch"
+    ]
+  }
+}

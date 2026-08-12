@@ -22,9 +22,16 @@ for move_name in tqdm(all_moves, desc="Collecting move data"):
         f"{POKEAPI_BASE_URL}/move/{move_name}"
     ).json()
 
+    effect_text = ""
+    for entry in move.get("effect_entries", []):
+        if entry.get("language", {}).get("name") == "en":
+            effect_text = entry.get("effect", "")
+            break
+
     move_db[move_name] = {
         "accuracy": move["accuracy"],
         "damage_class": move["damage_class"]["name"],
+        "effect": effect_text,
         "name": move["name"],
         "power": move["power"],
         "pp": move["pp"],
