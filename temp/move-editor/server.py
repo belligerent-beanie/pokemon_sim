@@ -11,44 +11,75 @@ Then open http://localhost:5050
 
 import json
 import re
-import sqlite3
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
 from flask import Flask, jsonify, request, send_from_directory
 
-BASE_DIR   = Path(__file__).parent
-CACHE_FILE = BASE_DIR / 'move_cache.json'
-DB_FILE    = BASE_DIR / 'move_events.db'
+BASE_DIR    = Path(__file__).parent
+CACHE_FILE  = BASE_DIR / 'move_cache.json'
+MOVES_DIR   = BASE_DIR / 'moves'
+PRESETS_DIR = BASE_DIR / 'presets'
 
 app = Flask(__name__)
 
 
-# ── Database ──────────────────────────────────────────────────────────────────
+# ── File-backed storage ──────────────────────────────────────────────────────
+#
+# Each move's saved events/conditions/custom_desc live in their own JSON file
+# under moves/, and each preset lives in its own JSON file under presets/.
+# One file per record keeps git diffs small and lets edits made on different
+# machines merge (and sync) cleanly instead of colliding inside a single
+# binary SQLite file.
 
-def get_db() -> sqlite3.Connection:
-    conn = sqlite3.connect(str(DB_FILE))
-    conn.row_factory = sqlite3.Row
-    return conn
+NAME_RE = re.compile(r'^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$')
 
 
-def init_db() -> None:
-    with get_db() as conn:
-        conn.executescript("""
-            CREATE TABLE IF NOT EXISTS move_data (
-                move_name   TEXT PRIMARY KEY,
-                events      TEXT NOT NULL DEFAULT '[]',
-                conditions  TEXT NOT NULL DEFAULT '[]',
-                custom_desc TEXT NOT NULL DEFAULT ''
-            );
-            CREATE TABLE IF NOT EXISTS presets (
-                id          INTEGER PRIMARY KEY AUTOINCREMENT,
-                name        TEXT NOT NULL,
-                events      TEXT NOT NULL DEFAULT '[]',
-                conditions  TEXT NOT NULL DEFAULT '[]'
-            );
-        """)
+def init_storage() -> None:
+    MOVES_DIR.mkdir(parents=True, exist_ok=True)
+    PRESETS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def _safe_move_name(move_name: str) -> str | None:
+    """Validate a move name is a plain slug before it's used to build a path."""
+    return move_name if NAME_RE.match(move_name) else None
+
+
+def _move_path(move_name: str) -> Path | None:
+    safe = _safe_move_name(move_name)
+    return (MOVES_DIR / f'{safe}.json') if safe else None
+
+
+def _read_json(path: Path) -> dict | None:
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text('utf-8'))
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
+def _write_json(path: Path, data: dict) -> None:
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', 'utf-8')
+
+
+def _load_move_data(move_name: str) -> dict:
+    path = _move_path(move_name)
+    data = _read_json(path) if path else None
+    return {
+        'events':      (data or {}).get('events', []),
+        'conditions':  (data or {}).get('conditions', []),
+        'custom_desc': (data or {}).get('custom_desc', ''),
+    }
+
+
+def _iter_preset_files():
+    return sorted(PRESETS_DIR.glob('*.json'), key=lambda p: int(p.stem))
+
+
+def _next_preset_id() -> int:
+    ids = [int(p.stem) for p in PRESETS_DIR.glob('*.json') if p.stem.isdigit()]
+    return (max(ids) + 1) if ids else 1
 
 
 # ── Move category constants ───────────────────────────────────────────────────
@@ -220,60 +251,49 @@ def api_moves():
 @app.route('/api/moves/with-data')
 def api_with_data():
     """Move names that have at least one event or condition saved."""
-    with get_db() as conn:
-        rows = conn.execute(
-            "SELECT move_name FROM move_data WHERE events != '[]' OR conditions != '[]'"
-        ).fetchall()
-    return jsonify([r['move_name'] for r in rows])
+    names = []
+    for path in MOVES_DIR.glob('*.json'):
+        data = _read_json(path)
+        if data and (data.get('events') or data.get('conditions')):
+            names.append(path.stem)
+    return jsonify(names)
 
 
 @app.route('/api/events/<move_name>', methods=['GET'])
 def api_get_events(move_name: str):
-    with get_db() as conn:
-        row = conn.execute(
-            'SELECT * FROM move_data WHERE move_name = ?', (move_name,)
-        ).fetchone()
-    if row is None:
-        return jsonify({'events': [], 'conditions': [], 'custom_desc': ''})
-    return jsonify({
-        'events':      json.loads(row['events']),
-        'conditions':  json.loads(row['conditions']),
-        'custom_desc': row['custom_desc'],
-    })
+    if _safe_move_name(move_name) is None:
+        return jsonify({'error': 'invalid move name'}), 400
+    return jsonify(_load_move_data(move_name))
 
 
 @app.route('/api/events/<move_name>', methods=['PUT'])
 def api_put_events(move_name: str):
+    path = _move_path(move_name)
+    if path is None:
+        return jsonify({'error': 'invalid move name'}), 400
     body = request.get_json(force=True)
-    with get_db() as conn:
-        conn.execute("""
-            INSERT INTO move_data (move_name, events, conditions, custom_desc)
-            VALUES (?, ?, ?, ?)
-            ON CONFLICT(move_name) DO UPDATE SET
-                events      = excluded.events,
-                conditions  = excluded.conditions,
-                custom_desc = excluded.custom_desc
-        """, (
-            move_name,
-            json.dumps(body.get('events', [])),
-            json.dumps(body.get('conditions', [])),
-            body.get('custom_desc', ''),
-        ))
+    _write_json(path, {
+        'events':      body.get('events', []),
+        'conditions':  body.get('conditions', []),
+        'custom_desc': body.get('custom_desc', ''),
+    })
     return jsonify({'ok': True})
 
 
 @app.route('/api/presets', methods=['GET'])
 def api_get_presets():
-    with get_db() as conn:
-        rows = conn.execute(
-            'SELECT id, name, events, conditions FROM presets ORDER BY id'
-        ).fetchall()
-    return jsonify([{
-        'id':         r['id'],
-        'name':       r['name'],
-        'events':     json.loads(r['events']),
-        'conditions': json.loads(r['conditions']),
-    } for r in rows])
+    presets = []
+    for path in _iter_preset_files():
+        data = _read_json(path)
+        if data is None:
+            continue
+        presets.append({
+            'id':         int(path.stem),
+            'name':       data.get('name', ''),
+            'events':     data.get('events', []),
+            'conditions': data.get('conditions', []),
+        })
+    return jsonify(presets)
 
 
 @app.route('/api/presets', methods=['POST'])
@@ -282,42 +302,44 @@ def api_create_preset():
     name = (body.get('name') or '').strip()
     if not name:
         return jsonify({'error': 'name required'}), 400
-    with get_db() as conn:
-        cur = conn.execute(
-            'INSERT INTO presets (name, events, conditions) VALUES (?, ?, ?)',
-            (name, json.dumps(body.get('events', [])), json.dumps(body.get('conditions', [])))
-        )
-    return jsonify({'id': cur.lastrowid, 'ok': True})
+    preset_id = _next_preset_id()
+    _write_json(PRESETS_DIR / f'{preset_id}.json', {
+        'name':       name,
+        'events':     body.get('events', []),
+        'conditions': body.get('conditions', []),
+    })
+    return jsonify({'id': preset_id, 'ok': True})
 
 
 @app.route('/api/presets/<int:preset_id>', methods=['DELETE'])
 def api_delete_preset(preset_id: int):
-    with get_db() as conn:
-        conn.execute('DELETE FROM presets WHERE id = ?', (preset_id,))
+    (PRESETS_DIR / f'{preset_id}.json').unlink(missing_ok=True)
     return jsonify({'ok': True})
 
 
 @app.route('/api/export')
 def api_export():
-    with get_db() as conn:
-        move_rows   = conn.execute('SELECT * FROM move_data').fetchall()
-        preset_rows = conn.execute(
-            'SELECT id, name, events, conditions FROM presets ORDER BY id'
-        ).fetchall()
-    move_data = {
-        r['move_name']: {
-            'events':      json.loads(r['events']),
-            'conds':       json.loads(r['conditions']),
-            'customDesc':  r['custom_desc'],
+    move_data = {}
+    for path in MOVES_DIR.glob('*.json'):
+        data = _read_json(path)
+        if data is None:
+            continue
+        move_data[path.stem] = {
+            'events':     data.get('events', []),
+            'conds':      data.get('conditions', []),
+            'customDesc': data.get('custom_desc', ''),
         }
-        for r in move_rows
-    }
-    presets = [{
-        'id':    r['id'],
-        'name':  r['name'],
-        'events': json.loads(r['events']),
-        'conds':  json.loads(r['conditions']),
-    } for r in preset_rows]
+    presets = []
+    for path in _iter_preset_files():
+        data = _read_json(path)
+        if data is None:
+            continue
+        presets.append({
+            'id':     int(path.stem),
+            'name':   data.get('name', ''),
+            'events': data.get('events', []),
+            'conds':  data.get('conditions', []),
+        })
     return jsonify({'moveData': move_data, 'presets': presets})
 
 
@@ -326,24 +348,30 @@ def api_import():
     body      = request.get_json(force=True)
     move_data = body.get('moveData', {})
     presets   = body.get('presets', [])
-    with get_db() as conn:
-        conn.execute('DELETE FROM move_data')
-        conn.execute('DELETE FROM presets')
-        for move_name, data in move_data.items():
-            conn.execute(
-                'INSERT INTO move_data (move_name, events, conditions, custom_desc) VALUES (?, ?, ?, ?)',
-                (
-                    move_name,
-                    json.dumps(data.get('events', [])),
-                    json.dumps(data.get('conds', [])),
-                    data.get('customDesc', ''),
-                )
-            )
-        for p in presets:
-            conn.execute(
-                'INSERT INTO presets (name, events, conditions) VALUES (?, ?, ?)',
-                (p['name'], json.dumps(p.get('events', [])), json.dumps(p.get('conds', [])))
-            )
+
+    for path in MOVES_DIR.glob('*.json'):
+        path.unlink()
+    for path in PRESETS_DIR.glob('*.json'):
+        path.unlink()
+
+    for move_name, data in move_data.items():
+        path = _move_path(move_name)
+        if path is None:
+            continue
+        _write_json(path, {
+            'events':      data.get('events', []),
+            'conditions':  data.get('conds', []),
+            'custom_desc': data.get('customDesc', ''),
+        })
+
+    for i, p in enumerate(presets, start=1):
+        preset_id = p.get('id') or i
+        _write_json(PRESETS_DIR / f'{preset_id}.json', {
+            'name':       p.get('name', ''),
+            'events':     p.get('events', []),
+            'conditions': p.get('conds', []),
+        })
+
     return jsonify({'ok': True})
 
 
@@ -362,7 +390,7 @@ def static_files(filename: str):
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
-    init_db()
+    init_storage()
     print('─' * 44)
     print('  Move Event Editor')
     print('  http://localhost:5050')

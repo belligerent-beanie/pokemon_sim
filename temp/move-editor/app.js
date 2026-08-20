@@ -165,7 +165,7 @@ async function selectMove(move) {
   renderMoveList();
 }
 
-// ── Persist current state to SQLite ──────────────────────────────────────────
+// ── Persist current state to per-move/preset JSON files ──────────────────────────────────────────
 
 async function persistCurrent() {
   if (!selectedMove) return;

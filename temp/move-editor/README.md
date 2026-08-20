@@ -1,7 +1,8 @@
 # Move Event Editor
 
 Development tool for associating pub-sub events and conditions with Pokémon moves.
-Data is stored in SQLite — queryable directly from the battle engine.
+Data is stored as one JSON file per move (and per preset) — plain text, so it
+diffs and syncs cleanly through git.
 
 ## Setup
 
@@ -22,81 +23,74 @@ Every subsequent launch serves from the cache instantly.
 
 ## Files
 
-| File              | Contents                                              | Commit? |
-|-------------------|-------------------------------------------------------|---------|
-| `move_cache.json` | Processed move data from PokeAPI                      | ✅ Yes  |
-| `move_events.db`  | SQLite — events, conditions, presets per move         | ❌ No   |
+| Path                      | Contents                                          | Commit? |
+|----------------------------|---------------------------------------------------|---------|
+| `move_cache.json`          | Processed move data from PokeAPI                  | ✅ Yes  |
+| `moves/<move_name>.json`   | Events, conditions, custom description for a move | ✅ Yes  |
+| `presets/<id>.json`        | One reusable event/condition preset               | ✅ Yes  |
 
-Add `move_events.db` to `.gitignore`.
+`moves/` and `presets/` are created automatically on first launch. Only moves
+you've actually edited get a file — untouched moves have no entry.
 
 ## Working across multiple machines
 
-`move_events.db` is local and not committed to git, so you need to sync it manually when switching machines.
+Because each move and preset is its own tracked JSON file, syncing across
+machines is just normal git: commit `moves/` and `presets/` along with your
+other changes, then `git pull` on the other machine and restart `server.py`.
+If you and someone else edit different moves, git merges them without any
+conflict; edits to the *same* move on two machines behave like any other
+text-file merge conflict — resolve it like you would any JSON file.
 
-**Option A — Manual export/import (recommended)**
-1. Before switching, click **Export JSON** in the editor and commit the file.
-2. On the other machine, pull, run `server.py`, then click **Import JSON**.
-
-**Option B — Shared folder (seamless)**
-Point `DB_FILE` in `server.py` to a path that's automatically synced (Dropbox, OneDrive, etc.):
-
-```python
-DB_FILE = Path('/path/to/your/synced/folder/move_events.db')
-```
-
-The database stays in sync without any manual steps. Git still handles the code and move cache.
+The **Export JSON** / **Import JSON** buttons in the editor still work as a
+manual bulk export/import if you ever want a single-file snapshot (e.g. for a
+backup, or to hand data to someone outside git).
 
 ## Reading from Python (pub-sub system)
 
 ```python
-import sqlite3, json
+import json
+from pathlib import Path
 
-DB = 'temp/move-editor/move_events.db'
+MOVES_DIR = Path('temp/move-editor/moves')
 
 def get_move_events(move_name: str) -> dict:
-    con = sqlite3.connect(DB)
-    con.row_factory = sqlite3.Row
-    row = con.execute(
-        'SELECT * FROM move_data WHERE move_name = ?', (move_name,)
-    ).fetchone()
-    if row is None:
+    path = MOVES_DIR / f'{move_name}.json'
+    if not path.exists():
         return {'events': [], 'conditions': []}
+    data = json.loads(path.read_text('utf-8'))
     return {
-        'events':     json.loads(row['events']),
-        'conditions': json.loads(row['conditions']),
+        'events':     data.get('events', []),
+        'conditions': data.get('conditions', []),
     }
 
 def get_all_move_events() -> dict:
-    con = sqlite3.connect(DB)
-    con.row_factory = sqlite3.Row
-    rows = con.execute(
-        "SELECT * FROM move_data WHERE events != '[]'"
-    ).fetchall()
-    return {
-        r['move_name']: {
-            'events':     json.loads(r['events']),
-            'conditions': json.loads(r['conditions']),
-        }
-        for r in rows
-    }
+    result = {}
+    for path in MOVES_DIR.glob('*.json'):
+        data = json.loads(path.read_text('utf-8'))
+        if data.get('events'):
+            result[path.stem] = {
+                'events':     data.get('events', []),
+                'conditions': data.get('conditions', []),
+            }
+    return result
 ```
 
-## Schema
+## File format
 
-```sql
--- Per-move event/condition data
-CREATE TABLE move_data (
-    move_name   TEXT PRIMARY KEY,
-    events      TEXT NOT NULL DEFAULT '[]',   -- JSON array
-    conditions  TEXT NOT NULL DEFAULT '[]',   -- JSON array
-    custom_desc TEXT NOT NULL DEFAULT ''
-);
+```jsonc
+// moves/<move_name>.json
+{
+  "events": [ /* JSON array */ ],
+  "conditions": [ /* JSON array */ ],
+  "custom_desc": ""
+}
+```
 
--- Reusable preset combinations
-CREATE TABLE presets (
-    id         INTEGER PRIMARY KEY AUTOINCREMENT,
-    name       TEXT NOT NULL,
-    events     TEXT NOT NULL DEFAULT '[]',
-    conditions TEXT NOT NULL DEFAULT '[]'
-);
+```jsonc
+// presets/<id>.json
+{
+  "name": "Preset name",
+  "events": [ /* JSON array */ ],
+  "conditions": [ /* JSON array */ ]
+}
 ```
