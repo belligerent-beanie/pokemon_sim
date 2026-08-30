@@ -36,12 +36,25 @@ let presets      = [];         // full preset list, kept in sync with API
 const CONDITION_LABELS = { on_hit: 'On Hit', on_contact: 'On Contact' };
 const condLabel = c => CONDITION_LABELS[c?.type] || c?.type || 'on_hit';
 
-// Which condition types actually make sense for a given move, based on its
-// real Showdown flags (e.g. On Contact is meaningless for a move that never
-// makes contact — Absorb, Will-O-Wisp, ... — so don't offer it as a choice).
-function availableConditionTypes(move) {
+// Which condition types actually make sense for a move right now.
+// On Contact isn't about whether the move itself makes contact when
+// attacking (that's move.flags.contact — a separate, purely descriptive
+// fact, e.g. for Rough Skin/Static reacting to being hit by this move).
+// It's about whether THIS move has a defensive counter-effect that fires
+// when something makes contact with its user — that's the trait every
+// Protect-family move shares: it grants itself a self-targeted volatile
+// on hit. Tackle doesn't do that, so it shouldn't offer On Contact even
+// though Tackle itself makes contact; King's Shield does, so it should.
+function hasDefensiveVolatile(effects) {
+  return (effects || []).some(block =>
+    block.condition?.type === 'on_hit' &&
+    block.events.some(ev => ev.target === 'self' && ev.params.some(p => p.key === 'volatile'))
+  );
+}
+
+function availableConditionTypes(effects) {
   const types = ['on_hit'];
-  if (move?.flags?.contact) types.push('on_contact');
+  if (hasDefensiveVolatile(effects)) types.push('on_contact');
   return types;
 }
 const sameCondition = (a, b) => JSON.stringify(a) === JSON.stringify(b);
@@ -325,7 +338,7 @@ function renderBlock(block, blockIdx) {
   const wrap = document.createElement('div');
   wrap.className = 'effect-block';
 
-  const allowed = availableConditionTypes(selectedMove);
+  const allowed = availableConditionTypes(curEffects);
   const options = allowed.includes(block.condition.type)
     ? allowed
     : [block.condition.type, ...allowed];
@@ -493,7 +506,7 @@ document.getElementById('newBlockConditionType').addEventListener('change', e =>
 
 function openCondModal() {
   const sel = document.getElementById('newBlockConditionType');
-  const allowed = availableConditionTypes(selectedMove);
+  const allowed = availableConditionTypes(curEffects);
   sel.innerHTML = allowed.map(t => `<option value="${esc(t)}">${esc(CONDITION_LABELS[t] || t)}</option>`).join('')
     + '<option value="__custom__">Custom…</option>';
   sel.value = 'on_hit';
@@ -523,7 +536,7 @@ function renderPresetsList() {
   const list = document.getElementById('presetsList');
   if (!list) return;
 
-  const allowed = availableConditionTypes(selectedMove);
+  const allowed = availableConditionTypes(curEffects);
   const applicable = presets
     .map((p, i) => ({ p, i }))
     .filter(({ p }) => allowed.includes((p.condition || { type: 'on_hit' }).type));
