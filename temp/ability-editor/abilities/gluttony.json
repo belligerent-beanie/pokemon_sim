@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a Berry that would normally auto-activate at 1/4 max HP or below instead activates at 1/2 max HP or below"
+            },
+            {
+              "key": "note",
+              "val": "modifies the eating CONDITION of other Berry effects — not a standalone trigger, and does nothing on its own without a qualifying Berry held"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

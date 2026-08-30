@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "opposing Pokémon cannot eat their held Berries while the holder remains active"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

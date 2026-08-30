@@ -1,0 +1,45 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "appears as the last conscious Pokémon in the party's roster instead of its own species"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the illusion breaks, revealing the true form"
+            },
+            {
+              "key": "fail_if",
+              "val": "the illusion has already broken"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,47 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "lifted off the ground (ungrounded); moves used against the holder always hit except OHKO moves, which still miss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "3"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Telekinesis ends; the holder returns to the ground"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

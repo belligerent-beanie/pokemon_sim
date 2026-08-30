@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 8,
           "params": [
             {
               "key": "damage_class",
@@ -23,7 +22,41 @@
               "val": "120"
             }
           ],
-          "_from_preset": 8
+          "priority": 0,
+          "target": "opponent"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "charge_turn",
+              "val": "true"
+            },
+            {
+              "key": "note",
+              "val": "charges on turn 1, attacks on turn 2 — standard two-turn move"
+            }
+          ]
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_attack"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            },
+            {
+              "key": "note",
+              "val": "raised once the charging turn completes, before the attack resolves"
+            }
+          ],
+          "chance": "100"
         }
       ]
     }

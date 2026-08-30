@@ -1,0 +1,47 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "reverses turn order — slower Pokémon move first"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "5"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Trick Room ends"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

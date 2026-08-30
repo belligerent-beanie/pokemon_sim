@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks all major status conditions and Leech Seed from being inflicted"
+            },
+            {
+              "key": "fail_if",
+              "val": "harsh sunlight (Sun or Extremely Harsh Sunlight) is not currently active"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

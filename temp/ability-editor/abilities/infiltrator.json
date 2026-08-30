@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's moves bypass Reflect, Light Screen, Aurora Veil, and Safeguard on the target's side"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

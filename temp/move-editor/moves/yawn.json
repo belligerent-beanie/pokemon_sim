@@ -12,14 +12,13 @@
           "params": [
             {
               "key": "volatile",
-              "val": "drowsy"
+              "val": "yawn"
             },
             {
               "key": "chance",
               "val": "100"
             }
-          ],
-          "_from_preset": 26
+          ]
         }
       ]
     }

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "negates every weather-based effect on the field (damage, stat boosts, type immunities, etc.) while the holder remains active — the weather itself stays active in the background and keeps ticking down"
+            },
+            {
+              "key": "note",
+              "val": "identical effect to Air Lock"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

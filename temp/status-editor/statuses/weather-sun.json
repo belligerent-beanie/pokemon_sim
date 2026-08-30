@@ -1,0 +1,47 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "boosts Fire moves, weakens Water moves"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "5, or 8 with Heat Rock held"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Harsh Sunlight clears"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

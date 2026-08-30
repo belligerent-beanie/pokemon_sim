@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "based on Steel-type effectiveness vs. the switching-in Pokémon: 0.25x eff. → 3% max HP, 0.5x → 7%, 1x → 13%, 2x → 25%"
+            },
+            {
+              "key": "note",
+              "val": "no 4x case and no immunity case — nothing resists Steel twice over, and nothing is immune to it"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

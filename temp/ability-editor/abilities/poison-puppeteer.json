@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "any Pokémon poisoned by one of the holder's moves also becomes Confused"
+            },
+            {
+              "key": "note",
+              "val": "Pecharunt-exclusive; the Confusion is an addition on top of whatever move actually inflicted the poison, not a replacement"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

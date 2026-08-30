@@ -1,0 +1,52 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "random 1-4"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "snaps out of confusion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "hits itself in confusion instead of using the selected move (typeless, ~40 power physical, always hits, no crit)"
+            },
+            {
+              "key": "note",
+              "val": "rolled independently each turn while confusion is active, separate from the duration_turns countdown above"
+            }
+          ],
+          "chance": "33"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

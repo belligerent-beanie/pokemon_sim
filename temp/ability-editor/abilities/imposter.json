@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "transforms into whichever opposing Pokémon is directly opposite, copying its stats, moves, and typing (not HP)"
+            },
+            {
+              "key": "note",
+              "val": "automatic and unconditional version of the move Transform"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

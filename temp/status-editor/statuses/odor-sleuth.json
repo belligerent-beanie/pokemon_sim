@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "negates the holder's evasion stat boosts; Normal- and Fighting-type moves can hit the holder even if it's Ghost-type"
+            },
+            {
+              "key": "note",
+              "val": "mechanically identical to Foresight — different move name, same effect, kept as a separate catalog entry since the games do"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

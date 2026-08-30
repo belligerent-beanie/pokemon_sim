@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "single-target moves from the opposing side are redirected to the user this turn"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move targets the whole field/side rather than a single Pokémon, or is flagged to ignore redirection"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

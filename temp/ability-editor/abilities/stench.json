@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_deal_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "flinch"
+            },
+            {
+              "key": "note",
+              "val": "applies to any of the holder's damaging moves, stacking on top of a move's own listed flinch chance if it already has one"
+            }
+          ],
+          "chance": "10"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

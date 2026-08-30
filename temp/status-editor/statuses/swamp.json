@@ -1,0 +1,47 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "quarters the Speed of Pokémon on the target side"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "4"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Swamp fades"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

@@ -1,0 +1,51 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "random 1-3"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "wakes up, cures sleep, acts normally this turn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "fully prevents the move this turn"
+            },
+            {
+              "key": "note",
+              "val": "blocked every turn while asleep, until the Lasts N Turns duration above expires"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

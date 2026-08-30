@@ -1,0 +1,47 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "blocks status conditions for grounded Pokémon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "5, or 8 with Terrain Extender held"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Misty Terrain fades"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

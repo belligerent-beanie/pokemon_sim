@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "an HP-draining move used against the holder damages the attacker by the same amount it would have healed, instead of healing it"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not drain/leech HP"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

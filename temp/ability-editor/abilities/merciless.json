@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's moves are always a critical hit against a poisoned or badly poisoned target"
+            },
+            {
+              "key": "fail_if",
+              "val": "the target is not poisoned or badly poisoned"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

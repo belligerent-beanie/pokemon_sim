@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_terastallize",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises a stat depending on the holder's mask: Teal Mask → Speed, Wellspring Mask → Special Defense, Hearthflame Mask → Attack, Cornerstone Mask → Defense"
+            },
+            {
+              "key": "note",
+              "val": "custom condition type — Terastallizing is not covered by any existing trigger"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

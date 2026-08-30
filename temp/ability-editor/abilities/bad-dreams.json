@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "13% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "the target is not asleep"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

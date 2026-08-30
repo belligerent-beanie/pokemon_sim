@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder loafs around and cannot act every other turn, alternating between a usable turn and a skipped one"
+            },
+            {
+              "key": "note",
+              "val": "resets back to \"ready\" if the holder switches out and back in"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

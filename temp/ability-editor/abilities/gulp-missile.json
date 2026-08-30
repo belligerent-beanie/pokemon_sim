@@ -1,0 +1,49 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_move_used"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "catches prey and changes form — Gulping if HP is above 50%, Gorging if at or below 50%"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move used is not Surf or Dive"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_hit_holder"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "the caught prey is spat out at the attacker for 25% of the attacker's own max HP, plus a guaranteed Defense drop (-1, Gulping form) or Paralysis (Gorging form) depending on which form the holder is in"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is in its base form (has not used Surf/Dive to catch prey), or the attacker is currently semi-invulnerable (e.g. mid-Dig/Fly)"
+            }
+          ],
+          "priority": 0,
+          "target": "opponent"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_priority_check"
+      },
+      "events": [
+        {
+          "chance": "30",
+          "params": [
+            {
+              "key": "effect",
+              "val": "acts first within its priority bracket this turn"
+            },
+            {
+              "key": "note",
+              "val": "does not change the move's priority stage — only wins the speed tie-break within whatever bracket it's already in"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move being used is a status move — Quick Draw only applies to damaging moves"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_priority_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "status moves always act last within their priority bracket, but ignore the target's ability when applying their effect (Mold Breaker-style, restricted to status moves only)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move being used is not a status move"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

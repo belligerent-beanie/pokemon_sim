@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Grass-type moves deal ×1.5 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not Grass-type, or the holder's HP is above 1/3 max HP"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "25% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "holder is not currently asleep"
+            },
+            {
+              "key": "note",
+              "val": "has no duration of its own — persists exactly as long as Sleep does; cured immediately alongside it"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "cures a major status condition on an adjacent ally"
+            },
+            {
+              "key": "note",
+              "val": "only relevant in double/multi battles — \"adjacent ally\" has no meaning in a single battle"
+            }
+          ],
+          "chance": "30"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

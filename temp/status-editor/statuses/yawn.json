@@ -1,0 +1,33 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "delayed_turn",
+        "params": [
+          {
+            "key": "turns",
+            "val": "1"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "falls asleep (applies the Sleep status)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is already afflicted with a major status condition, or is protected from sleep (Insomnia, Vital Spirit, Electric Terrain, Uproar, etc.)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

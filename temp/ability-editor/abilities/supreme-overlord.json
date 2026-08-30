@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "move power is boosted based on the number of fainted party members (capped at 5): +10%/+20%/+30%/+40%/+50% for 1/2/3/4/5+ fainted allies respectively"
+            },
+            {
+              "key": "note",
+              "val": "verified exact values via Showdown source (powMod table [4096,4506,4915,5325,5734,6144]/4096 for 0-5 fallen) — precisely linear at +10% per ally, not an approximation. Also corrected the framing: this is a MOVE-POWER multiplier applied at damage calc, not a literal Attack/Sp. Atk stat boost — functionally similar for damage output, but doesn't affect anything else that reads the Attack/Sp. Atk stat directly."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

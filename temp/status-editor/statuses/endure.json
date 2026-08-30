@@ -1,0 +1,58 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "this hit's damage leaves the holder at 1 HP instead of fainting"
+            },
+            {
+              "key": "fail_if",
+              "val": "this hit would not have reduced the holder to 0 HP or below anyway"
+            },
+            {
+              "key": "note",
+              "val": "only intervenes on THIS hit's HP loss — does not block or reduce the move's secondary effects (status, stat drops), and does not protect against indirect damage later the same turn or on subsequent turns (poison, hazards, weather, Life Orb recoil, etc.)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "protect_streak"
+            },
+            {
+              "key": "increment",
+              "val": "protect_streak"
+            },
+            {
+              "key": "note",
+              "val": "shared across the whole protection-move family — reset to 0 on any turn where no protection move was used; success chance next use is (1/3)^protect_streak"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

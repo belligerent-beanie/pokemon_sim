@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "lowers Speed by 1 stage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the switching-in Pokémon is not grounded"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

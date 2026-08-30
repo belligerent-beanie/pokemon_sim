@@ -1,0 +1,42 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "negates Flying-type's weaknesses entirely — Flying takes neutral damage from Rock/Electric/Ice moves instead of super-effective; cannot be changed or ended by any weather-setting move/ability while active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_cure",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "ends when the Pokémon that summoned it (the Delta Stream holder) leaves the field or faints — the only way it clears"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

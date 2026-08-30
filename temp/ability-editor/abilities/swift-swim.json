@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Speed is doubled"
+            },
+            {
+              "key": "fail_if",
+              "val": "Rain is not currently active"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

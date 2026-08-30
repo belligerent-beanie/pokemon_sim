@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "takes no damage from anything except a move's own direct damage — no weather chip damage, entry hazards, status damage-over-time, recoil, or Life Orb-style self-damage"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

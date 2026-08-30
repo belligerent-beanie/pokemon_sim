@@ -1,0 +1,51 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_start",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "thaws out and cures freeze; the Pokémon acts normally this turn"
+            },
+            {
+              "key": "note",
+              "val": "checked once per turn, before the move-block check below; some moves (Fire-type moves landing on a frozen target, Scald/Steam Eruption/Burn Up) force an immediate thaw independent of this roll — model those on the move's own On Hit block, not here"
+            }
+          ],
+          "chance": "20"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "fully prevents the move this turn"
+            },
+            {
+              "key": "note",
+              "val": "only reached if the On Turn Start thaw roll above failed"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

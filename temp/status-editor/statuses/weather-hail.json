@@ -1,0 +1,73 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Hail (pre-Gen 9): damages non-Ice-types each turn. Snow (Gen 9): no damage, boosts Ice-type Defense instead"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "5, or 8 with Icy Rock held"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Hail/Snow clears"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "7% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "target is Ice-type, OR this is modeled as Snow (Gen 9) rather than Hail"
+            },
+            {
+              "key": "note",
+              "val": "pick one behavior per your generation target — the catalog merges Hail and Snow into a single entry"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

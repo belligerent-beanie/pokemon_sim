@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Fairy-type moves used by any Pokémon deal ×1.33 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not Fairy-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

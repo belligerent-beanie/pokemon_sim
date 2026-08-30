@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "disables the move that just hit the holder"
+            },
+            {
+              "key": "note",
+              "val": "same underlying mechanic as the Disable status, applied reactively rather than via a move"
+            }
+          ],
+          "chance": "30"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

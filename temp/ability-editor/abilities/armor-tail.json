@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_priority_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks an opposing move from being used against the holder at all if its effective priority is greater than 0"
+            },
+            {
+              "key": "fail_if",
+              "val": "the opposing move's effective priority is not greater than 0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

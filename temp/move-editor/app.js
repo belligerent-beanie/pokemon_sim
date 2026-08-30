@@ -33,8 +33,28 @@ let curDesc      = '';
 let withDataSet  = new Set();  // move names with saved effect blocks
 let presets      = [];         // full preset list, kept in sync with API
 
-const CONDITION_LABELS = { on_hit: 'On Hit', on_contact: 'On Contact' };
-const condLabel = c => CONDITION_LABELS[c?.type] || c?.type || 'on_hit';
+const CONDITION_LABELS = {
+  on_hit: 'On Hit', on_contact: 'On Contact',
+  // Fires once, N turns after the move connects — the counter starts on hit,
+  // and the block's events resolve when it hits zero. Same shape as the
+  // status-editor's Delayed Turn (see ../status-editor/app.js, used there
+  // for Wish) — the move-side use case is Future Sight / Doom Desire.
+  delayed_turn: 'Delayed Turn',
+  // Same countdown as Delayed Turn, inverted meaning: the effect is active
+  // for the whole countdown and expires when it runs out (see
+  // ../status-editor/app.js for where this is used most — Sleep, Taunt,
+  // Encore). Rare on the move side, but e.g. a self-buff a move grants for
+  // a fixed number of turns could use it.
+  duration_turns: 'Lasts N Turns',
+};
+const getTurns = c => (c?.params || []).find(p => p.key === 'turns')?.val || '2';
+const TURN_COUNT_CONDITIONS = ['delayed_turn', 'duration_turns'];
+const condLabel = c => {
+  const base = CONDITION_LABELS[c?.type] || c?.type || 'on_hit';
+  if (c?.type === 'delayed_turn')   return `${base} (${getTurns(c)} turns)`;
+  if (c?.type === 'duration_turns') return `${base}: ${getTurns(c)} turns`;
+  return base;
+};
 
 // Which condition types actually make sense for a move right now.
 // On Contact isn't about whether the move itself makes contact when
@@ -53,7 +73,7 @@ function hasDefensiveVolatile(effects) {
 }
 
 function availableConditionTypes(effects) {
-  const types = ['on_hit'];
+  const types = ['on_hit', 'delayed_turn'];
   if (hasDefensiveVolatile(effects)) types.push('on_contact');
   return types;
 }
@@ -348,6 +368,7 @@ function renderBlock(block, blockIdx) {
       <select class="condition-tag" data-block="${blockIdx}">
         ${options.map(t => `<option value="${esc(t)}" ${t === block.condition.type ? 'selected' : ''}>${esc(CONDITION_LABELS[t] || t)}</option>`).join('')}
       </select>
+      ${TURN_COUNT_CONDITIONS.includes(block.condition.type) ? `<input type="text" class="delay-turns-input" value="${esc(getTurns(block.condition))}" title="${block.condition.type === 'duration_turns' ? 'How many turns this lasts' : 'Turns until this fires'}" style="width:90px;margin-left:6px">` : ''}
       <span class="count">${block.events.length}</span>
       <div class="spacer"></div>
       <button class="btn btn-gold btn-sm" data-act="save-preset">Save as Preset</button>
@@ -359,7 +380,11 @@ function renderBlock(block, blockIdx) {
 
   wrap.querySelector('.condition-tag').addEventListener('change', async e => {
     const newType = e.target.value;
-    const newCondition = { type: newType, params: block.condition.params || [] };
+    let params = block.condition.params || [];
+    if (TURN_COUNT_CONDITIONS.includes(newType) && !params.some(p => p.key === 'turns')) {
+      params = [...params, { key: 'turns', val: '2' }];
+    }
+    const newCondition = { type: newType, params };
     const collision = curEffects.find((b, i) => i !== blockIdx && sameCondition(b.condition, newCondition));
     if (collision) {
       collision.events.push(...block.events);
@@ -370,6 +395,17 @@ function renderBlock(block, blockIdx) {
     await persistCurrent();
     renderEffects();
   });
+
+  const turnsInput = wrap.querySelector('.delay-turns-input');
+  if (turnsInput) {
+    turnsInput.addEventListener('change', async e => {
+      const params = (block.condition.params || []).filter(p => p.key !== 'turns');
+      params.push({ key: 'turns', val: e.target.value || '2' });
+      block.condition = { type: block.condition.type, params };
+      await persistCurrent();
+      renderEffects();
+    });
+  }
 
   wrap.querySelector('[data-act="add-event"]').addEventListener('click', () => openEventModal(blockIdx, null));
   wrap.querySelector('[data-act="save-preset"]').addEventListener('click', () => openPresetModal(blockIdx));
@@ -392,12 +428,13 @@ function renderBlock(block, blockIdx) {
 function renderEventCard(ev, i, blockIdx) {
   const tags = ev.params.slice(0, 3)
     .map(p => `<span class="mini-tag">${esc(p.key)}: ${esc(p.val)}</span>`).join('');
+  const chanceBadge = ev.chance ? `<span class="chance-badge">${esc(ev.chance)}% chance</span>` : '';
   const card = document.createElement('div');
   card.className = 'item-card';
   card.innerHTML = `
     <div class="idx">${String(i + 1).padStart(2, '0')}</div>
     <div class="main">
-      <div class="t1">Target: ${esc(ev.target)}</div>
+      <div class="t1">${chanceBadge}Target: ${esc(ev.target)}</div>
       <div class="t2">priority ${esc(String(ev.priority))} · ${ev.params.length} param${ev.params.length !== 1 ? 's' : ''}</div>
     </div>
     <div class="tags">${tags}</div>
@@ -466,12 +503,14 @@ function openEventModal(blockIdx, editIdx) {
     document.getElementById('eventModalTitle').textContent = 'Create Event';
     document.getElementById('targetSelect').value          = 'self';
     document.getElementById('eventPriority').value         = 0;
+    document.getElementById('eventChance').value            = '';
     evtParams = [];
   } else {
     const ev = curEffects[blockIdx].events[editIdx];
     document.getElementById('eventModalTitle').textContent = 'Edit Event';
     document.getElementById('targetSelect').value          = ev.target;
     document.getElementById('eventPriority').value         = ev.priority;
+    document.getElementById('eventChance').value            = ev.chance ?? '';
     evtParams = ev.params.map(p => ({ ...p }));
   }
   renderEvtParamRows();
@@ -484,9 +523,11 @@ document.getElementById('addEventParamBtn').addEventListener('click', () => {
 });
 
 document.getElementById('saveEventBtn').addEventListener('click', async () => {
+  const chanceRaw = document.getElementById('eventChance').value.trim();
   const record = {
     target:   document.getElementById('targetSelect').value,
     priority: document.getElementById('eventPriority').value,
+    ...(chanceRaw !== '' ? { chance: chanceRaw } : {}),
     params:   evtParams.filter(p => p.key.trim() !== ''),
   };
   const events = curEffects[editingBlockIdx].events;
@@ -502,6 +543,10 @@ document.getElementById('saveEventBtn').addEventListener('click', async () => {
 document.getElementById('newBlockConditionType').addEventListener('change', e => {
   document.getElementById('newBlockCustomRow').style.display =
     e.target.value === '__custom__' ? 'block' : 'none';
+  document.getElementById('newBlockTurnsRow').style.display =
+    TURN_COUNT_CONDITIONS.includes(e.target.value) ? 'block' : 'none';
+  document.getElementById('newBlockTurnsLabel').textContent =
+    e.target.value === 'duration_turns' ? 'Turns this lasts' : 'Turns until it fires';
 });
 
 function openCondModal() {
@@ -512,6 +557,8 @@ function openCondModal() {
   sel.value = 'on_hit';
   document.getElementById('newBlockCustomRow').style.display = 'none';
   document.getElementById('newBlockCustomType').value = '';
+  document.getElementById('newBlockTurnsRow').style.display = 'none';
+  document.getElementById('newBlockTurns').value = 2;
   openModal('condModal');
 }
 
@@ -521,7 +568,10 @@ document.getElementById('saveCondBtn').addEventListener('click', async () => {
     ? document.getElementById('newBlockCustomType').value.trim()
     : sel;
   if (!type) return;
-  const condition = { type, params: [] };
+  const params = TURN_COUNT_CONDITIONS.includes(type)
+    ? [{ key: 'turns', val: document.getElementById('newBlockTurns').value || '2' }]
+    : [];
+  const condition = { type, params };
   const existing = curEffects.find(b => sameCondition(b.condition, condition));
   if (!existing) {
     curEffects.push({ condition, events: [] });

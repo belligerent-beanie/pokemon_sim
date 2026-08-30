@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_faint",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "exactly the HP the holder had remaining immediately before fainting"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

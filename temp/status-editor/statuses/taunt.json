@@ -1,0 +1,51 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "3"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Taunt expires; status moves can be selected again"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "prevents selecting or using a status move"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move being used is not a status move (damaging moves are unaffected)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

@@ -1,0 +1,37 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "heal",
+              "val": "7% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "Hail/Snow is not currently active"
+            }
+          ]
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "takes no damage from Hail"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

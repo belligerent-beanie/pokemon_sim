@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the move that lands the finishing blow loses all its remaining PP"
+            },
+            {
+              "key": "fail_if",
+              "val": "this hit did not cause the holder to faint"
+            },
+            {
+              "key": "note",
+              "val": "cleared the instant the user takes its next action, same as Destiny Bond"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

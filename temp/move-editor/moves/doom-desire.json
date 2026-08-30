@@ -2,8 +2,13 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "type": "delayed_turn",
+        "params": [
+          {
+            "key": "turns",
+            "val": "2"
+          }
+        ]
       },
       "events": [
         {
@@ -11,19 +16,22 @@
           "priority": 0,
           "params": [
             {
-              "key": "damage_class",
-              "val": "special"
+              "key": "damage",
+              "val": "140 power Steel, calculated at resolution using stats/items/abilities current then"
             },
             {
-              "key": "crit_stage",
-              "val": "0"
+              "key": "bind_target",
+              "val": "target_slot"
             },
             {
-              "key": "power",
-              "val": "140"
+              "key": "fail_if",
+              "val": "slot is empty (target fainted with no replacement)"
+            },
+            {
+              "key": "note",
+              "val": "accuracy/type-immunity is checked at the moment it was used, not at resolution; ignores Protect on the resolving turn"
             }
-          ],
-          "_from_preset": 8
+          ]
         }
       ]
     }

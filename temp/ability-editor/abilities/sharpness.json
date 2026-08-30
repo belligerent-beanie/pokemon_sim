@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "slicing-flagged moves deal ×1.5 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not flagged as slicing"
+            },
+            {
+              "key": "note",
+              "val": "gated on a move flag, not a type — same caveat as Iron Fist/Strong Jaw from family 6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

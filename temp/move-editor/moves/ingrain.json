@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
+          "_from_preset": 30,
           "params": [
             {
               "key": "heal_basis",
@@ -19,7 +18,19 @@
               "val": "0.0625"
             }
           ],
-          "_from_preset": 30
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "ingrain"
+            }
+          ],
+          "chance": "100"
         }
       ]
     }

@@ -7,19 +7,97 @@
       },
       "events": [
         {
-          "target": "opponent",
+          "target": "self",
           "priority": 0,
           "params": [
             {
-              "key": "volatile",
-              "val": "flinch"
+              "key": "stat",
+              "val": "attack"
             },
             {
-              "key": "chance",
-              "val": "100"
+              "key": "stages",
+              "val": "1"
             }
           ],
-          "_from_preset": 20
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "defense"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_attack"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_defense"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "speed"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "block_switch",
+              "val": "true"
+            },
+            {
+              "key": "block_forced_switch",
+              "val": "true"
+            },
+            {
+              "key": "note",
+              "val": "traps the user in exchange for the all-stats boost — cannot switch out voluntarily or be forced out, until it switches out via another effect (e.g. Baton Pass is exempt) or the trapper leaves"
+            }
+          ]
         }
       ]
     }

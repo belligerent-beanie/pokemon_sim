@@ -1,0 +1,24 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "13% max HP, or 25% max HP if the holder is Water- or Steel-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

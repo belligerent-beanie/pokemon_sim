@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "reveals to the trainer whether any opposing Pokémon has a move that would be super-effective against the holder, or an OHKO/Explosion-family move"
+            },
+            {
+              "key": "note",
+              "val": "purely informational — no in-battle mechanical effect to simulate"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

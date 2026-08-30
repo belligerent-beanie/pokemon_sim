@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_turn_end"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "damage",
+              "val": "13% max HP"
+            },
+            {
+              "key": "note",
+              "val": "constant — does not scale with turns active"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Attack is boosted ×1.5 while the holder is poisoned (including badly poisoned)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is not poisoned or badly poisoned"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

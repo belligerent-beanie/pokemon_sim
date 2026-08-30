@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 8,
           "params": [
             {
               "key": "damage_class",
@@ -23,7 +22,18 @@
               "val": "150"
             }
           ],
-          "_from_preset": 8
+          "priority": 0,
+          "target": "opponent"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "recharge",
+              "val": "true"
+            }
+          ]
         }
       ]
     }

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "inverts Dark Aura's and Fairy Aura's effect on the field into a ×0.75 reduction instead of a boost, for as long as this ability remains active"
+            },
+            {
+              "key": "fail_if",
+              "val": "neither Dark Aura nor Fairy Aura is currently active on the field"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

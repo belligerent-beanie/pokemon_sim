@@ -1,0 +1,49 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's highest stat is boosted ×1.3 (×1.5 if the highest stat is Speed)"
+            },
+            {
+              "key": "fail_if",
+              "val": "harsh sunlight (Sun or Extremely Harsh Sunlight) is not currently active, and the Booster Energy activation below is not in effect"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "if the holder is holding Booster Energy, it is consumed and the stat boost activates immediately regardless of the field condition, persisting until the holder switches out even if that condition later ends"
+            },
+            {
+              "key": "note",
+              "val": "touches item-consumption mechanics ahead of the still-deferred item-interaction family — described in plain language rather than a structured item vocabulary, since that doesn't exist yet"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

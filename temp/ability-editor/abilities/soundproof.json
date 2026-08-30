@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_type_effectiveness",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming sound-based move entirely"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not flagged as sound-based"
+            },
+            {
+              "key": "note",
+              "val": "gated on a move FLAG (sound-based), not a type — a stretch of on_type_effectiveness's name, but the closest existing trigger for \"incoming move property check\""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

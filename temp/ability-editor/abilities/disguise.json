@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the first instance of battle damage this Pokémon would take is negated entirely (the disguise breaks and its appearance changes instead)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the disguise has already been broken this battle"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

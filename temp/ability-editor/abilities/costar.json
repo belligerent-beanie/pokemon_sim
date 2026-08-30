@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "copies all of an ally's current stat stage changes upon entering battle"
+            },
+            {
+              "key": "note",
+              "val": "doubles/multi-battle only — meaningless in a single battle"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

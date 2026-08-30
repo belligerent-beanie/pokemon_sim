@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's moves ignore a target's ability whenever that ability would hinder or prevent the move (e.g. Water Absorb, Levitate, Wonder Guard, Clear Body, Sturdy)"
+            },
+            {
+              "key": "note",
+              "val": "does not bypass abilities unrelated to hindering the move itself — e.g. Rough Skin/Static still trigger normally off a Mold Breaker user's contact move; identical effect to Mold Breaker and Turboblaze"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

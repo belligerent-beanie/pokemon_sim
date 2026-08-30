@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "lowers Defense and Sp. Def by 1 stage each; raises Attack, Special Attack, and Speed by 1 stage each"
+            },
+            {
+              "key": "fail_if",
+              "val": "this hit did not bring the holder's HP from above half to at or below half"
+            },
+            {
+              "key": "note",
+              "val": "only fires the turn HP crosses from above half to at-or-below half — does not re-trigger on subsequent hits while already below half"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

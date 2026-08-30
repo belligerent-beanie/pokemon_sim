@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 7,
           "params": [
             {
               "key": "damage_class",
@@ -23,7 +22,30 @@
               "val": "100"
             }
           ],
-          "_from_preset": 7
+          "priority": 0,
+          "target": "opponent"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_miss",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "50% max HP"
+            },
+            {
+              "key": "note",
+              "val": "custom condition type — none of the existing triggers cover \"this move missed its target\""
+            }
+          ]
         }
       ]
     }

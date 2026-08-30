@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks major status conditions and stat-stage reductions for Grass-type allies"
+            },
+            {
+              "key": "fail_if",
+              "val": "the affected ally is not Grass-type"
+            },
+            {
+              "key": "note",
+              "val": "PokeAPI's short effect text only mentions stat drops, but real behavior also blocks status conditions for Grass-type allies"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

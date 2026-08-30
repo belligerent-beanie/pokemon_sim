@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_weather_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "changes type and form to match the active weather — Normal in clear weather, Water in Rain, Fire in Sun, Ice in Hail/Snow"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

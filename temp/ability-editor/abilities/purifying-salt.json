@@ -1,0 +1,41 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks every major and volatile status condition from being inflicted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "damage taken from Ghost-type moves is halved"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

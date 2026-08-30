@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a contact-making move deals ×1.33 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move does not make contact"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

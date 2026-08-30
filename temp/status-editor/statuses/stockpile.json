@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "stockpile_layers"
+            },
+            {
+              "key": "increment",
+              "val": "stockpile_layers"
+            },
+            {
+              "key": "note",
+              "val": "capped at 3 layers; each layer also raises Defense and Sp. Def by 1 stage immediately on being added"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

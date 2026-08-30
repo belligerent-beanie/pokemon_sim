@@ -1,0 +1,33 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "prevents the move this turn (too infatuated to attack)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the Pokémon that caused the infatuation has fainted or is no longer on the field"
+            },
+            {
+              "key": "note",
+              "val": "same mechanic as Infatuation — Attract is the move/status name, Infatuation is the effect name; kept as twin entries since the catalog lists both"
+            }
+          ],
+          "chance": "50"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

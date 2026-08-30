@@ -1,0 +1,51 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "4"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Disable expires; the disabled move can be selected again"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "prevents selecting or using the specific move that was disabled"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move being used is not the disabled move"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

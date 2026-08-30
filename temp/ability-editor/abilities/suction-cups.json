@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "block_forced_switch",
+              "val": "true"
+            },
+            {
+              "key": "note",
+              "val": "only blocks being forced out by something else (Roar, Whirlwind, Dragon Tail, Circle Throw, Red Card, Eject Button) — does not restrict the holder's own voluntary switch, unlike the trapping trio above"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

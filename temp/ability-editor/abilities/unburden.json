@@ -1,0 +1,97 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_item_consumed",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "unburden_active"
+            },
+            {
+              "key": "set",
+              "val": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_item_removed",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "unburden_active"
+            },
+            {
+              "key": "set",
+              "val": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_switch_out",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "unburden_active"
+            },
+            {
+              "key": "set",
+              "val": "0"
+            },
+            {
+              "key": "note",
+              "val": "the flag resets on switch-out — re-entering with a new item held does not carry the boost over"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Speed is doubled"
+            },
+            {
+              "key": "fail_if",
+              "val": "unburden_active is not set, or the holder currently holds an item again"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

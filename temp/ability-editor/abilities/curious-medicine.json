@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "resets all stat stage changes to 0 for every ally on the field"
+            },
+            {
+              "key": "note",
+              "val": "does not reset the holder's own stat changes, only its allies'"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

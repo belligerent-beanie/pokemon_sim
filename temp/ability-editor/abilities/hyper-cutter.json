@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks Attack from being lowered by another Pokémon"
+            },
+            {
+              "key": "fail_if",
+              "val": "the stat change is not a decrease to Attack, or was self-inflicted"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

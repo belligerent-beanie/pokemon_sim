@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "lowers Speed by 1 stage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

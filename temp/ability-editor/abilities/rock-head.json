@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder takes no recoil/crash damage from its own moves"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move used does not deal recoil or crash damage"
+            },
+            {
+              "key": "note",
+              "val": "covers both true recoil (Double-Edge, Flare Blitz) and miss-crash damage (Jump Kick, High Jump Kick) — both categories are blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

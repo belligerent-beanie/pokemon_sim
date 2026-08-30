@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's moves have their accuracy increased ×1.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

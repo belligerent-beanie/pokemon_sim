@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Speed is boosted ×1.5 while the holder has a major status condition — this REPLACES Paralysis's usual Speed-reduction rather than stacking with it"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder has no major status condition"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

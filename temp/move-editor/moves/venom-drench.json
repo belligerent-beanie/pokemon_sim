@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 10,
           "params": [
             {
               "key": "stat",
@@ -21,13 +20,17 @@
             {
               "key": "chance",
               "val": "100"
+            },
+            {
+              "key": "fail_if",
+              "val": "the target is not poisoned or badly poisoned"
             }
           ],
-          "_from_preset": 10
+          "priority": 0,
+          "target": "opponent"
         },
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 12,
           "params": [
             {
               "key": "stat",
@@ -40,13 +43,17 @@
             {
               "key": "chance",
               "val": "100"
+            },
+            {
+              "key": "fail_if",
+              "val": "the target is not poisoned or badly poisoned"
             }
           ],
-          "_from_preset": 12
+          "priority": 0,
+          "target": "opponent"
         },
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 14,
           "params": [
             {
               "key": "stat",
@@ -59,9 +66,14 @@
             {
               "key": "chance",
               "val": "100"
+            },
+            {
+              "key": "fail_if",
+              "val": "the target is not poisoned or badly poisoned"
             }
           ],
-          "_from_preset": 14
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

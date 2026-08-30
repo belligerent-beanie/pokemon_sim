@@ -1,0 +1,29 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "lowers Speed by 1 stage"
+            },
+            {
+              "key": "tag",
+              "val": "Fire-type move effectiveness against the holder is doubled"
+            }
+          ],
+          "chance": "100"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

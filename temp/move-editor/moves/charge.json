@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
+          "_from_preset": 13,
           "params": [
             {
               "key": "stat",
@@ -23,7 +22,22 @@
               "val": "100"
             }
           ],
-          "_from_preset": 13
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the user's next Electric-type move deals double power"
+            },
+            {
+              "key": "note",
+              "val": "consumed by using that next Electric move — same shape as Electromorphosis/Wind Power in ability-editor"
+            }
+          ]
         }
       ]
     }

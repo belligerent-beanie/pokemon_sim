@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder and its allies have their moves' accuracy increased ×1.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

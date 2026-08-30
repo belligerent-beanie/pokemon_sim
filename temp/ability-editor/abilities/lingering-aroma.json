@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_ability_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "changes the attacker's ability to Lingering Aroma"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            },
+            {
+              "key": "note",
+              "val": "same shape as Mummy, different resulting ability"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

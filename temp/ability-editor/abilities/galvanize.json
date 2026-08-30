@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_used",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "a Normal-type move becomes Electric-type and deals ×1.2 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not Normal-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

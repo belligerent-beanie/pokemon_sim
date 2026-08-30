@@ -1,0 +1,53 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "assumes Schooling Form when HP is above 25% max HP, or Solo Form otherwise"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is below level 20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "assumes Schooling Form when HP is above 25% max HP, or Solo Form otherwise"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is below level 20"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: two real corrections — (1) the check is strictly ABOVE 25%, so at exactly 25% HP it reverts to Solo Form, not School Form (was previously '25% or higher'); (2) the trigger is on_switch_in AND on_turn_end (checked continuously), not on_hit — School Form can revert mid-battle from any HP loss, not just from being hit by a move"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

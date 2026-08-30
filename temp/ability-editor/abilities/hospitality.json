@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "heal",
+              "val": "25% max HP"
+            },
+            {
+              "key": "note",
+              "val": "target is an ally, using the same 'opponent = not self' convention as Dragon Cheer/Helping Hand"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

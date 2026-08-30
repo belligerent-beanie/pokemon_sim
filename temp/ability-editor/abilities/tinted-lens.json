@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a not-very-effective move deals ×2 damage, offsetting the resistance"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not resisted (not-very-effective) against the target"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

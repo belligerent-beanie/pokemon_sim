@@ -1,0 +1,77 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks most incoming moves this turn"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move bypasses Protect (Feint, moves flagged to ignore protection, most field-target moves)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "inflicts Burn"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            }
+          ],
+          "chance": "100"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "protect_streak"
+            },
+            {
+              "key": "increment",
+              "val": "protect_streak"
+            },
+            {
+              "key": "note",
+              "val": "shared across the whole protection-move family — reset to 0 on any turn where no protection move was used; success chance next use is (1/3)^protect_streak"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

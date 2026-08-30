@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Special Attack is boosted ×1.5 while an ally on the field has Plus or Minus"
+            },
+            {
+              "key": "fail_if",
+              "val": "no ally currently has the Plus or Minus ability"
+            },
+            {
+              "key": "note",
+              "val": "identical effect to Minus"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

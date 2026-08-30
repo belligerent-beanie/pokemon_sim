@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Defense by 1 stage"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

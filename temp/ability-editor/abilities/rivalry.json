@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "deals ×1.25 damage against a target of the same gender, or ×0.75 against a target of the opposite gender"
+            },
+            {
+              "key": "fail_if",
+              "val": "either the holder or the target is genderless"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

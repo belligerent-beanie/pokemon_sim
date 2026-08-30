@@ -1,0 +1,45 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "evasion is boosted ×1.25"
+            },
+            {
+              "key": "fail_if",
+              "val": "a Sandstorm is not currently active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "takes no damage from Sandstorm"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

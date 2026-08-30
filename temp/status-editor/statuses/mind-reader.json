@@ -1,0 +1,37 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "1"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the user's next move against this target does not miss"
+            },
+            {
+              "key": "bind_target",
+              "val": "the specific target locked on to, not just any opponent"
+            },
+            {
+              "key": "note",
+              "val": "mechanically identical to Lock-On"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

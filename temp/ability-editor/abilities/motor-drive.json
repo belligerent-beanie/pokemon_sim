@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_type_effectiveness",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming Electric-type move entirely and raises Speed by 1 stage instead"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not Electric-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

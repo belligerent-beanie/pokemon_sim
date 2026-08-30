@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "damage taken from a super-effective hit is reduced ×0.75"
+            },
+            {
+              "key": "note",
+              "val": "identical effect to Solid Rock/Filter — the naming here is Zygarde-family flavor, not a different mechanic"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

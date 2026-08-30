@@ -1,0 +1,49 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks Poison and Toxic for the holder and every ally on its side"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming status is not Poison or Toxic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "cures Poison/Toxic already affecting any ally switching in alongside this Pokémon"
+            },
+            {
+              "key": "note",
+              "val": "confirmed real game behavior beyond the short PokeAPI description, which only mentions blocking new poison"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

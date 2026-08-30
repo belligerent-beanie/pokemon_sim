@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_used",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "changes to Blade Forme before using a damaging move, or to Shield Forme before using King's Shield"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

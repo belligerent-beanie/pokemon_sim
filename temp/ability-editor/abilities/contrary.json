@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "inverts the direction of any stat stage change applied to the holder — increases become decreases and vice versa"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,69 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "burning field — damages non-Fire-types each turn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "4"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Sea of Fire fades"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "13% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "target is Fire-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

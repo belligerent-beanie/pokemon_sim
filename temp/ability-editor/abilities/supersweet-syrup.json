@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "lowers evasion by 1 stage for every adjacent opponent"
+            },
+            {
+              "key": "note",
+              "val": "only fires once per battle, not on every switch-in"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

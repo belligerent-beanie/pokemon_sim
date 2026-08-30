@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_ability_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "changes the attacker's ability to Mummy"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            },
+            {
+              "key": "fail_if",
+              "val": "the attacker already has Mummy, or has an ability that cannot be overwritten"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

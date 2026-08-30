@@ -2,10 +2,35 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
+        {
+          "_from_preset": 30,
+          "params": [
+            {
+              "key": "heal_basis",
+              "val": "self"
+            },
+            {
+              "key": "amount",
+              "val": "0.5"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "cures the target of a major status condition"
+            }
+          ]
+        },
         {
           "target": "self",
           "priority": 0,
@@ -18,8 +43,7 @@
               "key": "amount",
               "val": "0.5"
             }
-          ],
-          "_from_preset": 30
+          ]
         }
       ]
     }

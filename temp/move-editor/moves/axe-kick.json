@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 7,
           "params": [
             {
               "key": "damage_class",
@@ -23,11 +22,11 @@
               "val": "120"
             }
           ],
-          "_from_preset": 7
+          "priority": 0,
+          "target": "opponent"
         },
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 19,
           "params": [
             {
               "key": "volatile",
@@ -36,9 +35,36 @@
             {
               "key": "chance",
               "val": "30"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: confusion inflicted specifically by Axe Kick uses a longer minimum duration than confusion from any other source — 2-4 at-risk turns instead of the usual 1-4 (Showdown special-cases sourceEffect.id === 'axekick' to roll a minimum of 3 instead of 2 before the same off-by-one decrement logic applies). Not documented anywhere in the move's own description text — a per-source override baked into the confusion condition itself, not something Axe Kick's own data would surface on its own."
             }
           ],
-          "_from_preset": 19
+          "priority": 0,
+          "target": "opponent"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_miss"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "damage",
+              "val": "50% max HP"
+            },
+            {
+              "key": "note",
+              "val": "crash damage — flat 50% of the user's own max HP (Gen 5+ / modern mechanic; superseded the older Gen 1-4 would-be-damage calculation)"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Speed by 1 stage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not Dark-, Ghost-, or Bug-type"
+            },
+            {
+              "key": "note",
+              "val": "in modern games also triggers when Intimidate lowers this Pokémon's stat, not just from being hit by a move"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

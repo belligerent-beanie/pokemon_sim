@@ -1,0 +1,67 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "changes between Meteor Form (above 50% HP) and Core Form (at or below 50% HP)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "changes between Meteor Form (above 50% HP) and Core Form (at or below 50% HP)"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: trigger is on_switch_in AND on_turn_end (checked continuously), not on_hit — the form can revert mid-battle from any HP loss, not just from being hit by a move (same correction as Schooling)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks all major status conditions and Yawn's drowsiness"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is not currently in Meteor Form"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

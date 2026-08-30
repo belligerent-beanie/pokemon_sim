@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Dragon-type moves deal ×1.5 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not Dragon-type"
+            },
+            {
+              "key": "note",
+              "val": "PokeAPI's text omits the number — using the standard signature-boost value shared with Steelworker/Rocky Payload"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

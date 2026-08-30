@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's moves behave as though harsh sunlight were active, even when it isn't currently active"
+            },
+            {
+              "key": "note",
+              "val": "confirmed by the user against actual game text: \"Even when the sunlight has not turned harsh, the Pokémon can use its moves as if the weather were harsh sunlight\" — always-on, not weather-reactive"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

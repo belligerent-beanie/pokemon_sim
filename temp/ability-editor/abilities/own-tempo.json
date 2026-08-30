@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks Confusion from being inflicted"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming status is not Confusion"
+            },
+            {
+              "key": "note",
+              "val": "Confusion is a volatile status, not a major one, but Own Tempo blocks it the same way"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

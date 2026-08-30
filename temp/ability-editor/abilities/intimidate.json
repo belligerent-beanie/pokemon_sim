@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "lowers Attack by 1 stage"
+            },
+            {
+              "key": "note",
+              "val": "affects every opposing Pokémon currently on the field (both, in a double battle) — a one-time switch-in effect, not a persistent side condition"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

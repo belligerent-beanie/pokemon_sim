@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "ignores stat stage changes on both sides for damage and accuracy calculation — as attacker, ignores its own Attack/Sp. Atk boosts and the target's Defense/Sp. Def/evasion changes; as defender, ignores the attacker's Attack/Sp. Atk/accuracy changes and its own Defense/Sp. Def boosts"
+            },
+            {
+              "key": "note",
+              "val": "the holder's own stat stages still change normally and still affect anything else (e.g. Speed) — this only suppresses their effect in the specific damage/accuracy calculation described above"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

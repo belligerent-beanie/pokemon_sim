@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_any_faint",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Special Attack by 1 stage"
+            },
+            {
+              "key": "note",
+              "val": "custom condition type — triggers on ANY Pokémon fainting anywhere in the battle, holder's own KOs included; none of the built-in trigger points (on_deal_damage, on_faint, on_ally_faint) mean \"any faint, any cause, any side\""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

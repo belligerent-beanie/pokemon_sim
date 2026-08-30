@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 8,
           "params": [
             {
               "key": "damage_class",
@@ -23,7 +22,83 @@
               "val": "185"
             }
           ],
-          "_from_preset": 8
+          "priority": 0,
+          "target": "opponent"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "attack"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "defense"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_attack"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_defense"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "speed"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
         }
       ]
     }

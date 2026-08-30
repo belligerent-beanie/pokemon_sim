@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "moves with 60 base power or less deal ×1.5 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move's base power is greater than 60"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

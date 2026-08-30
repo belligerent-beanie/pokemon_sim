@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "enters an ally Dondozo's mouth: the holder becomes untargetable and takes no actions of its own, while the Dondozo gains +2 to every stat for as long as this lasts"
+            },
+            {
+              "key": "fail_if",
+              "val": "no ally Dondozo is currently on the field"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a physical move deals ×1.5 damage but has its accuracy reduced ×0.8"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not physical"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,45 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "redirects single-target Water-type moves to this Pokémon when possible (not multi-target moves; not if the original target has its own type immunity)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_type_effectiveness",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming Water-type move entirely and raises Special Attack by 1 stage instead"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not Water-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

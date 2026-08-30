@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a critical hit dealt by the holder deals ×3 damage instead of the usual ×1.5"
+            },
+            {
+              "key": "fail_if",
+              "val": "the hit is not a critical hit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

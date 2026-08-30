@@ -1,0 +1,49 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Special Attack is boosted ×1.5 while harsh sunlight (Sun or Extremely Harsh Sunlight) is active"
+            },
+            {
+              "key": "fail_if",
+              "val": "harsh sunlight is not currently active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "13% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "harsh sunlight is not currently active"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

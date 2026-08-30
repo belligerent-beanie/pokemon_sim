@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "sets one layer of Toxic Spikes on the attacker's side"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not physical"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

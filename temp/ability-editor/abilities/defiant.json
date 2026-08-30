@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Attack by 2 stages"
+            },
+            {
+              "key": "fail_if",
+              "val": "the stat change was not a decrease to one of the holder's own stats"
+            },
+            {
+              "key": "note",
+              "val": "triggers off any stat drop, including self-inflicted ones (Overheat, Leaf Storm) and Intimidate"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

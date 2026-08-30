@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Attack by 1 stage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not Dark-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "weather-sand"
+            },
+            {
+              "key": "note",
+              "val": "sets an ordinary 5/8-turn Sandstorm, not indefinite — unlike Sand Stream, this is reactive rather than switch-in, and uses the standard weather duration"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

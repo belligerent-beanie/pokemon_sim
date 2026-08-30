@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "every Pokémon's Special Defense except the holder's own is treated as ×0.75 for damage calculation"
+            },
+            {
+              "key": "note",
+              "val": "not an actual stat stage change — does not trigger Defiant/Competitive or show as a stage arrow, and multiple Ruin abilities on the field all stack independently"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

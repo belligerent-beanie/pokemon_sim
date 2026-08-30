@@ -1,0 +1,67 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks accuracy from being lowered"
+            },
+            {
+              "key": "fail_if",
+              "val": "the stat change is not a decrease to accuracy, or was self-inflicted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "ignores the target's evasion stat increases when calculating the holder's own accuracy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Normal- and Fighting-type moves used by the holder can hit Ghost-type targets"
+            },
+            {
+              "key": "note",
+              "val": "same effect as Scrappy, bundled here as one of three facets rather than a standalone ability"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

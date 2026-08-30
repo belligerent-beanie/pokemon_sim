@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "can inflict Poison or Toxic on Poison- and Steel-type targets, which would otherwise be immune"
+            },
+            {
+              "key": "note",
+              "val": "only bypasses the poison-type immunity itself — every other effect of a move still resolves normally"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

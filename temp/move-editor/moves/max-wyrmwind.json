@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 7,
           "params": [
             {
               "key": "damage_class",
@@ -23,7 +22,23 @@
               "val": "10"
             }
           ],
-          "_from_preset": 7
+          "priority": 0,
+          "target": "opponent"
+        },
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "attack"
+            },
+            {
+              "key": "stages",
+              "val": "-1"
+            }
+          ],
+          "chance": "100"
         }
       ]
     }

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "cures any major status condition the holder currently has"
+            },
+            {
+              "key": "fail_if",
+              "val": "Rain is not currently active"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

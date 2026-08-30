@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Speed by 1 stage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming status is not Flinch"
+            },
+            {
+              "key": "note",
+              "val": "reacts to flinching rather than blocking it — the opposite of Inner Focus"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

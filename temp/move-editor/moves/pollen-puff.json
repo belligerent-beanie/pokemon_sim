@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 8,
           "params": [
             {
               "key": "damage_class",
@@ -23,7 +22,26 @@
               "val": "90"
             }
           ],
-          "_from_preset": 8
+          "priority": 0,
+          "target": "opponent"
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "heal_basis",
+              "val": "target"
+            },
+            {
+              "key": "amount",
+              "val": "0.5"
+            },
+            {
+              "key": "note",
+              "val": "\"opponent\" here means \"whichever Pokémon is targeted\" — heals 50% max HP if that's an ally, deals damage instead (see the base on_hit event) if it's a foe. The move picks one or the other depending on who's targeted, not both."
+            }
+          ]
         }
       ]
     }

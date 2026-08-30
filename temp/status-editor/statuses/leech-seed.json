@@ -1,0 +1,46 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_turn_end"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "damage",
+              "val": "13% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "holder is Grass-type"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "params": [
+            {
+              "key": "heal",
+              "val": "amount equal to damage dealt to holder this tick"
+            },
+            {
+              "key": "bind_target",
+              "val": "seeder_slot"
+            },
+            {
+              "key": "note",
+              "val": "heals whoever currently occupies the seeder's slot, not the original seeder Pokémon specifically"
+            }
+          ],
+          "priority": 0,
+          "target": "opponent"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

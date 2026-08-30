@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_deal_damage"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "steals the target's held item"
+            },
+            {
+              "key": "fail_if",
+              "val": "the target isn't holding an item, the holder already holds one, the holder used a Gem this turn, or the move used was Fling"
+            },
+            {
+              "key": "note",
+              "val": "not contact-gated — triggers off any damaging move. Verified via Showdown source: also excluded when the holder consumed a Gem this turn or used Fling (both already spend/use an item as part of the move), and when multiple targets were hit, only steals from the first eligible one in speed order, then stops"
+            }
+          ],
+          "priority": 0,
+          "target": "opponent"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_ability_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "copies a random eligible opposing Pokémon's current ability upon entering battle"
+            },
+            {
+              "key": "fail_if",
+              "val": "no eligible opposing ability exists to copy (e.g. all are Trace-proof, or already copied)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

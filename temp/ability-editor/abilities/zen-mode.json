@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "assumes Zen Mode when HP is at or below 50% max HP, or Standard Mode otherwise"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: the threshold is inclusive (hp <= maxhp/2 triggers Zen Mode) — was previously worded \"below 50%\", which would incorrectly exclude the exact-50% case"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

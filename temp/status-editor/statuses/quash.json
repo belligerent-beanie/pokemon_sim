@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the target's move (if not yet used this turn) is pushed to resolve last, after everyone else"
+            },
+            {
+              "key": "fail_if",
+              "val": "the target has already moved this turn"
+            },
+            {
+              "key": "note",
+              "val": "one-time turn-order effect; nothing persists past this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

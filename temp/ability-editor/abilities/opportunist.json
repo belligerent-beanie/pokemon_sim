@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_opponent_stat_raise",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "copies the same stat-stage increase onto the holder"
+            },
+            {
+              "key": "note",
+              "val": "custom condition type — on_stat_change as it exists is documented \"(Self)\"; this needs the opposite: reacting to an OPPONENT raising its own stat"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

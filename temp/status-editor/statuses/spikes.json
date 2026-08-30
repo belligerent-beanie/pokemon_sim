@@ -1,0 +1,54 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "spikes_layers"
+            },
+            {
+              "key": "increment",
+              "val": "spikes_layers"
+            },
+            {
+              "key": "note",
+              "val": "capped at 3 layers; re-applying Spikes to an already-3-layered side does nothing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "spikes_layers=1: 13% max HP, =2: 17% max HP, =3: 25% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "the switching-in Pokémon is not grounded (Flying-type, Levitate, Air Balloon, Magnet Rise)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

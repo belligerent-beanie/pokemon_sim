@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the Sleep status's turn counter decreases twice as fast (2 per turn instead of 1)"
+            },
+            {
+              "key": "note",
+              "val": "cross-references Sleep's own duration_turns counter rather than redefining sleep — same treatment as Heatproof modifying Burn's tick"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

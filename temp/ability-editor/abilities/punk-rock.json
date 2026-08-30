@@ -1,0 +1,49 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "damage taken from a sound-based move is halved"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not sound-based"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a sound-based move used by the holder deals ×1.3 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not sound-based"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

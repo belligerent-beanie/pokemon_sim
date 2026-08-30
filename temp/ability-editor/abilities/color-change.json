@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "changes the holder's type to match the type of the move that just hit it"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move dealt no damage, or the hit caused the holder to faint"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
+          "_from_preset": 14,
           "params": [
             {
               "key": "stat",
@@ -23,7 +22,18 @@
               "val": "100"
             }
           ],
-          "_from_preset": 14
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the user's weight is halved, cumulatively with repeated uses"
+            }
+          ]
         }
       ]
     }

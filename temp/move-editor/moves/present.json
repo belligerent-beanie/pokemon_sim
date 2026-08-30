@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 7,
           "params": [
             {
               "key": "damage_class",
@@ -19,7 +18,22 @@
               "val": "0"
             }
           ],
-          "_from_preset": 7
+          "priority": 0,
+          "target": "opponent"
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "randomly either deals damage (variable power 40/80/120) or heals the target for 1/4 its max HP instead"
+            },
+            {
+              "key": "note",
+              "val": "the base on_hit damage event covers the damage branch; this documents the heal branch, which this schema has no separate way to express as a coin-flip alternative to a sibling event"
+            }
+          ]
         }
       ]
     }

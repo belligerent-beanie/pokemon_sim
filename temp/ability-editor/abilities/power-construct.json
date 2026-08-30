@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_hit"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "transforms Zygarde into its Complete Forme"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder's HP is greater than 50% max HP, or it has already transformed this battle"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

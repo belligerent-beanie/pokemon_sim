@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks Flinch from being inflicted"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming status is not Flinch"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

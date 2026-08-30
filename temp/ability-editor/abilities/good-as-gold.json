@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks any status move used against the holder entirely — the move has no effect"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not a status move"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

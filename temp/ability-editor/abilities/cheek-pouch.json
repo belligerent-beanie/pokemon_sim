@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_item_consumed",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "heal",
+              "val": "34% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "the consumed item was not a Berry"
+            },
+            {
+              "key": "note",
+              "val": "in ADDITION to whatever the Berry's own effect already does — this doesn't replace it"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

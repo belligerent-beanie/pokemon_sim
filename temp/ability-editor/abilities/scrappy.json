@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Normal- and Fighting-type moves used by the holder can hit Ghost-type targets"
+            },
+            {
+              "key": "note",
+              "val": "same effect as one of Mind's Eye's three facets"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_type_effectiveness",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming bullet/ball/bomb-based move entirely"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not flagged as bullet/ball/bomb-based"
+            },
+            {
+              "key": "note",
+              "val": "gated on a move flag, not a type — same caveat as Soundproof"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

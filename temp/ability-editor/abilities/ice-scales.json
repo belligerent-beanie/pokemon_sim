@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "damage taken from special moves is halved"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not a special move"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

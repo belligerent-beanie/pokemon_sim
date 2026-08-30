@@ -1,0 +1,49 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Attack by 1 stage instead of having it lowered"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming effect is not specifically Intimidate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "block_forced_switch",
+              "val": "true"
+            },
+            {
+              "key": "note",
+              "val": "same immunity as Suction Cups; does not block the holder's own voluntary switch"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

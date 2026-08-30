@@ -1,0 +1,64 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "boosts Fire moves, weakens Water moves — same as ordinary Sun, but cannot be changed or ended by any other weather-setting move/ability while active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Water-type moves fail outright, dealing no damage and having no effect"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not Water-type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_cure",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "ends when the Pokémon that summoned it (the Desolate Land holder) leaves the field or faints — the only way it clears"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

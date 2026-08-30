@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_terastallize",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "immediately neutralizes all active weather and terrain effects"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder's Terastal type is not Stellar"
+            },
+            {
+              "key": "note",
+              "val": "custom condition type — same as Embody Aspect, Terastallizing has no existing trigger"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

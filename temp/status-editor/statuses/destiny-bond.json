@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the attacker also faints"
+            },
+            {
+              "key": "fail_if",
+              "val": "this hit did not cause the holder to faint"
+            },
+            {
+              "key": "note",
+              "val": "cleared the instant the user takes its next action — not a turn count; using Destiny Bond again just re-applies it fresh"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

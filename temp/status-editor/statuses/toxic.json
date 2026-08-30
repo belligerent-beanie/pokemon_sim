@@ -1,0 +1,58 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "toxic_counter"
+            },
+            {
+              "key": "set",
+              "val": "1"
+            },
+            {
+              "key": "note",
+              "val": "starting multiplier — plain turn count, multiplied into damage below"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "toxic_counter × 7% max HP"
+            },
+            {
+              "key": "increment",
+              "val": "toxic_counter"
+            },
+            {
+              "key": "note",
+              "val": "counter persists across switches while badly poisoned remains active; only resets to 1 if the status is cured and Toxic is inflicted again fresh"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

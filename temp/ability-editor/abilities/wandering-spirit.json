@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_ability_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "swaps abilities with the attacker — the holder gains the attacker's ability, the attacker gains Wandering Spirit"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            },
+            {
+              "key": "fail_if",
+              "val": "either Pokémon's current ability cannot be swapped away from"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

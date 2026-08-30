@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "picks up an item that an ADJACENT Pokémon used up THIS turn (not any past turn), chosen at random if multiple qualify, if the holder currently holds none"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder currently holds an item, or no adjacent Pokémon used up an item this turn"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: strictly \"used it up this turn\" and \"adjacent\" — not any used/Flung item from anywhere earlier in the battle, which the previous wording implied. Also has a separate post-battle-only pickup chance, out of scope for an in-battle event model."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

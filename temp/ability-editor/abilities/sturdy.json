@@ -1,0 +1,45 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a hit that would knock the holder out from full HP instead leaves it at 1 HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is not currently at full HP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "immune to one-hit KO moves, regardless of current HP"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

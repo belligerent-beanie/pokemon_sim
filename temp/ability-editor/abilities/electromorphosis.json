@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the holder's next Electric-type move deals double power"
+            },
+            {
+              "key": "note",
+              "val": "consumed by using that next Electric move, not a turn countdown"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

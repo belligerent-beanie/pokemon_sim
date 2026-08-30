@@ -11,15 +11,18 @@
           "priority": 0,
           "params": [
             {
-              "key": "damage_class",
-              "val": "physical"
+              "key": "damage_basis",
+              "val": "target_current_hp"
             },
             {
-              "key": "crit_stage",
-              "val": "0"
+              "key": "amount",
+              "val": "0.5"
+            },
+            {
+              "key": "note",
+              "val": "damage_basis/amount convention: damage is computed from the target's CURRENT HP (not max), rounded up — same shape as heal_basis/amount already used for Rest/Heal Pulse"
             }
-          ],
-          "_from_preset": 7
+          ]
         }
       ]
     }

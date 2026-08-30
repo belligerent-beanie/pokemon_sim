@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 8,
           "params": [
             {
               "key": "damage_class",
@@ -16,14 +15,15 @@
             },
             {
               "key": "crit_stage",
-              "val": "0"
+              "val": "3"
             },
             {
               "key": "power",
               "val": "60"
             }
           ],
-          "_from_preset": 8
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

@@ -1,0 +1,54 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_item_consumed"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "remembers the Berry that was just eaten"
+            },
+            {
+              "key": "fail_if",
+              "val": "the consumed item was not a Berry"
+            },
+            {
+              "key": "fail_if",
+              "val": "the Berry was eaten because an opponent's Bug Bite or Pluck forced it out — only the holder's own normal eating counts"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [
+          {
+            "key": "turns",
+            "val": "1"
+          }
+        ],
+        "type": "delayed_turn"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "the remembered Berry's effect is applied a second time, without needing to hold or re-eat it"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

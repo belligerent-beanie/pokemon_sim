@@ -1,0 +1,45 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a Rock-, Ground-, or Steel-type move used by the holder deals ×1.3 power during a Sandstorm"
+            },
+            {
+              "key": "fail_if",
+              "val": "no Sandstorm is currently active, or the move is not Rock/Ground/Steel-type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "takes no damage from Sandstorm"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

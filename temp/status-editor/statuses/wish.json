@@ -1,0 +1,37 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "delayed_turn",
+        "params": [
+          {
+            "key": "turns",
+            "val": "2"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "heal",
+              "val": "50% of caster max HP, snapshotted when Wish was used"
+            },
+            {
+              "key": "bind_target",
+              "val": "caster_slot"
+            },
+            {
+              "key": "fail_if",
+              "val": "slot is empty"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

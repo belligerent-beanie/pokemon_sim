@@ -1,0 +1,81 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_item_consumed"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "counter",
+              "val": "harvest_eligible"
+            },
+            {
+              "key": "set",
+              "val": "1"
+            },
+            {
+              "key": "fail_if",
+              "val": "the consumed item was not a Berry"
+            },
+            {
+              "key": "note",
+              "val": "only self-consumption sets this — on_item_removed (Knock Off, Thief, Covet) never does, so a knocked-off Berry can never be restored"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_turn_end"
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "chance": "100",
+          "params": [
+            {
+              "key": "effect",
+              "val": "restores the Berry it most recently consumed"
+            },
+            {
+              "key": "fail_if",
+              "val": "harvest_eligible is not set, or the holder currently holds an item, or harsh sunlight is not currently active"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: guaranteed (100%) while Sun/Extremely Harsh Sunlight is active — see the sibling 50% event below for the non-sun case"
+            }
+          ]
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "chance": "50",
+          "params": [
+            {
+              "key": "effect",
+              "val": "restores the Berry it most recently consumed"
+            },
+            {
+              "key": "fail_if",
+              "val": "harvest_eligible is not set, or the holder currently holds an item, or harsh sunlight IS currently active"
+            },
+            {
+              "key": "note",
+              "val": "the 50% case — only applies outside harsh sunlight; see the sibling 100% event above for the sun case"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "steals the next status move used by any Pokémon this turn and executes it as the user's own instead"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move about to be used is not a status move, or is flagged as unable to be Snatched"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

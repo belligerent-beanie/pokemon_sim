@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a move that hits 2-5 times (or a Triple Kick/Triple Axel-style move) always hits its maximum number of times"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

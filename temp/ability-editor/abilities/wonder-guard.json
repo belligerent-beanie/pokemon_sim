@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_type_effectiveness",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks all damage from the incoming move"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming damaging move IS super-effective (2× or greater) against the holder's typing"
+            },
+            {
+              "key": "note",
+              "val": "only blocks damage — status moves and non-damaging secondary effects from a blocked move still apply normally"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

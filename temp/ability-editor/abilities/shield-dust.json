@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming move's secondary/additional effect (status chance, stat-drop chance, flinch chance, etc.) — the move's direct damage and primary effect still apply normally"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

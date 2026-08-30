@@ -1,0 +1,41 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_terrain_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "changes the holder's type to match the active terrain (or its original type if no terrain is active)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "sets the holder's type to match whatever terrain is already active on entering battle"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

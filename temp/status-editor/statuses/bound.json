@@ -1,0 +1,59 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "random 5-6, or fixed 8 if the trapping Pokémon holds Grip Claw"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the binding move ends"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: random(5,7) = 5 or 6 turns normally (previously had this wrong as \"4-5\"); Grip Claw on the trapper fixes it at exactly 8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "13% max HP, or 17% max HP if the trapping Pokémon holds Binding Band"
+            },
+            {
+              "key": "block_switch",
+              "val": "true"
+            },
+            {
+              "key": "note",
+              "val": "voluntary switching is blocked, but forced switches (Roar, Whirlwind, Dragon Tail, Circle Throw) still work — unlike Ingrain. Binding Band interaction (1/6 instead of 1/8) verified via Showdown source and was previously missing entirely."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

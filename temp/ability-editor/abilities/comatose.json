@@ -1,0 +1,45 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "always treated as though asleep — enables Sleep Talk/Snore without an actual Sleep status, and can never be \"woken\" since there is nothing to wake from"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks every other major status condition from being inflicted"
+            },
+            {
+              "key": "note",
+              "val": "blocked because the holder is already permanently in a Sleep-equivalent state"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

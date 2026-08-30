@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "raises the target's critical-hit ratio by 1 stage (2 stages instead if the target is Dragon-type)"
+            },
+            {
+              "key": "note",
+              "val": "target is an ally, not a foe — \"opponent\" in this schema just means \"not self,\" i.e. whichever Pokémon receives the status"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's moves cannot be redirected (Follow Me, Rage Powder, Lightning Rod, Storm Drain) — they always hit their original target"
+            },
+            {
+              "key": "note",
+              "val": "identical effect to Propeller Tail"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "both_sides",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "lowers Speed by 1 stage for every other Pokémon on the field"
+            },
+            {
+              "key": "note",
+              "val": "PokeAPI's effect text for this one is garbled/mismatched — behavior here is from known game mechanics, not the fetched description"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

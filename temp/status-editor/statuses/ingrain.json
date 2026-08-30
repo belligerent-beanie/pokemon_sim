@@ -1,0 +1,72 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_apply"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "tag",
+              "val": "grounded"
+            },
+            {
+              "key": "note",
+              "val": "loses Flying/Levitate immunity to Ground moves and entry hazards while rooted"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_turn_end"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "heal",
+              "val": "7% max HP"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_switch_out"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "block_switch",
+              "val": "true"
+            },
+            {
+              "key": "block_forced_switch",
+              "val": "true"
+            },
+            {
+              "key": "note",
+              "val": "blocks own voluntary switch AND immunity to being forced out (Roar/Whirlwind/Dragon Tail/Red Card)"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

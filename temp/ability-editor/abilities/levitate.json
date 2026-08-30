@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_type_effectiveness",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming Ground-type move entirely, taking no damage or effect from it"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not Ground-type"
+            },
+            {
+              "key": "note",
+              "val": "suppressed if the holder is grounded by Gravity, Ingrain, Smack Down, Iron Ball, or a similar effect"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

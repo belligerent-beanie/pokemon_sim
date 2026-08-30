@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "doubles a Berry's HP/stat-restoration amount and any stat-boost amount it grants when the holder eats it"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source, and it's more specific than a blanket \"doubles Berry effects\": (1) the doubling only applies to items flagged as a true Berry — Berry Juice and Leftovers show a Ripen activation message but their heal amount is NOT doubled; (2) separately, after eating a damage-reducing Berry (e.g. Occa Berry against a Fire move), the NEXT hit's damage is additionally halved on top of the Berry's own reduction — a distinct mechanic from the heal/stat doubling above, not just \"the Berry's effect is doubled\""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_priority_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises the priority of non-damaging (status) moves by +1"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not a status move"
+            },
+            {
+              "key": "note",
+              "val": "in modern games, a Prankster-boosted status move still fails against a Dark-type target — the target's own type immunity to the boost, not a block on Prankster itself"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

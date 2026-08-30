@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_ally_item_consumed",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "passes the holder's held item to the ally that just used up its own item"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder isn't holding an item"
+            },
+            {
+              "key": "note",
+              "val": "custom condition type — reacts to an ALLY consuming an item, not the holder's own (on_item_consumed is documented '(Self)'); the holder itself ends up holding nothing afterward"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

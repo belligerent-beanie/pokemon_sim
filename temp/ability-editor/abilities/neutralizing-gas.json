@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "suppresses the effect of every other Pokémon's ability on the field while the holder remains active with this ability"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

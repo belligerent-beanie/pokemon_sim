@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a damaging move hits twice; the second hit deals half the power of the first"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is already multi-hit, a one-hit-KO move, or otherwise flagged as ineligible (Explosion-family moves, etc.)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

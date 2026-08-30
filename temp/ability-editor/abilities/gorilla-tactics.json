@@ -1,0 +1,41 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Attack is boosted ×1.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder can only select the same move it used on its first turn after switching in — every other move is locked out for the rest of that time on the field"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

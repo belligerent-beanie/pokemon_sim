@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "deals ×2 damage against a target that switched in this same turn"
+            },
+            {
+              "key": "fail_if",
+              "val": "the target did not switch in this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

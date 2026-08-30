@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "evasion is doubled while the holder is confused"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is not confused"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

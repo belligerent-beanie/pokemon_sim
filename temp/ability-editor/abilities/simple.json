@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "doubles the magnitude of any stat stage change applied to the holder (still capped at ±6 stages)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

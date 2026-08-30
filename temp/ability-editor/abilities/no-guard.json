@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "every move used by or against the holder always hits, ignoring accuracy and evasion entirely"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

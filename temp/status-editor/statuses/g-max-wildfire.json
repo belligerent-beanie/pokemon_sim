@@ -1,0 +1,69 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_apply"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "tag",
+              "val": "damages non-Fire-type Pokémon each turn"
+            }
+          ],
+          "priority": 0,
+          "target": "opponent_side"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [
+          {
+            "key": "turns",
+            "val": "4"
+          }
+        ],
+        "type": "duration_turns"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "G-Max Wildfire fades"
+            }
+          ],
+          "priority": 0,
+          "target": "opponent_side"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_turn_end"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "damage",
+              "val": "17% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "target is Fire-type"
+            }
+          ],
+          "priority": 0,
+          "target": "opponent_side"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

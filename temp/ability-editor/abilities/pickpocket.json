@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "steals the attacker's held item"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            },
+            {
+              "key": "fail_if",
+              "val": "the attacker isn't holding an item, or the holder already has one"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

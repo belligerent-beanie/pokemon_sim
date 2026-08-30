@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Electric-type moves deal ×1.3 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not Electric-type"
+            },
+            {
+              "key": "note",
+              "val": "PokeAPI's text omits the number (\"Powers up Electric-type moves\") — was ×1.5 prior to a Gen 9 balance change, ×1.3 since"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

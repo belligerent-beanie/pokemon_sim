@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's moves never make contact, even if they normally would"
+            },
+            {
+              "key": "note",
+              "val": "relevant to anything checking contact — Rough Skin, Static, the Protect family's on_hit_holder retaliation, etc."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_crit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Attack to its maximum, +6 stages, outright (not a +1 increment)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

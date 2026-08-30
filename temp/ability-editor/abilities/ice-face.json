@@ -1,0 +1,75 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_hit_holder"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "the first physical hit the holder takes is negated entirely (no damage), and its ice head breaks — changing its appearance and losing this effect"
+            },
+            {
+              "key": "fail_if",
+              "val": "the ice head has already broken, or the incoming move is not physical"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_weather_change"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "the ice head is restored"
+            },
+            {
+              "key": "fail_if",
+              "val": "Hail/Snow is not currently active"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: restoration is also checked on_switch_in (entering battle while Hail/Snow is already active and the ice head is currently broken), not just when the weather changes mid-battle — added as a second block below rather than merged into this one, since they're genuinely different trigger points"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the ice head is restored"
+            },
+            {
+              "key": "fail_if",
+              "val": "Hail/Snow is not currently active, or the ice head is not currently broken"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,50 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "5"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Slow Start's stat halving ends"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Attack and Speed are halved"
+            },
+            {
+              "key": "fail_if",
+              "val": "the duration_turns countdown above has already expired"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "weather-heavy-rain"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

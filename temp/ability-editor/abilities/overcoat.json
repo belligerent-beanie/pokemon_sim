@@ -1,0 +1,45 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "takes no damage from weather (Sandstorm, Hail)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming powder/spore-based move entirely"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not flagged as powder-based"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

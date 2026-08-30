@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_dance_move_used",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "immediately uses the same dance move right after, at no PP cost to itself"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move was not flagged as a dance move, or was used by the holder itself"
+            },
+            {
+              "key": "note",
+              "val": "custom condition type — no existing trigger means \"any Pokémon on the field used a dance move,\" only on_move_used (self only)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

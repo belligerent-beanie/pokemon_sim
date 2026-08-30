@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_item_removed"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the item from being taken"
+            },
+            {
+              "key": "note",
+              "val": "only blocks external removal — does not prevent the holder using/consuming its own item, and does not interact with on_item_consumed at all"
+            },
+            {
+              "key": "fail_if",
+              "val": "the held item is Sticky Barb — that item transfers via contact despite Sticky Hold"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

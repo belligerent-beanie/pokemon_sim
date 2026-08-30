@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_used",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "changes the holder's type to match the type of the move it's about to use"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is already purely that single type"
+            },
+            {
+              "key": "note",
+              "val": "as of Gen 9, triggers only once per switch-in rather than before every move"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

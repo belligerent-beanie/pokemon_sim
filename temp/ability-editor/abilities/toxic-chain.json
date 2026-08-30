@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_deal_damage"
+      },
+      "events": [
+        {
+          "chance": "30",
+          "params": [
+            {
+              "key": "status",
+              "val": "toxic"
+            },
+            {
+              "key": "note",
+              "val": "not contact-gated and not type-gated, unlike Poison Touch — triggers off any move that lands. Chance verified as exactly 30% via Showdown source (randomChance(3, 10))."
+            },
+            {
+              "key": "fail_if",
+              "val": "the target has Shield Dust, or is holding a Covert Cloak — both block this despite it not technically being a move's own secondary effect"
+            }
+          ],
+          "priority": 0,
+          "target": "opponent"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

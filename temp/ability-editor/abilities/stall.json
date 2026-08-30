@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_priority_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "always acts last within its priority bracket"
+            },
+            {
+              "key": "note",
+              "val": "the mirror image of Quick Draw/Mycelium Might — does not change priority stage, only loses every tie-break within it"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

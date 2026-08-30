@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's type matches its held Memory (or Normal-type if holding none)"
+            },
+            {
+              "key": "note",
+              "val": "same shape as Multitype, different item family"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

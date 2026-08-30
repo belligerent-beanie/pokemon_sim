@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the same status (Burn, Paralysis, or Poison/Toxic) is also inflicted on whoever caused it"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming status is not Burn, Paralysis, Poison, or Toxic"
+            },
+            {
+              "key": "note",
+              "val": "does not reflect Sleep or Freeze, and does not trigger from a self-inflicted status (Rest, a status Orb, etc.)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

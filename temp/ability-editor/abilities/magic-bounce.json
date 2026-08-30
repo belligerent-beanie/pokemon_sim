@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "reflects the incoming status move back at whoever used it"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not a status move, or is flagged as unreflectable"
+            },
+            {
+              "key": "note",
+              "val": "the same effect as the Magic Coat status, but always active rather than needing to be set up each turn"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

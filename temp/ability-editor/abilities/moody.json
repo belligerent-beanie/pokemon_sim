@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises one random stat by 2 stages and lowers a different random stat by 1 stage"
+            },
+            {
+              "key": "note",
+              "val": "the stat raised and the stat lowered are always different from each other"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_priority_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises the priority of Flying-type moves by +1"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is not Flying-type, or the holder is not at full HP"
+            },
+            {
+              "key": "note",
+              "val": "the full-HP requirement was added in Gen 7 — earlier generations had no such restriction"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

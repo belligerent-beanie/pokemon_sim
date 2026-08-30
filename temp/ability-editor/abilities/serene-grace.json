@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "doubles the chance of a move's secondary/additional effect occurring"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

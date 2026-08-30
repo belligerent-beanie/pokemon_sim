@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 36,
           "params": [
             {
               "key": "volatile",
@@ -19,7 +18,19 @@
               "val": "100"
             }
           ],
-          "_from_preset": 36
+          "priority": 0,
+          "target": "opponent"
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "octolock"
+            }
+          ],
+          "chance": "100"
         }
       ]
     }

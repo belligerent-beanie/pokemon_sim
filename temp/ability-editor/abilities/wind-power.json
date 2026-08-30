@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the holder's next Electric-type move deals double power"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not flagged as wind-based"
+            },
+            {
+              "key": "note",
+              "val": "same payoff as Electromorphosis, different trigger"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

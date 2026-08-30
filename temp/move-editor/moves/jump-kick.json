@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 7,
           "params": [
             {
               "key": "damage_class",
@@ -23,7 +22,30 @@
               "val": "100"
             }
           ],
-          "_from_preset": 7
+          "priority": 0,
+          "target": "opponent"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_miss"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "damage",
+              "val": "50% max HP"
+            },
+            {
+              "key": "note",
+              "val": "crash damage — flat 50% of the user's own max HP (Gen 5+ / modern mechanic; superseded the older Gen 1-4 would-be-damage calculation)"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

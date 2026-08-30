@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "if the holder attempts to use a Fire-type move this turn, that move fails and the holder instead takes 25% max HP damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move being used is not Fire-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

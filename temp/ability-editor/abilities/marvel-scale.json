@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "Defense is boosted ×1.5 while the holder has a major status condition"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder has no major status condition"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's held item has no effect and cannot be used, thrown, or otherwise activated"
+            },
+            {
+              "key": "note",
+              "val": "the item is still physically held — it can still be stolen, knocked off, or checked by weight-based moves; it just does nothing on its own"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

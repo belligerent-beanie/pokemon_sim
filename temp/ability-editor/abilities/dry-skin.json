@@ -1,0 +1,81 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_turn_end",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage",
+              "val": "13% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "harsh sunlight is not currently active"
+            }
+          ]
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "heal",
+              "val": "13% max HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "Rain is not currently active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_type_effectiveness",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming Water-type move entirely and heals 25% max HP instead"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not Water-type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "damage taken from Fire-type moves is increased ×1.25"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

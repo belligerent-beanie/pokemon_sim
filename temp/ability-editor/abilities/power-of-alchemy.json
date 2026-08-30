@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_ally_faint",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "copies the fainted ally's ability"
+            },
+            {
+              "key": "note",
+              "val": "identical effect to Receiver"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

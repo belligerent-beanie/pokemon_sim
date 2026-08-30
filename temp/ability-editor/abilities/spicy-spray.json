@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "status",
+              "val": "burn"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

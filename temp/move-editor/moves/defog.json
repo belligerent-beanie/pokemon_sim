@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 16,
           "params": [
             {
               "key": "stat",
@@ -23,7 +22,32 @@
               "val": "100"
             }
           ],
-          "_from_preset": 16
+          "priority": 0,
+          "target": "opponent"
+        },
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "clear_hazards",
+              "val": "true"
+            }
+          ]
+        },
+        {
+          "target": "both_sides",
+          "priority": 0,
+          "params": [
+            {
+              "key": "clear_screens",
+              "val": "true"
+            },
+            {
+              "key": "note",
+              "val": "clears Reflect/Light Screen/Aurora Veil/Safeguard from BOTH sides, unlike the evasion drop which only hits the target"
+            }
+          ]
         }
       ]
     }

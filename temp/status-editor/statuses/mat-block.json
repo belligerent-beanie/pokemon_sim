@@ -1,0 +1,58 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks damaging moves targeting this side this turn (status moves are unaffected)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not a damaging move"
+            },
+            {
+              "key": "note",
+              "val": "can only be selected as the user's first move immediately after switching in — a move-usage restriction, not modeled as part of this status"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "protect_streak"
+            },
+            {
+              "key": "increment",
+              "val": "protect_streak"
+            },
+            {
+              "key": "note",
+              "val": "shared across the whole protection-move family — reset to 0 on any turn where no protection move was used; success chance next use is (1/3)^protect_streak"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

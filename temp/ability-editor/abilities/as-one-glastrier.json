@@ -1,0 +1,53 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "opposing Pokémon cannot eat their held Berries while the holder remains active"
+            },
+            {
+              "key": "note",
+              "val": "the Unnerve half of this combined ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_deal_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Attack by 1 stage"
+            },
+            {
+              "key": "fail_if",
+              "val": "this hit did not knock out the target"
+            },
+            {
+              "key": "note",
+              "val": "the Chilling Neigh half of this combined ability"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

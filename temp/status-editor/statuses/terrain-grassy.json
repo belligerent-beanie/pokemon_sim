@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_turn_end"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "heal",
+              "val": "7% max HP"
+            },
+            {
+              "key": "only_if",
+              "val": "grounded"
+            }
+          ],
+          "priority": 0,
+          "target": "field"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

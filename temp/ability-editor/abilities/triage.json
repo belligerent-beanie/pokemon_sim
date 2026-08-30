@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_priority_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises the priority of HP-restoring moves by +3"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move does not restore HP"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

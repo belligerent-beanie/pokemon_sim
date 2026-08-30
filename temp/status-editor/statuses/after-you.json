@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "moves immediately after the user this turn, skipping everyone else still waiting in the turn order"
+            },
+            {
+              "key": "note",
+              "val": "one-time turn-order effect; nothing persists past the moment turn order is resolved"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

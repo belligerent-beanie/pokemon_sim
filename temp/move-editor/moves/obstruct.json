@@ -14,8 +14,7 @@
               "key": "volatile",
               "val": "obstruct"
             }
-          ],
-          "_from_preset": 9
+          ]
         }
       ]
     },
@@ -26,7 +25,7 @@
       },
       "events": [
         {
-          "target": "self",
+          "target": "opponent",
           "priority": 0,
           "params": [
             {
@@ -41,8 +40,7 @@
               "key": "chance",
               "val": "100"
             }
-          ],
-          "_from_preset": 11
+          ]
         }
       ]
     }

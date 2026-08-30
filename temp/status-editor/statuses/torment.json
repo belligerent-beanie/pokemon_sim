@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "prevents using the same move twice in a row"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move being selected is different from the move used on the previous turn"
+            },
+            {
+              "key": "note",
+              "val": "persists until switch-out; no duration_turns block needed"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

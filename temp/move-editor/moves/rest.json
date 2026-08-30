@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
+          "_from_preset": 30,
           "params": [
             {
               "key": "heal_basis",
@@ -19,7 +18,23 @@
               "val": "1.0"
             }
           ],
-          "_from_preset": 30
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "sleep"
+            },
+            {
+              "key": "note",
+              "val": "fixed at exactly 2 turns — overrides Sleep's normal random 1-3 turn duration_turns, same override pattern abilities use (see Drizzle/Drought overriding weather-rain/weather-sun's normal timer)"
+            }
+          ],
+          "chance": "100"
         }
       ]
     }

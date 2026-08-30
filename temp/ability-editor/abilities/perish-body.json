@@ -1,0 +1,41 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "perish-song"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            }
+          ]
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "perish-song"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

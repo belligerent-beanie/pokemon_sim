@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_status_inflict",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks Freeze from being inflicted"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming status is not Freeze"
+            },
+            {
+              "key": "note",
+              "val": "this is new-freeze immunity only — does not retroactively thaw a freeze the holder already had before gaining this ability, e.g. via Skill Swap"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

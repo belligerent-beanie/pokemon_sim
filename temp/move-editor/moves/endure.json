@@ -8,14 +8,13 @@
       "events": [
         {
           "target": "self",
-          "priority": 0,
+          "priority": 4,
           "params": [
             {
               "key": "volatile",
               "val": "endure"
             }
-          ],
-          "_from_preset": 35
+          ]
         }
       ]
     }

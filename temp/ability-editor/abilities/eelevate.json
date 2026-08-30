@@ -1,0 +1,53 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "immune to Ground-type moves, and to the Spikes/Toxic Spikes/Sticky Web statuses"
+            },
+            {
+              "key": "note",
+              "val": "same shape as Levitate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_deal_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises the holder's highest stat by 1 stage"
+            },
+            {
+              "key": "fail_if",
+              "val": "this hit did not knock out the target"
+            },
+            {
+              "key": "note",
+              "val": "same shape as Beast Boost"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks any stat from being lowered by another Pokémon"
+            },
+            {
+              "key": "fail_if",
+              "val": "the stat change is not a decrease, or was self-inflicted"
+            },
+            {
+              "key": "note",
+              "val": "identical effect to Clear Body"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

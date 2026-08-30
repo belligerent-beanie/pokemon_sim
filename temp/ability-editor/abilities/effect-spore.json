@@ -1,0 +1,62 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "chance": "11",
+          "params": [
+            {
+              "key": "status",
+              "val": "sleep"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact, or the attacker is Grass-type, or is otherwise immune to powder/spore effects (Overcoat, Safety Goggles)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source: NOT an equal three-way split like Dire Claw/Tri Attack — it's three separate probability bands within a 100-roll (r<11 sleep, r<21 paralysis, r<30 poison), so 11%/10%/9% respectively, not 10%/10%/10%. Modeled as three separate events rather than one \"equal chance\" event for that reason."
+            }
+          ]
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "chance": "10",
+          "params": [
+            {
+              "key": "status",
+              "val": "paralysis"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact, or the attacker is Grass-type, or is otherwise immune to powder/spore effects (Overcoat, Safety Goggles)"
+            }
+          ]
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "chance": "9",
+          "params": [
+            {
+              "key": "status",
+              "val": "poison"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact, or the attacker is Grass-type, or is otherwise immune to powder/spore effects (Overcoat, Safety Goggles)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

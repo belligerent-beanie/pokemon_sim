@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 10,
           "params": [
             {
               "key": "stat",
@@ -23,7 +22,26 @@
               "val": "100"
             }
           ],
-          "_from_preset": 10
+          "priority": 0,
+          "target": "opponent"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "heal_basis",
+              "val": "target_attack_stat"
+            },
+            {
+              "key": "amount",
+              "val": "1.0"
+            },
+            {
+              "key": "note",
+              "val": "new heal_basis value ('target_attack_stat') — heals the user by an amount equal to the target's current Attack stat (as a raw stat value, not a % of HP), read BEFORE this move's own Attack-lowering event applies"
+            }
+          ]
         }
       ]
     }

@@ -1,0 +1,55 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "3"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Encore expires; free choice of moves returns"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "forces the repeat of the move that was used when Encore was applied"
+            },
+            {
+              "key": "note",
+              "val": "overrides move selection rather than blocking outright"
+            },
+            {
+              "key": "fail_if",
+              "val": "that move has run out of PP — also ends Encore immediately, independent of the turn counter"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "block_switch",
+              "val": "true"
+            },
+            {
+              "key": "note",
+              "val": "unlike Arena Trap, there is no Flying/Levitate exception — traps every opposing Pokémon regardless of typing or grounding"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

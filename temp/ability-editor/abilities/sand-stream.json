@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "weather-sand"
+            },
+            {
+              "key": "note",
+              "val": "overrides the normal duration_turns timer on this weather status (5 turns, or 8 with the matching Rock item) — lasts indefinitely while this Pokémon remains active on the field; still replaceable by a stronger weather effect (Primordial Sea/Desolate Land/Strong Winds) or another weather-setting ability/move"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

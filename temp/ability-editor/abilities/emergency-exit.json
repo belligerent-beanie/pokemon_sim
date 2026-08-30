@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "automatically switches out to a valid replacement, if one is available"
+            },
+            {
+              "key": "fail_if",
+              "val": "this hit did not bring the holder's HP from above half to at or below half"
+            },
+            {
+              "key": "note",
+              "val": "same threshold-crossing shape as Berserk/Anger Shell"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,23 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "incoming hits can never be a critical hit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

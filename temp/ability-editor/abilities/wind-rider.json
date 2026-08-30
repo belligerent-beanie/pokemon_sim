@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_type_effectiveness",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming wind-flagged move entirely and raises Attack by 1 stage instead"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move/effect is not flagged as wind-based (e.g. Tailwind, Petal Blizzard)"
+            },
+            {
+              "key": "note",
+              "val": "also grants immunity to an opposing Tailwind's Speed boost rather than benefiting from it"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

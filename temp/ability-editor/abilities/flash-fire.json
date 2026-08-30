@@ -1,0 +1,31 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_type_effectiveness",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the incoming Fire-type move entirely"
+            },
+            {
+              "key": "tag",
+              "val": "own Fire-type moves deal ×1.5 damage, persisting until the holder switches out — even after this specific hit is done"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not Fire-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

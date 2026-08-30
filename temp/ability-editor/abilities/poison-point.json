@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "status",
+              "val": "poison"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            }
+          ],
+          "chance": "30"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

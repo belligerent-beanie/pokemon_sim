@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "reveals an opposing Pokémon's held item"
+            },
+            {
+              "key": "note",
+              "val": "informational only"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

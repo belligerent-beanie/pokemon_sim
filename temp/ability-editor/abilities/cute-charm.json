@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "infatuation"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move does not make contact"
+            },
+            {
+              "key": "fail_if",
+              "val": "the attacker is not the opposite gender of the holder, or either Pokémon is genderless"
+            }
+          ],
+          "chance": "30"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

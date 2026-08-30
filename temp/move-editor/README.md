@@ -94,3 +94,11 @@ def get_all_move_events() -> dict:
   "conditions": [ /* JSON array */ ]
 }
 ```
+
+## Event param vocabulary
+
+Event `params` are free-form `{key, val}` pairs, but the same key should
+mean the same thing everywhere an effect is written — moves, abilities, and
+statuses alike. See [`../EVENT_VOCAB.md`](../EVENT_VOCAB.md) for the
+accumulated vocabulary (`damage`, `heal`, `chance`/`effect`, `bind_target`,
+`counter`/`set`/`increment`/`decrement`, ...) before inventing a new key.

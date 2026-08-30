@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a move with a secondary/additional effect deals ×1.3 damage, but that secondary effect is removed entirely"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move has no secondary effect to begin with"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

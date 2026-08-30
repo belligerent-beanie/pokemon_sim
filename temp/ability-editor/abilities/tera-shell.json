@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "a damaging move that hits the holder is treated as not-very-effective, regardless of actual type matchup"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is not currently at full HP"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

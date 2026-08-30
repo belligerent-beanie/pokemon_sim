@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_calc_damage",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "an incoming non-damaging (status) move used against the holder has its accuracy set to exactly 50%, overriding its normal accuracy"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is not a status move, or its normal accuracy is already 50% or lower"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

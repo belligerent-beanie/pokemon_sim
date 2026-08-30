@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "boosts the power of whatever move the target uses this turn by 50%"
+            },
+            {
+              "key": "note",
+              "val": "target is an ally; expires automatically at the end of this turn regardless of whether the ally actually moved"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

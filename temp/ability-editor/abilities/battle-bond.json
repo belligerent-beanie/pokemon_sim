@@ -1,0 +1,98 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "params": [],
+        "type": "on_deal_damage"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "transforms into Ash-Greninja"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: the transform is ALSO accompanied by raising Attack, Special Attack, and Speed by 1 stage each — the previous data only captured the Water Shuriken buff and missed the stat boost entirely"
+            },
+            {
+              "key": "fail_if",
+              "val": "this hit did not knock out the target, or the holder has already transformed this battle"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "attack"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_attack"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "speed"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            }
+          ],
+          "chance": "100"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "passive"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "tag",
+              "val": "while transformed, Water Shuriken has base power 20 and always hits 3 times"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder has not transformed into Ash-Greninja"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,72 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "toxic_spikes_layers"
+            },
+            {
+              "key": "increment",
+              "val": "toxic_spikes_layers"
+            },
+            {
+              "key": "note",
+              "val": "capped at 2 layers; re-applying to an already-2-layered side does nothing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "toxic_spikes_layers=1: inflicts Poison, =2: inflicts Toxic (badly poisoned)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the switching-in Pokémon is not grounded, or is Steel-type (immune, but the hazard remains)"
+            }
+          ]
+        },
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "the hazard is cleared entirely (all layers removed)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the switching-in Pokémon is not a grounded Poison-type"
+            },
+            {
+              "key": "note",
+              "val": "distinct from the immunity case above — a grounded Poison-type removes Toxic Spikes outright instead of just being unaffected"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

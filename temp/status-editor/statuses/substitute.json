@@ -1,0 +1,90 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "substitute_hp"
+            },
+            {
+              "key": "set",
+              "val": "N% of the holder's max HP — 25% for Substitute itself, 50% for a Substitute created by Shed Tail; whichever move/effect creates it decides N"
+            },
+            {
+              "key": "damage",
+              "val": "N% max HP, paid immediately as the cost of creating it (same N as the set above)"
+            },
+            {
+              "key": "fail_if",
+              "val": "holder's current HP is at or below N% of max HP — cannot afford to create it"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_hit_holder",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "incoming damage is subtracted from substitute_hp instead of the holder's own HP"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move ignores Substitute (sound-based moves, Infiltrator)"
+            }
+          ]
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Substitute breaks; any damage beyond what remained on substitute_hp is wasted, not passed through to the holder"
+            },
+            {
+              "key": "fail_if",
+              "val": "substitute_hp remains above 0 after this hit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_switch_out",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Substitute is lost — it does not persist through switching"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

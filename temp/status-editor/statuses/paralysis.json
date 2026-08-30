@@ -1,0 +1,29 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_move_block_check",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "fully prevents the move this turn (full paralysis)"
+            },
+            {
+              "key": "note",
+              "val": "checked independently each time the Pokémon attempts to act"
+            }
+          ],
+          "chance": "25"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "",
+  "duration": ""
+}

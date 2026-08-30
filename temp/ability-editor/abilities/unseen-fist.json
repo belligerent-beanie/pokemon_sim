@@ -1,0 +1,27 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "passive",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's contact moves can strike through Protect and its variants"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move does not make contact"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}
