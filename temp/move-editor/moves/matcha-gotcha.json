@@ -1,0 +1,58 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage_class",
+              "val": "special"
+            },
+            {
+              "key": "crit_stage",
+              "val": "0"
+            },
+            {
+              "key": "power",
+              "val": "80"
+            }
+          ],
+          "_from_preset": 8
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "drain_fraction",
+              "val": "0.5"
+            }
+          ],
+          "_from_preset": 32
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "status",
+              "val": "burn"
+            },
+            {
+              "key": "chance",
+              "val": "20"
+            }
+          ],
+          "_from_preset": 6
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

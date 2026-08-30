@@ -1,0 +1,24 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "laser-focus"
+            }
+          ],
+          "_from_preset": 35
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Meta: Force Random Switch",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "opponent", "priority": 0, "params": [{"key": "meta", "val": "force_random_switch"}]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Meta: Ability Interaction",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "opponent", "priority": 0, "params": [{"key": "meta", "val": "unspecified"}]}
+  ]
+}

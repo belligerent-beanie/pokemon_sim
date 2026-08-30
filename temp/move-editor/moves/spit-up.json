@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage_class",
+              "val": "special"
+            },
+            {
+              "key": "power",
+              "val": "stockpile_based"
+            },
+            {
+              "key": "consumes_condition",
+              "val": "stockpile"
+            }
+          ],
+          "_from_preset": 67
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,39 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage_basis",
+              "val": "self"
+            },
+            {
+              "key": "amount",
+              "val": "0.5"
+            }
+          ],
+          "_from_preset": 34
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "select_incoming_pokemon"
+            }
+          ],
+          "_from_preset": 50
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

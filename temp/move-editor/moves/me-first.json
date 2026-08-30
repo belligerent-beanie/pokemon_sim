@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "use_move"
+            },
+            {
+              "key": "source",
+              "val": "target_move_this_turn"
+            },
+            {
+              "key": "power_multiplier",
+              "val": "1.5"
+            }
+          ],
+          "_from_preset": 57
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

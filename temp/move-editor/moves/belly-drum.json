@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "attack"
+            },
+            {
+              "key": "value",
+              "val": "6"
+            }
+          ],
+          "_from_preset": 17
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

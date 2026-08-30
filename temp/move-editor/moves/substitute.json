@@ -1,0 +1,51 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage_basis",
+              "val": "self"
+            },
+            {
+              "key": "amount",
+              "val": "0.25"
+            }
+          ],
+          "_from_preset": 34
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "substitute"
+            },
+            {
+              "key": "absorbs_damage",
+              "val": "true"
+            },
+            {
+              "key": "absorbs_status",
+              "val": "true"
+            },
+            {
+              "key": "move_restrictions",
+              "val": "none"
+            }
+          ],
+          "_from_preset": 35
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

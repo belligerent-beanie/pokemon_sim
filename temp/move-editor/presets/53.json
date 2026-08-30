@@ -1,0 +1,7 @@
+{
+  "name": "Damage (derived from base move)",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "opponent", "priority": 0, "params": [{"key": "damage_class", "val": "derived_from_base_move"}, {"key": "power", "val": "derived_from_base_move"}]}
+  ]
+}

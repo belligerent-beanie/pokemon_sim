@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "heal_basis",
+              "val": "self"
+            },
+            {
+              "key": "amount",
+              "val": "0.5"
+            }
+          ],
+          "_from_preset": 30
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

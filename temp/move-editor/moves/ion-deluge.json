@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "override_move_type"
+            },
+            {
+              "key": "value",
+              "val": "electric"
+            },
+            {
+              "key": "scope",
+              "val": "normal_moves_only"
+            }
+          ],
+          "_from_preset": 61
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

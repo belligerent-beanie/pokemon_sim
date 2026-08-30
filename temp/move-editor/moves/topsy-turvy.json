@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "scope",
+              "val": "unspecified"
+            },
+            {
+              "key": "meta",
+              "val": "invert_stat_stages"
+            }
+          ],
+          "_from_preset": 63
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

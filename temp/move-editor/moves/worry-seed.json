@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "set_ability"
+            },
+            {
+              "key": "ability",
+              "val": "insomnia"
+            }
+          ],
+          "_from_preset": 60
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

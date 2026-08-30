@@ -1,0 +1,24 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 4,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "protect"
+            }
+          ],
+          "_from_preset": 9
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

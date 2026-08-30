@@ -1,0 +1,108 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "_from_preset": 10,
+          "params": [
+            {
+              "key": "stat",
+              "val": "attack"
+            },
+            {
+              "key": "stages",
+              "val": "2"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "_from_preset": 12,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_attack"
+            },
+            {
+              "key": "stages",
+              "val": "2"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "_from_preset": 14,
+          "params": [
+            {
+              "key": "stat",
+              "val": "speed"
+            },
+            {
+              "key": "stages",
+              "val": "2"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "_from_preset": 11,
+          "params": [
+            {
+              "key": "stat",
+              "val": "defense"
+            },
+            {
+              "key": "stages",
+              "val": "-1"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "_from_preset": 13,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_defense"
+            },
+            {
+              "key": "stages",
+              "val": "-1"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    }
+  ],
+  "custom_desc": "Raises user’s Attack, Special Attack, and Speed by two stages.  Lower user’s Defense and Special Defense by one stage."
+}

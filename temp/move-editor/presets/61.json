@@ -1,0 +1,7 @@
+{
+  "name": "Meta: Type Change",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "self", "priority": 0, "params": [{"key": "meta", "val": "set_types"}, {"key": "value", "val": "unspecified"}]}
+  ]
+}

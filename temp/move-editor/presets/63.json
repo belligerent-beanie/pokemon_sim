@@ -1,0 +1,7 @@
+{
+  "name": "Meta: Manipulate",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "opponent", "priority": 0, "params": [{"key": "meta", "val": "unspecified"}, {"key": "scope", "val": "unspecified"}]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Meta: Stockpile",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "self", "priority": 0, "params": [{"key": "volatile", "val": "stockpile"}, {"key": "stacks", "val": "+1"}, {"key": "max_stacks", "val": "3"}]}
+  ]
+}

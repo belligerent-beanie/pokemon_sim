@@ -1,0 +1,7 @@
+{
+  "name": "Opponent Volatile (own name)",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "opponent", "priority": 0, "params": [{"key": "volatile", "val": "__MOVE_NAME__"}]}
+  ]
+}

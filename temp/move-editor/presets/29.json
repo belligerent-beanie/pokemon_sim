@@ -1,0 +1,23 @@
+{
+  "name": "Field Effect",
+  "condition": {
+    "type": "on_hit",
+    "params": []
+  },
+  "events": [
+    {
+      "target": "field",
+      "priority": 0,
+      "params": [
+        {
+          "key": "field_effect",
+          "val": "__MOVE_NAME__"
+        },
+        {
+          "key": "duration",
+          "val": "5"
+        }
+      ]
+    }
+  ]
+}

@@ -28,11 +28,14 @@ const TRASH_SVG  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 let allMoves     = [];
 let filtered     = [];
 let selectedMove = null;
-let curEvents    = [];
-let curConds     = [];
+let curEffects   = [];         // [{condition:{type,params}, events:[...]}]
 let curDesc      = '';
-let withDataSet  = new Set();  // move names with saved events/conditions
+let withDataSet  = new Set();  // move names with saved effect blocks
 let presets      = [];         // full preset list, kept in sync with API
+
+const CONDITION_LABELS = { on_hit: 'On Hit', on_contact: 'On Contact' };
+const condLabel = c => CONDITION_LABELS[c?.type] || c?.type || 'on_hit';
+const sameCondition = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -45,6 +48,13 @@ function deepClone(arr) {
   return arr.map(item => ({
     ...item,
     params: (item.params || []).map(p => ({ ...p })),
+  }));
+}
+
+function deepCloneEffects(effects) {
+  return (effects || []).map(block => ({
+    condition: { type: block.condition?.type || 'on_hit', params: (block.condition?.params || []).map(p => ({ ...p })) },
+    events: deepClone(block.events || []),
   }));
 }
 
@@ -135,7 +145,7 @@ function renderMoveList() {
         <div class="name">${esc(m.displayName)}</div>
         <div class="meta">${m.type.toUpperCase()} · ${m.damage_class === 'both' ? 'PHYS / SPEC' : m.damage_class.toUpperCase()}</div>
       </div>
-      ${hasDot ? '<div class="row-dot" title="Has saved events/conditions"></div>' : ''}
+      ${hasDot ? '<div class="row-dot" title="Has saved effects"></div>' : ''}
     `;
     row.addEventListener('click', async () => selectMove(m));
     listEl.appendChild(row);
@@ -150,16 +160,14 @@ function renderMoveList() {
 async function selectMove(move) {
   selectedMove = move;
   try {
-    const data = await apiGet(`/api/events/${encodeURIComponent(move.name)}`);
-    curEvents   = deepClone(data.events     || []);
-    curConds    = deepClone(data.conditions || []);
+    const data  = await apiGet(`/api/events/${encodeURIComponent(move.name)}`);
+    curEffects  = deepCloneEffects(data.effects || []);
     // Use saved custom desc if non-empty, otherwise fall back to PokeAPI effect text
     curDesc     = data.custom_desc || move.effect || '';
   } catch (err) {
     console.error('Failed to load move data:', err);
-    curEvents = [];
-    curConds  = [];
-    curDesc   = move.effect || '';
+    curEffects = [];
+    curDesc    = move.effect || '';
   }
   renderEditor();
   renderMoveList();
@@ -170,12 +178,14 @@ async function selectMove(move) {
 async function persistCurrent() {
   if (!selectedMove) return;
   try {
+    // Drop blocks that ended up with no events (e.g. the last event in a
+    // block was deleted) — an empty condition block carries no data.
+    const payload = curEffects.filter(b => b.events.length > 0);
     await apiPut(`/api/events/${encodeURIComponent(selectedMove.name)}`, {
-      events:      curEvents,
-      conditions:  curConds,
+      effects:     payload,
       custom_desc: curDesc,
     });
-    const hasData = curEvents.length > 0 || curConds.length > 0;
+    const hasData = payload.length > 0;
     if (hasData) withDataSet.add(selectedMove.name);
     else         withDataSet.delete(selectedMove.name);
     _updateRowDot();
@@ -193,7 +203,7 @@ function _updateRowDot() {
   if (hasDot && !dot) {
     dot = document.createElement('div');
     dot.className = 'row-dot';
-    dot.title = 'Has saved events/conditions';
+    dot.title = 'Has saved effects';
     active.appendChild(dot);
   } else if (!hasDot && dot) {
     dot.remove();
@@ -239,38 +249,25 @@ function renderEditor() {
       <textarea class="desc" id="descBox">${esc(curDesc)}</textarea>
     </div>
 
-    <!-- Events section -->
+    <!-- Effects section: each block pairs one condition with the events it gates -->
     <div class="section">
       <div class="section-head">
-        <h3>Events</h3>
-        <span class="count" id="eventCount">0</span>
+        <h3>Effects</h3>
+        <span class="count" id="effectCount">0</span>
         <div class="spacer"></div>
         <button class="presets-trigger" id="presetsTrigger">Presets ▾</button>
         <div class="presets-panel" id="presetsPanel">
           <div class="ph">Available Presets</div>
           <div id="presetsList"></div>
         </div>
-        <button class="btn btn-primary btn-sm" id="addEventBtn">+ Add Event</button>
+        <button class="btn btn-primary btn-sm" id="addBlockBtn">+ Add Condition Block</button>
       </div>
-      <div class="section-body" id="eventsBody"></div>
-    </div>
-
-    <!-- Conditions section -->
-    <div class="section">
-      <div class="section-head">
-        <h3>Conditions</h3>
-        <span class="count" id="condCount">0</span>
-        <div class="spacer"></div>
-        <button class="btn btn-gold btn-sm" id="savePresetBtn">Save as Preset</button>
-        <button class="btn btn-primary btn-sm" id="addCondBtn">+ Add Condition</button>
-      </div>
-      <div class="section-body" id="condBody"></div>
+      <div class="section-body" id="effectsBody"></div>
     </div>
   `;
 
   bindEditorListeners();
-  renderEvents();
-  renderConds();
+  renderEffects();
 }
 
 function bindEditorListeners() {
@@ -281,9 +278,7 @@ function bindEditorListeners() {
     descTimer = setTimeout(() => persistCurrent(), 600);
   });
 
-  document.getElementById('addEventBtn').addEventListener('click', () => openEventModal(null));
-  document.getElementById('addCondBtn').addEventListener('click',  () => openCondModal(null));
-  document.getElementById('savePresetBtn').addEventListener('click', openPresetModal);
+  document.getElementById('addBlockBtn').addEventListener('click', () => openCondModal());
 
   const trigger = document.getElementById('presetsTrigger');
   const panel   = document.getElementById('presetsPanel');
@@ -299,82 +294,100 @@ document.addEventListener('click', () => {
   if (panel) panel.classList.remove('open');
 });
 
-// ── Events section ────────────────────────────────────────────────────────────
+// ── Effects section (condition blocks, each with its own events) ──────────────
 
-function renderEvents() {
-  const countEl = document.getElementById('eventCount');
-  const body    = document.getElementById('eventsBody');
+function renderEffects() {
+  const countEl = document.getElementById('effectCount');
+  const body    = document.getElementById('effectsBody');
   if (!countEl || !body) return;
-  countEl.textContent = curEvents.length;
+  const totalEvents = curEffects.reduce((n, b) => n + b.events.length, 0);
+  countEl.textContent = totalEvents;
 
-  if (curEvents.length === 0) {
-    body.innerHTML = '<div class="empty-row">No events yet. Click "+ Add Event" or apply a preset.</div>';
+  if (curEffects.length === 0) {
+    body.innerHTML = '<div class="empty-row">No effects yet. Click "+ Add Condition Block" or apply a preset.</div>';
     return;
   }
 
   body.innerHTML = '';
-  curEvents.forEach((ev, i) => {
-    const tags = ev.params.slice(0, 3)
-      .map(p => `<span class="mini-tag">${esc(p.key)}: ${esc(p.val)}</span>`).join('');
-    const card = document.createElement('div');
-    card.className = 'item-card';
-    card.innerHTML = `
-      <div class="idx">${String(i + 1).padStart(2, '0')}</div>
-      <div class="main">
-        <div class="t1">Target: ${esc(ev.target)}</div>
-        <div class="t2">priority ${esc(String(ev.priority))} · ${ev.params.length} param${ev.params.length !== 1 ? 's' : ''}</div>
-      </div>
-      <div class="tags">${tags}</div>
-      <button class="icon-btn" title="Edit">${PENCIL_SVG}</button>
-      <button class="icon-btn danger" title="Delete">${TRASH_SVG}</button>
-    `;
-    card.querySelectorAll('.icon-btn')[0].addEventListener('click', () => openEventModal(i));
-    card.querySelectorAll('.icon-btn')[1].addEventListener('click', async () => {
-      curEvents.splice(i, 1);
-      await persistCurrent();
-      renderEvents();
-    });
-    body.appendChild(card);
-  });
+  curEffects.forEach((block, blockIdx) => body.appendChild(renderBlock(block, blockIdx)));
 }
 
-// ── Conditions section ────────────────────────────────────────────────────────
+function renderBlock(block, blockIdx) {
+  const wrap = document.createElement('div');
+  wrap.className = 'effect-block';
 
-function renderConds() {
-  const countEl = document.getElementById('condCount');
-  const body    = document.getElementById('condBody');
-  if (!countEl || !body) return;
-  countEl.textContent = curConds.length;
+  const options = Object.keys(CONDITION_LABELS).includes(block.condition.type)
+    ? Object.keys(CONDITION_LABELS)
+    : [block.condition.type, ...Object.keys(CONDITION_LABELS)];
 
-  if (curConds.length === 0) {
-    body.innerHTML = '<div class="empty-row">No conditions yet. Click "+ Add Condition".</div>';
-    return;
+  wrap.innerHTML = `
+    <div class="effect-block-head">
+      <select class="condition-tag" data-block="${blockIdx}">
+        ${options.map(t => `<option value="${esc(t)}" ${t === block.condition.type ? 'selected' : ''}>${esc(CONDITION_LABELS[t] || t)}</option>`).join('')}
+      </select>
+      <span class="count">${block.events.length}</span>
+      <div class="spacer"></div>
+      <button class="btn btn-gold btn-sm" data-act="save-preset">Save as Preset</button>
+      <button class="btn btn-primary btn-sm" data-act="add-event">+ Add Event</button>
+      <button class="icon-btn danger" title="Delete block" data-act="del-block">${TRASH_SVG}</button>
+    </div>
+    <div class="section-body" data-role="events"></div>
+  `;
+
+  wrap.querySelector('.condition-tag').addEventListener('change', async e => {
+    const newType = e.target.value;
+    const newCondition = { type: newType, params: block.condition.params || [] };
+    const collision = curEffects.find((b, i) => i !== blockIdx && sameCondition(b.condition, newCondition));
+    if (collision) {
+      collision.events.push(...block.events);
+      curEffects.splice(blockIdx, 1);
+    } else {
+      block.condition = newCondition;
+    }
+    await persistCurrent();
+    renderEffects();
+  });
+
+  wrap.querySelector('[data-act="add-event"]').addEventListener('click', () => openEventModal(blockIdx, null));
+  wrap.querySelector('[data-act="save-preset"]').addEventListener('click', () => openPresetModal(blockIdx));
+  wrap.querySelector('[data-act="del-block"]').addEventListener('click', async () => {
+    curEffects.splice(blockIdx, 1);
+    await persistCurrent();
+    renderEffects();
+  });
+
+  const eventsBody = wrap.querySelector('[data-role="events"]');
+  if (block.events.length === 0) {
+    eventsBody.innerHTML = '<div class="empty-row">No events in this block yet.</div>';
+  } else {
+    block.events.forEach((ev, i) => eventsBody.appendChild(renderEventCard(ev, i, blockIdx)));
   }
 
-  body.innerHTML = '';
-  curConds.forEach((c, i) => {
-    const tags = c.params.slice(0, 3)
-      .map(p => `<span class="mini-tag">${esc(p.key)}: ${esc(p.val)}</span>`).join('');
-    const card = document.createElement('div');
-    card.className = 'item-card';
-    card.innerHTML = `
-      <div class="idx">${String(i + 1).padStart(2, '0')}</div>
-      <div class="main">
-        <div class="t1">Condition ${i + 1}</div>
-        <div class="t2">${c.params.length} param${c.params.length !== 1 ? 's' : ''}</div>
-      </div>
-      <div class="tags">${tags}</div>
-      <button class="icon-btn" title="Edit">${PENCIL_SVG}</button>
-      <button class="icon-btn danger" title="Delete">${TRASH_SVG}</button>
-    `;
-    card.querySelectorAll('.icon-btn')[0].addEventListener('click', () => openCondModal(i));
-    card.querySelectorAll('.icon-btn')[1].addEventListener('click', async () => {
-      curConds.splice(i, 1);
-      await persistCurrent();
-      renderConds();
-    });
-    body.appendChild(card);
+  return wrap;
+}
+
+function renderEventCard(ev, i, blockIdx) {
+  const tags = ev.params.slice(0, 3)
+    .map(p => `<span class="mini-tag">${esc(p.key)}: ${esc(p.val)}</span>`).join('');
+  const card = document.createElement('div');
+  card.className = 'item-card';
+  card.innerHTML = `
+    <div class="idx">${String(i + 1).padStart(2, '0')}</div>
+    <div class="main">
+      <div class="t1">Target: ${esc(ev.target)}</div>
+      <div class="t2">priority ${esc(String(ev.priority))} · ${ev.params.length} param${ev.params.length !== 1 ? 's' : ''}</div>
+    </div>
+    <div class="tags">${tags}</div>
+    <button class="icon-btn" title="Edit">${PENCIL_SVG}</button>
+    <button class="icon-btn danger" title="Delete">${TRASH_SVG}</button>
+  `;
+  card.querySelectorAll('.icon-btn')[0].addEventListener('click', () => openEventModal(blockIdx, i));
+  card.querySelectorAll('.icon-btn')[1].addEventListener('click', async () => {
+    curEffects[blockIdx].events.splice(i, 1);
+    await persistCurrent();
+    renderEffects();
   });
+  return card;
 }
 
 // ── Modal helpers ─────────────────────────────────────────────────────────────
@@ -395,8 +408,9 @@ document.addEventListener('keydown', e => {
 
 // ── Event modal ───────────────────────────────────────────────────────────────
 
-let evtParams     = [];
-let editingEvtIdx = null;
+let evtParams      = [];
+let editingEvtIdx  = null;
+let editingBlockIdx = null;
 
 function renderEvtParamRows() {
   const container = document.getElementById('eventParamRows');
@@ -422,15 +436,16 @@ function renderEvtParamRows() {
   });
 }
 
-function openEventModal(editIdx) {
-  editingEvtIdx = editIdx;
+function openEventModal(blockIdx, editIdx) {
+  editingBlockIdx = blockIdx;
+  editingEvtIdx   = editIdx;
   if (editIdx === null) {
     document.getElementById('eventModalTitle').textContent = 'Create Event';
-    document.getElementById('targetSelect').value          = 'Self';
+    document.getElementById('targetSelect').value          = 'self';
     document.getElementById('eventPriority').value         = 0;
     evtParams = [];
   } else {
-    const ev = curEvents[editIdx];
+    const ev = curEffects[blockIdx].events[editIdx];
     document.getElementById('eventModalTitle').textContent = 'Edit Event';
     document.getElementById('targetSelect').value          = ev.target;
     document.getElementById('eventPriority').value         = ev.priority;
@@ -451,66 +466,40 @@ document.getElementById('saveEventBtn').addEventListener('click', async () => {
     priority: document.getElementById('eventPriority').value,
     params:   evtParams.filter(p => p.key.trim() !== ''),
   };
-  if (editingEvtIdx === null) curEvents.push(record);
-  else                        curEvents[editingEvtIdx] = record;
+  const events = curEffects[editingBlockIdx].events;
+  if (editingEvtIdx === null) events.push(record);
+  else                        events[editingEvtIdx] = record;
   await persistCurrent();
-  renderEvents();
+  renderEffects();
   closeModal('eventModal');
 });
 
-// ── Condition modal ───────────────────────────────────────────────────────────
+// ── Add Condition Block modal ─────────────────────────────────────────────────
 
-let condParams     = [];
-let editingCondIdx = null;
+document.getElementById('newBlockConditionType').addEventListener('change', e => {
+  document.getElementById('newBlockCustomRow').style.display =
+    e.target.value === '__custom__' ? 'block' : 'none';
+});
 
-function renderCondParamRows() {
-  const container = document.getElementById('condParamRows');
-  container.innerHTML = '';
-  condParams.forEach((p, i) => {
-    const row = document.createElement('div');
-    row.className = 'param-row';
-    row.innerHTML = `
-      <input type="text" placeholder="Key (e.g. Weather)" value="${esc(p.key)}" data-field="key" data-i="${i}">
-      <input type="text" placeholder="Value"              value="${esc(p.val)}" data-field="val" data-i="${i}">
-      <button class="rm">&times;</button>
-    `;
-    row.querySelectorAll('input').forEach(inp =>
-      inp.addEventListener('input', e => {
-        condParams[e.target.dataset.i][e.target.dataset.field] = e.target.value;
-      })
-    );
-    row.querySelector('.rm').addEventListener('click', () => {
-      condParams.splice(i, 1);
-      renderCondParamRows();
-    });
-    container.appendChild(row);
-  });
-}
-
-function openCondModal(editIdx) {
-  editingCondIdx = editIdx;
-  if (editIdx === null) {
-    document.getElementById('condModalTitle').textContent = 'Create Condition';
-    condParams = [];
-  } else {
-    document.getElementById('condModalTitle').textContent = 'Edit Condition';
-    condParams = curConds[editIdx].params.map(p => ({ ...p }));
-  }
-  renderCondParamRows();
+function openCondModal() {
+  document.getElementById('newBlockConditionType').value = 'on_hit';
+  document.getElementById('newBlockCustomRow').style.display = 'none';
+  document.getElementById('newBlockCustomType').value = '';
   openModal('condModal');
 }
 
-document.getElementById('addCondParamBtn').addEventListener('click', () => {
-  condParams.push({ key: '', val: '' });
-  renderCondParamRows();
-});
-
 document.getElementById('saveCondBtn').addEventListener('click', async () => {
-  const record = { params: condParams.filter(p => p.key.trim() !== '') };
-  if (editingCondIdx === null) curConds.push(record);
-  else                         curConds[editingCondIdx] = record;
-  await persistCurrent();
-  renderConds();
+  const sel = document.getElementById('newBlockConditionType').value;
+  const type = sel === '__custom__'
+    ? document.getElementById('newBlockCustomType').value.trim()
+    : sel;
+  if (!type) return;
+  const condition = { type, params: [] };
+  const existing = curEffects.find(b => sameCondition(b.condition, condition));
+  if (!existing) {
+    curEffects.push({ condition, events: [] });
+    renderEffects();
+  }
   closeModal('condModal');
 });
 
@@ -535,7 +524,7 @@ function renderPresetsList() {
     item.className = 'preset-item';
     item.innerHTML = `
       <div class="preset-content">
-        <div class="pname">${esc(p.name)}</div>
+        <div class="pname">${esc(p.name)} <span class="mini-tag">${esc(condLabel(p.condition))}</span></div>
         <div class="ptags">${chips}</div>
       </div>
       <button class="preset-del" title="Delete preset">&times;</button>
@@ -554,29 +543,37 @@ function renderPresetsList() {
 }
 
 async function applyPreset(i) {
-  const p   = presets[i];
-  curEvents = deepClone(p.events);
-  curConds  = deepClone(p.conditions || []);
+  const p = presets[i];
+  const condition = p.condition || { type: 'on_hit', params: [] };
+  let block = curEffects.find(b => sameCondition(b.condition, condition));
+  if (!block) {
+    block = { condition, events: [] };
+    curEffects.push(block);
+  }
+  block.events.push(...deepClone(p.events));
   await persistCurrent();
-  renderEvents();
-  renderConds();
+  renderEffects();
   const panel = document.getElementById('presetsPanel');
   if (panel) panel.classList.remove('open');
 }
 
 // ── Save-preset modal ─────────────────────────────────────────────────────────
 
-function openPresetModal() {
+let presetSourceBlockIdx = null;
+
+function openPresetModal(blockIdx) {
+  presetSourceBlockIdx = blockIdx;
+  const block = curEffects[blockIdx];
+
   document.getElementById('presetNameInput').value = '';
   document.getElementById('presetNameInput').classList.remove('input-error');
   document.getElementById('presetNameError').style.display = 'none';
 
-  document.getElementById('presetEventChips').innerHTML = curEvents.length
-    ? curEvents.map(ev => `<span class="chip evt">${esc(ev.target)}</span>`).join('')
-    : '<span class="chip">none</span>';
+  document.getElementById('presetConditionChip').innerHTML =
+    `<span class="chip cond">${esc(condLabel(block.condition))}</span>`;
 
-  document.getElementById('presetCondChips').innerHTML = curConds.length
-    ? curConds.map((_, i) => `<span class="chip cond">Condition ${i + 1}</span>`).join('')
+  document.getElementById('presetEventChips').innerHTML = block.events.length
+    ? block.events.map(ev => `<span class="chip evt">${esc(ev.target)}</span>`).join('')
     : '<span class="chip">none</span>';
 
   openModal('presetModal');
@@ -599,17 +596,18 @@ document.getElementById('confirmPresetBtn').addEventListener('click', async () =
     nameInput.focus();
     return;
   }
+  const block = curEffects[presetSourceBlockIdx];
   try {
     const result = await apiPost('/api/presets', {
       name,
-      events:     deepClone(curEvents),
-      conditions: deepClone(curConds),
+      condition: block.condition,
+      events:    deepClone(block.events),
     });
     presets.push({
-      id:         result.id,
+      id:        result.id,
       name,
-      events:     deepClone(curEvents),
-      conditions: deepClone(curConds),
+      condition: block.condition,
+      events:    deepClone(block.events),
     });
     closeModal('presetModal');
   } catch (err) {

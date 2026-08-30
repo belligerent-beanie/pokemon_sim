@@ -1,0 +1,118 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "attack"
+            },
+            {
+              "key": "value",
+              "val": "0"
+            }
+          ],
+          "_from_preset": 17
+        },
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "defense"
+            },
+            {
+              "key": "value",
+              "val": "0"
+            }
+          ],
+          "_from_preset": 44
+        },
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_attack"
+            },
+            {
+              "key": "value",
+              "val": "0"
+            }
+          ],
+          "_from_preset": 45
+        },
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_defense"
+            },
+            {
+              "key": "value",
+              "val": "0"
+            }
+          ],
+          "_from_preset": 46
+        },
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "speed"
+            },
+            {
+              "key": "value",
+              "val": "0"
+            }
+          ],
+          "_from_preset": 47
+        },
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "accuracy"
+            },
+            {
+              "key": "value",
+              "val": "0"
+            }
+          ],
+          "_from_preset": 48
+        },
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "evasion"
+            },
+            {
+              "key": "value",
+              "val": "0"
+            }
+          ],
+          "_from_preset": 49
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

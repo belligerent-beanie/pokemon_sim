@@ -1,0 +1,7 @@
+{
+  "name": "Meta: Learn Move",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "self", "priority": 0, "params": [{"key": "meta", "val": "learn_move"}, {"key": "mode", "val": "temporary"}]}
+  ]
+}

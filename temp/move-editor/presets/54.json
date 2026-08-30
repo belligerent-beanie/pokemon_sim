@@ -1,0 +1,7 @@
+{
+  "name": "Meta: No Effect",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "self", "priority": 0, "params": [{"key": "meta", "val": "no_effect"}]}
+  ]
+}

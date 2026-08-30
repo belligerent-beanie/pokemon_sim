@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "field_effect",
+              "val": "stealth_rock"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 29
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

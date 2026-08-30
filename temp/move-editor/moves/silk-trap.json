@@ -1,0 +1,51 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 4,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "silk-trap"
+            }
+          ],
+          "_from_preset": 9
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_contact",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "speed"
+            },
+            {
+              "key": "stages",
+              "val": "-1"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 14
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

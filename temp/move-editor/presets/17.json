@@ -1,0 +1,23 @@
+{
+  "name": "Set Stat: attack",
+  "condition": {
+    "type": "on_hit",
+    "params": []
+  },
+  "events": [
+    {
+      "target": "self",
+      "priority": 0,
+      "params": [
+        {
+          "key": "stat",
+          "val": "attack"
+        },
+        {
+          "key": "value",
+          "val": "6"
+        }
+      ]
+    }
+  ]
+}

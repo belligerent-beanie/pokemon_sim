@@ -1,0 +1,7 @@
+{
+  "name": "Set HP (self)",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "self", "priority": 0, "params": [{"key": "set_hp_to", "val": "average_with_target"}]}
+  ]
+}

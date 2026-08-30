@@ -1,0 +1,11 @@
+{
+  "name": "Meta: Consume Stockpile (Heal)",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "self", "priority": 0, "params": [
+      {"key": "heal_basis", "val": "self"},
+      {"key": "amount", "val": "stockpile_based"},
+      {"key": "consumes_condition", "val": "stockpile"}
+    ]}
+  ]
+}

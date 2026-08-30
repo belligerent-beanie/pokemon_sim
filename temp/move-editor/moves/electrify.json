@@ -1,0 +1,47 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "condition_check"
+            },
+            {
+              "key": "checks",
+              "val": "turn_order"
+            },
+            {
+              "key": "against",
+              "val": "target_has_not_acted_yet"
+            }
+          ],
+          "_from_preset": 62
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "override_move_type"
+            },
+            {
+              "key": "value",
+              "val": "electric"
+            }
+          ],
+          "_from_preset": 61
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "add_type"
+            },
+            {
+              "key": "value",
+              "val": "ghost"
+            }
+          ],
+          "_from_preset": 61
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

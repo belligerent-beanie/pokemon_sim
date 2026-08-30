@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "use_move"
+            },
+            {
+              "key": "source",
+              "val": "last_used_by_target"
+            }
+          ],
+          "_from_preset": 57
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

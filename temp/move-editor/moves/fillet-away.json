@@ -1,0 +1,85 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage_basis",
+              "val": "self"
+            },
+            {
+              "key": "amount",
+              "val": "0.5"
+            }
+          ],
+          "_from_preset": 34
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "attack"
+            },
+            {
+              "key": "stages",
+              "val": "2"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 10
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_attack"
+            },
+            {
+              "key": "stages",
+              "val": "2"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 12
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "speed"
+            },
+            {
+              "key": "stages",
+              "val": "2"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 14
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "copy_ability"
+            },
+            {
+              "key": "copy_source",
+              "val": "target"
+            }
+          ],
+          "_from_preset": 60
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

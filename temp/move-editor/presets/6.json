@@ -1,0 +1,19 @@
+{
+  "name": "Burn",
+  "condition": {
+    "type": "on_hit",
+    "params": []
+  },
+  "events": [
+    {
+      "target": "opponent",
+      "priority": 0,
+      "params": [
+        {
+          "key": "status",
+          "val": "burn"
+        }
+      ]
+    }
+  ]
+}

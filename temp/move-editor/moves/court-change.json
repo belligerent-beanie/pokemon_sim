@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "swap_field_effects"
+            },
+            {
+              "key": "scope",
+              "val": "side_effects"
+            }
+          ],
+          "_from_preset": 63
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

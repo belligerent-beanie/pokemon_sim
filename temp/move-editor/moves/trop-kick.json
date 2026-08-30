@@ -1,0 +1,51 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "attack"
+            },
+            {
+              "key": "stages",
+              "val": "-1"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 10
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage_class",
+              "val": "physical"
+            },
+            {
+              "key": "crit_stage",
+              "val": "0"
+            },
+            {
+              "key": "power",
+              "val": "70"
+            }
+          ],
+          "_from_preset": 7
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

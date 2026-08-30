@@ -1,0 +1,36 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage_class",
+              "val": "physical"
+            },
+            {
+              "key": "power",
+              "val": "110"
+            },
+            {
+              "key": "requires_item",
+              "val": "target"
+            },
+            {
+              "key": "crit_stage",
+              "val": "0"
+            }
+          ],
+          "_from_preset": 7
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

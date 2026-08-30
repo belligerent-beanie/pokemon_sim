@@ -1,0 +1,35 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "self_ko"
+            }
+          ],
+          "_from_preset": 52
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "select_incoming_pokemon"
+            }
+          ],
+          "_from_preset": 50
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

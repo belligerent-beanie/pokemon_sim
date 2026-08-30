@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "field_effect",
+              "val": "aurora_veil"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            },
+            {
+              "key": "duration",
+              "val": "5"
+            }
+          ],
+          "_from_preset": 29
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,43 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage_class",
+              "val": "physical"
+            },
+            {
+              "key": "crit_stage",
+              "val": "0"
+            },
+            {
+              "key": "power",
+              "val": "70"
+            }
+          ],
+          "_from_preset": 7
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "select_incoming_pokemon"
+            }
+          ],
+          "_from_preset": 50
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

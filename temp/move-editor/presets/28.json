@@ -1,0 +1,23 @@
+{
+  "name": "Terrain",
+  "condition": {
+    "type": "on_hit",
+    "params": []
+  },
+  "events": [
+    {
+      "target": "field",
+      "priority": 0,
+      "params": [
+        {
+          "key": "terrain",
+          "val": "__MOVE_NAME__"
+        },
+        {
+          "key": "duration",
+          "val": "5"
+        }
+      ]
+    }
+  ]
+}

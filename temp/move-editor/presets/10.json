@@ -1,0 +1,19 @@
+{
+  "name": "Change Stat: attack",
+  "condition": {
+    "type": "on_hit",
+    "params": []
+  },
+  "events": [
+    {
+      "target": "opponent",
+      "priority": 0,
+      "params": [
+        {
+          "key": "stat",
+          "val": "attack"
+        }
+      ]
+    }
+  ]
+}

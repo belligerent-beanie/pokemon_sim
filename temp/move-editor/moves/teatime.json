@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "eat_berries"
+            },
+            {
+              "key": "requires_item",
+              "val": "none"
+            }
+          ],
+          "_from_preset": 59
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

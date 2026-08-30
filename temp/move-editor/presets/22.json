@@ -1,0 +1,19 @@
+{
+  "name": "Volatile: encore",
+  "condition": {
+    "type": "on_hit",
+    "params": []
+  },
+  "events": [
+    {
+      "target": "opponent",
+      "priority": 0,
+      "params": [
+        {
+          "key": "volatile",
+          "val": "encore"
+        }
+      ]
+    }
+  ]
+}

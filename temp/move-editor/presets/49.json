@@ -1,0 +1,7 @@
+{
+  "name": "Set Stat: evasion",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "self", "priority": 0, "params": [{"key": "stat", "val": "evasion"}, {"key": "value", "val": "0"}]}
+  ]
+}

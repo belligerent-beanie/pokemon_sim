@@ -1,0 +1,7 @@
+{
+  "name": "Meta: Revive Pokemon",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "self", "priority": 0, "params": [{"key": "meta", "val": "revive_pokemon"}, {"key": "heal_basis", "val": "target"}, {"key": "amount", "val": "0.5"}]}
+  ]
+}

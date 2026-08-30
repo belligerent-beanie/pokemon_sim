@@ -1,0 +1,39 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "heal_basis",
+              "val": "self"
+            },
+            {
+              "key": "amount",
+              "val": "0.5"
+            }
+          ],
+          "_from_preset": 30
+        },
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "cures",
+              "val": "status"
+            }
+          ],
+          "_from_preset": 37
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

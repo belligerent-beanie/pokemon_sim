@@ -1,0 +1,32 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "terrain",
+              "val": "electric"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            },
+            {
+              "key": "duration",
+              "val": "5"
+            }
+          ],
+          "_from_preset": 28
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

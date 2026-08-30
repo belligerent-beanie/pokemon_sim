@@ -1,0 +1,24 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "pp_change",
+              "val": "-4"
+            }
+          ],
+          "_from_preset": 55
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

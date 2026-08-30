@@ -1,0 +1,43 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "weather",
+              "val": "snow"
+            },
+            {
+              "key": "duration",
+              "val": "5"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 27
+        },
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "select_incoming_pokemon"
+            }
+          ],
+          "_from_preset": 50
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

@@ -1,0 +1,28 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "swap_base_stats"
+            },
+            {
+              "key": "scope",
+              "val": "speed"
+            }
+          ],
+          "_from_preset": 63
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

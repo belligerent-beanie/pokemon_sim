@@ -1,0 +1,66 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "damage_class",
+              "val": "physical"
+            },
+            {
+              "key": "crit_stage",
+              "val": "1"
+            },
+            {
+              "key": "power",
+              "val": "90"
+            }
+          ],
+          "_from_preset": 7
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "defense"
+            },
+            {
+              "key": "stages",
+              "val": "-1"
+            },
+            {
+              "key": "chance",
+              "val": "50"
+            }
+          ],
+          "_from_preset": 11
+        },
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "flinch"
+            },
+            {
+              "key": "chance",
+              "val": "30"
+            }
+          ],
+          "_from_preset": 20
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

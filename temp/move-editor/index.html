@@ -90,10 +90,12 @@
         <div class="form-row">
           <label>Target</label>
           <select id="targetSelect">
-            <option>Self</option>
-            <option>Target</option>
-            <option>All Pokémon</option>
-            <option>Opposite Field</option>
+            <option value="self">Self</option>
+            <option value="opponent">Opponent</option>
+            <option value="field">Field</option>
+            <option value="self_side">Self Side</option>
+            <option value="opponent_side">Opponent Side</option>
+            <option value="both_sides">Both Sides</option>
           </select>
         </div>
         <div class="form-row">
@@ -112,21 +114,30 @@
   </div>
 </div>
 
-<!-- MODAL: Create / Edit Condition -->
+<!-- MODAL: Add Condition Block -->
 <div class="modal-overlay" id="condModal">
   <div class="modal">
     <div class="modal-head">
-      <h3 id="condModalTitle">Create Condition</h3>
+      <h3>Add Condition Block</h3>
       <button class="close" data-close="condModal">&times;</button>
     </div>
     <div class="modal-body">
-      <div class="param-head"><label>Condition Parameters</label></div>
-      <div id="condParamRows"></div>
-      <button class="add-param-btn" id="addCondParamBtn">+ Add Parameter</button>
+      <div class="form-row">
+        <label>Condition</label>
+        <select id="newBlockConditionType">
+          <option value="on_hit">On Hit</option>
+          <option value="on_contact">On Contact</option>
+          <option value="__custom__">Custom…</option>
+        </select>
+      </div>
+      <div class="form-row" id="newBlockCustomRow" style="display:none">
+        <label>Custom condition type</label>
+        <input type="text" id="newBlockCustomType" placeholder="e.g. after_damage">
+      </div>
     </div>
     <div class="modal-foot">
       <button class="btn btn-ghost" data-close="condModal">Cancel</button>
-      <button class="btn btn-primary" id="saveCondBtn">Save Condition</button>
+      <button class="btn btn-primary" id="saveCondBtn">Add Block</button>
     </div>
   </div>
 </div>
@@ -145,12 +156,12 @@
         <div class="error-msg" id="presetNameError">A name is required.</div>
       </div>
       <div class="savepage-section">
-        <span class="sp-label">Events</span>
-        <div class="chip-row" id="presetEventChips"></div>
+        <span class="sp-label">Condition</span>
+        <div class="chip-row" id="presetConditionChip"></div>
       </div>
       <div class="savepage-section" style="margin-bottom:0">
-        <span class="sp-label">Conditions</span>
-        <div class="chip-row" id="presetCondChips"></div>
+        <span class="sp-label">Events</span>
+        <div class="chip-row" id="presetEventChips"></div>
       </div>
     </div>
     <div class="modal-foot">

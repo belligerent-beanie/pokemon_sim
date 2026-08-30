@@ -1,0 +1,70 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "meta",
+              "val": "condition_check"
+            },
+            {
+              "key": "checks",
+              "val": "ability"
+            },
+            {
+              "key": "against",
+              "val": "plus_or_minus"
+            }
+          ],
+          "_from_preset": 62
+        },
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "defense"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 11
+        },
+        {
+          "target": "self_side",
+          "priority": 0,
+          "params": [
+            {
+              "key": "stat",
+              "val": "special_defense"
+            },
+            {
+              "key": "stages",
+              "val": "1"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 13
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

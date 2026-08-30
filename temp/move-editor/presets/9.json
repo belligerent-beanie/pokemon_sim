@@ -1,0 +1,19 @@
+{
+  "name": "Self Protect",
+  "condition": {
+    "type": "on_hit",
+    "params": []
+  },
+  "events": [
+    {
+      "target": "self",
+      "priority": 4,
+      "params": [
+        {
+          "key": "volatile",
+          "val": "__MOVE_NAME__"
+        }
+      ]
+    }
+  ]
+}

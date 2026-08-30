@@ -1,0 +1,7 @@
+{
+  "name": "Reduce PP",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "opponent", "priority": 0, "params": [{"key": "pp_change", "val": "-4"}]}
+  ]
+}

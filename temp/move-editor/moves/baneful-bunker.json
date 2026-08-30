@@ -1,0 +1,47 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 4,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "baneful-bunker"
+            }
+          ],
+          "_from_preset": 9
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_contact",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "status",
+              "val": "poison"
+            },
+            {
+              "key": "chance",
+              "val": "100"
+            }
+          ],
+          "_from_preset": 2
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

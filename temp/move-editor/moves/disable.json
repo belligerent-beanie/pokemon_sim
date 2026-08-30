@@ -1,0 +1,24 @@
+{
+  "effects": [
+    {
+      "condition": {
+        "type": "on_hit",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "opponent",
+          "priority": 0,
+          "params": [
+            {
+              "key": "volatile",
+              "val": "disable"
+            }
+          ],
+          "_from_preset": 36
+        }
+      ]
+    }
+  ],
+  "custom_desc": ""
+}

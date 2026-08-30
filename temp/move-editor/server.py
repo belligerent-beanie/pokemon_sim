@@ -11,6 +11,7 @@ Then open http://localhost:5050
 
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
@@ -63,13 +64,21 @@ def _write_json(path: Path, data: dict) -> None:
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', 'utf-8')
 
 
+DEFAULT_CONDITION = {'type': 'on_hit', 'params': []}
+
+
 def _load_move_data(move_name: str) -> dict:
+    """A move's saved data is a list of effect blocks: {condition, events}[],
+    one block per gating condition (on_hit, on_contact, ...)."""
     path = _move_path(move_name)
-    data = _read_json(path) if path else None
+    data = _read_json(path) or {}
+    if 'effects' not in data and data.get('events'):
+        # Legacy flat shape from before effect blocks existed.
+        data = {'effects': [{'condition': dict(DEFAULT_CONDITION), 'events': data['events']}],
+                'custom_desc': data.get('custom_desc', '')}
     return {
-        'events':      (data or {}).get('events', []),
-        'conditions':  (data or {}).get('conditions', []),
-        'custom_desc': (data or {}).get('custom_desc', ''),
+        'effects':     data.get('effects', []),
+        'custom_desc': data.get('custom_desc', ''),
     }
 
 
@@ -153,6 +162,14 @@ def _fetch_one(url: str) -> dict | None:
             if entry.get('language', {}).get('name') == 'en':
                 effect = entry.get('short_effect') or entry.get('effect', '')
                 break
+        if not effect.strip():
+            # Some newer (Gen 9 DLC-era) moves have no effect_entries at all yet.
+            # Fall back to the most recent English flavor text (Pokedex-style
+            # description) rather than leaving the move undescribed.
+            flavor_entries = [e for e in data.get('flavor_text_entries', [])
+                              if e.get('language', {}).get('name') == 'en']
+            if flavor_entries:
+                effect = flavor_entries[-1].get('flavor_text', '').replace('\n', ' ').replace('\x0c', ' ')
         return {
             'name':         name,
             'displayName':  _fmt_name(name),
@@ -250,11 +267,11 @@ def api_moves():
 
 @app.route('/api/moves/with-data')
 def api_with_data():
-    """Move names that have at least one event or condition saved."""
+    """Move names that have at least one effect block saved."""
     names = []
     for path in MOVES_DIR.glob('*.json'):
         data = _read_json(path)
-        if data and (data.get('events') or data.get('conditions')):
+        if data and (data.get('effects') or data.get('events')):
             names.append(path.stem)
     return jsonify(names)
 
@@ -273,8 +290,7 @@ def api_put_events(move_name: str):
         return jsonify({'error': 'invalid move name'}), 400
     body = request.get_json(force=True)
     _write_json(path, {
-        'events':      body.get('events', []),
-        'conditions':  body.get('conditions', []),
+        'effects':     body.get('effects', []),
         'custom_desc': body.get('custom_desc', ''),
     })
     return jsonify({'ok': True})
@@ -288,10 +304,10 @@ def api_get_presets():
         if data is None:
             continue
         presets.append({
-            'id':         int(path.stem),
-            'name':       data.get('name', ''),
-            'events':     data.get('events', []),
-            'conditions': data.get('conditions', []),
+            'id':        int(path.stem),
+            'name':      data.get('name', ''),
+            'condition': data.get('condition') or dict(DEFAULT_CONDITION),
+            'events':    data.get('events', []),
         })
     return jsonify(presets)
 
@@ -304,9 +320,9 @@ def api_create_preset():
         return jsonify({'error': 'name required'}), 400
     preset_id = _next_preset_id()
     _write_json(PRESETS_DIR / f'{preset_id}.json', {
-        'name':       name,
-        'events':     body.get('events', []),
-        'conditions': body.get('conditions', []),
+        'name':      name,
+        'condition': body.get('condition') or dict(DEFAULT_CONDITION),
+        'events':    body.get('events', []),
     })
     return jsonify({'id': preset_id, 'ok': True})
 
@@ -325,8 +341,7 @@ def api_export():
         if data is None:
             continue
         move_data[path.stem] = {
-            'events':     data.get('events', []),
-            'conds':      data.get('conditions', []),
+            'effects':    data.get('effects', []),
             'customDesc': data.get('custom_desc', ''),
         }
     presets = []
@@ -335,10 +350,10 @@ def api_export():
         if data is None:
             continue
         presets.append({
-            'id':     int(path.stem),
-            'name':   data.get('name', ''),
-            'events': data.get('events', []),
-            'conds':  data.get('conditions', []),
+            'id':        int(path.stem),
+            'name':      data.get('name', ''),
+            'condition': data.get('condition') or dict(DEFAULT_CONDITION),
+            'events':    data.get('events', []),
         })
     return jsonify({'moveData': move_data, 'presets': presets})
 
@@ -359,17 +374,16 @@ def api_import():
         if path is None:
             continue
         _write_json(path, {
-            'events':      data.get('events', []),
-            'conditions':  data.get('conds', []),
+            'effects':     data.get('effects', []),
             'custom_desc': data.get('customDesc', ''),
         })
 
     for i, p in enumerate(presets, start=1):
         preset_id = p.get('id') or i
         _write_json(PRESETS_DIR / f'{preset_id}.json', {
-            'name':       p.get('name', ''),
-            'events':     p.get('events', []),
-            'conditions': p.get('conds', []),
+            'name':      p.get('name', ''),
+            'condition': p.get('condition') or dict(DEFAULT_CONDITION),
+            'events':    p.get('events', []),
         })
 
     return jsonify({'ok': True})

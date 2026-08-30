@@ -1,0 +1,7 @@
+{
+  "name": "Set HP (opponent)",
+  "condition": {"type": "on_hit", "params": []},
+  "events": [
+    {"target": "opponent", "priority": 0, "params": [{"key": "set_hp_to", "val": "average_with_target"}]}
+  ]
+}
