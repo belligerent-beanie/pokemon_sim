@@ -7,19 +7,18 @@
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
+          "_from_preset": 32,
           "params": [
             {
               "key": "drain_fraction",
               "val": "0.5"
             }
           ],
-          "_from_preset": 32
+          "priority": 0,
+          "target": "self"
         },
         {
-          "target": "opponent",
-          "priority": 0,
+          "_from_preset": 8,
           "params": [
             {
               "key": "damage_class",
@@ -34,10 +33,11 @@
               "val": "20"
             }
           ],
-          "_from_preset": 8
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }
   ],
-  "custom_desc": ""
+  "custom_desc": "Drains half the damage inflicted to heal the user."
 }

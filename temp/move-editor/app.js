@@ -35,6 +35,15 @@ let presets      = [];         // full preset list, kept in sync with API
 
 const CONDITION_LABELS = { on_hit: 'On Hit', on_contact: 'On Contact' };
 const condLabel = c => CONDITION_LABELS[c?.type] || c?.type || 'on_hit';
+
+// Which condition types actually make sense for a given move, based on its
+// real Showdown flags (e.g. On Contact is meaningless for a move that never
+// makes contact — Absorb, Will-O-Wisp, ... — so don't offer it as a choice).
+function availableConditionTypes(move) {
+  const types = ['on_hit'];
+  if (move?.flags?.contact) types.push('on_contact');
+  return types;
+}
 const sameCondition = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -316,9 +325,10 @@ function renderBlock(block, blockIdx) {
   const wrap = document.createElement('div');
   wrap.className = 'effect-block';
 
-  const options = Object.keys(CONDITION_LABELS).includes(block.condition.type)
-    ? Object.keys(CONDITION_LABELS)
-    : [block.condition.type, ...Object.keys(CONDITION_LABELS)];
+  const allowed = availableConditionTypes(selectedMove);
+  const options = allowed.includes(block.condition.type)
+    ? allowed
+    : [block.condition.type, ...allowed];
 
   wrap.innerHTML = `
     <div class="effect-block-head">
@@ -482,7 +492,11 @@ document.getElementById('newBlockConditionType').addEventListener('change', e =>
 });
 
 function openCondModal() {
-  document.getElementById('newBlockConditionType').value = 'on_hit';
+  const sel = document.getElementById('newBlockConditionType');
+  const allowed = availableConditionTypes(selectedMove);
+  sel.innerHTML = allowed.map(t => `<option value="${esc(t)}">${esc(CONDITION_LABELS[t] || t)}</option>`).join('')
+    + '<option value="__custom__">Custom…</option>';
+  sel.value = 'on_hit';
   document.getElementById('newBlockCustomRow').style.display = 'none';
   document.getElementById('newBlockCustomType').value = '';
   openModal('condModal');
@@ -509,13 +523,20 @@ function renderPresetsList() {
   const list = document.getElementById('presetsList');
   if (!list) return;
 
-  if (presets.length === 0) {
-    list.innerHTML = '<div class="preset-empty">No presets saved yet.</div>';
+  const allowed = availableConditionTypes(selectedMove);
+  const applicable = presets
+    .map((p, i) => ({ p, i }))
+    .filter(({ p }) => allowed.includes((p.condition || { type: 'on_hit' }).type));
+
+  if (applicable.length === 0) {
+    list.innerHTML = presets.length === 0
+      ? '<div class="preset-empty">No presets saved yet.</div>'
+      : '<div class="preset-empty">No presets apply to this move (e.g. On Contact presets need a contact-flagged move).</div>';
     return;
   }
 
   list.innerHTML = '';
-  presets.forEach((p, i) => {
+  applicable.forEach(({ p, i }) => {
     const chips = p.events.length
       ? p.events.map(ev => `<span class="mini-tag">${esc(ev.target)}</span>`).join('')
       : '<span class="mini-tag">no events</span>';
