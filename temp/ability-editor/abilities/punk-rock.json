@@ -39,6 +39,10 @@
             {
               "key": "fail_if",
               "val": "the move is not sound-based"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (punkrock): exact multiplier is 5325/4096 (≈1.2999), same fraction as Power Spot."
             }
           ]
         }

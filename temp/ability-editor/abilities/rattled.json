@@ -20,7 +20,33 @@
             },
             {
               "key": "note",
-              "val": "in modern games also triggers when Intimidate lowers this Pokémon's stat, not just from being hit by a move"
+              "val": "See the separate Intimidate-triggered effect below for the full mechanism -- this note previously described it inline only."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "raises Speed by 1 stage in addition to the normal Attack drop"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming stat-lowering effect is not Intimidate itself, or Intimidate did not actually lower Attack (e.g. it was blocked by another ability)"
+            },
+            {
+              "key": "note",
+              "val": "MADE INTO A PROPER SECOND EFFECT (previously just a text note on the first effect) -- verified against Showdown data/abilities.ts (rattled): a separate onAfterBoost hook adds +1 Speed on TOP OF Intimidate's Atk drop -- it's additive, not a replacement, unlike Guard Dog/Inner Focus which block the drop outright."
             }
           ]
         }

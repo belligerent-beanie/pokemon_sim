@@ -16,11 +16,15 @@
             },
             {
               "key": "fail_if",
-              "val": "the holder is already purely that single type"
+              "val": "the holder is already purely that single type, OR the move is typeless ('???', e.g. Struggle/Present), OR the move bounced back (Magic Bounce/Magic Coat), OR it's a future move (Doom Desire/Future Sight), OR it was called via Snatch, OR the move itself calls another move (e.g. Metronome/Nature Power/Assist)"
             },
             {
               "key": "note",
               "val": "as of Gen 9, triggers only once per switch-in rather than before every move"
+            },
+            {
+              "key": "note",
+              "val": "ADDED the same missing exclusions found on Libero (functionally identical ability, pre-Gen-9-restriction era) -- verified against Showdown data/abilities.ts (protean): typeless moves, bounced moves, future moves, Snatch-sourced moves, and any move.callsMove move."
             }
           ]
         }

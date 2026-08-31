@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "heal",
-              "val": "7% max HP"
+              "val": "1/16 (6.25%) max HP"
             },
             {
               "key": "fail_if",
-              "val": "Rain is not currently active"
+              "val": "neither Rain nor Primordial Sea is currently active as the holder's EFFECTIVE weather"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED from \"7%\" -- verified against Showdown data/abilities.ts (raindish): heal is baseMaxhp/16, exactly 6.25%, not 7% (same rounding-error class as Ice Body). Also covers Primordial Sea, not just Rain, and checks the holder's own effective weather specifically (Cloud Nine/Air Lock or Utility Umbrella-style suppression would prevent it)."
             }
           ]
         }

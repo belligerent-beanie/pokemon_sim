@@ -1508,3 +1508,29 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
 - **propeller-tail**: confirmed correct in substance. Added a note on the
   scripted-target-move exception (Counter/Mirror Coat/Metal Burst have no
   fixed target to begin with, so the anti-redirect flag is moot for them).
+
+## Verification pass: run 16, 2026-08-31 (protean–rattled)
+
+- **protean**: ADDED the same missing exclusions found on Libero (functionally
+  identical ability) -- typeless moves, bounced moves, future moves,
+  Snatch-sourced moves, and move.callsMove moves.
+- **psychic-surge**: confirmed correct as-is (sets Psychic Terrain on switch-in).
+  No change.
+- **punk-rock**: confirmed correct (both the defensive halving and offensive
+  boost for sound moves). Added a precision note: exact offensive multiplier
+  is 5325/4096 (≈1.2999), same fraction as Power Spot.
+- **pure-power**: confirmed correct as-is (identical to Huge Power). No change.
+- **queenly-majesty**: confirmed correct in substance (identical to Armor
+  Tail/Dazzling). Added a note on the field-target-move exceptions: broad
+  field/foe-side moves are normally exempt from the block entirely, EXCEPT
+  Perish Song, Floral Healing, and Rototiller, which remain blockable despite
+  their broad targeting.
+- **quick-feet**: confirmed correct as-is (×1.5 Speed with any status,
+  replacing Paralysis's speed drop elsewhere in the status data). No change.
+- **rain-dish**: CORRECTED the per-turn heal from "7%" to the exact 1/16
+  (6.25%) max HP -- same rounding-error class as Ice Body. Also covers
+  Primordial Sea, not just Rain, checked against effective weather.
+- **rattled**: PROMOTED the Intimidate interaction from a text note into a
+  proper second effect -- a separate hook adds +1 Speed ON TOP OF Intimidate's
+  Atk drop (additive, not a replacement, unlike Guard Dog/Inner Focus which
+  block the drop outright).

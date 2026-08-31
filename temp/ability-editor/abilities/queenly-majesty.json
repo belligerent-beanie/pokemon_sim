@@ -21,6 +21,10 @@
             {
               "key": "note",
               "val": "identical effect to Armor Tail and Dazzling"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (queenlymajesty): field-wide/foe-side-targeting moves (Spikes, Stealth Rock-style hazards, etc.) are normally exempt from being blocked at all since they don't target a Pokémon directly, EXCEPT for Perish Song, Floral Healing (flowershield), and Rototiller, which are explicitly still subject to the priority block despite their broad targeting."
             }
           ]
         }
