@@ -17,9 +17,20 @@
             {
               "key": "crit_stage",
               "val": "0"
+            },
+            {
+              "key": "damage_basis",
+              "val": "fixed"
+            },
+            {
+              "key": "amount",
+              "val": "40"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (moves.ts: damage: 40): always deals exactly 40 HP, not a percentage or level-scaled amount, unaffected by stats/type effectiveness/STAB/crits — was previously a bare damage-class skeleton with no actual damage mechanism, same gap super-fang had before its fix"
             }
-          ],
-          "_from_preset": 8
+          ]
         }
       ]
     }

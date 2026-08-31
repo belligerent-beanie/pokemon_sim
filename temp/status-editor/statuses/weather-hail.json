@@ -2,68 +2,46 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
-              "val": "Hail (pre-Gen 9): damages non-Ice-types each turn. Snow (Gen 9): no damage, boosts Ice-type Defense instead"
+              "val": "boosts Ice-type Defense by 50%; deals no per-turn chip damage"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (conditions.ts snowscape, the Gen 9 condition replacing legacy Hail): modern Snow has onModifyDef (+50% Def for Ice-types) and NO onWeather damage call, unlike legacy Hail (data/conditions.ts hail: this.damage(baseMaxhp/16) to non-Ice-types). Per this project's modern-mainline-always rule, the per-turn chip damage was removed and the previous hedge (\"pick one behavior\") was resolved in favor of Snow's no-damage behavior."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     },
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
             "val": "5, or 8 with Icy Rock held"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "Hail/Snow clears"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "condition": {
-        "type": "on_turn_end",
-        "params": []
-      },
-      "events": [
-        {
-          "target": "field",
+          ],
           "priority": 0,
-          "params": [
-            {
-              "key": "damage",
-              "val": "7% max HP"
-            },
-            {
-              "key": "fail_if",
-              "val": "target is Ice-type, OR this is modeled as Snow (Gen 9) rather than Hail"
-            },
-            {
-              "key": "note",
-              "val": "pick one behavior per your generation target — the catalog merges Hail and Snow into a single entry"
-            }
-          ]
+          "target": "field"
         }
       ]
     }

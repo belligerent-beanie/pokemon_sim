@@ -2,23 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "damage",
-              "val": "based on Steel-type effectiveness vs. the switching-in Pokémon: 0.25x eff. → 3% max HP, 0.5x → 7%, 1x → 13%, 2x → 25%"
+              "val": "based on Steel-type effectiveness vs. the switching-in Pokémon: 0.25x eff. → 4% max HP, 0.5x → 7%, 1x → 13%, 2x → 25%, 4x → 50%"
             },
             {
               "key": "note",
-              "val": "no 4x case and no immunity case — nothing resists Steel twice over, and nothing is immune to it"
+              "val": "verified via Showdown source (moves.ts gmaxsteelsurge condition, reuses Stealth Rock's damage formula with type forced to Steel): the stored table was missing the 4x row entirely (Ice/Fairy types, e.g. Alolan Ninetales/Vulpix, are weak to Steel-type moves twice over -> 4x -> 50%), and its note incorrectly claimed no 4x case existed. Also fixed 0.25x rounding: 1/32 = 3.125% rounds UP to 4%, not the 3% previously stored (Steel/Electric types like Magnezone resist Steel-type moves twice over -> 0.25x). 'No immunity case' is still correct — nothing is immune to Steel-type moves. Heavy Duty Boots exception was also missing entirely; added as a new fail_if."
+            },
+            {
+              "key": "fail_if",
+              "val": "the switching-in Pokémon holds Heavy Duty Boots"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     }

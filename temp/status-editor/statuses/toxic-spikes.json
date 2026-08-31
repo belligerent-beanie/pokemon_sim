@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "counter",
@@ -22,19 +20,19 @@
               "key": "note",
               "val": "capped at 2 layers; re-applying to an already-2-layered side does nothing"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -42,13 +40,17 @@
             },
             {
               "key": "fail_if",
-              "val": "the switching-in Pokémon is not grounded, or is Steel-type (immune, but the hazard remains)"
+              "val": "the switching-in Pokémon is not grounded, is Steel-type (immune, but the hazard remains), or holds Heavy Duty Boots (immune, hazard remains)"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts toxicspikes condition): Heavy Duty Boots exception was missing (source checks pokemon.hasType('Steel') || pokemon.hasItem('heavydutyboots') -> do nothing, same no-op outcome as the Steel-type case); added. Layer count (1=Poison, 2=Toxic, capped at 2) and the grounded Poison-type full-clear behavior were already correct."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         },
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -62,7 +64,9 @@
               "key": "note",
               "val": "distinct from the immunity case above — a grounded Poison-type removes Toxic Spikes outright instead of just being unaffected"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     }

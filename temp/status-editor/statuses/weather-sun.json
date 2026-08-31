@@ -2,42 +2,46 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
               "val": "boosts Fire moves, weakens Water moves"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (conditions.ts sunnyday.onImmunity): while Sun/Harsh Sunlight is active, Pokemon cannot be frozen (freeze immunity) — this was missing entirely."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     },
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
             "val": "5, or 8 with Heat Rock held"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "Harsh Sunlight clears"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     }

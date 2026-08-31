@@ -2,6 +2,51 @@
   "effects": [
     {
       "condition": {
+        "type": "on_apply",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "boosts Grass moves (x1.3) used by a grounded attacker; halves the damage of Earthquake/Bulldoze/Magnitude against grounded targets"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (moves.ts grassyterrain condition): onBasePower boosts Grass-type moves x5325/4096 (x1.3) when attacker.isGrounded(), and separately halves Earthquake/Bulldoze/Magnitude (chainModify(0.5)) when defender.isGrounded(). This whole block, plus the duration_turns block below, was missing entirely — only the per-turn heal event existed before."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "duration_turns",
+        "params": [
+          {
+            "key": "turns",
+            "val": "5, or 8 with Terrain Extender held"
+          }
+        ]
+      },
+      "events": [
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "Grassy Terrain fades"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
         "params": [],
         "type": "on_turn_end"
       },

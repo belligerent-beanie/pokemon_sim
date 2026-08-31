@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "counter",
@@ -24,21 +22,25 @@
             },
             {
               "key": "fail_if",
-              "val": "holder's current HP is at or below N% of max HP — cannot afford to create it"
+              "val": "holder's current HP is at or below N% of max HP — cannot afford to create it; also always fails if the holder's max HP is 1 (Shedinja), regardless of current HP"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts substitute onTryHit): the maxhp===1 case is a separate hard-coded check (the \"Shedinja clause\"), not just an edge case of the percentage rule — a 1-max-HP Pokémon's current HP can never be low enough to trip the generic threshold, so without this explicit clause it would incorrectly be able to make a Substitute. This clause was missing from the entry."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_hit_holder",
-        "params": []
+        "params": [],
+        "type": "on_hit_holder"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -46,13 +48,17 @@
             },
             {
               "key": "fail_if",
-              "val": "the move ignores Substitute (sound-based moves, Infiltrator)"
+              "val": "the move ignores Substitute — moves individually flagged to bypass it"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts, flags.bypasssub): broader than \"sound moves + Infiltrator\" as previously written — sound moves (Boomburst, Hyper Voice, etc.) do carry this flag, but so do ~45 non-damaging status moves that target the substitute-holder directly and need to land regardless (Taunt, Encore, Disable, Whirlwind, Curse, Foresight, Attract, and others), plus a few damaging outliers (Hyperspace Fury/Hole, Spectral Thief). Infiltrator is a separate check (move.infiltrates), not part of the bypasssub flag itself."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         },
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -62,25 +68,27 @@
               "key": "fail_if",
               "val": "substitute_hp remains above 0 after this hit"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_switch_out",
-        "params": []
+        "params": [],
+        "type": "on_switch_out"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "Substitute is lost — it does not persist through switching"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

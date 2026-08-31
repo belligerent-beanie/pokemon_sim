@@ -17,9 +17,20 @@
             {
               "key": "crit_stage",
               "val": "0"
+            },
+            {
+              "key": "damage_basis",
+              "val": "user_level"
+            },
+            {
+              "key": "amount",
+              "val": "1"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (moves.ts: damage: 'level'): deals fixed damage equal to the user's level, unaffected by stats, type effectiveness, STAB, or crits — was previously a bare damage-class skeleton with no actual damage mechanism, same gap super-fang had before its fix"
             }
-          ],
-          "_from_preset": 7
+          ]
         }
       ]
     }

@@ -2,18 +2,16 @@
   "effects": [
     {
       "condition": {
-        "type": "delayed_turn",
         "params": [
           {
             "key": "turns",
-            "val": "2"
+            "val": "1"
           }
-        ]
+        ],
+        "type": "delayed_turn"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "heal",
@@ -26,8 +24,14 @@
             {
               "key": "fail_if",
               "val": "slot is empty"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts wish condition): traced the control flow rather than trusting the raw comparison — onStart records startingTurn when Wish is used, and onResidual only resolves once getOverflowedTurnCount() > startingTurn, which first becomes true at the end of the very next turn (a 1-turn delay), not two turns later. Same off-by-one shape as Yawn (already stored here as turns=1 for an identical resolve-next-turn-end pattern) — corrected turns from 2 to 1. The 50% max HP heal, snapshotted at cast time, was already correct."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     }

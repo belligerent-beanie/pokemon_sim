@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "counter",
@@ -19,10 +17,38 @@
               "val": "stockpile_layers"
             },
             {
+              "key": "fail_if",
+              "val": "stockpile_layers is already at 3"
+            },
+            {
               "key": "note",
-              "val": "capped at 3 layers; each layer also raises Defense and Sp. Def by 1 stage immediately on being added"
+              "val": "capped at 3 layers; each layer also raises Defense and Sp. Def by 1 stage immediately on being added (fails outright rather than refreshing anything once at the cap)"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_end"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "reverses whatever Defense/Sp. Def stat stages Stockpile itself actually granted (only the portion that successfully applied — e.g. not stages that were capped at +6 — gets removed)"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts stockpile onEnd): ending Stockpile — via Swallow/Spit Up consuming the stacks, or any other cure — strips back out the Def/SpD boosts it granted while stacking, tracked per-stage so only boosts that actually took effect are reversed. This was missing from the entry entirely; previously only the stacking side was documented."
+            }
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

@@ -2,42 +2,46 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
-              "val": "blocks status conditions for grounded Pokémon"
+              "val": "blocks major status conditions and confusion for grounded Pokemon; halves Dragon-type move damage against grounded targets"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (moves.ts mistyterrain condition): onSetStatus blocks status infliction and onTryAddVolatile separately blocks confusion, both gated on the target being grounded; onBasePower halves (x0.5) Dragon-type move damage against a grounded, non-semi-invulnerable defender. Both the confusion-block and the Dragon-type damage halving were missing from the original tag, which only mentioned status conditions."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     },
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
             "val": "5, or 8 with Terrain Extender held"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "Misty Terrain fades"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     }

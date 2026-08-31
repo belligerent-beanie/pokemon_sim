@@ -38,8 +38,12 @@
               "val": "fully prevents the move this turn"
             },
             {
+              "key": "fail_if",
+              "val": "the move is Sleep Talk or Snore"
+            },
+            {
               "key": "note",
-              "val": "blocked every turn while asleep, until the Lasts N Turns duration above expires"
+              "val": "blocked every turn while asleep, until the Lasts N Turns duration above expires; Sleep Talk and Snore are explicitly flagged sleepUsable in Showdown source and go through normally instead of being blocked"
             }
           ]
         }

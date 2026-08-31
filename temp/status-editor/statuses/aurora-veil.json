@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
@@ -17,31 +15,37 @@
             {
               "key": "fail_if",
               "val": "no Hail/Snow is active — Aurora Veil cannot be set up otherwise"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (moves.ts auroraveil condition, onAnyModifyDamage): does not reduce damage from critical hits or moves that bypass screens (Infiltrator, move.infiltrates); in a doubles/multi battle (activePerHalf > 1) the reduction is 1/3 (x2732/4096) instead of 1/2 — this nuance wasn't previously noted."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     },
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
             "val": "5, or 8 with Light Clay held"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "Aurora Veil ends; damage returns to normal"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     }

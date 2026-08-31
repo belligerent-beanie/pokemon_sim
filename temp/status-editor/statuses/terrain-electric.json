@@ -2,42 +2,46 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
-              "val": "boosts Electric moves and blocks sleep for grounded Pokémon"
+              "val": "boosts Electric moves (x1.3) used by a grounded attacker; blocks Pokemon from falling asleep (and blocks Yawn) while grounded"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (moves.ts electricterrain condition): onBasePower requires attacker.isGrounded() for the power boost specifically (x5325/4096, i.e. x1.3) — the boost is not universal, it only applies to a grounded user's own Electric-type moves."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     },
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
             "val": "5, or 8 with Terrain Extender held"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "Electric Terrain fades"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     }

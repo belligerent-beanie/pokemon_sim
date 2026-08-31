@@ -2,31 +2,29 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
               "val": "boosts Water moves, weakens Fire moves — same as ordinary Rain, but cannot be changed or ended by any other weather-setting move/ability while active"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_move_block_check",
-        "params": []
+        "params": [],
+        "type": "on_move_block_check"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -35,26 +33,32 @@
             {
               "key": "fail_if",
               "val": "the move is not Fire-type"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (primordialsea.onTryMove): the block additionally requires move.category !== 'Status' — only damaging Fire-type moves fail outright; a Fire-type status move would not be blocked."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_cure",
-        "params": []
+        "params": [],
+        "type": "on_cure"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "ends when the Pokémon that summoned it (the Primordial Sea holder) leaves the field or faints — the only way it clears"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     }

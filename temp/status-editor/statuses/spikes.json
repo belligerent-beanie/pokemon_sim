@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "counter",
@@ -22,19 +20,19 @@
               "key": "note",
               "val": "capped at 3 layers; re-applying Spikes to an already-3-layered side does nothing"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "damage",
@@ -42,9 +40,15 @@
             },
             {
               "key": "fail_if",
-              "val": "the switching-in Pokémon is not grounded (Flying-type, Levitate, Air Balloon, Magnet Rise)"
+              "val": "the switching-in Pokémon is not grounded (Flying-type, Levitate, Air Balloon, Magnet Rise), or holds Heavy Duty Boots"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts spikes condition): Heavy Duty Boots exception (pokemon.hasItem('heavydutyboots') skips the damage entirely) was missing from fail_if; added. Layer damage table (13%/17%/25% for layers 1/2/3, from damageAmounts [0,3,4,6]/24 = 1/8, 1/6, 1/4 rounded up) and the 3-layer cap were already correct."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     }

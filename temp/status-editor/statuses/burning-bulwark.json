@@ -2,35 +2,38 @@
   "effects": [
     {
       "condition": {
-        "type": "on_move_block_check",
-        "params": []
+        "params": [],
+        "type": "on_move_block_check"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "blocks most incoming moves this turn"
+              "val": "blocks most incoming damaging (physical/special) moves this turn — status moves are not blocked"
             },
             {
               "key": "fail_if",
-              "val": "the incoming move bypasses Protect (Feint, moves flagged to ignore protection, most field-target moves)"
+              "val": "the incoming move bypasses Protect (Feint, moves flagged to ignore protection, most field-target moves), or the incoming move is a status move"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts): Burning Bulwark calls checkMoveBypassesProtect(move, source, target, false) — the blockStatus=false path, unlike Protect/Detect/Spiky Shield/Baneful Bunker's blockStatus=true default — so status-category moves are never blocked here, only damaging ones. Matches Bulbapedia's phrasing ('protects the user from physical and special moves') vs. Protect's broader 'from moves' wording. Same blockStatus=false shape as King's Shield/Mat Block."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_hit_holder",
-        "params": []
+        "params": [],
+        "type": "on_hit_holder"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "chance": "100",
           "params": [
             {
               "key": "effect",
@@ -39,21 +42,24 @@
             {
               "key": "fail_if",
               "val": "the incoming move does not make contact"
+            },
+            {
+              "key": "note",
+              "val": "checked for a rumored 'halves damage from Fire-type moves' nuance on top of the burn — not present in Showdown's moves.ts (the condition block has only the protect-block + trySetStatus('brn') on contact, no separate onSourceModifyDamage/Fire-halving hook) nor in Bulbapedia's effect text; only the burn-on-contact payoff is real."
             }
           ],
-          "chance": "100"
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "counter",
@@ -67,7 +73,9 @@
               "key": "note",
               "val": "shared across the whole protection-move family — reset to 0 on any turn where no protection move was used; success chance next use is (1/3)^protect_streak"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

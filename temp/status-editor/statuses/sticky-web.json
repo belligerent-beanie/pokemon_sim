@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -16,9 +14,15 @@
             },
             {
               "key": "fail_if",
-              "val": "the switching-in Pokémon is not grounded"
+              "val": "the switching-in Pokémon is not grounded, or holds Heavy Duty Boots"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts stickyweb condition): Heavy Duty Boots exception (pokemon.hasItem('heavydutyboots') skips the stat drop) was missing from fail_if; added. The -1 Speed stat drop itself was already correct."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     }

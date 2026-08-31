@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -17,8 +15,14 @@
             {
               "key": "fail_if",
               "val": "the incoming move targets the whole field/side rather than a single Pokémon, or is flagged to ignore redirection"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts followme/ragepowder): the two setters are NOT fully equivalent — Rage Powder additionally checks the attacker's powder immunity (source.runStatusImmunity('powder')) and does NOT redirect attacks from Grass-type Pokémon or anything else immune to powder moves (Overcoat, Safety Goggles); Follow Me has no such check and redirects regardless of the attacker's type/ability/item. This entry covers both setters generically — the powder-immunity carve-out is Rage Powder-only."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     }

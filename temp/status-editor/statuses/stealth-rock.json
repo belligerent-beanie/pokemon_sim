@@ -2,23 +2,31 @@
   "effects": [
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "damage",
-              "val": "based on Rock-type effectiveness vs. the switching-in Pokémon: 0.25x eff. → 3% max HP, 0.5x → 7%, 1x → 13%, 2x → 25%, 4x → 50%"
+              "val": "based on Rock-type effectiveness vs. the switching-in Pokémon: 0.25x eff. → 4% max HP, 0.5x → 7%, 1x → 13%, 2x → 25%, 4x → 50%"
             },
             {
               "key": "note",
               "val": "no immunity case — every type takes at least the 0.25x-effectiveness minimum, since nothing resists Rock twice over"
+            },
+            {
+              "key": "fail_if",
+              "val": "the switching-in Pokémon holds Heavy Duty Boots"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts stealthrock condition, damage = maxhp*(2**typeMod)/8): Heavy Duty Boots exception was missing entirely, added. Also fixed the 0.25x row: 1/32 = 3.125% max HP, which rounds UP to 4% per the Amounts rule, not the 3% previously stored (a rounding-down error). The other rows (7/13/25/50%) were already correct, as was the 'no immunity case' note."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     }

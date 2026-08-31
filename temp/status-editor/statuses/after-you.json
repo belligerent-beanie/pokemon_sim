@@ -2,23 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "moves immediately after the user this turn, skipping everyone else still waiting in the turn order"
             },
             {
+              "key": "fail_if",
+              "val": "the target has already moved this turn, or has no action left to reorder"
+            },
+            {
               "key": "note",
-              "val": "one-time turn-order effect; nothing persists past the moment turn order is resolved"
+              "val": "verified via Showdown source (moves.ts afteryou): onHit checks queue.willMove(target) and fails outright if it returns falsy — identical check to Quash's, just missing from this entry before; one-time turn-order effect, nothing persists past the moment turn order is resolved"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

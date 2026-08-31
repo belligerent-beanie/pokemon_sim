@@ -2,42 +2,46 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
-              "val": "boosts Psychic moves and blocks priority moves targeting grounded Pokémon"
+              "val": "boosts Psychic moves (x1.3) used by a grounded attacker; blocks priority moves from targeting grounded Pokemon"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (moves.ts psychicterrain condition): onBasePower requires attacker.isGrounded() for the power boost (x5325/4096, i.e. x1.3) — separate condition from the priority-block, which instead checks the DEFENDER's groundedness (onTryHit, skips airborne/semi-invulnerable/ally targets)."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     },
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
             "val": "5, or 8 with Terrain Extender held"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "Psychic Terrain fades"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     }

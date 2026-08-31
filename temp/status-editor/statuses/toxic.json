@@ -20,7 +20,33 @@
             },
             {
               "key": "note",
-              "val": "starting multiplier — plain turn count, multiplied into damage below"
+              "val": "starting multiplier — plain turn count, multiplied into damage below; caps at 15 (see on_turn_end note) and resets on switch (see on_switch_in block below)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_switch_in",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "counter",
+              "val": "toxic_counter"
+            },
+            {
+              "key": "set",
+              "val": "1"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown's tox condition source (onSwitchIn resets effectState.stage to 0): the per-turn multiplier resets back to stage 1 every time the badly-poisoned holder switches out and back in, even though the poisoned status itself is NOT cured by switching — a commonly-assumed-wrong mechanic (people expect the counter to keep climbing forever through switches, but it doesn't)"
             }
           ]
         }
@@ -46,7 +72,7 @@
             },
             {
               "key": "note",
-              "val": "counter persists across switches while badly poisoned remains active; only resets to 1 if the status is cured and Toxic is inflicted again fresh"
+              "val": "counter increments once per turn end while badly poisoned, capped at 15 (verified against Showdown source, effectState.stage maxes at 15 and simply stops incrementing — damage stays at 15×7% every turn thereafter, it does not wrap or keep climbing); persists across turns while badly poisoned remains active, but resets to 1 on switch-in per the on_switch_in block above, and only resets to 1 the hard way if the status is cured and Toxic is inflicted again fresh"
             }
           ]
         }

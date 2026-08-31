@@ -2,42 +2,46 @@
   "effects": [
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
-              "val": "grounds all Pokémon (including Flying-types/Levitate holders) and boosts move accuracy"
+              "val": "grounds all Pokemon (including Flying-types/Levitate holders); boosts move accuracy by ~1.67x (x6840/4096); outright disables/blocks moves flagged gravity-incompatible (Fly, Bounce, Sky Drop, Splash, Magnet Rise, Telekinesis, Jump Kick, High Jump Kick, and others)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (moves.ts gravity condition): onModifyAccuracy is chainModify([6840,4096]) (~1.67x, not just \"boosts\" with no number); onBeforeMove/onModifyMove/onDisableMove block any move carrying the 'gravity' flag outright — this move-blocking behavior was missing entirely from the original tag, which only mentioned grounding and an unspecified accuracy boost."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     },
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
             "val": "5"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "Gravity ends"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     }

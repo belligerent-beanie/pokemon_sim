@@ -17,6 +17,10 @@
             {
               "key": "block_switch",
               "val": "true"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source: the trap and the per-turn stat drop both end early (before the countdown would matter — there isn't one) if the Pokémon that used Octolock leaves the field or faints, not just if the holder itself switches"
             }
           ]
         }
