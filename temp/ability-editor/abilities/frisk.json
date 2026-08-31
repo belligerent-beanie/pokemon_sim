@@ -2,23 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "reveals an opposing Pokémon's held item"
+              "val": "reveals ALL opposing Pokémon's held items (not just one -- relevant in a double battle with two foes active)"
             },
             {
               "key": "note",
               "val": "informational only"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED from singular framing -- verified against Showdown data/abilities.ts (frisk): loops over every active foe, not just one."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

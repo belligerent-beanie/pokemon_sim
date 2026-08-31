@@ -12,15 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "blocks major status conditions and stat-stage reductions for Grass-type allies"
+              "val": "blocks major status conditions, Yawn, and stat-stage reductions caused by another Pokémon for Grass-type allies"
             },
             {
               "key": "fail_if",
-              "val": "the affected ally is not Grass-type"
+              "val": "the affected ally is not Grass-type, OR the status/stat-drop was self-inflicted by that ally itself (e.g. a Grass-type ally's own Overheat/Leaf Storm recoil-drop is NOT blocked -- only externally-caused effects are)"
             },
             {
               "key": "note",
-              "val": "PokeAPI's short effect text only mentions stat drops, but real behavior also blocks status conditions for Grass-type allies"
+              "val": "PokeAPI's short effect text only mentions stat drops, but real behavior also blocks status conditions for Grass-type allies. ADDED after re-verifying against Showdown data/abilities.ts (flowerveil): (1) Yawn is blocked via a SEPARATE volatile-add hook, not the same path as major statuses -- worth keeping distinct if the engine ever needs to special-case it; (2) the self-inflicted exception, same shape as Defiant/Competitive's opponent-only trigger."
             }
           ]
         }

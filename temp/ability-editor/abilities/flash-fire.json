@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_type_effectiveness",
-        "params": []
+        "params": [],
+        "type": "on_type_effectiveness"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -21,8 +19,14 @@
             {
               "key": "fail_if",
               "val": "the incoming move is not Fire-type"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (flashfire): confirmed immune+persistent-boost shape, applies to both Atk and SpA. Also noted: flagged noCopy, so this state is NOT passed along by Baton Pass."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

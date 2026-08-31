@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "reveals the highest base-power move among the opposing Pokémon"
+              "val": "reveals one of the opposing Pokémon's highest-ranked moves (picked at random if multiple tie for highest)"
+            },
+            {
+              "key": "fail_if",
+              "val": "no eligible foe move exists (extremely rare -- effectively always finds one)"
             },
             {
               "key": "note",
-              "val": "informational only"
+              "val": "verified against Showdown data/abilities.ts (forewarn): CORRECTED from a plain 'highest base-power move' framing -- (1) Status moves are NEVER revealed, full stop (they rank as 0, below the minimum threshold of 1); (2) OHKO moves are ranked as if base power 150, and Counter/Metal Burst/Mirror Coat as if 120, regardless of their real (0/variable) listed power; (3) a variable-power move with no listed base power (that isn't a Status move) is ranked as 80; (4) ties are broken RANDOMLY among all qualifying moves, not by any fixed priority. Informational only, no battle effect."
             }
           ]
         }

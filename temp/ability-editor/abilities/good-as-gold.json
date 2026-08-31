@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_move_block_check",
-        "params": []
+        "params": [],
+        "type": "on_move_block_check"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -16,9 +14,15 @@
             },
             {
               "key": "fail_if",
-              "val": "the incoming move is not a status move"
+              "val": "the incoming move is not a status move, OR the holder is using the status move on itself (this only blocks status moves coming from ANOTHER Pokémon)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (goodasgold): added the self-targeted-status-move exclusion (target !== source in source)."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

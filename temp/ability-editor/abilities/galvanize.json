@@ -16,7 +16,11 @@
             },
             {
               "key": "fail_if",
-              "val": "the move is not Normal-type"
+              "val": "the move is not Normal-type, OR the move is one of judgment/multi-attack/natural-gift/revelation-dance/techno-blast/terrain-pulse/weather-ball (these already have dynamic typing and are excluded, unless it's being used as a Max Move), OR it's a damaging Z-move, OR it's Tera Blast while the holder is Terastallized"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (galvanize): same missing exclusion list as Dragonize had -- ADDED the dynamic-typing-move exclusions plus Z-move/Terastallized-Tera-Blast exceptions. Unlike Dragonize, Galvanize is NOT isNonstandard -- it's a normal, currently-released ability."
             }
           ]
         }

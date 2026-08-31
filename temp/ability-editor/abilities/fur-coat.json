@@ -12,11 +12,11 @@
           "params": [
             {
               "key": "tag",
-              "val": "damage taken from a physical move is halved"
+              "val": "the holder's Defense stat value itself is doubled (not merely a post-calc damage-taken reduction)"
             },
             {
-              "key": "fail_if",
-              "val": "the incoming move is not physical"
+              "key": "note",
+              "val": "CORRECTED framing: verified against Showdown data/abilities.ts (furcoat) -- this is onModifyDef, a stat-value modifier applied before damage calc, NOT a 'damage from physical moves is halved' effect (the two are usually equivalent in the standard formula, but genuinely differ for anything that reads the holder's raw Defense value directly, e.g. the holder itself using Body Press -- that move's own power depends on the user's Defense stat, so it needs the doubled value to compute correctly). Same class of correction as Supreme Overlord/Flare Boost."
             }
           ]
         }

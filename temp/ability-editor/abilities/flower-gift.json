@@ -16,7 +16,11 @@
             },
             {
               "key": "fail_if",
-              "val": "harsh sunlight is not currently active"
+              "val": "harsh sunlight is not currently active, OR the holder is not Cherrim (this ability only functions on that species, even if copied elsewhere)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (flowergift): ADDED the missing Cherrim species-lock (same shape as Disguise/Embody Aspect) and a second, entirely separate effect this entry didn't have at all -- while in active sun, the holder itself forme-changes Cherrim -> Cherrim-Sunshine (reverting when sun ends), re-checked both on switch-in and on any weather change, not just once."
             }
           ]
         }

@@ -13,6 +13,14 @@
             {
               "key": "effect",
               "val": "changes type and form to match the active weather — Normal in clear weather, Water in Rain, Fire in Sun, Ice in Hail/Snow"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is not Castform (this ability only functions on that species, even if copied elsewhere)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (forecast): ADDED the Castform species-lock (same shape as Disguise/Flower Gift/Embody Aspect). Also re-checked on switch-in as well as on live weather changes, not just the latter."
             }
           ]
         }

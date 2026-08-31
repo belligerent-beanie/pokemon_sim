@@ -17,6 +17,10 @@
             {
               "key": "fail_if",
               "val": "the incoming move does not make contact"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (fluffy): the contact ×0.5 and Fire-type ×2 modifiers are applied as separate multiplicative chainModify calls in source, meaning a CONTACT FIRE move nets out to ×1 (2 × 0.5) -- normal damage, not double or half. Make sure both effect blocks below compose multiplicatively rather than picking only one when a move matches both conditions."
             }
           ]
         }
