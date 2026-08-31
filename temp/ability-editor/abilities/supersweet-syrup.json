@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "opponent_side",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -16,9 +14,11 @@
             },
             {
               "key": "note",
-              "val": "only fires once per battle, not on every switch-in"
+              "val": "only fires once per battle, not on every switch-in; also skips (shows an immune message instead) any adjacent foe currently behind a Substitute — both verified via Showdown source (onStart: pokemon.syrupTriggered guard, and an explicit target.volatiles['substitute'] check per target)"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "opponent_side"
         }
       ]
     }

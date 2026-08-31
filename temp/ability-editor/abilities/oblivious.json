@@ -2,23 +2,53 @@
   "effects": [
     {
       "condition": {
-        "type": "on_status_inflict",
-        "params": []
+        "params": [],
+        "type": "on_status_inflict"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "blocks Infatuation from being inflicted"
+              "val": "blocks Infatuation and Taunt from being inflicted"
             },
             {
               "key": "fail_if",
-              "val": "the incoming status is not Infatuation"
+              "val": "the incoming status is not Infatuation or Taunt"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: Oblivious blocks Taunt outright as well, not just Infatuation (onTryHit fails Attract/Captivate/Taunt outright); also retroactively cures an already-active Attract or Taunt the instant the holder has this ability (e.g. via Skill Swap), via the same onUpdate pattern as Insomnia/Limber/Magma Armor/Own Tempo."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_stat_change"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the Attack decrease specifically from Intimidate"
+            },
+            {
+              "key": "fail_if",
+              "val": "the stat change is not an Attack decrease caused by Intimidate"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (onTryBoost checks effect.name === 'Intimidate' specifically) — narrower than a blanket Attack-drop block: other Attack-lowering effects (Charm, Growl, etc.) are unaffected, same shape as Guard Dog's identical Intimidate-only block."
+            }
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

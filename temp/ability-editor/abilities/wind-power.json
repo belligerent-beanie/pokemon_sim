@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -21,6 +19,34 @@
             {
               "key": "note",
               "val": "same payoff as Electromorphosis, different trigger"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_side_condition_start"
+      },
+      "events": [
+        {
+          "priority": 0,
+          "target": "self",
+          "params": [
+            {
+              "key": "effect",
+              "val": "the holder becomes charged; its next Electric-type move deals double power"
+            },
+            {
+              "key": "fail_if",
+              "val": "the side condition that started is not Tailwind, or it started on the opponent's side"
+            },
+            {
+              "key": "note",
+              "val": "Showdown source (onSideConditionStart) confirms Wind Power also charges when Tailwind begins on the holder's own side, not just from being hit by a wind move — a second, previously-undocumented trigger for the identical payoff. New custom condition type (on_side_condition_start) — nothing existing covers 'a side condition just began'; also needed by Wind Rider."
             }
           ]
         }
