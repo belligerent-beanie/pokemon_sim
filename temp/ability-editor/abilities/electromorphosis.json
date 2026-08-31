@@ -2,7 +2,7 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
+        "type": "on_hit_holder",
         "params": []
       },
       "events": [
@@ -15,8 +15,12 @@
               "val": "the holder's next Electric-type move deals double power"
             },
             {
+              "key": "fail_if",
+              "val": "the incoming hit did not deal damage"
+            },
+            {
               "key": "note",
-              "val": "consumed by using that next Electric move, not a turn countdown"
+              "val": "CORRECTED condition type on_hit -> on_hit_holder: this triggers when the HOLDER is hit by a damaging move (Showdown's onDamagingHit, a defensive/target-side hook), not when the holder's own move hits -- on_hit was the wrong direction. Applies to any damaging hit regardless of contact or the incoming move's type (verified against Showdown data/abilities.ts: electromorphosis). Consumed by using that next Electric move, not a turn countdown -- grants the same 'charge' volatile as the move Charge."
             }
           ]
         }

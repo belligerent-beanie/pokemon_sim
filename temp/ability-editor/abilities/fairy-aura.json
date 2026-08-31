@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_calc_damage",
-        "params": []
+        "params": [],
+        "type": "on_calc_damage"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
@@ -17,6 +15,26 @@
             {
               "key": "fail_if",
               "val": "the move is not Fairy-type"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (fairyaura): confirmed field-wide, ×1.33. ADDED missing interaction, same as Dark Aura — if Aura Break is also active anywhere on the field, the multiplier flips to ×0.75 instead of ×1.33 (the aura is reversed, not cancelled)."
+            }
+          ],
+          "priority": 0,
+          "target": "field"
+        },
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "if Aura Break is also present on the field, Fairy-type moves instead deal ×0.75 damage (the aura is reversed, not just cancelled)"
+            },
+            {
+              "key": "fail_if",
+              "val": "no Pokémon on the field has Aura Break"
             }
           ]
         }

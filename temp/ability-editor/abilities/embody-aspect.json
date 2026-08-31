@@ -15,8 +15,12 @@
               "val": "raises a stat depending on the holder's mask: Teal Mask → Speed, Wellspring Mask → Special Defense, Hearthflame Mask → Attack, Cornerstone Mask → Defense"
             },
             {
+              "key": "fail_if",
+              "val": "this has already triggered once this battle for this Pokémon (only fires the first time it becomes active while Terastallized into the matching form)"
+            },
+            {
               "key": "note",
-              "val": "custom condition type — Terastallizing is not covered by any existing trigger"
+              "val": "custom condition type — Terastallizing is not covered by any existing trigger. ADDED: (1) each mask variant is its own separate Showdown ability internally, individually gated to its own exact baseSpecies match (e.g. Embody Aspect (Teal) only checks pokemon.baseSpecies.name === 'Ogerpon-Teal-Tera') -- if copied onto a different Pokémon via an ability-copying effect it would never trigger, same species-lock shape as Disguise; (2) guarded by a one-time-per-battle flag (Showdown's effectState.embodied), it does not re-fire on every switch-in once already triggered."
             }
           ]
         }

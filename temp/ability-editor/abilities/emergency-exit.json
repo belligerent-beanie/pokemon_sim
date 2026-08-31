@@ -16,11 +16,11 @@
             },
             {
               "key": "fail_if",
-              "val": "this hit did not bring the holder's HP from above half to at or below half"
+              "val": "this hit did not bring the holder's HP from above half to at or below half, OR there is no valid Pokémon left to switch into, OR the holder is trapped (e.g. by Arena Trap, Shadow Tag, or a binding move)"
             },
             {
               "key": "note",
-              "val": "same threshold-crossing shape as Berserk/Anger Shell"
+              "val": "same threshold-crossing shape as Berserk/Anger Shell. Verified against Showdown data/abilities.ts (emergencyexit): added the explicit no-valid-replacement/trapped fail_if (previously only implied by 'if one is available' in the effect text, not gated). Also clears any other Pokémon's already-pending switch-out flag in favor of this one -- a niche interaction not represented as a separate event."
             }
           ]
         }

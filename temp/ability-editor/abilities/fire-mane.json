@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_calc_damage",
-        "params": []
+        "params": [],
+        "type": "on_calc_damage"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
@@ -17,8 +15,14 @@
             {
               "key": "fail_if",
               "val": "the move is not Fire-type"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (firemane): confirmed ×1.5, applies to both Atk and SpA (same shape as Dragon's Maw). Also flags isNonstandard:'Future' — not yet released in a mainline game as of this data pull."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

@@ -1166,3 +1166,29 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
   the exact same "+1 stage" oversimplification while verifying eelevate — identical
   source code shape (`onSourceAfterFaint(length, ...)`). Fixed even though it was already
   marked done; batch 1 apparently didn't check the `length` parameter on this one.
+
+## Verification pass: run 4, 2026-08-31 (electric-surge–flare-boost)
+
+- **electric-surge**: confirmed correct (sets terrain, no special persistence logic
+  unlike the weather-setters — terrain-setting abilities don't get the
+  indefinite-while-active treatment Drizzle/Drought/etc. get). No change.
+- **electromorphosis**: condition type was `on_hit` (offensive/holder's-move-lands
+  direction) but Showdown's `onDamagingHit` is a defensive hook — the holder being hit
+  triggers this, not the holder hitting something. Corrected to `on_hit_holder`
+  (matches Disguise's established precedent for this exact defensive-trigger shape).
+- **embody-aspect**: added two missing details — each mask variant is individually
+  species-locked to its exact Ogerpon Tera-form (same species-lock shape as Disguise —
+  copied via an ability-swap effect, it would do nothing), and it's gated by a
+  one-time-per-battle flag, not a re-check on every switch-in.
+- **emergency-exit**: added an explicit fail_if for "no valid replacement" / "holder is
+  trapped" — previously only implied by the effect text's "if one is available," not
+  actually gated as a condition.
+- **fairy-aura**: same Aura Break interaction gap as Dark Aura before it — added the
+  ×0.75-instead-of-×1.33 reversal when Aura Break is also active on the field.
+- **filter**: confirmed correct (×0.75 on super-effective hits, matches Solid
+  Rock/Prism Armor's shape). No change.
+- **fire-mane**: confirmed the ×1.5 Atk+SpA boost; noted `isNonstandard: "Future"` like
+  Dragonize/Eelevate (not yet released in a mainline game).
+- **flare-boost**: same framing bug as Supreme Overlord from an earlier pass — it's a
+  move base-power multiplier at damage-calc time (`onBasePower`), not a literal Special
+  Attack stat boost. Reframed accordingly.

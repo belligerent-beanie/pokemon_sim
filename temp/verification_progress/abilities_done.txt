@@ -61,7 +61,15 @@ early-bird
 earth-eater
 eelevate
 effect-spore
+electric-surge
+electromorphosis
+embody-aspect
+emergency-exit
+fairy-aura
+filter
+fire-mane
 flame-body
+flare-boost
 gulp-missile
 harvest
 healer

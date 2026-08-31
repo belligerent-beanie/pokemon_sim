@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "tag",
-              "val": "Special Attack is boosted ×1.5 while the holder is burned"
+              "val": "the power of the holder's special moves is boosted ×1.5 while the holder is burned"
             },
             {
               "key": "fail_if",
-              "val": "the holder is not burned"
+              "val": "the holder is not burned, OR the move being used is not a Special move"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED framing: verified against Showdown data/abilities.ts (flareboost) — this is a move base-power multiplier at damage-calc time (onBasePower), NOT a literal Special Attack stat boost (no this.boost() call, no stat stage change) — same framing correction as Supreme Overlord from an earlier pass. Matters for anything that reads the raw stat value directly rather than post-power-modifier damage."
             }
           ]
         }
