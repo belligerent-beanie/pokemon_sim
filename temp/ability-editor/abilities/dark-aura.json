@@ -17,6 +17,24 @@
             {
               "key": "fail_if",
               "val": "the move is not Dark-type"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (darkaura): confirmed field-wide, chainModify([5448,4096]) = ×1.33. ADDED missing interaction — if Aura Break is also active anywhere on the field, the multiplier flips to ×0.75 (chainModify([3072,4096])) instead of ×1.33; this reversal case was not previously represented."
+            }
+          ]
+        },
+        {
+          "target": "field",
+          "priority": 0,
+          "params": [
+            {
+              "key": "tag",
+              "val": "if Aura Break is also present on the field, Dark-type moves instead deal ×0.75 damage (the aura is reversed, not just cancelled)"
+            },
+            {
+              "key": "fail_if",
+              "val": "no Pokémon on the field has Aura Break"
             }
           ]
         }

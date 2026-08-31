@@ -1042,3 +1042,29 @@ not the naive symmetric guess one might expect).
 This closes out status-editor: all 93 statuses have now been individually
 cross-checked against Showdown source, not just PokeAPI text or general
 knowledge.
+
+## Verification pass: local manual sweep, 2026-08-31 (session-driven, not the scheduled task)
+
+Context: the scheduled-task automation for this sweep turned out to be non-functional
+(fired twice, reported success, produced zero commits — root cause was git push
+credentials/repo-authorization, not the verification logic itself). This pass was done
+directly in an interactive session instead, working straight against the local clone as
+source of truth (commits are local-only until pushed).
+
+- **Scope discovery**: 60 of the 373 cached abilities are `is_main_series: false`
+  (Pokémon Conquest spin-off abilities — e.g. `daze`, `black-hole`, `conqueror`,
+  `bonanza`). These have no Showdown implementation at all, so "verify against Showdown"
+  doesn't apply to them. Split them into `temp/verification_progress/abilities_out_of_scope.txt`
+  (51 remaining after removing ones that happened to already be in batch 1's done range)
+  rather than leaving them stuck in the todo queue.
+- **dark-aura**: confirmed the ×1.33 field-wide Dark-type damage boost (chainModify
+  [5448,4096]), but the existing entry was missing the Aura Break interaction — when
+  Aura Break is also active anywhere on the field, the multiplier flips to ×0.75
+  ([3072,4096]) instead of ×1.33 (the aura is reversed, not cancelled). Added.
+- **dazzling**: existing entry scoped the priority-move block to "the holder only." Real
+  scope is the holder AND its allies (`source.isAlly(dazzlingHolder)` check) — a
+  whole-side protection, same as Armor Tail/Queenly Majesty. Also added the
+  target==='foeSide' / all-target exception list (Perish Song, Flower Shield, Rototiller
+  are not blocked). Fixed.
+- **dauntless-shield**: confirmed correct as-is (once-per-battle +1 Def on switch-in via
+  the `shieldBoost` flag, matches source exactly). No change.

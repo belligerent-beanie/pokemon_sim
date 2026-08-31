@@ -12,15 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "blocks an opposing move from being used against the holder at all if its effective priority is greater than 0"
+              "val": "blocks an opposing priority move (effective priority greater than 0) from being used against the holder OR any of its allies"
             },
             {
               "key": "fail_if",
-              "val": "the opposing move's effective priority is not greater than 0"
+              "val": "the opposing move's effective priority is not greater than 0, OR the move targets the foe's whole side (e.g. Perish Song, Flower Shield, Rototiller), OR the move targets all Pokémon on the field"
             },
             {
               "key": "note",
-              "val": "identical effect to Armor Tail and Queenly Majesty"
+              "val": "verified against Showdown data/abilities.ts (dazzling): corrected scope from 'holder only' to 'holder and its allies' (source.isAlly(dazzlingHolder) check) — this is a whole-side protection ability, not self-only. Also added the target==='foeSide'/all-target exception list (perishsong, flowershield, rototiller are NOT blocked). Identical implementation to Armor Tail and Queenly Majesty."
             }
           ]
         }

@@ -52,6 +52,9 @@ cursed-body
 cute-charm
 damp
 dancer
+dark-aura
+dauntless-shield
+dazzling
 gulp-missile
 ice-face
 illuminate
