@@ -16,7 +16,11 @@
             },
             {
               "key": "fail_if",
-              "val": "the move is not flagged as sound-based"
+              "val": "the move is not flagged as sound-based, OR the holder is Dynamaxed"
+            },
+            {
+              "key": "note",
+              "val": "ADDED the missing Dynamax exception -- verified against Showdown data/abilities.ts (liquidvoice): explicitly hardcoded off while the holder is Dynamaxed."
             }
           ]
         }

@@ -17,6 +17,10 @@
             {
               "key": "fail_if",
               "val": "the opposing Pokémon is not Steel-type"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (magnetpull): only traps Steel-type foes ADJACENT to the holder (relevant in Doubles/Triples -- a non-adjacent Steel-type foe isn't trapped)."
             }
           ]
         }

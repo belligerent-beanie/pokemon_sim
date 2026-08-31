@@ -16,11 +16,15 @@
             },
             {
               "key": "fail_if",
-              "val": "the incoming move is not a status move, or is flagged as unreflectable"
+              "val": "the incoming move is not a status move, or is flagged as unreflectable, OR the move has already been bounced once (no infinite bounce loops), OR the holder is currently semi-invulnerable (Fly/Dig/Dive/etc.)"
             },
             {
               "key": "note",
               "val": "the same effect as the Magic Coat status, but always active rather than needing to be set up each turn"
+            },
+            {
+              "key": "note",
+              "val": "ADDED two missing exclusions -- verified against Showdown data/abilities.ts (magicbounce): hasBounced prevents a move from being reflected twice, and isSemiInvulnerable() skips bouncing while the holder is mid-Fly/Dig/etc. Also has a separate onAllyTryHitSide hook: in doubles/multis, a Magic Bounce holder can bounce a status move aimed at its ally's side back at the attacker even if the move wasn't targeting the holder directly."
             }
           ]
         }

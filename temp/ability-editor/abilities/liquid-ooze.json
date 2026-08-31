@@ -17,6 +17,10 @@
             {
               "key": "fail_if",
               "val": "the incoming move does not drain/leech HP"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (liquidooze): the exact effect IDs checked are 'drain' (Giga Drain, Draining Kiss, etc.), 'leechseed', and 'strengthsap' -- nothing else counts as draining for this ability's purposes."
             }
           ]
         }

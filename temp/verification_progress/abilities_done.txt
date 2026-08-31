@@ -165,3 +165,11 @@ libero
 light-metal
 lightning-rod
 lingering-aroma
+liquid-ooze
+liquid-voice
+long-reach
+magic-bounce
+magic-guard
+magnet-pull
+marvel-scale
+mega-launcher

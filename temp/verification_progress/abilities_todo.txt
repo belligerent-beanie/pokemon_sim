@@ -1,11 +1,3 @@
-liquid-ooze
-liquid-voice
-long-reach
-magic-bounce
-magic-guard
-magnet-pull
-marvel-scale
-mega-launcher
 mega-sol
 merciless
 mimicry

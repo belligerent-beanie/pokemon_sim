@@ -1354,3 +1354,24 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
 - **lingering-aroma**: ADDED the missing cantsuppress exception (Multitype, Zen
   Mode, RKS System-style abilities can't be overwritten by anything) and the
   already-has-it exception, mirroring Mummy's established shape.
+
+## Verification pass: run 10, 2026-08-31 (liquid-ooze–mega-launcher)
+
+- **liquid-ooze**: confirmed correct as-is. Added a note listing the exact
+  drain-effect IDs checked ('drain', 'leechseed', 'strengthsap').
+- **liquid-voice**: ADDED the missing Dynamax exception -- explicitly suppressed
+  while the holder is Dynamaxed (source comment: "hardcode").
+- **long-reach**: confirmed correct as-is (removes the contact flag from all of
+  the holder's moves). No change.
+- **magic-bounce**: ADDED two missing exclusions -- can't bounce a move that's
+  already been bounced once (no infinite loops), and doesn't trigger while the
+  holder is semi-invulnerable (Fly/Dig/etc.). Also noted the separate
+  onAllyTryHitSide hook: in doubles/multis it can bounce a status move aimed at
+  an ally's side, not just moves aimed at the holder directly.
+- **magic-guard**: confirmed correct as-is (blocks all non-move-direct damage
+  sources). No change.
+- **magnet-pull**: confirmed correct in substance. Added a note that trapping
+  only applies to Steel-type foes adjacent to the holder (Doubles/Triples-relevant).
+- **marvel-scale**: confirmed correct as-is (×1.5 Def with any major status).
+  No change.
+- **mega-launcher**: confirmed correct as-is (×1.5 on aura/pulse moves). No change.
