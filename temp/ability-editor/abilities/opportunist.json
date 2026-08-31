@@ -16,7 +16,7 @@
             },
             {
               "key": "note",
-              "val": "custom condition type — on_stat_change as it exists is documented \"(Self)\"; this needs the opposite: reacting to an OPPONENT raising its own stat"
+              "val": "custom condition type — on_stat_change as it exists is documented \"(Self)\"; this needs the opposite: reacting to an OPPONENT raising its own stat ADDED after re-verifying against Showdown data/abilities.ts (opportunist): the copy is NOT instant -- positive boosts a foe gains are accumulated (onFoeAfterBoost), then actually applied to the holder later, at a low-priority onAnySwitchIn/onAnyAfterMega point (effectively at the next such window, not the same instant the foe's stat rose). Boosts caused by Opportunist or Mirror Herb themselves are excluded from being re-copied, to avoid infinite chains between multiple Opportunist/Mirror Herb holders."
             }
           ]
         }

@@ -12,7 +12,11 @@
           "params": [
             {
               "key": "tag",
-              "val": "every move used by or against the holder always hits, ignoring accuracy and evasion entirely"
+              "val": "every move used by or against the holder always hits, ignoring accuracy and evasion entirely; also bypasses semi-invulnerability (a No Guard user's move can hit a target mid-Fly/Dig/Dive, and the holder itself can be hit while using such a move)"
+            },
+            {
+              "key": "note",
+              "val": "ADDED the semi-invulnerability bypass -- verified against Showdown data/abilities.ts (noguard): onAnyInvulnerability forces a 0 (hittable) result whenever the holder is either the source or the target of the move, in addition to onAnyAccuracy forcing guaranteed accuracy."
             }
           ]
         }

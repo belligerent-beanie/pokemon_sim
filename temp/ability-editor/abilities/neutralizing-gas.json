@@ -13,6 +13,14 @@
             {
               "key": "tag",
               "val": "suppresses the effect of every other Pokémon's ability on the field while the holder remains active with this ability"
+            },
+            {
+              "key": "fail_if",
+              "val": "the other Pokémon holds an Ability Shield (that Pokémon's ability is unaffected), OR that Pokémon is a Tatsugiri currently \"commanding\" from inside an active Dondozo (cannot be suppressed while commanding)"
+            },
+            {
+              "key": "note",
+              "val": "ADDED real exceptions previously missing entirely -- verified against Showdown data/abilities.ts (neutralizinggas): Ability Shield fully blocks the suppression for its holder; a commanding Tatsugiri is exempt. Also has special one-time interactions when it activates: an Illusion holder's disguise is forced to end immediately, and a Slow Start holder's volatile is removed outright (not merely suppressed) since Slow Start's timer state would otherwise desync."
             }
           ]
         }

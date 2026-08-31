@@ -16,7 +16,11 @@
             },
             {
               "key": "fail_if",
-              "val": "the move is already multi-hit, a one-hit-KO move, or otherwise flagged as ineligible (Explosion-family moves, etc.)"
+              "val": "the move is a Status move, is already multi-hit, is flagged noparentalbond, is a charge (two-turn) move, is a future move (Doom Desire/Future Sight), targets multiple Pokémon (spread moves in Doubles/Triples don't get a second hit), or is a Z-move/Max Move"
+            },
+            {
+              "key": "note",
+              "val": "REPLACED the vague \"Explosion-family, etc.\" framing with the precise exclusion list from Showdown data/abilities.ts (parentalbond): Status, already-multihit, noparentalbond-flagged, charge-flagged, future moves, spread hits, Z-moves, and Max Moves. Also added: when the move is Secret Power, only the FIRST hit can apply Secret Power's terrain-dependent secondary effect (other than flinch, which both hits can still cause) -- a hack specifically to avoid double-applying King's Rock/Razor Fang flinch chances awkwardly."
             }
           ]
         }

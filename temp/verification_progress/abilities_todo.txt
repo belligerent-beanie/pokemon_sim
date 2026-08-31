@@ -1,11 +1,3 @@
-neutralizing-gas
-no-guard
-opportunist
-orichalcum-pulse
-overcoat
-overgrow
-own-tempo
-parental-bond
 pastel-veil
 perish-body
 pickpocket

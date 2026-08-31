@@ -21,6 +21,36 @@
             {
               "key": "note",
               "val": "Confusion is a volatile status, not a major one, but Own Tempo blocks it the same way"
+            },
+            {
+              "key": "note",
+              "val": "ADDED after re-verifying against Showdown data/abilities.ts (owntempo): also actively CURES an existing confusion volatile on a continuous update check (onUpdate), not just prevents new confusion from being added -- relevant if the holder somehow already has confusion (e.g. gained Own Tempo mid-battle via Skill Swap/Trace/Worry Seed-style effects while already confused)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks Attack from being lowered specifically by Intimidate"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming stat-lowering effect is not Intimidate itself"
+            },
+            {
+              "key": "note",
+              "val": "MISSING ENTIRELY before this pass -- verified against Showdown data/abilities.ts (owntempo): a separate onTryBoost hook nulls Intimidate's Atk drop by name, identical shape to Inner Focus's own Intimidate-specific block."
             }
           ]
         }

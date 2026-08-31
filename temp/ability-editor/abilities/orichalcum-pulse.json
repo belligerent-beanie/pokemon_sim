@@ -35,6 +35,10 @@
             {
               "key": "fail_if",
               "val": "no harsh sunlight is currently active"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (orichalcumpulse): exact multiplier is 5461/4096 (≈1.333, same fraction as Hadron Engine's SpA boost) -- \"33%\" is a rounded description. The switch-in effect only calls setWeather('sunnyday') specifically (not Desolate Land), but the Atk boost itself checks for either."
             }
           ]
         }

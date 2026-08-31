@@ -1421,3 +1421,36 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
   No change.
 - **neuroforce**: confirmed correct as-is (exact ×1.25 -- 5120/4096 -- on
   super-effective moves). No change.
+
+## Verification pass: run 13, 2026-08-31 (neutralizing-gas–parental-bond)
+
+- **neutralizing-gas**: ADDED real exceptions previously missing entirely --
+  Ability Shield fully blocks the suppression for its holder, and a commanding
+  Tatsugiri (inside an active Dondozo) is exempt. Also noted special one-time
+  interactions on activation: forces an Illusion holder's disguise to end, and
+  removes a Slow Start holder's volatile outright.
+- **no-guard**: ADDED the semi-invulnerability bypass -- a No Guard user's move
+  can hit a target mid-Fly/Dig/Dive, and the holder itself can be hit while
+  using such a move, not just the guaranteed-accuracy piece already documented.
+- **opportunist**: confirmed correct in substance but ADDED the deferred-timing
+  nuance -- the copied boost isn't instant, it's accumulated and applied later
+  at a low-priority switch-in/Mega-evolution window; also excludes boosts
+  caused by Opportunist/Mirror Herb themselves to avoid infinite chains.
+- **orichalcum-pulse**: confirmed correct. Added a precision note: exact
+  multiplier is 5461/4096 (same fraction as Hadron Engine), and the switch-in
+  effect only sets Sun specifically (not Desolate Land), though the Atk boost
+  itself recognizes either.
+- **overcoat**: confirmed correct as-is (weather-chip immunity + powder-move
+  block). No change.
+- **overgrow**: confirmed correct as-is (×1.5 on Grass moves, both Atk and SpA
+  hooks, at ≤1/3 max HP). No change.
+- **own-tempo**: ADDED an entire missing second effect -- a separate hook blocks
+  Attack from being lowered specifically by Intimidate (same shape as Inner
+  Focus). Also added: it actively CURES an existing confusion volatile on
+  update, not just prevents new confusion from being added.
+- **parental-bond**: REPLACED a vague "Explosion-family, etc." exclusion list
+  with the precise one from source -- Status moves, already-multihit moves,
+  noparentalbond-flagged, charge (two-turn) moves, future moves, spread hits,
+  Z-moves, and Max Moves. Added the Secret Power nuance: only the first hit
+  can apply its terrain-dependent secondary (flinch chance still applies to
+  both hits).
