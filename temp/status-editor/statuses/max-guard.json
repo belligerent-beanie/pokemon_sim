@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_move_block_check",
-        "params": []
+        "params": [],
+        "type": "on_move_block_check"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -21,20 +19,24 @@
             {
               "key": "note",
               "val": "usable only while the user is Dynamaxed — a move-usage restriction, not modeled as part of this status"
+            },
+            {
+              "key": "note",
+              "val": "Max Guard's real bypass list (moves.ts, a hardcoded array) is broader than Protect's flag-based bypass — it also lets through many support/team moves Protect would normally block: Acupressure, After You, Ally Switch, Aromatherapy, Aromatic Mist, Coaching, Confide, Copycat, Curse, Decorate, Doom Desire, Future Sight, Heal Bell, Hold Hands, Howl, Jungle Healing, Life Dew, Mean Look, Perish Song, Play Nice, Power Trick, Role Play, Roar, Tearful Look — in addition to Feint/G-Max One Blow/G-Max Rapid Flow which Protect also lets through. Not itemized here since the existing 'blocks most incoming moves' + bypasses-Protect fail_if is still directionally correct and the full list is unusually long; flagged so the difference from plain Protect isn't lost."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "counter",
@@ -48,7 +50,9 @@
               "key": "note",
               "val": "shared across the whole protection-move family — reset to 0 on any turn where no protection move was used; success chance next use is (1/3)^protect_streak"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

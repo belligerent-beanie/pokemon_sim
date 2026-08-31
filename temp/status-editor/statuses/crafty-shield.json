@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_move_block_check",
-        "params": []
+        "params": [],
+        "type": "on_move_block_check"
       },
       "events": [
         {
-          "target": "self_side",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -17,20 +15,24 @@
             {
               "key": "fail_if",
               "val": "the incoming move is not a status move"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (moves.ts): Crafty Shield's own onTryHit also lets through any move whose target is 'self' or 'all' (e.g. Trick Room, Perish Song, Haze) even though those are status moves — it only blocks status moves that target a specific Pokémon/side. Not folded into the fail_if above since self-targeted moves already can't reach this side's Pokémon regardless; the 'all'-target exception is the one genuine extra carve-out."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self_side"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_apply",
-        "params": []
+        "params": [],
+        "type": "on_apply"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "counter",
@@ -44,7 +46,9 @@
               "key": "note",
               "val": "shared across the whole protection-move family — reset to 0 on any turn where no protection move was used; success chance next use is (1/3)^protect_streak"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }
