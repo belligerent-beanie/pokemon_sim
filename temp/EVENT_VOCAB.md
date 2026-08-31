@@ -1119,3 +1119,23 @@ documented in the "Verification pass against Showdown's actual source" section a
 
 Checkpoint totals after reconciliation: abilities 95 done / 218 todo (of 313 total,
 post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
+
+## Verification pass: run 2, 2026-08-31 (defeatist–download)
+
+- **defeatist**: confirmed correct as-is (halves both Atk and SpA at ≤50% HP). No change.
+- **defiant**: real bug, same shape as batch-1's Competitive fix — the existing note
+  claimed it triggers on self-inflicted stat drops (Overheat, Leaf Storm); Showdown's
+  `onAfterEachBoost` explicitly skips when there's no source or the source is an ally
+  of the target, so only an opponent-caused drop triggers the +2 Atk. Fixed.
+- **delta-stream** / **desolate-land**: both were missing the two mechanics shared by
+  the "strong weather" trio (with Primordial Sea) — (1) immune to being overridden by
+  anything except one of the other two strong weathers, (2) persists after the holder
+  switches out as long as another same-ability holder is still active, only truly
+  clearing when none remain. Added to both.
+- **disguise**: previously described generically; missing three real details —
+  hard-gated to Mimikyu/Mimikyu-Totem species specifically (does nothing if copied
+  onto another species via Trace/Skill Swap), deals real 1/8-max-HP damage on
+  breaking (not just cosmetic), and doesn't break if the hit lands on Substitute
+  instead of the holder. Fixed.
+- **download**: confirmed correct as-is (sums foes' Def vs SpD, boosts SpA on a tie
+  or when Def is the higher/equal stat, Atk otherwise). No change.

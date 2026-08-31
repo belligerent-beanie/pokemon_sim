@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "the first instance of battle damage this Pokémon would take is negated entirely (the disguise breaks and its appearance changes instead)"
+              "val": "the first instance of battle damage this Pokémon would take from a move is negated entirely (the disguise breaks and its appearance changes to Busted form), and it then takes damage equal to 1/8 of its max HP from the disguise breaking"
             },
             {
               "key": "fail_if",
-              "val": "the disguise has already been broken this battle"
+              "val": "the disguise has already been broken this battle, OR the holder is not Mimikyu / Mimikyu-Totem (this ability only functions on those two species, even if copied onto another Pokémon via Trace/Skill Swap/etc.), OR the hit was absorbed by the holder's own Substitute instead of hitting the holder directly"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (disguise): ADDED three things missing from the previous entry -- (1) it is hard species-gated to mimikyu/mimikyutotem, doing nothing if the ability ends up on any other species; (2) breaking the disguise deals real damage to the holder equal to 1/8 max HP, not just a cosmetic form change; (3) a hit that lands on Substitute instead of the holder doesn't break it. (Not represented as separate events: the onCriticalHit/onEffectiveness handlers, which only suppress the crit/type-effectiveness message before the damage-negation happens -- no separate mechanical effect beyond what's captured here.)"
             }
           ]
         }

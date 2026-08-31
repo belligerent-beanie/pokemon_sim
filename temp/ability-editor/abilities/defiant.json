@@ -16,11 +16,11 @@
             },
             {
               "key": "fail_if",
-              "val": "the stat change was not a decrease to one of the holder's own stats"
+              "val": "the stat change was not a decrease to one of the holder's own stats, OR the decrease was caused by the holder itself or one of its allies (self-inflicted drops like Overheat/Leaf Storm, and ally-caused drops, do NOT trigger it)"
             },
             {
               "key": "note",
-              "val": "triggers off any stat drop, including self-inflicted ones (Overheat, Leaf Storm) and Intimidate"
+              "val": "CORRECTED: previous note claimed this triggers on self-inflicted drops (Overheat, Leaf Storm) -- verified against Showdown data/abilities.ts (defiant): onAfterEachBoost checks `!source || target.isAlly(source)` and returns early (no trigger) in that case, so it only fires when an OPPONENT causes the drop. Same bug shape as Competitive had before its batch-1 fix -- these two abilities mirror each other exactly."
             }
           ]
         }

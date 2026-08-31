@@ -46,6 +46,12 @@ dancer
 dark-aura
 dauntless-shield
 dazzling
+defeatist
+defiant
+delta-stream
+desolate-land
+disguise
+download
 effect-spore
 flame-body
 gulp-missile

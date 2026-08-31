@@ -13,6 +13,10 @@
             {
               "key": "volatile",
               "val": "weather-strong-winds"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts: ADDED two missing mechanics shared by Delta Stream/Desolate Land/Primordial Sea (the 'strong weather' trio) -- (1) while active, no other weather-setting effect (move, item, or a non-strong-weather ability) can override it, only one of the other two strong weathers can; (2) if the holder switches out, the weather persists rather than clearing IF another Pokémon with the same ability is still active on the field -- it only actually clears when no holder of that ability remains active."
             }
           ]
         }
