@@ -16,7 +16,11 @@
             },
             {
               "key": "fail_if",
-              "val": "Rain is not currently active"
+              "val": "neither Rain nor Primordial Sea (the primal weather equivalent) is currently active as the holder's EFFECTIVE weather (suppressed to none for everyone if Cloud Nine/Air Lock is also on the field)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (hydration): checks effectiveWeather(), which folds in Primordial Sea and returns none if Cloud Nine/Air Lock is active anywhere on the field."
             }
           ]
         }

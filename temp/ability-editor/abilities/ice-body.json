@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "heal",
-              "val": "7% max HP"
+              "val": "1/16 (6.25%) max HP"
             },
             {
               "key": "fail_if",
               "val": "Hail/Snow is not currently active"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED from \"7%\" -- verified against Showdown data/abilities.ts (icebody): heal is baseMaxhp/16, i.e. exactly 6.25%, not 7%. Also triggers for Snow (Gen 9's snowscape condition id), not just Hail."
             }
           ]
         },

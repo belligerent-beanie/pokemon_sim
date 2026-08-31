@@ -13,6 +13,14 @@
             {
               "key": "effect",
               "val": "alternates form between Full Belly Mode and Hangry Mode"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is Terastallized (form-switching stops entirely once Terastallized)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (hungerswitch): flagged failroleplay/noreceiver/noentrain/notrace/failskillswap/notransform -- this ability cannot be copied onto, given to, or read from the holder by ANY ability-copying/move-copying effect (Role Play, Skill Swap, Trace, Receiver, Entrainment, Transform all fail against it)."
             }
           ]
         }

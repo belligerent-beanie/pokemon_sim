@@ -12,7 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "appears as the last conscious Pokémon in the party's roster instead of its own species"
+              "val": "appears as the last conscious Pokémon still positioned after the holder in the party's roster (i.e. not yet sent out), instead of its own species"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is Terastallized AND that would-be disguise target's species is Ogerpon or Terapagos (Illusion fails to disguise as anything in that case)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (illusion): scans the party from the last slot backward for the first non-fainted Pokémon positioned after the holder, stopping at the first candidate found (so it can, unusually, mimic another already-active Pokémon if that Pokémon is to the holder's right)."
             }
           ]
         }
@@ -34,7 +42,11 @@
             },
             {
               "key": "fail_if",
-              "val": "the illusion has already broken"
+              "val": "the illusion has already broken, OR the incoming hit dealt no damage (a status move or a missed/blocked hit does not break the illusion)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (illusion): gated on onDamagingHit specifically, not any hit -- Disable, Taunt, etc. landing on the holder do NOT break the disguise."
             }
           ]
         }

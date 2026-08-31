@@ -17,6 +17,10 @@
             {
               "key": "fail_if",
               "val": "the move is not physical"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (hustle): the Atk ×1.5 uses a direct `modify()` call rather than `chainModify()` (source comment: \"should be applied directly to the stat as opposed to chaining with the others\") -- this affects calculation order relative to other multiplicative Atk modifiers if the engine ever models modifier-chain ordering precisely. The accuracy multiplier's exact value is 3277/4096 (≈ 0.8, not a round number)."
             }
           ]
         }

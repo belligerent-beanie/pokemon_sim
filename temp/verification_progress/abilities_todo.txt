@@ -1,11 +1,3 @@
-huge-power
-hunger-switch
-hustle
-hydration
-hyper-cutter
-ice-body
-ice-scales
-illusion
 imposter
 infiltrator
 innards-out

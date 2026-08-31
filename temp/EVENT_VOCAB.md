@@ -1272,3 +1272,32 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
 - **hospitality**: confirmed correct. Added a note that the heal uses the ally's
   `baseMaxhp` (un-Dynamaxed max HP) -- so a Dynamaxed ally still only heals 25% of
   its normal max HP, not 25% of the doubled value; only adjacent allies.
+
+## Verification pass: run 7, 2026-08-31 (huge-power–illusion)
+
+- **huge-power**: confirmed correct as-is (flat ×2 Atk). No change.
+- **hunger-switch**: ADDED the missing Terastallized exception -- form-switching
+  stops entirely once the holder Terastallizes. Also noted the full uncopiable
+  flag set (failroleplay/noreceiver/noentrain/notrace/failskillswap/notransform):
+  no ability- or move-copying effect can touch this ability in either direction.
+- **hustle**: confirmed correct (×1.5 Atk, ×0.8-ish accuracy on physical moves).
+  Added a note that the Atk boost uses a direct stat `modify()` rather than
+  `chainModify()` per a source comment (calc-order-sensitive), and that the
+  accuracy multiplier's exact value is 3277/4096, not a round 0.8.
+- **hydration**: confirmed correct in substance. Reworded the fail_if to cover
+  Primordial Sea (not just Rain) and to use "effective" weather, since Cloud
+  Nine/Air Lock on the field suppresses weather (and thus Hydration) for everyone.
+- **hyper-cutter**: confirmed correct as-is (blocks only Atk drops from others;
+  self-inflicted Atk drops go through). No change.
+- **ice-body**: CORRECTED the per-turn heal from "7%" to the exact 1/16 (6.25%)
+  max HP -- same class of rounding error as Dry Skin's earlier "13%" fix. Also
+  triggers on Snow (Gen 9's condition id), not just Hail.
+- **ice-scales**: confirmed correct as-is (halves damage from special moves).
+  No change.
+- **illusion**: ADDED the Ogerpon/Terapagos-Terastallized exception (Illusion
+  disguises as nothing if the would-be target's species is either of those and
+  the holder is Terastallized), and the damaging-hit gate on breaking (a status
+  move or a missed/blocked hit does NOT break the disguise, only onDamagingHit
+  does). Also clarified the target-selection rule: scans backward from the last
+  party slot for the first non-fainted Pokémon positioned after the holder,
+  which can unusually mean disguising as another already-active ally to its right.
