@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_turn_end",
-        "params": []
+        "params": [],
+        "type": "on_turn_end"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
           "params": [
             {
               "key": "damage",
@@ -16,9 +14,15 @@
             },
             {
               "key": "fail_if",
-              "val": "the target is not asleep"
+              "val": "the target is not asleep and does not have the Comatose ability"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (abilities.ts onResidual): checks `target.status === 'slp' || target.hasAbility('comatose')` explicitly — Comatose holders never carry the literal Sleep status, so the check needs an explicit OR-clause rather than just \"is asleep\""
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

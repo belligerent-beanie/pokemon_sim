@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
+          "chance": "30",
           "params": [
             {
               "key": "effect",
@@ -17,9 +16,22 @@
             {
               "key": "note",
               "val": "same underlying mechanic as the Disable status, applied reactively rather than via a move"
+            },
+            {
+              "key": "fail_if",
+              "val": "the attacker already has an active Disable volatile"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming move is a Max move, a future move (Future Sight/Doom Desire), or Struggle"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (abilities.ts onDamagingHit): excludes Max moves, future moves (Future Sight/Doom Desire), and Struggle, and no-ops if the attacker already has an active Disable — none of these guards were previously captured"
             }
           ],
-          "chance": "30"
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

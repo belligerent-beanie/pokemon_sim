@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_stat_change",
-        "params": []
+        "params": [],
+        "type": "on_stat_change"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -16,13 +14,15 @@
             },
             {
               "key": "fail_if",
-              "val": "the stat change was not a decrease to one of the holder's own stats"
+              "val": "the stat change was not a decrease to the holder's own stats caused by an opposing Pokémon"
             },
             {
               "key": "note",
-              "val": "triggers off any stat drop, including self-inflicted ones (Overheat, Leaf Storm) and Intimidate"
+              "val": "verified against Showdown source (abilities.ts onAfterEachBoost): `if (!source || target.isAlly(source)) return;` — self-inflicted drops (Overheat, Leaf Storm) and ally-caused drops do NOT trigger Competitive, only stat drops caused by an opposing Pokémon (Intimidate, Icy Wind, etc.) do; corrected from the previous note which had this backwards"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

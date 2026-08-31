@@ -2,19 +2,23 @@
   "effects": [
     {
       "condition": {
-        "type": "passive",
-        "params": []
+        "params": [],
+        "type": "passive"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
-              "val": "prevents Self-Destruct, Explosion, and Aftermath-style faint-damage effects from working anywhere on the field while the holder remains active"
+              "val": "prevents Self-Destruct, Explosion, Mind Blown, and Misty Explosion from being used, and blocks Aftermath-style faint-damage effects, anywhere on the field while the holder remains active"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (abilities.ts onAnyTryMove): the blocked move list is `['explosion', 'mindblown', 'mistyexplosion', 'selfdestruct']` — Mind Blown and Misty Explosion were missing from the stored text"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     }

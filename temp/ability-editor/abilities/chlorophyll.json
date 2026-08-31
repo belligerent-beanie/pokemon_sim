@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "passive",
-        "params": []
+        "params": [],
+        "type": "passive"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
@@ -16,9 +14,15 @@
             },
             {
               "key": "fail_if",
-              "val": "harsh sunlight is not currently active"
+              "val": "neither harsh sunlight nor extremely harsh sunlight (Desolate Land) is currently active"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (abilities.ts onModifySpe): checks `['sunnyday', 'desolateland'].includes(...)` — also active under Desolate Land (Extremely Harsh Sunlight), not just ordinary Sun; same pattern as Swift Swim also covering Primordial Sea"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

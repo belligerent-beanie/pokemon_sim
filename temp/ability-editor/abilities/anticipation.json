@@ -2,23 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "reveals to the trainer whether any opposing Pokémon has a move that would be super-effective against the holder, or an OHKO/Explosion-family move"
+              "val": "reveals to the trainer whether any opposing Pokémon has a move that would be super-effective against the holder, or an OHKO move"
             },
             {
               "key": "note",
               "val": "purely informational — no in-battle mechanical effect to simulate"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (abilities.ts onStart): only checks move.ohko, there is no Explosion-family check — corrected from \"OHKO/Explosion-family move\" to just \"OHKO move\""
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

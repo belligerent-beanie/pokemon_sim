@@ -2,23 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "copies all of an ally's current stat stage changes upon entering battle"
+              "val": "copies all of an ally's current stat stage changes upon entering battle, along with the Focus Energy, Dragon Cheer, Laser Focus, and G-Max Chi Strike crit-boost volatiles if the ally has any active"
             },
             {
               "key": "note",
               "val": "doubles/multi-battle only — meaningless in a single battle"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown source (abilities.ts onStart): also copies `['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus']` volatiles, not just stat stages — previous data only captured the stat-stage copy"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }
