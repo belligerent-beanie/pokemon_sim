@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "passive",
-        "params": []
+        "params": [],
+        "type": "passive"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
@@ -18,23 +16,23 @@
               "key": "note",
               "val": "same shape as Levitate"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_deal_damage",
-        "params": []
+        "params": [],
+        "type": "on_deal_damage"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "raises the holder's highest stat by 1 stage"
+              "val": "raises the holder's highest stat by N stages, where N is the number of Pokémon knocked out by that single hit (normally 1, but 2 if a spread move KOs both foes at once in a double battle)"
             },
             {
               "key": "fail_if",
@@ -42,9 +40,11 @@
             },
             {
               "key": "note",
-              "val": "same shape as Beast Boost"
+              "val": "same shape as Beast Boost (onSourceAfterFaint(length,...) boosts by `length`, not a flat 1 -- verified against Showdown data/abilities.ts). Also isNonstandard:'Future' like Dragonize, num 313 (sequential with it) -- not yet released in a mainline game as of this data pull."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

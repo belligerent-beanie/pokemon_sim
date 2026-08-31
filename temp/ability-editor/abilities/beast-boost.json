@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "raises the holder's highest stat by 1 stage"
+              "val": "raises the holder's highest stat by N stages, where N is the number of Pokémon knocked out by that single hit (normally 1, but 2 if a spread move KOs both foes at once in a double battle)"
             },
             {
               "key": "fail_if",
               "val": "this hit did not knock out the target"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED post-batch-1: previous entry said a flat '+1 stage', which is wrong for multi-KO spread moves. Verified against Showdown data/abilities.ts (beastboost): onSourceAfterFaint(length,...) boosts by `length`, the actual number of Pokémon fainted by that hit -- found while verifying eelevate (identical source code shape)."
             }
           ]
         }

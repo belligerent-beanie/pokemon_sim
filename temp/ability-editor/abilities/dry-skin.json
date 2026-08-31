@@ -2,49 +2,51 @@
   "effects": [
     {
       "condition": {
-        "type": "on_turn_end",
-        "params": []
+        "params": [],
+        "type": "on_turn_end"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "damage",
-              "val": "13% max HP"
+              "val": "12.5% max HP (1/8 max HP)"
             },
             {
               "key": "fail_if",
               "val": "harsh sunlight is not currently active"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (dryskin): corrected 13% -> exact 1/8 (12.5%) for both the sun-damage and rain-heal ticks. Also, this only applies while the holder's OWN effective weather matches (target.effectiveWeather()) -- a holder shielded from weather by Utility Umbrella is unaffected even while rain/sun is active on the field."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         },
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "heal",
-              "val": "13% max HP"
+              "val": "12.5% max HP (1/8 max HP)"
             },
             {
               "key": "fail_if",
               "val": "Rain is not currently active"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_type_effectiveness",
-        "params": []
+        "params": [],
+        "type": "on_type_effectiveness"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -54,25 +56,27 @@
               "key": "fail_if",
               "val": "the incoming move is not Water-type"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_calc_damage",
-        "params": []
+        "params": [],
+        "type": "on_calc_damage"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
               "val": "damage taken from Fire-type moves is increased ×1.25"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

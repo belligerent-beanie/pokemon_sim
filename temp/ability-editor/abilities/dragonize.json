@@ -16,7 +16,11 @@
             },
             {
               "key": "fail_if",
-              "val": "the move is not Normal-type"
+              "val": "the move is not Normal-type, OR the move is one of judgment/multi-attack/natural-gift/revelation-dance/techno-blast/terrain-pulse/weather-ball (these already have dynamic typing and are excluded, unless it's being used as a Max Move), OR it's a damaging Z-move, OR it's Tera Blast while the holder is Terastallized"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (dragonize): ADDED the exclusion list for moves with their own dynamic typing, plus the Z-move and Terastallized-Tera-Blast exceptions -- previously only excluded non-Normal moves. Also: Showdown flags this ability isNonstandard:'Future' (not yet released in a mainline game as of this data pull) — treat with extra caution if in-game behavior ever needs cross-checking, there's no live game to compare against yet."
             }
           ]
         }

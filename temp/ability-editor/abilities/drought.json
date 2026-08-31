@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "field",
-          "priority": 0,
           "params": [
             {
               "key": "volatile",
@@ -16,9 +14,15 @@
             },
             {
               "key": "note",
-              "val": "overrides the normal duration_turns timer on this weather status (5 turns, or 8 with the matching Rock item) — lasts indefinitely while this Pokémon remains active on the field; still replaceable by a stronger weather effect (Primordial Sea/Desolate Land/Strong Winds) or another weather-setting ability/move"
+              "val": "overrides the normal duration_turns timer on this weather status (5 turns, or 8 with the matching Rock item) — lasts indefinitely while this Pokémon remains active on the field; still replaceable by a stronger weather effect (Primordial Sea/Desolate Land/Strong Winds) or another weather-setting ability/move Also missing: does NOT set weather at all if the holder is Groudon holding a Red Orb (that combination primal-reverts into Desolate Land instead, whose own ability handles the weather-set, avoiding a double-trigger) -- added as an extra fail_if."
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is Groudon holding a Red Orb (that combination primal-reverts into Desolate Land, which handles its own weather-set instead)"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "field"
         }
       ]
     }

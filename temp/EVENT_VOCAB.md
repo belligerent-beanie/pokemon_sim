@@ -1139,3 +1139,30 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
   instead of the holder. Fixed.
 - **download**: confirmed correct as-is (sums foes' Def vs SpD, boosts SpA on a tie
   or when Def is the higher/equal stat, Atk otherwise). No change.
+
+## Verification pass: run 3, 2026-08-31 (dragonize–eelevate, + a batch-1 correction)
+
+- **dragonize**: was only excluding non-Normal moves from the type-change; missing the
+  fixed exclusion list of moves with their own dynamic typing (Judgment, Multi-Attack,
+  Natural Gift, Revelation Dance, Techno Blast, Terrain Pulse, Weather Ball — unless
+  used as a Max Move), plus Z-move and Terastallized-Tera-Blast exceptions. Fixed. Also
+  noted: Showdown flags it `isNonstandard: "Future"` — not yet released in any mainline
+  game as of this data pull.
+- **dragons-maw**: confirmed correct (1.5× Atk/SpA on Dragon moves, exact value from
+  source, not a guess). No change.
+- **drizzle** / **drought**: both missing their primal-reversion exception — Kyogre+Blue
+  Orb (Drizzle) / Groudon+Red Orb (Drought) don't set weather themselves, since the
+  primal-reverted form's own ability (Primordial Sea / Desolate Land) handles it, avoiding
+  a double-trigger. Added to both.
+- **dry-skin**: corrected the weather-tick heal/damage from "13%" to the exact 1/8
+  (12.5%) max HP; added the Utility Umbrella exception (only applies to the holder's own
+  *effective* weather, so a Utility Umbrella holder is unaffected even in active rain/sun).
+- **early-bird**, **earth-eater**: both confirmed correct as-is. No change.
+- **eelevate**: the "raises highest stat by 1 stage" framing was wrong — Showdown's
+  `onSourceAfterFaint(length, ...)` boosts by `length`, the actual count of Pokémon KO'd
+  by that one hit (matters for spread moves double-KOing in doubles). Fixed. Also flagged
+  `isNonstandard: "Future"`, same as Dragonize (sequential ability numbers, 312/313).
+- **beast-boost** (batch-1 correction, not part of this run's todo queue): found to have
+  the exact same "+1 stage" oversimplification while verifying eelevate — identical
+  source code shape (`onSourceAfterFaint(length, ...)`). Fixed even though it was already
+  marked done; batch 1 apparently didn't check the `length` parameter on this one.
