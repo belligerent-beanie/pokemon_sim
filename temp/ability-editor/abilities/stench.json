@@ -2,24 +2,28 @@
   "effects": [
     {
       "condition": {
-        "type": "on_deal_damage",
-        "params": []
+        "params": [],
+        "type": "on_deal_damage"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
+          "chance": "10",
           "params": [
             {
               "key": "volatile",
               "val": "flinch"
             },
             {
+              "key": "fail_if",
+              "val": "the move already lists its own flinch chance as a secondary effect"
+            },
+            {
               "key": "note",
-              "val": "applies to any of the holder's damaging moves, stacking on top of a move's own listed flinch chance if it already has one"
+              "val": "verified via Showdown source (onModifyMove): Stench only ADDS its 10% flinch chance when the move doesn't already have one — it does NOT stack with a move's own flinch secondary (e.g. Iron Head, the Fang-line bites); corrected from the previous \"stacks with an existing flinch chance\" claim, which was backwards"
             }
           ],
-          "chance": "10"
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

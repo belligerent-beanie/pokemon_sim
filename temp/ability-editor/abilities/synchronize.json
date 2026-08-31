@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_status_inflict",
-        "params": []
+        "params": [],
+        "type": "on_status_inflict"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -20,9 +18,11 @@
             },
             {
               "key": "note",
-              "val": "does not reflect Sleep or Freeze, and does not trigger from a self-inflicted status (Rest, a status Orb, etc.)"
+              "val": "does not reflect Sleep or Freeze, does not trigger from a self-inflicted status (Rest, a status Orb, etc.), and does not trigger when the status came from Toxic Spikes specifically (effect.id === 'toxicspikes' explicitly excluded in source, distinct from an ordinary self-inflicted case)"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_status_inflict",
-        "params": []
+        "params": [],
+        "type": "on_status_inflict"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -21,8 +19,14 @@
             {
               "key": "note",
               "val": "identical effect to Insomnia"
+            },
+            {
+              "key": "note",
+              "val": "Showdown source (onTryAddVolatile) confirms Vital Spirit also blocks Yawn's drowsy volatile from being applied, not just direct Sleep infliction — identical to Insomnia's own onTryAddVolatile hook, same source function shape."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

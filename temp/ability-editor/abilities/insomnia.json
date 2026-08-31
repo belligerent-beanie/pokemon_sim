@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_status_inflict",
-        "params": []
+        "params": [],
+        "type": "on_status_inflict"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -18,7 +16,53 @@
               "key": "fail_if",
               "val": "the incoming status is not Sleep"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
+        },
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "also blocks Yawn (which would otherwise cause Sleep at the end of the next turn)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming status/volatile is not Yawn"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (onTryAddVolatile): a real, distinct exclusion not obvious from the base Sleep-blocking description — Insomnia blocks Yawn's delayed sleep the same way it blocks direct Sleep infliction. Missing from the prior stored data."
+            }
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_ability_change"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "immediately cures Sleep if the holder is already asleep at the moment it gains this ability"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is not already Asleep"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: onUpdate cures slp on the spot, on top of the onSetStatus block that only stops NEW infliction — relevant when this ability is gained mid-battle (Skill Swap, Trace, Mummy/Lingering Aroma, Entrainment) while already asleep. Same onUpdate shape found on Immunity and Limber in this batch."
+            }
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

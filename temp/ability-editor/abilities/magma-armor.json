@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_status_inflict",
-        "params": []
+        "params": [],
+        "type": "on_status_inflict"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -20,9 +18,11 @@
             },
             {
               "key": "note",
-              "val": "this is new-freeze immunity only — does not retroactively thaw a freeze the holder already had before gaining this ability, e.g. via Skill Swap"
+              "val": "corrected via Showdown source: onUpdate DOES retroactively cure an existing Freeze the moment the holder has this ability, not just block new Freeze — same as the rest of the family (Insomnia/Limber/Water Veil/Immunity/Own Tempo all share this identical onUpdate-cure pattern in source). Previous note here claimed the opposite (no retroactive thaw); that was wrong."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

@@ -2,19 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_move_used",
-        "params": []
+        "params": [],
+        "type": "on_move_used"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "all of the holder's moves become Normal-type"
+              "val": "all of the holder's moves become Normal-type and deal ×1.2 damage"
+            },
+            {
+              "key": "fail_if",
+              "val": "the move is already Normal-type with nothing to convert, or is one of a fixed exclusion list that keeps its own type (Hidden Power, Judgment, Multi-Attack, Natural Gift, Revelation Dance, Struggle, Techno Blast, Terrain Pulse, Weather Ball), or is Tera Blast while the holder is Terastallized"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: previous data was missing the power multiplier entirely. The type-change and the ×1.2 boost are gated together (chainModify([4915,4096]) = 1.2×, the same constant used by Aerilate/Pixilate/Refrigerate/Galvanize, not a unique Normalize-only value) and only apply to moves not on the noModifyType exclusion list."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

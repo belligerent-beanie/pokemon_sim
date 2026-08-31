@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_status_inflict",
-        "params": []
+        "params": [],
+        "type": "on_status_inflict"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -18,7 +16,35 @@
               "key": "fail_if",
               "val": "the incoming status is not Poison or Toxic"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_ability_change"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "immediately cures Poison/Toxic if the holder is already afflicted at the moment it gains this ability"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is not already Poisoned/Badly Poisoned"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: onUpdate cures psn/tox on the spot, on top of the onSetStatus block above that only stops NEW infliction — relevant when this ability is gained mid-battle (Skill Swap, Trace, Mummy/Lingering Aroma, Entrainment) while already poisoned. Same onUpdate shape found on Insomnia and Limber in this batch; may be worth checking the rest of this family (Water Veil, Magma Armor, Own Tempo) too, out of this batch's scope."
+            }
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

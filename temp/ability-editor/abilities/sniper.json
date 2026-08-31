@@ -2,23 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_calc_damage",
-        "params": []
+        "params": [],
+        "type": "on_calc_damage"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
-              "val": "a critical hit dealt by the holder deals ×3 damage instead of the usual ×1.5"
+              "val": "a critical hit dealt by the holder deals ×2.25 damage total instead of the usual ×1.5 (Sniper applies an additional ×1.5 on top of the base ×1.5 crit multiplier)"
             },
             {
               "key": "fail_if",
               "val": "the hit is not a critical hit"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (onModifyDamage: chainModify(1.5) stacks multiplicatively on top of the base ×1.5 modern-gen crit multiplier, not a flat replacement) — corrected from ×3 (the legacy pre-Gen-6 value, back when base crit damage was ×2) to the modern-mainline ×2.25 total"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

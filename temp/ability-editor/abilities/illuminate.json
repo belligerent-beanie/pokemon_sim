@@ -2,19 +2,45 @@
   "effects": [
     {
       "condition": {
-        "type": "passive",
-        "params": []
+        "params": [],
+        "type": "on_stat_change"
       },
       "events": [
         {
-          "target": "self",
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks accuracy from being lowered by another Pokémon"
+            },
+            {
+              "key": "fail_if",
+              "val": "the stat change is not a decrease to accuracy, or was self-inflicted"
+            }
+          ],
           "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "passive"
+      },
+      "events": [
+        {
           "params": [
             {
               "key": "tag",
-              "val": "no in-battle effect — doubles the wild encounter rate outside of battle"
+              "val": "the holder's own moves ignore the target's evasion stat boosts entirely"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: Illuminate was changed (Gen 9) from a purely cosmetic/informational ability to a real in-battle effect identical to Keen Eye/Big Pecks — onTryBoost blocks the holder's own accuracy from being lowered by others, and onModifyMove sets move.ignoreEvasion = true unconditionally. Corrected from a prior entry that (correctly, for older gens) described it as having no in-battle effect; modern-mainline data now needs both blocks."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

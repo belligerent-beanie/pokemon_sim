@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_turn_end"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -16,13 +14,15 @@
             },
             {
               "key": "fail_if",
-              "val": "this hit did not bring the holder's HP from above half to at or below half"
+              "val": "the holder's HP has not just crossed from above half to at or below half max HP"
             },
             {
               "key": "note",
-              "val": "identical mechanic to Emergency Exit"
+              "val": "Showdown source hooks a dedicated EmergencyExit event, checked after every action's residual damage during the turn (and again on switch-in) — not gated to being struck by a move. Restructured from on_hit to on_turn_end so it also covers non-move HP loss (Leech Seed, poison, weather chip, etc.), matching Zen Mode's continuous-check shape. Threshold confirmed inclusive (hp <= maxhp/2, crossing from originalHP > maxhp/2). Identical mechanic to Emergency Exit."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

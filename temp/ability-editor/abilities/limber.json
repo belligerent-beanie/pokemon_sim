@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_status_inflict",
-        "params": []
+        "params": [],
+        "type": "on_status_inflict"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -18,7 +16,35 @@
               "key": "fail_if",
               "val": "the incoming status is not Paralysis"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_ability_change"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "immediately cures Paralysis if the holder is already paralyzed at the moment it gains this ability"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is not already Paralyzed"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: onUpdate cures par on the spot, on top of the onSetStatus block that only stops NEW infliction — relevant when this ability is gained mid-battle (Skill Swap, Trace, Mummy/Lingering Aroma, Entrainment) while already paralyzed. Same onUpdate shape found on Immunity and Insomnia in this batch."
+            }
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

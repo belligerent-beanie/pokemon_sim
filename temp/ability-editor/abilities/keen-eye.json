@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_stat_change",
-        "params": []
+        "params": [],
+        "type": "on_stat_change"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -18,7 +16,31 @@
               "key": "fail_if",
               "val": "the stat change is not a decrease to accuracy, or was self-inflicted"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "passive"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "tag",
+              "val": "the holder's own moves ignore the target's evasion stat boosts entirely"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source: onModifyMove unconditionally sets move.ignoreEvasion = true, in addition to the accuracy-drop block above — this second facet was missing from the stored data (same effect Illuminate was found to share)"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

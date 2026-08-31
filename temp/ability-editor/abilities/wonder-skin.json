@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_calc_damage",
-        "params": []
+        "params": [],
+        "type": "on_calc_damage"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
@@ -16,9 +14,15 @@
             },
             {
               "key": "fail_if",
-              "val": "the incoming move is not a status move, or its normal accuracy is already 50% or lower"
+              "val": "the incoming move is not a status move, or the move's accuracy is not a plain number (e.g. an always-hit effect)"
+            },
+            {
+              "key": "note",
+              "val": "Showdown source (onModifyAccuracy) unconditionally overrides to 50 for any numeric-accuracy status move — no comparison against the move's original accuracy. Previous fail_if wording (\"already 50% or lower\") was an unverified guess not supported by source; the override can even raise accuracy for a rare sub-50% status move."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

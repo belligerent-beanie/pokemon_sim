@@ -2,23 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit",
-        "params": []
+        "params": [],
+        "type": "on_hit"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "raises Speed by 1 stage and lowers Defense by 1 stage"
+              "val": "raises Speed by 2 stages and lowers Defense by 1 stage"
             },
             {
               "key": "fail_if",
               "val": "the incoming move is not a physical move"
+            },
+            {
+              "key": "note",
+              "val": "Showdown source: this.boost({def:-1, spe:2}) — Speed is +2, not +1 as previously stored."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }
