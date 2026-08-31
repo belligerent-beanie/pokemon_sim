@@ -1454,3 +1454,30 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
   Z-moves, and Max Moves. Added the Secret Power nuance: only the first hit
   can apply its terrain-dependent secondary (flinch chance still applies to
   both hits).
+
+## Verification pass: run 14, 2026-08-31 (pastel-veil–poison-puppeteer)
+
+- **pastel-veil**: confirmed correct in substance. Added a note that it also
+  actively CURES an existing Poison/Toxic on continuous update, not just blocks
+  new poison, same shape as Own Tempo's confusion cure.
+- **perish-body**: ADDED a missing exception -- doesn't re-trigger (or reset the
+  countdown) if the attacker already has an active Perish Song volatile.
+- **pickpocket**: ADDED the switch-flag exceptions -- skipped if either the
+  holder or the attacker has a pending forced-switch flag from that same
+  turn's action (U-turn/Red Card/Roar-style effects).
+- **piercing-drill**: confirmed correct (contact moves bypass Protect). Added a
+  note that it's flagged isNonstandard: "Future" -- not yet released, same
+  status as Dragonize/Eelevate/Fire-mane/Mega Sol.
+- **pixilate**: CORRECTED TWO REAL BUGS -- (1) the damage multiplier was wrongly
+  listed as ×1.3, the actual value is 4915/4096 (≈1.2), same fraction as Iron
+  Fist; (2) it was missing the entire dynamic-typing-move exclusion list
+  (Judgment, Multi-Attack, Natural Gift, Revelation Dance, Techno Blast,
+  Terrain Pulse, Weather Ball, Z-moves, Terastallized Tera Blast) that
+  Galvanize/Dragonize already have documented.
+- **plus**: confirmed correct as-is (identical shape to Minus). No change.
+- **poison-heal**: CORRECTED the per-turn heal from "13%" to the exact 1/8
+  (12.5%) max HP -- same rounding-error class as Iron Barbs/Ice Body/Dry Skin.
+- **poison-puppeteer**: ADDED the missing Move-effect gating -- only triggers
+  off poison inflicted by the holder's own move, not indirect sources like
+  Toxic Spikes. Also noted the full uncopiable flag set (though notably NOT
+  flagged notransform, unlike Hunger Switch).

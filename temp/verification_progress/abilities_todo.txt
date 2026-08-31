@@ -1,11 +1,3 @@
-pastel-veil
-perish-body
-pickpocket
-piercing-drill
-pixilate
-plus
-poison-heal
-poison-puppeteer
 poison-touch
 power-of-alchemy
 power-spot

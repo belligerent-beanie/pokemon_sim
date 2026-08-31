@@ -12,7 +12,7 @@
           "params": [
             {
               "key": "heal",
-              "val": "13% max HP"
+              "val": "1/8 (12.5%) max HP"
             },
             {
               "key": "fail_if",
@@ -21,6 +21,10 @@
             {
               "key": "note",
               "val": "REPLACES Poison/Toxic's own tick-damage entirely rather than adding to it — cross-references those statuses rather than modifying them directly"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED from \"13%\" -- verified against Showdown data/abilities.ts (poisonheal): heal is target.baseMaxhp/8, exactly 12.5%, not 13%. Same rounding-error class as Iron Barbs/Ice Body/Dry Skin."
             }
           ]
         }

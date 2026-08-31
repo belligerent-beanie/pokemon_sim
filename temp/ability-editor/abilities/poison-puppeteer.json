@@ -17,6 +17,14 @@
             {
               "key": "note",
               "val": "Pecharunt-exclusive; the Confusion is an addition on top of whatever move actually inflicted the poison, not a replacement"
+            },
+            {
+              "key": "fail_if",
+              "val": "the poison was not inflicted by a move (indirect poison, e.g. from Toxic Spikes, does not trigger this), or it's poisoning itself"
+            },
+            {
+              "key": "note",
+              "val": "ADDED the Move-effect gating -- verified against Showdown data/abilities.ts (poisonpuppeteer): only triggers off a poison inflicted by the holder's own move (effect.effectType === 'Move'), not indirect sources. Also flagged failroleplay/noreceiver/noentrain/notrace/failskillswap -- fully uncopiable, matching Hunger Switch's precedent (though notably NOT flagged notransform, unlike Hunger Switch)."
             }
           ]
         }

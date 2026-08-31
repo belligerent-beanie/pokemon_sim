@@ -20,7 +20,11 @@
             },
             {
               "key": "fail_if",
-              "val": "the attacker isn't holding an item, or the holder already has one"
+              "val": "the attacker isn't holding an item, or the holder already has one, or either the holder or the attacker has a pending forced-switch flag this turn (e.g. from U-turn/Red Card/Roar-style effects resolving the same turn)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (pickpocket): resolves onAfterMoveSecondary (after the move's own secondary effects), and is skipped if either side has a switch/forceSwitch flag pending from that same turn's action."
             }
           ]
         }

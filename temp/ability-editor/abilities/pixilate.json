@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "a Normal-type move becomes Fairy-type and deals ×1.3 damage"
+              "val": "a Normal-type move becomes Fairy-type and deals ×1.2 damage"
             },
             {
               "key": "fail_if",
-              "val": "the move is not Normal-type"
+              "val": "the move is not Normal-type, OR the move is one of judgment/multi-attack/natural-gift/revelation-dance/techno-blast/terrain-pulse/weather-ball (these already have dynamic typing and are excluded, unless it's being used as a Max Move), OR it's a damaging Z-move, OR it's Tera Blast while the holder is Terastallized"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED two real bugs -- verified against Showdown data/abilities.ts (pixilate): (1) the damage multiplier is 4915/4096 (≈1.2), NOT ×1.3 as this entry previously said; (2) it was missing the entire dynamic-typing-move exclusion list that Galvanize/Dragonize/Refrigerate-family abilities already have documented (same source pattern)."
             }
           ]
         }

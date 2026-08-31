@@ -16,7 +16,7 @@
             },
             {
               "key": "fail_if",
-              "val": "the incoming move does not make contact"
+              "val": "the incoming move does not make contact, OR the attacker already has the Perish Song countdown running (doesn't re-trigger/reset it)"
             }
           ]
         },
@@ -30,7 +30,7 @@
             },
             {
               "key": "fail_if",
-              "val": "the incoming move does not make contact"
+              "val": "the incoming move does not make contact, OR the attacker already has the Perish Song countdown running (doesn't re-trigger/reset it)"
             }
           ]
         }

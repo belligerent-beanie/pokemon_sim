@@ -17,6 +17,10 @@
             {
               "key": "fail_if",
               "val": "the incoming status is not Poison or Toxic"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (pastelveil): also actively CURES an existing Poison/Toxic on a continuous update check (onUpdate), not just prevents new poison, same shape as Own Tempo's confusion cure."
             }
           ]
         }

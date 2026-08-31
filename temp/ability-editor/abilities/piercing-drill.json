@@ -21,6 +21,10 @@
             {
               "key": "note",
               "val": "identical effect to Unseen Fist"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (piercingdrill): flagged isNonstandard: \"Future\" -- not yet released in any mainline game, same status as Dragonize/Eelevate/Fire-mane/Mega Sol."
             }
           ]
         }
