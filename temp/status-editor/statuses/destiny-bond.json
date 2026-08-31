@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit_holder",
-        "params": []
+        "params": [],
+        "type": "on_hit_holder"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -20,9 +18,11 @@
             },
             {
               "key": "note",
-              "val": "cleared the instant the user takes its next action — not a turn count; using Destiny Bond again just re-applies it fresh"
+              "val": "cleared the instant the user takes its next action — not a turn count; using Destiny Bond again just re-applies it fresh. Also verified via Showdown source: only triggers when the faint is caused directly by an opposing move this same hit (effect.effectType === 'Move'), not by residual/indirect damage (poison, weather, hazards, etc.), and explicitly excludes future-sight/doom-desire-type moves (the 'futuremove' flag)."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_move_block_check",
-        "params": []
+        "params": [],
+        "type": "on_move_block_check"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
+          "chance": "50",
           "params": [
             {
               "key": "effect",
@@ -20,10 +19,11 @@
             },
             {
               "key": "note",
-              "val": "checked independently each time the Pokémon attempts to act, same as Paralysis"
+              "val": "checked independently each time the Pokémon attempts to act, same as Paralysis. Verified via Showdown source (moves.ts attract condition): can only be inflicted between a target and source of opposite gender (pokemon.gender checks in onStart/onTryImmunity) — genderless Pokémon can neither cause nor receive infatuation. This gates whether the status is applied at all, separate from the 50% move-block chance above."
             }
           ],
-          "chance": "50"
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

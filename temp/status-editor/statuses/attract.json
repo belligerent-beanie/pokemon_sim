@@ -2,13 +2,12 @@
   "effects": [
     {
       "condition": {
-        "type": "on_move_block_check",
-        "params": []
+        "params": [],
+        "type": "on_move_block_check"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
+          "chance": "50",
           "params": [
             {
               "key": "effect",
@@ -20,10 +19,11 @@
             },
             {
               "key": "note",
-              "val": "same mechanic as Infatuation — Attract is the move/status name, Infatuation is the effect name; kept as twin entries since the catalog lists both"
+              "val": "same mechanic as Infatuation — Attract is the move/status name, Infatuation is the effect name; kept as twin entries since the catalog lists both. Verified via Showdown source: only applies between a target and source of opposite gender — genderless Pokémon can neither cause nor receive it; this gates application, not the 50% chance above."
             }
           ],
-          "chance": "50"
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

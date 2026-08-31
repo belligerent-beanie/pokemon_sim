@@ -2,24 +2,28 @@
   "effects": [
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
-            "val": "2"
+            "val": "1"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
               "val": "the user's next move is guaranteed to land a critical hit; expires after that"
+            },
+            {
+              "key": "note",
+              "val": "corrected from \"2\" to \"1\": verified via Showdown source (moves.ts laserfocus condition) — the raw internal duration counter is 2, but Laser Focus's own use-turn never benefits (it isn't a damaging move) and the generic per-turn decrement clears the volatile at the end of the following turn, so the crit guarantee is functionally live for exactly 1 turn, the user's very next move. The old \"2\" contradicted this event's own \"next move ... expires after that\" wording and was inconsistent with Lock-On/Mind Reader, which have the identical raw-duration-2 counter and were already correctly stored as 1 turn."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

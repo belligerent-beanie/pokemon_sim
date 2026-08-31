@@ -2,18 +2,16 @@
   "effects": [
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
             "val": "1"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -25,9 +23,11 @@
             },
             {
               "key": "note",
-              "val": "mechanically identical to Lock-On"
+              "val": "mechanically identical to Lock-On. Also verified via Showdown source: the guarantee bypasses semi-invulnerable states too (Fly/Dig/etc.), not just accuracy/evasion."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

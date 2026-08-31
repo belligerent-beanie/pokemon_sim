@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_hit_holder",
-        "params": []
+        "params": [],
+        "type": "on_hit_holder"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -20,9 +18,11 @@
             },
             {
               "key": "note",
-              "val": "cleared the instant the user takes its next action, same as Destiny Bond"
+              "val": "cleared the instant the user takes its next action, same as Destiny Bond. Also verified via Showdown source: same direct-move-only / not-futuremove-flagged requirement as Destiny Bond (effect.effectType === 'Move', excludes the 'futuremove' flag) — indirect/residual damage never triggers it."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

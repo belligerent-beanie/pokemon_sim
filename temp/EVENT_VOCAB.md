@@ -148,6 +148,8 @@ in move-editor's existing conventions (`stat`/`stages`/`chance`,
 | `steal_stat_boosts` | copies the target's positive stat stages onto the user, then clears them from the target | Spectral Thief |
 | `reduce_pp` | cuts the target's last-used move's PP by a fixed amount | Eerie Spell |
 | `damage_basis` (+ `amount`) | damage computed from something other than power — e.g. `target_current_hp` | Super Fang (mirrors the existing `heal_basis`/`amount` pair) |
+| `damage_basis: user_level` | fixed damage equal to the user's level, `amount: "1"` (100% of level) | Seismic Toss, Night Shade |
+| `damage_basis: fixed` (+ `amount` as a flat HP number, not a fraction) | always deals exactly this many HP, unaffected by stats/type effectiveness/STAB/crits | Dragon Rage (`amount: "40"`), Sonic Boom (`amount: "20"`) |
 | `heal_basis: target_attack_stat` | heals by a raw stat value read off the target, not a % of HP | Strength Sap |
 | `on_contact` (new use) | fires on contact made DURING a charging move's wind-up, before the attack itself resolves | Beak Blast |
 | `on_miss` (new condition type) | fires when the move fails to hit its target | Supercell Slam's self-damage |
@@ -937,3 +939,106 @@ normal `duration_turns` timer).
   gating the immune types). This is the standard shape for "X is active for
   N turns and does something passive the whole time, with no per-turn
   event of its own to model."
+
+## Verification pass: full status-editor sweep (all 93 statuses)
+
+Every status not already covered by the Confusion/Paralysis/Freeze/Bound
+verification was cross-checked against Showdown's actual `conditions.ts`
+and the setter move's own `condition:` block in `moves.ts` (most
+volatile/side/field statuses are defined inline on their setter move
+rather than in `conditions.ts`, which only holds the handful of
+globally-shared conditions — major statuses, confusion, weather). Real
+findings, grouped by theme:
+
+**Systemic gap — Heavy Duty Boots**: every entry-hazard status (Spikes,
+Stealth Rock, Toxic Spikes, Sticky Web, G-Max Steelsurge) was missing the
+Heavy Duty Boots exception entirely — none of them had it, and nothing
+else in the repo mentioned it. Added a `fail_if` to all five. Worth
+grepping for again if any new hazard-like status is ever added.
+
+**Systemic gap — the protect family's `blockStatus` flag**: Showdown's
+shared bypass check (`checkMoveBypassesProtect(move, source, target,
+blockStatus)`) takes a boolean for whether status moves are blocked too.
+King's Shield, Burning Bulwark, Silk Trap, and Obstruct all pass `false`
+(i.e. **don't** block status moves, only damaging ones) but were stored as
+"blocks most incoming moves" with no such carve-out — all four corrected.
+Mat Block already had this nuance right; Protect/Detect/Spiky Shield/
+Baneful Bunker/Endure genuinely do block everything (or have no
+move-block at all, for Endure) so needed no change. King's Shield's
+Attack-drop payoff was also wrong at -2 stages — verified directly against
+source (`boost({atk: -1}, ...)`) as -1; -2 was the pre-Gen-8 value.
+
+**Rounding-rule violations caught**: Stealth Rock's and G-Max Steelsurge's
+0.25x-effectiveness row was stored as 3% (1/32 max HP = 3.125%, rounded
+*down*) instead of the project's own round-**up** rule (→4%). G-Max
+Steelsurge was also missing its 4x-effectiveness row (Ice/Fairy targets)
+entirely, incorrectly claiming no 4x case exists.
+
+**Off-by-one delayed-payoff timing, same shape as the Sleep/Confusion
+worked example**: Wish's `delayed_turn` was stored as 2 turns; tracing
+Showdown's actual `onStart`/`onResidual` control flow shows the heal lands
+at the end of the very next turn — a 1-turn delay, the same shape already
+correctly captured for Yawn. Corrected. Laser Focus had the same class of
+error (stored as 2, corrected to 1, consistent with Lock-On/Mind Reader's
+already-correct 1).
+
+**A hedge that violated the modern-mainline-only rule**: Hail/Snow was
+previously written as a hedge between legacy Hail (per-turn chip damage)
+and modern Gen 9 Snow (no chip damage, +50% Ice-type Defense instead) with
+a note asking whoever read it to pick one. Verified Showdown's actual
+`snowscape` condition has no damage hook at all — rewrote to modern Snow
+only, removing the per-turn damage block entirely.
+
+**Missing blocks, not just missing numbers**: Grassy Terrain was missing
+its `on_apply` tag block and `duration_turns` block *entirely* — only the
+per-turn heal was ever built. Added the Grass-move power boost, the
+Earthquake/Bulldoze/Magnitude halving vs. grounded targets, and the
+missing duration block. Misty Terrain was missing its Confusion-block
+clause and its Dragon-move damage halving vs. grounded targets. Gravity
+was missing its accuracy-multiplier number and its move-block behavior
+(Fly/Bounce/Sky Drop/Splash/Magnet Rise/Telekinesis/Jump Kick/High Jump
+Kick all disabled outright) — previously just said "boosts accuracy" with
+nothing else.
+
+**Real mechanic quietly wrong, not just under-documented — Toxic's own
+counter**: the stored note claimed the badly-poisoned damage counter
+"persists across switches," but Showdown's `tox` condition has an explicit
+`onSwitchIn() { this.effectState.stage = 0; }` — the counter resets to
+stage 1 every time the holder switches out and back in, even though the
+poisoned status itself isn't cured by switching. This is the opposite of
+what was documented and is a commonly-misunderstood mechanic (people
+assume it climbs forever through switches). Corrected, and documented the
+15-stage cap that was also missing.
+
+**Real exclusions found by reading past the top-line effect**: Sleep now
+excludes Sleep Talk/Snore (both flagged `sleepUsable` in source — the
+sleeping Pokémon can still use these two moves). Substitute was missing
+the "Shedinja clause" (fails outright at 1 max HP, a separate hard check
+from the generic 25%-HP-threshold logic) and had an incomplete `bypasssub`
+example. Stockpile was missing that ending it reverses the Def/SpD boosts
+it granted. Octolock's trap/effect ends early if the Octolock user itself
+leaves the field. Attract/Infatuation were missing the opposite-gender
+precondition entirely (genderless Pokémon can neither cause nor receive
+it). Destiny Bond/Grudge only pay off when the faint is caused directly by
+an opposing move on that exact hit — not residual/indirect damage, and not
+future-sight-type moves. Lock-On/Mind Reader's guarantee also bypasses
+semi-invulnerable states (Fly/Dig), not just normal evasion. Redirect
+(Follow Me / Rage Powder) turned out not to be as symmetric as the two
+shared catalog entries implied: Rage Powder is blocked by powder-immunity
+(Grass-types, Overcoat, Safety Goggles) and Follow Me isn't.
+
+**Confirmed correct, no change** (the majority of the sweep): weather-rain,
+weather-sand, weather-strong-winds, trick-room, tailwind, protect, detect,
+spiky-shield, baneful-bunker, endure, crafty-shield (plus a precision
+note), wide-guard, quick-guard, mat-block, rainbow, sea-of-fire, swamp,
+all four G-Max side-damage moves, taunt, encore, disable (confirmed at a
+flat 4 turns, modern-gen — the "random range" people associate with it is
+a legacy-gens-only mechanic), torment, perish-song, glaive-rush, yawn,
+magnet-rise, telekinesis, magic-coat, snatch, helping-hand, powder,
+quash, foresight, miracle-eye, odor-sleuth, focus-energy, dragon-cheer
+(its Dragon-type-ally +2 vs. +1 asymmetry was already correctly captured,
+not the naive symmetric guess one might expect).
+
+This closes out status-editor: all 93 statuses have now been individually
+cross-checked against Showdown source, not just PokeAPI text or general
+knowledge.

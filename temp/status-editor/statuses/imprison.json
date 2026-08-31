@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "on_move_block_check",
-        "params": []
+        "params": [],
+        "type": "on_move_block_check"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -17,8 +15,14 @@
             {
               "key": "fail_if",
               "val": "the move being selected is not shared with the Imprison user's own moveset"
+            },
+            {
+              "key": "note",
+              "val": "lasts until the Imprison user (not the blocked opponent) switches out — verified via Showdown source: the condition has no duration field, it's a self-targeted volatile that just clears on the holder's own switch, same 'persists until switch-out, no duration_turns block needed' shape as Torment."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }

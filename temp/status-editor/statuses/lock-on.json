@@ -2,18 +2,16 @@
   "effects": [
     {
       "condition": {
-        "type": "duration_turns",
         "params": [
           {
             "key": "turns",
             "val": "1"
           }
-        ]
+        ],
+        "type": "duration_turns"
       },
       "events": [
         {
-          "target": "opponent",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -25,9 +23,11 @@
             },
             {
               "key": "note",
-              "val": "ends the instant that next move is used, whether or not the counter would otherwise still have a turn left"
+              "val": "ends the instant that next move is used, whether or not the counter would otherwise still have a turn left. Also verified via Showdown source: the guarantee bypasses semi-invulnerable states too (Fly/Dig/etc., via onSourceInvulnerability), not just accuracy/evasion — the locked-on move can't be dodged by a semi-invulnerable turn either."
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "opponent"
         }
       ]
     }
