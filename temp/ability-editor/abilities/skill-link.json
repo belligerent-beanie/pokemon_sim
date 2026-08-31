@@ -13,6 +13,10 @@
             {
               "key": "tag",
               "val": "a move that hits 2-5 times (or a Triple Kick/Triple Axel-style move) always hits its maximum number of times"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (skilllink): for combo moves like Triple Kick/Triple Axel that also have per-hit independent accuracy checks (multiaccuracy), Skill Link removes that flag entirely -- so every hit of those moves also always connects, not just the hit COUNT being maxed."
             }
           ]
         }

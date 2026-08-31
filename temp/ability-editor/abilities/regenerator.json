@@ -12,7 +12,11 @@
           "params": [
             {
               "key": "heal",
-              "val": "34% max HP"
+              "val": "1/3 (≈33.33%) max HP"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED from \"34%\" -- verified against Showdown data/abilities.ts (regenerator): heal is baseMaxhp/3, i.e. exactly one third, not 34%."
             }
           ]
         }

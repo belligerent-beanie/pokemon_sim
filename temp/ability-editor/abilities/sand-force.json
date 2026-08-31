@@ -17,6 +17,10 @@
             {
               "key": "fail_if",
               "val": "no Sandstorm is currently active, or the move is not Rock/Ground/Steel-type"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (sandforce): exact multiplier is 5325/4096 (≈1.2999), same fraction as Power Spot/Punk Rock."
             }
           ]
         }

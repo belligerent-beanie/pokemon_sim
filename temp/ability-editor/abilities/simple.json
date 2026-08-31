@@ -13,6 +13,14 @@
             {
               "key": "effect",
               "val": "doubles the magnitude of any stat stage change applied to the holder (still capped at ±6 stages)"
+            },
+            {
+              "key": "fail_if",
+              "val": "the stat change came from a Z-move's inherent self-boost effect (zpower) -- those are NOT doubled"
+            },
+            {
+              "key": "note",
+              "val": "ADDED a missing exception -- verified against Showdown data/abilities.ts (simple): onChangeBoost explicitly skips doubling when effect.id === 'zpower'."
             }
           ]
         }

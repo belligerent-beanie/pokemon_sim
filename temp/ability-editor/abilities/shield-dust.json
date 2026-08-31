@@ -12,7 +12,11 @@
           "params": [
             {
               "key": "effect",
-              "val": "blocks the incoming move's secondary/additional effect (status chance, stat-drop chance, flinch chance, etc.) — the move's direct damage and primary effect still apply normally"
+              "val": "blocks the incoming move's secondary/additional effect that targets the HOLDER (status chance, stat-drop chance, flinch chance, etc.) -- the move's direct damage, primary effect, and any secondary effect that targets the ATTACKER ITSELF still apply normally"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED a real gap -- verified against Showdown data/abilities.ts (shielddust): onModifySecondaries filters out all secondaries EXCEPT ones with effect.self set (secondaries that hit the move's own user) -- those still go through untouched. This entry previously implied ALL secondaries are blocked."
             }
           ]
         }

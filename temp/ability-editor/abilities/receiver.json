@@ -13,6 +13,14 @@
             {
               "key": "effect",
               "val": "copies the fainted ally's ability"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder itself has already fainted (e.g. simultaneous multi-faint), or the fainted ally's ability is flagged noreceiver or is literally \"no ability\""
+            },
+            {
+              "key": "note",
+              "val": "ADDED two missing exceptions, identical shape to Power of Alchemy -- verified against Showdown data/abilities.ts (receiver)."
             }
           ]
         }

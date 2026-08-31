@@ -17,6 +17,10 @@
             {
               "key": "fail_if",
               "val": "the move does not deal recoil/crash damage"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (reckless): exact multiplier is 4915/4096 (≈1.2001), same fraction as Iron Fist."
             }
           ]
         }

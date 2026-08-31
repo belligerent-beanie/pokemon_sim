@@ -13,6 +13,10 @@
             {
               "key": "effect",
               "val": "removes Reflect, Light Screen, and Aurora Veil from both sides of the field"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (screencleaner): loops over the holder's own side plus every foe side with the relevant condition -- in a standard 2-side battle this is just \"both sides,\" but in a multi-battle format it clears screens from more than one opposing side."
             }
           ]
         }

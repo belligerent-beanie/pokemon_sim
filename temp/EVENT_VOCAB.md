@@ -1534,3 +1534,68 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
   proper second effect -- a separate hook adds +1 Speed ON TOP OF Intimidate's
   Atk drop (additive, not a replacement, unlike Guard Dog/Inner Focus which
   block the drop outright).
+
+## Verification pass: run 17, 2026-08-31 (receiver–sand-force)
+
+- **receiver**: ADDED the same two missing exceptions as Power of Alchemy
+  (holder-already-fainted, fainted ally's ability flagged noreceiver/none).
+- **reckless**: confirmed correct (×1.2-ish recoil/crash boost). Added a
+  precision note: exact multiplier is 4915/4096, same fraction as Iron Fist.
+- **regenerator**: CORRECTED the switch-out heal from "34%" to the exact 1/3
+  (≈33.33%) max HP.
+- **rivalry**: confirmed correct as-is (×1.25 same-gender / ×0.75
+  opposite-gender, fails if either is genderless). No change.
+- **rocky-payload**: confirmed correct as-is (×1.5 Rock moves, both Atk/SpA
+  hooks). No change.
+- **rough-skin**: CORRECTED the contact counter-damage from "13%" to the exact
+  1/8 (12.5%) max HP -- same rounding-error class as Iron Barbs.
+- **run-away**: confirmed correct as-is (no in-battle effect, guarantees
+  fleeing wild encounters only). No change.
+- **sand-force**: confirmed correct (×1.3-ish Rock/Ground/Steel boost in
+  Sandstorm + Sandstorm-chip immunity). Added a precision note: exact
+  multiplier is 5325/4096, same fraction as Power Spot/Punk Rock.
+
+## Verification pass: run 18, 2026-08-31 (sand-rush–serene-grace)
+
+- **sand-rush**: confirmed correct as-is (×2 Speed in Sandstorm + chip immunity).
+  No change.
+- **sand-spit**: confirmed correct as-is (reactive, ordinary-duration Sandstorm
+  on being hit). No change.
+- **sand-stream**: confirmed correct as-is (indefinite Sandstorm while active).
+  No change.
+- **sand-veil**: confirmed correct in substance. Added an implementation note:
+  it's onModifyAccuracy multiplying the ATTACKER's accuracy by 3277/4096
+  (≈0.8), not a direct evasion-stat boost on the holder -- same class of
+  distinction as Fur Coat/Heatproof.
+- **sap-sipper**: confirmed correct as-is (Grass immunity + Atk+1). No change.
+- **screen-cleaner**: confirmed correct. Added a note that it clears screens
+  from the holder's own side plus every foe side, relevant beyond standard
+  2-side battles.
+- **seed-sower**: confirmed correct as-is (reactive Grassy Terrain on being
+  hit). No change.
+- **serene-grace**: confirmed correct. Added a note that it also doubles
+  self-inflicted secondary-effect chances (move.self.chance), not just
+  target-facing secondaries.
+
+## Verification pass: run 19, 2026-08-31 (shadow-shield–skill-link)
+
+- **shadow-shield**: confirmed correct as-is (identical to Multiscale). No change.
+- **shadow-tag**: CORRECTED a misleading note -- this entry previously claimed
+  there's no exception at all (unlike Arena Trap), but there IS one: a
+  Pokémon that itself has Shadow Tag is exempt from being trapped by another
+  Shadow Tag holder. Every other opposing Pokémon is still trapped regardless
+  of typing/grounding.
+- **sharpness**: confirmed correct as-is (×1.5 slicing-flagged moves). No change.
+- **sheer-force**: confirmed correct in substance. Added a precision note
+  (exact multiplier 5325/4096) and the Clangorous Soulblaze selfBoost
+  special-case.
+- **shell-armor**: confirmed correct as-is (identical to Battle Armor). No change.
+- **shield-dust**: CORRECTED A REAL GAP -- this entry implied it blocks ALL
+  secondary effects, but it specifically does NOT block secondaries that
+  target the move's own user (effect.self) -- only ones that would hit the
+  Shield Dust holder are blocked.
+- **simple**: ADDED a missing exception -- Z-move self-boost effects (zpower)
+  are NOT doubled by Simple, unlike ordinary stat changes.
+- **skill-link**: confirmed correct in substance. Added a note that it also
+  strips the independent per-hit accuracy check (multiaccuracy) from combo
+  moves like Triple Kick/Triple Axel, not just maxing the hit count.

@@ -17,6 +17,10 @@
             {
               "key": "fail_if",
               "val": "a Sandstorm is not currently active"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (sandveil): implemented as onModifyAccuracy multiplying the ATTACKER's accuracy by 3277/4096 (≈0.8) during Sandstorm, not a direct evasion-stat boost on the holder -- mathematically equivalent under the standard formula (reciprocal of ×1.25) but differs for anything that reads the holder's raw evasion stage directly."
             }
           ]
         }

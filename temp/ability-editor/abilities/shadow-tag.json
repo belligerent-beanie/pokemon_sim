@@ -16,7 +16,11 @@
             },
             {
               "key": "note",
-              "val": "unlike Arena Trap, there is no Flying/Levitate exception — traps every opposing Pokémon regardless of typing or grounding"
+              "val": "CORRECTED -- verified against Showdown data/abilities.ts (shadowtag): there IS still one exception, just not Flying/Levitate -- a Pokémon that itself has Shadow Tag is exempt from being trapped by another Shadow Tag holder. Every other opposing Pokémon, regardless of typing or grounding, is trapped."
+            },
+            {
+              "key": "fail_if",
+              "val": "the target itself also has Shadow Tag (two Shadow Tag holders don't trap each other)"
             }
           ]
         }

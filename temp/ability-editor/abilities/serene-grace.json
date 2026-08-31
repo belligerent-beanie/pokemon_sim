@@ -13,6 +13,10 @@
             {
               "key": "tag",
               "val": "doubles the chance of a move's secondary/additional effect occurring"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (serenegrace): doubles both move.secondaries[].chance (effects on the target) AND move.self.chance (self-inflicted secondary effects, e.g. a move with a chance to lower the user's own stat) -- not limited to target-facing secondaries."
             }
           ]
         }
