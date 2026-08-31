@@ -2,23 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_move_used",
-        "params": []
+        "params": [],
+        "type": "on_move_used"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "a Normal-type move becomes Ice-type and deals ×1.3 damage"
+              "val": "a Normal-type move becomes Ice-type and deals ×1.2 damage"
             },
             {
               "key": "fail_if",
               "val": "the move is not Normal-type"
+            },
+            {
+              "key": "note",
+              "val": "corrected from ×1.3: verified against Showdown source (abilities.ts refrigerate onBasePower, chainModify([4915, 4096]) = ×1.2, same fraction as Reckless's recoil boost and as Aerilate/Pixilate/Galvanize's own onBasePower). Refrigerate/Aerilate/Pixilate started at ×1.3 in Gen 6 and were nerfed to ×1.2 in Gen 7, matching Galvanize's original ×1.2 — the prior ×1.3 value reflected stale pre-nerf PokeAPI text, not the modern-mainline value this project targets"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

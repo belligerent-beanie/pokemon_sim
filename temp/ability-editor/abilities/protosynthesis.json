@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "passive",
-        "params": []
+        "params": [],
+        "type": "passive"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
@@ -18,29 +16,31 @@
               "key": "fail_if",
               "val": "harsh sunlight (Sun or Extremely Harsh Sunlight) is not currently active, and the Booster Energy activation below is not in effect"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "if the holder is holding Booster Energy, it is consumed and the stat boost activates immediately regardless of the field condition, persisting until the holder switches out even if that condition later ends"
+              "val": "if the holder is holding Booster Energy AND harsh sunlight is not already active, the item is consumed and the stat boost activates immediately, persisting until the holder switches out even if harsh sunlight becomes active or ends afterward"
             },
             {
               "key": "note",
-              "val": "touches item-consumption mechanics ahead of the still-deferred item-interaction family — described in plain language rather than a structured item vocabulary, since that doesn't exist yet"
+              "val": "corrected: verified against Showdown source (items.ts boosterenergy onUpdate) — the item is gated on the field condition NOT already being active (`!this.field.isWeather('sunnyday')`), not unconditional as previously worded (\"activates immediately regardless of the field condition\"). If harsh sunlight is already active on switch-in, the ability's own passive boost already applies and the item is never consumed, staying available for later. Also touches item-consumption mechanics ahead of the still-deferred item-interaction family — described in plain language rather than a structured item vocabulary, since that doesn't exist yet"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

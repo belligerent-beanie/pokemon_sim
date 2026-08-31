@@ -2,37 +2,41 @@
   "effects": [
     {
       "condition": {
-        "type": "on_status_inflict",
-        "params": []
+        "params": [],
+        "type": "on_status_inflict"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
-              "val": "blocks every major and volatile status condition from being inflicted"
+              "val": "blocks all major status conditions (burn, paralysis, poison/toxic, sleep, freeze) from being inflicted, plus Yawn specifically"
+            },
+            {
+              "key": "note",
+              "val": "corrected: verified against Showdown source (abilities.ts purifyingsalt) — onSetStatus blocks any move-inflicted major status, and onTryAddVolatile blocks only Yawn by name. This is narrower than a blanket volatile-status immunity: Purifying Salt does NOT block Confusion, Attract/Infatuation, Leech Seed, or other volatiles, contrary to the previous \"every major and volatile status condition\" wording"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     },
     {
       "condition": {
-        "type": "on_calc_damage",
-        "params": []
+        "params": [],
+        "type": "on_calc_damage"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
               "val": "damage taken from Ghost-type moves is halved"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

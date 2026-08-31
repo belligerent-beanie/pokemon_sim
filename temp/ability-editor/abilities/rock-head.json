@@ -2,27 +2,27 @@
   "effects": [
     {
       "condition": {
-        "type": "on_calc_damage",
-        "params": []
+        "params": [],
+        "type": "on_calc_damage"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
-              "val": "the holder takes no recoil/crash damage from its own moves"
+              "val": "the holder takes no recoil damage from its own moves"
             },
             {
               "key": "fail_if",
-              "val": "the move used does not deal recoil or crash damage"
+              "val": "the move used does not deal true recoil damage, or the move is Struggle"
             },
             {
               "key": "note",
-              "val": "covers both true recoil (Double-Edge, Flare Blitz) and miss-crash damage (Jump Kick, High Jump Kick) — both categories are blocked"
+              "val": "corrected: verified against Showdown source (abilities.ts rockhead onDamage) — it only intercepts `effect.id === 'recoil'`, and explicitly does NOT block it when the active move is Struggle (`if (this.activeMove.id !== 'struggle') return null;`). Crash damage from Jump Kick/High Jump Kick/Axe Kick uses a different effect id (the move's own id, e.g. 'axekick'), not 'recoil', so it is NOT blocked by Rock Head — contrary to the previous claim that both categories are blocked. Rock Head only prevents true recoil (Double-Edge, Flare Blitz, Take Down, etc.), and even that exception doesn't cover Struggle's own recoil"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

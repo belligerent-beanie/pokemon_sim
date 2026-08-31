@@ -36,11 +36,11 @@
             },
             {
               "key": "fail_if",
-              "val": "Hail/Snow is not currently active"
+              "val": "Hail/Snow is not currently active, or the ice head is not currently broken"
             },
             {
               "key": "note",
-              "val": "verified via Showdown source: restoration is also checked on_switch_in (entering battle while Hail/Snow is already active and the ice head is currently broken), not just when the weather changes mid-battle — added as a second block below rather than merged into this one, since they're genuinely different trigger points"
+              "val": "verified via Showdown source: restoration is also checked on_switch_in (entering battle while Hail/Snow is already active and the ice head is currently broken), not just when the weather changes mid-battle — added as a second block below rather than merged into this one, since they're genuinely different trigger points. Also added the missing \"ice head is not currently broken\" guard here — the real onWeatherChange handler checks both the weather AND that the Pokémon is currently in its broken (Eiscue-Noice) form, matching the on_switch_in block below; the fail_if here previously only checked the weather half."
             }
           ],
           "priority": 0,
@@ -50,13 +50,11 @@
     },
     {
       "condition": {
-        "type": "on_switch_in",
-        "params": []
+        "params": [],
+        "type": "on_switch_in"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "effect",
@@ -66,7 +64,9 @@
               "key": "fail_if",
               "val": "Hail/Snow is not currently active, or the ice head is not currently broken"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }

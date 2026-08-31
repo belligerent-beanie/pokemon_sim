@@ -36,7 +36,11 @@
             },
             {
               "key": "fail_if",
-              "val": "the holder is in its base form (has not used Surf/Dive to catch prey), or the attacker is currently semi-invulnerable (e.g. mid-Dig/Fly)"
+              "val": "the holder is in its base form (has not used Surf/Dive to catch prey), or the holder itself is currently semi-invulnerable (e.g. mid-Dive)"
+            },
+            {
+              "key": "note",
+              "val": "verified via Showdown source (onDamagingHit): the semi-invulnerability check is on the holder (target), not the attacker — Gulp Missile doesn't retaliate if Cramorant itself is still mid-Dive when hit; corrected from an earlier version that had this backwards"
             }
           ],
           "priority": 0,

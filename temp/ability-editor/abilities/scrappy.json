@@ -2,13 +2,11 @@
   "effects": [
     {
       "condition": {
-        "type": "passive",
-        "params": []
+        "params": [],
+        "type": "passive"
       },
       "events": [
         {
-          "target": "self",
-          "priority": 0,
           "params": [
             {
               "key": "tag",
@@ -18,7 +16,35 @@
               "key": "note",
               "val": "same effect as one of Mind's Eye's three facets"
             }
-          ]
+          ],
+          "priority": 0,
+          "target": "self"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "params": [],
+        "type": "on_stat_change"
+      },
+      "events": [
+        {
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks the Attack drop from Intimidate specifically"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming stat change is not an Intimidate-caused Attack drop on the holder"
+            },
+            {
+              "key": "note",
+              "val": "missing entirely from prior data — verified against Showdown source (abilities.ts scrappy onTryBoost): `if (effect.name === 'Intimidate' && boost.atk) delete boost.atk` unconditionally blocks Intimidate's Attack reduction. Narrower than Hyper Cutter/Keen Eye/Big Pecks's blanket one-stat block — this only excludes Intimidate by name, not every source of an Attack drop"
+            }
+          ],
+          "priority": 0,
+          "target": "self"
         }
       ]
     }
