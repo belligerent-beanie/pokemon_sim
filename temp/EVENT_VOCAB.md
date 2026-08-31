@@ -1481,3 +1481,30 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
   off poison inflicted by the holder's own move, not indirect sources like
   Toxic Spikes. Also noted the full uncopiable flag set (though notably NOT
   flagged notransform, unlike Hunger Switch).
+
+## Verification pass: run 15, 2026-08-31 (poison-touch–propeller-tail)
+
+- **poison-touch**: ADDED the Shield Dust/Covert Cloak exception -- special-cased
+  in source even though this proc isn't technically a move secondary effect.
+- **power-of-alchemy**: ADDED two missing exceptions -- doesn't trigger if the
+  holder itself has already fainted, or if the fainted ally's ability is
+  flagged noreceiver or is literally "no ability".
+- **power-spot**: confirmed correct. Added a precision note: exact multiplier
+  is 5325/4096 (≈1.2999).
+- **prankster**: confirmed correct as-is (+1 priority to status moves; Dark-type
+  immunity already correctly noted as the target's own immunity, not a block
+  on Prankster itself). No change.
+- **pressure**: confirmed correct in substance. Added a note that it only
+  applies when the move user is NOT an ally of the holder.
+- **primordial-sea**: ADDED A MAJOR MISSING MECHANISM -- this entry previously
+  only said it sets heavy rain on switch-in. It also actively BLOCKS any other
+  weather from being set while active (unless the new weather is itself
+  Desolate Land/Primordial Sea/Delta Stream), and cleanly ends the weather for
+  everyone when the holder leaves the field or loses the ability. Same
+  indefinite-weather-lock shape as Desolate Land/Delta Stream.
+- **prism-armor**: ADDED a missing fail_if -- this entry had NO gating condition
+  at all, meaning as previously written it could be read as applying
+  unconditionally rather than only on super-effective hits.
+- **propeller-tail**: confirmed correct in substance. Added a note on the
+  scripted-target-move exception (Counter/Mirror Coat/Metal Burst have no
+  fixed target to begin with, so the anti-redirect flag is moot for them).

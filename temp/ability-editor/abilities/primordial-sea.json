@@ -13,6 +13,10 @@
             {
               "key": "volatile",
               "val": "weather-heavy-rain"
+            },
+            {
+              "key": "note",
+              "val": "ADDED a major missing mechanism -- verified against Showdown data/abilities.ts (primordialsea): while active, it BLOCKS any other weather from being set by anything else on the field (onAnySetWeather returns false for a would-be weather change unless that new weather is itself one of Desolate Land/Primordial Sea/Delta Stream) -- so a Drought/Drizzle/Sand Stream user switching in while Primordial Sea is up simply fails to change the weather. When the Primordial Sea holder itself leaves the field or otherwise loses the ability (checked against field.weatherState.source to make sure it's ending its OWN weather instance, not someone else's), the heavy rain ends cleanly for everyone. This indefinite-weather-lock shape is shared with Desolate Land and Delta Stream."
             }
           ]
         }

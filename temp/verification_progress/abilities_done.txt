@@ -205,3 +205,11 @@ pixilate
 plus
 poison-heal
 poison-puppeteer
+poison-touch
+power-of-alchemy
+power-spot
+prankster
+pressure
+primordial-sea
+prism-armor
+propeller-tail

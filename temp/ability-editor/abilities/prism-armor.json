@@ -17,6 +17,10 @@
             {
               "key": "note",
               "val": "identical effect to Solid Rock/Filter — the naming here is Zygarde-family flavor, not a different mechanic"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming hit is not super-effective against the holder"
             }
           ]
         }

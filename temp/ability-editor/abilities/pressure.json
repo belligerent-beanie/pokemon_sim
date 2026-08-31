@@ -13,6 +13,10 @@
             {
               "key": "tag",
               "val": "any move used against the holder costs the user 1 additional PP"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (pressure): only applies when the move user is NOT an ally of the holder (onDeductPP explicitly exempts allies) -- an ally's spread move hitting the holder in Doubles doesn't cost extra PP."
             }
           ]
         }

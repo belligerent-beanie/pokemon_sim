@@ -16,7 +16,11 @@
             },
             {
               "key": "fail_if",
-              "val": "the incoming move does not make contact"
+              "val": "the incoming move does not make contact, OR the target has Shield Dust or holds a Covert Cloak"
+            },
+            {
+              "key": "note",
+              "val": "ADDED the Shield Dust/Covert Cloak exception -- verified against Showdown data/abilities.ts (poisontouch): source comment notes this is special-cased even though Poison Touch's proc isn't technically a move secondary effect."
             }
           ],
           "chance": "30"

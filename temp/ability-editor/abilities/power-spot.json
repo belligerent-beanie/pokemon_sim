@@ -21,6 +21,10 @@
             {
               "key": "note",
               "val": "unlike Battery, not restricted to special moves — boosts any ally move, physical or special"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (powerspot): exact multiplier is 5325/4096 (≈1.2999), \"×1.3\" is a very close rounded description."
             }
           ]
         }

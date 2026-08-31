@@ -17,6 +17,14 @@
             {
               "key": "note",
               "val": "identical effect to Receiver"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder itself has already fainted (e.g. simultaneous multi-faint), or the fainted ally's ability is flagged noreceiver or is literally \"no ability\""
+            },
+            {
+              "key": "note",
+              "val": "ADDED two missing exceptions -- verified against Showdown data/abilities.ts (powerofalchemy)."
             }
           ]
         }

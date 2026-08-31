@@ -13,6 +13,10 @@
             {
               "key": "tag",
               "val": "the holder's moves cannot be redirected (Follow Me, Rage Powder, Lightning Rod, Storm Drain) — they always hit their original target"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (propellertail): implemented as move.tracksTarget = true (locks onto the originally-selected target through redirection), except for moves with target type 'scripted' (Counter/Mirror Coat/Metal Burst, which retaliate against whoever hit them and have no fixed target to begin with, so the flag is moot for them)."
             }
           ]
         }
