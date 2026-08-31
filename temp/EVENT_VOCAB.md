@@ -1192,3 +1192,58 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
 - **flare-boost**: same framing bug as Supreme Overlord from an earlier pass — it's a
   move base-power multiplier at damage-calc time (`onBasePower`), not a literal Special
   Attack stat boost. Reframed accordingly.
+
+## Verification pass: run 5, 2026-08-31 (flash-fire–grassy-surge)
+
+- **flash-fire**: confirmed correct (immune + persistent Atk/SpA boost on both stats).
+  Noted: flagged `noCopy`, so this state is NOT passed along by Baton Pass.
+- **flower-gift**: ADDED the missing Cherrim species-lock (same shape as
+  Disguise/Embody Aspect) and a second effect this entry was entirely missing --
+  while in active sun, the holder itself forme-changes Cherrim -> Cherrim-Sunshine
+  (reverting when sun ends), re-checked on switch-in and on any weather change.
+- **flower-veil**: ADDED (1) Yawn is blocked via a separate volatile-add hook,
+  distinct from the major-status path; (2) a self-inflicted exception -- a Grass-type
+  ally's own stat drop (e.g. Overheat recoil) is NOT blocked, only externally-caused
+  effects are (same shape as Defiant/Competitive's opponent-only trigger).
+- **fluffy**: added a note that the contact ×0.5 and Fire-type ×2 modifiers are
+  separate multiplicative chainModify calls, so a contact Fire move nets ×1 overall,
+  not double or half -- both effect blocks must compose multiplicatively.
+- **forecast**: ADDED the Castform species-lock (same shape as Disguise/Flower
+  Gift/Embody Aspect); also re-checked on switch-in as well as live weather changes.
+- **forewarn**: CORRECTED from a plain "highest base-power move" framing --
+  Status moves are never revealed (ranked 0); OHKO moves rank as 150 bp, Counter/
+  Metal Burst/Mirror Coat as 120 bp; a variable-power non-Status move with no listed
+  power ranks as 80; ties are broken randomly among all qualifying moves.
+- **frisk**: CORRECTED from singular framing -- reveals ALL active foes' held items
+  (relevant in doubles with two foes), not just one.
+- **fur-coat**: CORRECTED framing -- this is `onModifyDef` (doubles the holder's raw
+  Defense stat value pre-calc), not a "damage from physical moves is halved" effect.
+  The two are usually equivalent under the standard formula but differ for anything
+  reading the holder's raw Defense directly (e.g. the holder's own Body Press). Same
+  class of correction as Supreme Overlord/Flare Boost.
+- **galvanize**: same missing exclusion list as Dragonize -- ADDED the
+  dynamic-typing-move exclusions (Judgment, Multi-Attack, Natural Gift, Revelation
+  Dance, Techno Blast, Terrain Pulse, Weather Ball unless used as a Max Move) plus
+  Z-move/Terastallized-Tera-Blast exceptions. Unlike Dragonize, not `isNonstandard`.
+- **good-as-gold**: added the self-targeted-status-move exclusion -- only blocks
+  status moves coming from another Pokémon, not the holder's own status move.
+- **friend-guard**: confirmed correct as-is (reduces damage taken by an ally by
+  ×0.75; does not apply to the holder's own damage taken). No change.
+- **full-metal-body**: confirmed correct as-is (blocks stat drops from other
+  Pokémon, self-inflicted drops go through; identical shape to Clear Body). No change.
+- **gale-wings**: confirmed correct as-is (+1 priority to Flying moves, full-HP gated
+  since Gen 7). No change.
+- **gluttony**: confirmed correct as-is (halves the auto-eat HP threshold for Berries
+  from 1/4 to 1/2 max HP; does nothing without a qualifying Berry held). No change.
+- **gooey**: confirmed correct as-is (contact punish, -1 Speed to the attacker).
+  No change.
+- **gorilla-tactics**: ADDED two missing details -- (1) the flat ×1.5 Atk boost is
+  suppressed entirely while the holder is Dynamaxed; (2) Struggle and any
+  Z-move/Max-powered move are exempt from the choice-lock in both directions
+  (using one doesn't set/change the lock, and the lock never blocks using one).
+  Functionally identical choice-lock shape to the Choice items, just tied to the
+  ability instead of a held item (so it survives item removal/Trick).
+- **grass-pelt**: confirmed correct as-is (×1.5 Def only during Grassy Terrain).
+  No change.
+- **grassy-surge**: confirmed correct as-is (sets Grassy Terrain on switch-in).
+  No change.

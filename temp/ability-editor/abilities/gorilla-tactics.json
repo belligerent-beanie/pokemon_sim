@@ -13,6 +13,14 @@
             {
               "key": "tag",
               "val": "Attack is boosted ×1.5"
+            },
+            {
+              "key": "fail_if",
+              "val": "the holder is Dynamaxed (no Atk boost while Dynamaxed)"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (gorillatactics): confirmed the flat ×1.5 Atk boost (not conditional on move choice), but it's suppressed entirely while the holder is Dynamaxed."
             }
           ]
         }
@@ -31,6 +39,10 @@
             {
               "key": "tag",
               "val": "the holder can only select the same move it used on its first turn after switching in — every other move is locked out for the rest of that time on the field"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (gorillatactics): Struggle and any Z-move/Max-powered move are exempt from this lock in both directions -- using one doesn't set/change the locked move, and the lock never blocks using one. Functionally identical choice-lock shape to the Choice items, just tied to the ability instead of a held item (so it survives item removal/Trick)."
             }
           ]
         }
