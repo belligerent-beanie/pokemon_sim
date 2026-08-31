@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "raises one random stat by 2 stages and lowers a different random stat by 1 stage"
+              "val": "raises one random stat by 2 stages and lowers a different random stat by 1 stage, chosen only among the six standard battle stats (Atk/Def/SpA/SpD/Spe) -- accuracy and evasion are never eligible for either the raise or the drop"
             },
             {
               "key": "note",
               "val": "the stat raised and the stat lowered are always different from each other"
+            },
+            {
+              "key": "note",
+              "val": "ADDED the accuracy/evasion exclusion -- verified against Showdown data/abilities.ts (moody): both the raise-candidate and drop-candidate stat pools explicitly skip 'accuracy' and 'evasion'. Also each pool only includes stats not already maxed/minned in that direction (a stat already at +6 can't be the raise target; one already at -6 can't be the drop target)."
             }
           ]
         }

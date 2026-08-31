@@ -1402,3 +1402,22 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
 - **mold-breaker**: confirmed correct as-is (bypasses hindering target abilities
   via a blanket ignoreAbility flag; doesn't affect unrelated retaliation
   abilities like Rough Skin/Static). No change.
+
+## Verification pass: run 12, 2026-08-31 (moody–neuroforce)
+
+- **moody**: ADDED the missing accuracy/evasion exclusion -- neither stat is ever
+  eligible for the +2 raise or the -1 drop, only the six standard battle stats.
+  Also noted each pool already excludes stats at their respective cap (+6/-6).
+- **motor-drive**: confirmed correct as-is (Electric immunity + Speed +1). No change.
+- **moxie**: CORRECTED from a flat "+1 stage" framing -- same length-based-boost
+  bug shape as Eelevate/Beast Boost/Grim Neigh's onSourceAfterFaint(length, ...).
+- **multiscale**: confirmed correct as-is (damage halved only at full HP). No change.
+- **mummy**: confirmed correct as-is (contact-triggered ability overwrite, already
+  gated on cantsuppress/already-has-it). No change.
+- **mycelium-might**: confirmed correct as-is (status moves act last in their
+  priority bracket and ignore target ability, Mold-Breaker-style but status-only).
+  No change.
+- **natural-cure**: confirmed correct in substance (cures status on switch-out).
+  No change.
+- **neuroforce**: confirmed correct as-is (exact ×1.25 -- 5120/4096 -- on
+  super-effective moves). No change.
