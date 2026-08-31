@@ -1082,3 +1082,40 @@ were never actually reviewed. Removed from abilities_done.txt along with the res
 Checkpoint totals now reconcile exactly: 75 done + 238 todo = 313 (the full trimmed
 catalog). Moves and the curated status list were checked and have no non-mainline
 entries to begin with.
+
+## Checkpoint reconciliation against prior EVENT_VOCAB.md verification passes, 2026-08-31
+
+The original task description (the scheduled task's prompt) referenced three
+already-verified ability families that predate this checkpoint system entirely: a
+"chance-value batch of 13," an "item-interaction batch of 12," and a "form-change-
+gimmick batch of ~22." Cross-referenced those against this file's own earlier
+sections ("Verification pass against Showdown's actual source" and "Verification
+pass: item interaction + form-change gimmicks") and marked every individually-named
+ability as done WITHOUT re-verifying it — trusting the prior write-up rather than
+re-spending budget on abilities already checked:
+
+- Chance-value batch: effect-spore, quick-draw, harvest, supreme-overlord,
+  toxic-chain, static, flame-body, poison-point, cute-charm, cursed-body, stench,
+  shed-skin, healer (13/13, full batch named individually — matches the claimed size).
+- Item-interaction family: pickup, magician, sticky-hold, cud-chew, ripen (5 of the
+  claimed 12 — only 5 were individually named with a finding; the other 7 aren't
+  identifiable by name from this file alone).
+- Form-change-gimmick family: battle-bond, gulp-missile, power-construct, schooling,
+  shields-down, zen-mode, ice-face, multitype, rks-system, commander (10 of the
+  claimed ~22 — same gap, only the ones with a finding or explicit "confirmed
+  correct" note got named).
+
+Honest gap: roughly 19 abilities across the item-interaction and form-change families
+were apparently reviewed as part of those batches (per the original task's count) but
+never individually named in this file — likely confirmed-correct-as-is with no
+note-worthy finding, the same pattern as verification batch 1's unnamed 37. They are
+NOT marked done here, since there's no way to identify which specific abilities they
+were without guessing. If that original batch accounting turns out to be trustworthy,
+this checkpoint is conservatively under-crediting by ~19 abilities; if it turns out
+to be wrong, nothing was falsely marked verified.
+
+Also moved axe-kick to moves_done — its confusion-duration override was verified and
+documented in the "Verification pass against Showdown's actual source" section above.
+
+Checkpoint totals after reconciliation: abilities 95 done / 218 todo (of 313 total,
+post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.

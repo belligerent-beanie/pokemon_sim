@@ -41,7 +41,6 @@ aurora-beam
 aurora-veil
 autotomize
 avalanche
-axe-kick
 baby-doll-eyes
 baddy-bad
 baneful-bunker
