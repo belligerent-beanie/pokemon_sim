@@ -17,6 +17,10 @@
             {
               "key": "note",
               "val": "target is an ally, using the same 'opponent = not self' convention as Dragon Cheer/Helping Hand"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (hospitality): heals ally.baseMaxhp / 4, i.e. the ally's un-Dynamaxed max HP -- so if the ally is Dynamaxed (doubled current max HP), the heal is still 25% of its normal (non-doubled) max HP, not 25% of the doubled value. Only adjacent allies (relevant in larger-than-singles formats)."
             }
           ]
         }

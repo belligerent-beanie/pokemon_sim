@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "raises Special Attack by 1 stage"
+              "val": "raises Special Attack by N stages, where N is the number of Pokémon knocked out by that single hit (matters for spread moves double-KOing in doubles) -- not a flat 1 stage"
             },
             {
               "key": "fail_if",
-              "val": "this hit did not knock out the target"
+              "val": "this hit did not knock out the target, OR the KO was not caused by a move (e.g. indirect KOs from residual damage/status don't count)"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED from a flat '+1 stage' framing -- verified against Showdown data/abilities.ts (grimneigh): identical shape to Eelevate/Beast Boost's onSourceAfterFaint(length, ...), which boosts by `length` (the KO count), gated on effect.effectType === 'Move'."
             }
           ]
         }

@@ -1247,3 +1247,28 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
   No change.
 - **grassy-surge**: confirmed correct as-is (sets Grassy Terrain on switch-in).
   No change.
+
+## Verification pass: run 6, 2026-08-31 (grim-neigh–hospitality)
+
+- **grim-neigh**: CORRECTED from a flat "+1 stage" framing -- identical bug shape to
+  Eelevate/Beast Boost's `onSourceAfterFaint(length, ...)`: boosts SpA by `length`,
+  the actual KO count from that hit (matters for spread moves double-KOing in
+  doubles), gated on `effect.effectType === 'Move'` (indirect KOs don't count).
+- **guard-dog**: confirmed correct as-is (Intimidate's Atk drop reversed into +1
+  instead; blocks forced switching/dragging out, same immunity as Suction Cups).
+  No change.
+- **guts**: confirmed correct as-is (×1.5 Atk with ANY major status, not just Burn;
+  works alongside Burn's own Atk-halving being skipped for Guts holders elsewhere
+  in the status data, not redefined here). No change.
+- **hadron-engine**: confirmed correct (sets Electric Terrain on switch-in; SpA
+  boost only while terrain is active). Added a note that the exact multiplier is
+  5461/4096 (≈1.333) -- "33%" is a rounded description, not the literal fraction.
+- **heatproof**: confirmed correct as-is (halves damage from Fire-type moves;
+  separately halves the holder's own Burn damage-per-turn on top of Burn's usual
+  amount). No change.
+- **heavy-metal**: confirmed correct as-is (doubles weight for all weight checks).
+  No change.
+- **honey-gather**: confirmed correct as-is (no in-battle effect). No change.
+- **hospitality**: confirmed correct. Added a note that the heal uses the ally's
+  `baseMaxhp` (un-Dynamaxed max HP) -- so a Dynamaxed ally still only heals 25% of
+  its normal max HP, not 25% of the doubled value; only adjacent allies.

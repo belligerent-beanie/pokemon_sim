@@ -35,6 +35,10 @@
             {
               "key": "fail_if",
               "val": "Electric Terrain is not currently active"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (hadronengine): confirmed the SpA boost (only while Electric Terrain is active); exact multiplier is 5461/4096 (≈ 1.333, i.e. \"33%\" is a rounded description, not the literal fraction used in damage calc)."
             }
           ]
         }

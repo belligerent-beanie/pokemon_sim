@@ -133,3 +133,11 @@ gooey
 gorilla-tactics
 grass-pelt
 grassy-surge
+grim-neigh
+guard-dog
+guts
+hadron-engine
+heatproof
+heavy-metal
+honey-gather
+hospitality
