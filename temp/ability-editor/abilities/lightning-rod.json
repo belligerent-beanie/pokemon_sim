@@ -12,7 +12,11 @@
           "params": [
             {
               "key": "tag",
-              "val": "redirects single-target Electric-type moves to this Pokémon when possible (not multi-target moves; not if the original target has its own type immunity)"
+              "val": "redirects single-target Electric-type moves to this Pokémon when possible (not multi-target moves; not if the original target has its own type immunity; not Pledge-combo moves)"
+            },
+            {
+              "key": "note",
+              "val": "ADDED the Pledge-combo exclusion -- verified against Showdown data/abilities.ts (lightningrod): onAnyRedirectTarget explicitly skips moves flagged pledgecombo (the combined Grass/Fire/Water Pledge effect)."
             }
           ]
         }

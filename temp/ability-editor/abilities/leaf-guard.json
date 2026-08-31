@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "effect",
-              "val": "blocks all major status conditions and Leech Seed from being inflicted"
+              "val": "blocks all major status conditions and Yawn's drowsy volatile from being inflicted"
             },
             {
               "key": "fail_if",
               "val": "harsh sunlight (Sun or Extremely Harsh Sunlight) is not currently active"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED a wrong claim -- verified against Showdown data/abilities.ts (leafguard): this entry previously said \"Leech Seed\", but the source has no Leech Seed interaction at all (onSetStatus for major statuses, onTryAddVolatile specifically for status.id === 'yawn'). Leech Seed is unaffected by Leaf Guard; only major statuses and Yawn are blocked, both gated on the holder's own EFFECTIVE weather being Sun or Desolate Land."
             }
           ]
         }

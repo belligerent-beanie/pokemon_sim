@@ -157,3 +157,11 @@ intimidate
 intrepid-sword
 iron-barbs
 iron-fist
+justified
+klutz
+leaf-guard
+levitate
+libero
+light-metal
+lightning-rod
+lingering-aroma

@@ -16,11 +16,15 @@
             },
             {
               "key": "fail_if",
-              "val": "the holder is already purely that single type"
+              "val": "the holder is already purely that single type, OR the move is typeless ('???', e.g. Struggle/Present), OR the move bounced back (Magic Bounce/Magic Coat), OR it's a future move (Doom Desire/Future Sight), OR it was called via Snatch, OR the move itself calls another move (e.g. Metronome/Nature Power/Assist)"
             },
             {
               "key": "note",
               "val": "functionally identical to Protean; as of Gen 9, triggers only once per switch-in"
+            },
+            {
+              "key": "note",
+              "val": "ADDED several missing exclusions -- verified against Showdown data/abilities.ts (libero): onPrepareHit skips typeless moves, bounced moves (hasBounced), future moves (flags.futuremove), Snatch-sourced moves (sourceEffect === 'snatch'), and any move with flags.callsMove (Metronome-style movecallers)."
             }
           ]
         }

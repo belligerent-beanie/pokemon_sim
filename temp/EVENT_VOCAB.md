@@ -1329,3 +1329,28 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
   (12.5%) max HP -- same rounding-error class as Ice Body/Dry Skin.
 - **iron-fist**: confirmed correct (×1.2-ish punch-move boost). Added a note that
   the exact multiplier is 4915/4096 (≈1.2001), not the literal fraction "1.2".
+
+## Verification pass: run 9, 2026-08-31 (justified–lingering-aroma)
+
+- **justified**: confirmed correct as-is (Atk +1 on being hit by a Dark-type move).
+  No change.
+- **klutz**: confirmed correct as-is (item is inert but still physically held/
+  stealable/weighable). No change.
+- **leaf-guard**: CORRECTED A WRONG CLAIM -- this entry previously said it blocks
+  Leech Seed, but Showdown's source has no Leech Seed interaction at all; that was
+  simply invented/mistaken. It blocks major status conditions (onSetStatus) and
+  separately Yawn's drowsy volatile (onTryAddVolatile, status.id === 'yawn'), both
+  gated on the holder's own effective weather being Sun/Desolate Land.
+- **levitate**: confirmed correct as-is (Ground-move immunity, overridden by
+  Gravity/Ingrain/Smack Down/Iron Ball-style grounding). No change.
+- **libero**: ADDED several missing exclusions -- typeless moves ('???', e.g.
+  Struggle/Present), bounced moves (Magic Bounce/Magic Coat), future moves (Doom
+  Desire/Future Sight), Snatch-sourced moves, and any move that itself calls
+  another move (Metronome/Nature Power/Assist-style). Previously only had the
+  "already single-typed" exclusion.
+- **light-metal**: confirmed correct as-is (weight halved). No change.
+- **lightning-rod**: ADDED the missing Pledge-combo-move exclusion from the
+  redirect effect (onAnyRedirectTarget explicitly skips pledgecombo-flagged moves).
+- **lingering-aroma**: ADDED the missing cantsuppress exception (Multitype, Zen
+  Mode, RKS System-style abilities can't be overwritten by anything) and the
+  already-has-it exception, mirroring Mummy's established shape.

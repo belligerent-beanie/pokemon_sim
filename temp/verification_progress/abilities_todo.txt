@@ -1,11 +1,3 @@
-justified
-klutz
-leaf-guard
-levitate
-libero
-light-metal
-lightning-rod
-lingering-aroma
 liquid-ooze
 liquid-voice
 long-reach
