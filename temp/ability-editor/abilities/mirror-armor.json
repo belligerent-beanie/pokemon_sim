@@ -16,7 +16,7 @@
             },
             {
               "key": "fail_if",
-              "val": "the stat change is not a decrease, or was self-inflicted"
+              "val": "the stat change is not a decrease, or was self-inflicted, OR this exact effect has already been reflected once by a Mirror Armor holder (no infinite bounce between two Mirror Armor holders), OR the target's affected stat is already at -6 (the drop is left to apply normally to the holder instead of being reflected), OR the attacker has already fainted by the time the reflection would happen"
             }
           ]
         }

@@ -17,6 +17,10 @@
             {
               "key": "note",
               "val": "confirmed by the user against actual game text: \"Even when the sunlight has not turned harsh, the Pokémon can use its moves as if the weather were harsh sunlight\" — always-on, not weather-reactive"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (megasol): flagged isNonstandard: \"Future\" -- not yet released in any mainline game, same status as Dragonize/Eelevate/Fire-mane. Mechanically it re-uses Sunny Day's own onWeatherModifyDamage logic directly and is partially implemented via Pokemon.effectiveWeather() rather than a self-contained hook."
             }
           ]
         }

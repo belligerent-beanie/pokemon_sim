@@ -1375,3 +1375,30 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
 - **marvel-scale**: confirmed correct as-is (×1.5 Def with any major status).
   No change.
 - **mega-launcher**: confirmed correct as-is (×1.5 on aura/pulse moves). No change.
+
+## Verification pass: run 11, 2026-08-31 (mega-sol–mold-breaker)
+
+- **mega-sol**: confirmed correct (moves act as if Sun is active regardless of
+  real weather). Added a note: flagged `isNonstandard: "Future"` (not yet
+  released), same status as Dragonize/Eelevate/Fire-mane; mechanically reuses
+  Sunny Day's own damage-mod logic and is partially implemented via
+  `Pokemon.effectiveWeather()` per a source comment.
+- **merciless**: confirmed correct as-is (guaranteed crit vs. poisoned/badly
+  poisoned targets). No change.
+- **mimicry**: confirmed correct as-is (type matches active terrain on both
+  terrain-change and switch-in; reverts to original type with no terrain).
+  No change.
+- **minds-eye**: confirmed correct as-is -- all three bundled facets (blocks
+  accuracy drops from others, ignores target evasion boosts, Normal/Fighting
+  hit Ghost like Scrappy) match source exactly. No change.
+- **minus**: confirmed correct as-is (×1.5 SpA with an ally having Plus or
+  Minus). No change.
+- **mirror-armor**: ADDED three missing edge cases -- no infinite bounce between
+  two Mirror Armor holders (an already-reflected effect isn't re-reflected), a
+  drop is left to apply normally instead of reflecting if the target's stat is
+  already at -6, and it doesn't reflect if the attacker has already fainted.
+- **misty-surge**: confirmed correct as-is (sets Misty Terrain on switch-in).
+  No change.
+- **mold-breaker**: confirmed correct as-is (bypasses hindering target abilities
+  via a blanket ignoreAbility flag; doesn't affect unrelated retaliation
+  abilities like Rough Skin/Static). No change.

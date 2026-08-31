@@ -173,3 +173,11 @@ magic-guard
 magnet-pull
 marvel-scale
 mega-launcher
+mega-sol
+merciless
+mimicry
+minds-eye
+minus
+mirror-armor
+misty-surge
+mold-breaker
