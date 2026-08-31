@@ -1,1 +1,2196 @@
-{"count": 373, "abilities": [{"name": "adaptability", "displayName": "Adaptability", "effect": "Increases the same-type attack bonus from 1.5\u00d7 to 2\u00d7.", "generation": 4, "is_main_series": true}, {"name": "aerilate", "displayName": "Aerilate", "effect": "Turns the bearer's Normal moves into Flying moves and strengthens them to 1.3\u00d7 their power.", "generation": 6, "is_main_series": true}, {"name": "aftermath", "displayName": "Aftermath", "effect": "Damages the attacker for 1/4 its max HP when knocked out by a contact move.", "generation": 4, "is_main_series": true}, {"name": "air-lock", "displayName": "Air Lock", "effect": "Negates all effects of weather, but does not prevent the weather itself.", "generation": 3, "is_main_series": true}, {"name": "analytic", "displayName": "Analytic", "effect": "Strengthens moves to 1.3\u00d7 their power when moving last.", "generation": 5, "is_main_series": true}, {"name": "anger-point", "displayName": "Anger Point", "effect": "Raises Attack to the maximum of six stages upon receiving a critical hit.", "generation": 4, "is_main_series": true}, {"name": "anger-shell", "displayName": "Anger Shell", "effect": "When the Pok\u00e9mon's HP drops below half, Anger Shell lowers its Defense and Special Defense but its Attack, Special Attack and Speed are raised.", "generation": 9, "is_main_series": true}, {"name": "anticipation", "displayName": "Anticipation", "effect": "Notifies all trainers upon entering battle if an opponent has a super-effective move, Self-Destruct, Explosion, or a one-hit KO move.", "generation": 4, "is_main_series": true}, {"name": "aqua-boost", "displayName": "Aqua Boost", "effect": "", "generation": 5, "is_main_series": false}, {"name": "arena-trap", "displayName": "Arena Trap", "effect": "Prevents opponents from fleeing or switching out.  Eluded by Flying-types and Pok\u00e9mon in the air.", "generation": 3, "is_main_series": true}, {"name": "armor-tail", "displayName": "Armor Tail", "effect": "Prevents the opponent from using any moves that have priority, such as Quick Attack.", "generation": 9, "is_main_series": true}, {"name": "aroma-veil", "displayName": "Aroma Veil", "effect": "Protects allies against moves that affect their mental state.", "generation": 6, "is_main_series": true}, {"name": "as-one-glastrier", "displayName": "As One Glastrier", "effect": "Combines the effects of Unnerve and Chilling Neigh.", "generation": 8, "is_main_series": true}, {"name": "as-one-spectrier", "displayName": "As One Spectrier", "effect": "Combines the effects of Unnerve and Grim Neigh.", "generation": 8, "is_main_series": true}, {"name": "aura-break", "displayName": "Aura Break", "effect": "Makes Dark Aura and Fairy Aura weaken moves of their respective types.", "generation": 6, "is_main_series": true}, {"name": "bad-dreams", "displayName": "Bad Dreams", "effect": "Damages sleeping opponents for 1/8 their max HP after each turn.", "generation": 4, "is_main_series": true}, {"name": "ball-fetch", "displayName": "Ball Fetch", "effect": "If the Pok\u00e9mon is not holding an item, it will fetch the Pok\u00e9 Ball from the first failed throw of the battle.", "generation": 8, "is_main_series": true}, {"name": "battery", "displayName": "Battery", "effect": "Ally Pok\u00e9mon's moves have their power increased to 1.3\u00d7.", "generation": 7, "is_main_series": true}, {"name": "battle-armor", "displayName": "Battle Armor", "effect": "Protects against critical hits.", "generation": 3, "is_main_series": true}, {"name": "battle-bond", "displayName": "Battle Bond", "effect": "Transforms this Pok\u00e9mon into Ash-Greninja after fainting an opponent.  Water Shuriken's power is 20 and always hits three times.", "generation": 7, "is_main_series": true}, {"name": "beads-of-ruin", "displayName": "Beads Of Ruin", "effect": "Lowers Special Defense of all Pok\u00e9mon except itself.", "generation": 9, "is_main_series": true}, {"name": "beast-boost", "displayName": "Beast Boost", "effect": "Raises this Pok\u00e9mon's highest stat by one stage when it faints another Pok\u00e9mon.", "generation": 7, "is_main_series": true}, {"name": "berserk", "displayName": "Berserk", "effect": "Raises this Pok\u00e9mon's Special Attack by one stage every time its HP drops below half.", "generation": 7, "is_main_series": true}, {"name": "big-pecks", "displayName": "Big Pecks", "effect": "Protects against Defense drops.", "generation": 5, "is_main_series": true}, {"name": "black-hole", "displayName": "Black Hole", "effect": "", "generation": 5, "is_main_series": false}, {"name": "blaze", "displayName": "Blaze", "effect": "Strengthens Fire moves to inflict 1.5\u00d7 damage at 1/3 max HP or less.", "generation": 3, "is_main_series": true}, {"name": "bodyguard", "displayName": "Bodyguard", "effect": "", "generation": 5, "is_main_series": false}, {"name": "bonanza", "displayName": "Bonanza", "effect": "", "generation": 5, "is_main_series": false}, {"name": "bulletproof", "displayName": "Bulletproof", "effect": "Protects against bullet, ball, and bomb-based moves.", "generation": 6, "is_main_series": true}, {"name": "calming", "displayName": "Calming", "effect": "", "generation": 5, "is_main_series": false}, {"name": "celebrate", "displayName": "Celebrate", "effect": "", "generation": 5, "is_main_series": false}, {"name": "cheek-pouch", "displayName": "Cheek Pouch", "effect": "Restores HP upon eating a Berry, in addition to the Berry's effect.", "generation": 6, "is_main_series": true}, {"name": "chilling-neigh", "displayName": "Chilling Neigh", "effect": "Boosts Attack after knocking out a Pok\u00e9mon.", "generation": 8, "is_main_series": true}, {"name": "chlorophyll", "displayName": "Chlorophyll", "effect": "Doubles Speed during strong sunlight.", "generation": 3, "is_main_series": true}, {"name": "clear-body", "displayName": "Clear Body", "effect": "Prevents stats from being lowered by other Pok\u00e9mon.", "generation": 3, "is_main_series": true}, {"name": "climber", "displayName": "Climber", "effect": "", "generation": 5, "is_main_series": false}, {"name": "cloud-nine", "displayName": "Cloud Nine", "effect": "Negates all effects of weather, but does not prevent the weather itself.", "generation": 3, "is_main_series": true}, {"name": "color-change", "displayName": "Color Change", "effect": "Changes type to match when hit by a damaging move.", "generation": 3, "is_main_series": true}, {"name": "comatose", "displayName": "Comatose", "effect": "This Pok\u00e9mon always  acts as though it were Asleep.", "generation": 7, "is_main_series": true}, {"name": "commander", "displayName": "Commander", "effect": "Goes inside the mouth of an ally Dondozo if one is on the field.", "generation": 9, "is_main_series": true}, {"name": "competitive", "displayName": "Competitive", "effect": "Raises Special Attack by two stages upon having any stat lowered.", "generation": 6, "is_main_series": true}, {"name": "compound-eyes", "displayName": "Compound Eyes", "effect": "Increases moves' accuracy to 1.3\u00d7.", "generation": 3, "is_main_series": true}, {"name": "confidence", "displayName": "Confidence", "effect": "", "generation": 5, "is_main_series": false}, {"name": "conqueror", "displayName": "Conqueror", "effect": "", "generation": 5, "is_main_series": false}, {"name": "contrary", "displayName": "Contrary", "effect": "Inverts stat changes.", "generation": 5, "is_main_series": true}, {"name": "corrosion", "displayName": "Corrosion", "effect": "This Pok\u00e9mon can inflict poison on Poison and Steel Pok\u00e9mon.", "generation": 7, "is_main_series": true}, {"name": "costar", "displayName": "Costar", "effect": "Copies ally's stat changes on entering battle.", "generation": 9, "is_main_series": true}, {"name": "cotton-down", "displayName": "Cotton Down", "effect": "When Ignores moves and abilities that draw in moves.", "generation": 8, "is_main_series": true}, {"name": "cud-chew", "displayName": "Cud Chew", "effect": "Causes the Pok\u00e9mon to reuse an already consumed Berry at the end of the next turn.", "generation": 9, "is_main_series": true}, {"name": "curious-medicine", "displayName": "Curious Medicine", "effect": "Resets all stat changes upon entering battlefield.", "generation": 8, "is_main_series": true}, {"name": "cursed-body", "displayName": "Cursed Body", "effect": "Has a 30% chance of Disabling any move that hits the Pok\u00e9mon.", "generation": 5, "is_main_series": true}, {"name": "cute-charm", "displayName": "Cute Charm", "effect": "Has a 30% chance of infatuating attacking Pok\u00e9mon on contact.", "generation": 3, "is_main_series": true}, {"name": "damp", "displayName": "Damp", "effect": "Prevents Self-Destruct, Explosion, and Aftermath from working while the Pok\u00e9mon is in battle.", "generation": 3, "is_main_series": true}, {"name": "dancer", "displayName": "Dancer", "effect": "Whenever another Pok\u00e9mon uses a dance move, this Pok\u00e9mon will use the same move immediately afterwards.", "generation": 7, "is_main_series": true}, {"name": "dark-aura", "displayName": "Dark Aura", "effect": "Strengthens Dark moves to 1.33\u00d7 their power for all friendly and opposing Pok\u00e9mon.", "generation": 6, "is_main_series": true}, {"name": "dauntless-shield", "displayName": "Dauntless Shield", "effect": "Boosts Defense in battle.", "generation": 8, "is_main_series": true}, {"name": "daze", "displayName": "Daze", "effect": "", "generation": 5, "is_main_series": false}, {"name": "dazzling", "displayName": "Dazzling", "effect": "Opposing Pok\u00e9mon cannot use priority attacks.", "generation": 7, "is_main_series": true}, {"name": "decoy", "displayName": "Decoy", "effect": "", "generation": 5, "is_main_series": false}, {"name": "deep-sleep", "displayName": "Deep Sleep", "effect": "", "generation": 5, "is_main_series": false}, {"name": "defeatist", "displayName": "Defeatist", "effect": "Halves Attack and Special Attack at 50% max HP or less.", "generation": 5, "is_main_series": true}, {"name": "defiant", "displayName": "Defiant", "effect": "Raises Attack two stages upon having any stat lowered.", "generation": 5, "is_main_series": true}, {"name": "delta-stream", "displayName": "Delta Stream", "effect": "Creates a mysterious air current, which cannot be replaced and causes moves to never be super effective against Flying Pok\u00e9mon.", "generation": 6, "is_main_series": true}, {"name": "desolate-land", "displayName": "Desolate Land", "effect": "Creates extremely harsh sunlight, which has all the properties of Sunny Day, cannot be replaced, and causes damaging Water moves to fail.", "generation": 6, "is_main_series": true}, {"name": "disguise", "displayName": "Disguise", "effect": "Prevents the first instance of battle damage.", "generation": 7, "is_main_series": true}, {"name": "disgust", "displayName": "Disgust", "effect": "", "generation": 5, "is_main_series": false}, {"name": "dodge", "displayName": "Dodge", "effect": "", "generation": 5, "is_main_series": false}, {"name": "download", "displayName": "Download", "effect": "Raises the attack stat corresponding to the opponents' weaker defense one stage upon entering battle.", "generation": 4, "is_main_series": true}, {"name": "dragonize", "displayName": "Dragonize", "effect": "The Pok\u00e9mon's Normal-type moves become Dragon-type moves and their power is boosted by 20%.", "generation": 9, "is_main_series": true}, {"name": "dragons-maw", "displayName": "Dragons Maw", "effect": "Powers up Dragon-type moves.", "generation": 8, "is_main_series": true}, {"name": "drizzle", "displayName": "Drizzle", "effect": "Summons rain that lasts indefinitely upon entering battle.", "generation": 3, "is_main_series": true}, {"name": "drought", "displayName": "Drought", "effect": "Summons strong sunlight that lasts indefinitely upon entering battle.", "generation": 3, "is_main_series": true}, {"name": "dry-skin", "displayName": "Dry Skin", "effect": "Causes 1/8 max HP in damage each turn during strong sunlight, but heals for 1/8 max HP during rain.  Increases damage from Fire moves to 1.25\u00d7, but absorbs Water moves, healing for 1/4 max HP.", "generation": 4, "is_main_series": true}, {"name": "early-bird", "displayName": "Early Bird", "effect": "Makes sleep pass twice as quickly.", "generation": 3, "is_main_series": true}, {"name": "earth-eater", "displayName": "Earth Eater", "effect": "Restores HP when hit by a Ground-type move.", "generation": 9, "is_main_series": true}, {"name": "eelevate", "displayName": "Eelevate", "effect": "The Pok\u00e9mon floats off the ground, making it immune to Ground-type moves, as well as the Spikes, Toxic Spikes, and Sticky Web statuses. When the Pok\u00e9mon knocks out a target with an attack, its highest stat is boosted by 1 stage.", "generation": 9, "is_main_series": true}, {"name": "effect-spore", "displayName": "Effect Spore", "effect": "Has a 30% chance of inflcting either paralysis, poison, or sleep on attacking Pok\u00e9mon on contact.", "generation": 3, "is_main_series": true}, {"name": "electric-surge", "displayName": "Electric Surge", "effect": "When this Pok\u00e9mon enters battle, it changes the terrain to Electric Terrain.", "generation": 7, "is_main_series": true}, {"name": "electromorphosis", "displayName": "Electromorphosis", "effect": "When hit by an attack, the power of the next Electric-type move it uses is doubled.", "generation": 9, "is_main_series": true}, {"name": "embody-aspect", "displayName": "Embody Aspect", "effect": "Embody Aspect boosts a particular stat, depending on the form of a Terastallized Ogerpon", "generation": 9, "is_main_series": true}, {"name": "emergency-exit", "displayName": "Emergency Exit", "effect": "This Pok\u00e9mon automatically switches out when its HP drops below half.", "generation": 7, "is_main_series": true}, {"name": "explode", "displayName": "Explode", "effect": "", "generation": 5, "is_main_series": false}, {"name": "fairy-aura", "displayName": "Fairy Aura", "effect": "Strengthens Fairy moves to 1.33\u00d7 their power for all friendly and opposing Pok\u00e9mon.", "generation": 6, "is_main_series": true}, {"name": "filter", "displayName": "Filter", "effect": "Decreases damage taken from super-effective moves by 1/4.", "generation": 4, "is_main_series": true}, {"name": "fire-mane", "displayName": "Fire Mane", "effect": "Boosts the power of the Pok\u00e9mon's Fire-type moves by 50%.", "generation": 9, "is_main_series": true}, {"name": "flame-body", "displayName": "Flame Body", "effect": "Has a 30% chance of burning attacking Pok\u00e9mon on contact.", "generation": 3, "is_main_series": true}, {"name": "flame-boost", "displayName": "Flame Boost", "effect": "", "generation": 5, "is_main_series": false}, {"name": "flare-boost", "displayName": "Flare Boost", "effect": "Increases Special Attack to 1.5\u00d7 when burned.", "generation": 5, "is_main_series": true}, {"name": "flash-fire", "displayName": "Flash Fire", "effect": "Protects against Fire moves.  Once one has been blocked, the Pok\u00e9mon's own Fire moves inflict 1.5\u00d7 damage until it leaves battle.", "generation": 3, "is_main_series": true}, {"name": "flower-gift", "displayName": "Flower Gift", "effect": "Increases friendly Pok\u00e9mon's Attack and Special Defense to 1.5\u00d7 during strong sunlight.", "generation": 4, "is_main_series": true}, {"name": "flower-veil", "displayName": "Flower Veil", "effect": "Protects friendly Grass Pok\u00e9mon from having their stats lowered by other Pok\u00e9mon.", "generation": 6, "is_main_series": true}, {"name": "fluffy", "displayName": "Fluffy", "effect": "Damage from contact moves is halved.  Damage from Fire moves is doubled.", "generation": 7, "is_main_series": true}, {"name": "forecast", "displayName": "Forecast", "effect": "Changes Castform's type and form to match the weather.", "generation": 3, "is_main_series": true}, {"name": "forewarn", "displayName": "Forewarn", "effect": "Reveals the opponents' strongest move upon entering battle.", "generation": 4, "is_main_series": true}, {"name": "fortune", "displayName": "Fortune", "effect": "", "generation": 5, "is_main_series": false}, {"name": "friend-guard", "displayName": "Friend Guard", "effect": "Decreases all direct damage taken by friendly Pok\u00e9mon to 0.75\u00d7.", "generation": 5, "is_main_series": true}, {"name": "frighten", "displayName": "Frighten", "effect": "", "generation": 5, "is_main_series": false}, {"name": "frisk", "displayName": "Frisk", "effect": "Reveals an opponent's held item upon entering battle.", "generation": 4, "is_main_series": true}, {"name": "frostbite", "displayName": "Frostbite", "effect": "", "generation": 5, "is_main_series": false}, {"name": "full-metal-body", "displayName": "Full Metal Body", "effect": "Other Pok\u00e9mon cannot lower this Pok\u00e9mon's stats.", "generation": 7, "is_main_series": true}, {"name": "fur-coat", "displayName": "Fur Coat", "effect": "Halves damage from physical attacks.", "generation": 6, "is_main_series": true}, {"name": "gale-wings", "displayName": "Gale Wings", "effect": "Raises Flying moves' priority by one stage.", "generation": 6, "is_main_series": true}, {"name": "galvanize", "displayName": "Galvanize", "effect": "This Pok\u00e9mon's Normal moves are Electric and have their power increased to 1.2\u00d7.", "generation": 7, "is_main_series": true}, {"name": "gluttony", "displayName": "Gluttony", "effect": "Makes the Pok\u00e9mon eat any held Berry triggered by low HP below 1/2 its max HP.", "generation": 4, "is_main_series": true}, {"name": "good-as-gold", "displayName": "Good As Gold", "effect": "Gives immunity to status moves.", "generation": 9, "is_main_series": true}, {"name": "gooey", "displayName": "Gooey", "effect": "Lowers attacking Pok\u00e9mon's Speed by one stage on contact.", "generation": 6, "is_main_series": true}, {"name": "gorilla-tactics", "displayName": "Gorilla Tactics", "effect": "Boosts the Pok\u00e9mon's Attack stat but only allows the use of the first selected move.", "generation": 8, "is_main_series": true}, {"name": "grass-cloak", "displayName": "Grass Cloak", "effect": "", "generation": 5, "is_main_series": false}, {"name": "grass-pelt", "displayName": "Grass Pelt", "effect": "Boosts Defense while Grassy Terrain is in effect.", "generation": 6, "is_main_series": true}, {"name": "grassy-surge", "displayName": "Grassy Surge", "effect": "When this Pok\u00e9mon enters battle, it changes the terrain to Grassy Terrain.", "generation": 7, "is_main_series": true}, {"name": "grim-neigh", "displayName": "Grim Neigh", "effect": "Boosts Special Attack after knocking out a Pok\u00e9mon.", "generation": 8, "is_main_series": true}, {"name": "guard-dog", "displayName": "Guard Dog", "effect": "Boosts Attack if intimidated, and prevents being forced to switch out.", "generation": 9, "is_main_series": true}, {"name": "gulp", "displayName": "Gulp", "effect": "", "generation": 5, "is_main_series": false}, {"name": "gulp-missile", "displayName": "Gulp Missile", "effect": "If a Cramorant with Gulp Missile uses Surf or Dive, it catches prey and changes its form depending on its remaining HP.", "generation": 8, "is_main_series": true}, {"name": "guts", "displayName": "Guts", "effect": "Increases Attack to 1.5\u00d7 with a major status ailment.", "generation": 3, "is_main_series": true}, {"name": "hadron-engine", "displayName": "Hadron Engine", "effect": "Creates an Electric Terrain when entering battle, and boosts Special Attack while active.", "generation": 9, "is_main_series": true}, {"name": "harvest", "displayName": "Harvest", "effect": "Has a 50% chance of restoring a used Berry after each turn if the Pok\u00e9mon has held no items in the meantime.", "generation": 5, "is_main_series": true}, {"name": "healer", "displayName": "Healer", "effect": "Has a 30% chance of curing each adjacent ally of any major status ailment after each turn.", "generation": 5, "is_main_series": true}, {"name": "heatproof", "displayName": "Heatproof", "effect": "Halves damage from Fire moves and burns.", "generation": 4, "is_main_series": true}, {"name": "heavy-metal", "displayName": "Heavy Metal", "effect": "Doubles the Pok\u00e9mon's weight.", "generation": 5, "is_main_series": true}, {"name": "herbivore", "displayName": "Herbivore", "effect": "", "generation": 5, "is_main_series": false}, {"name": "hero", "displayName": "Hero", "effect": "", "generation": 5, "is_main_series": false}, {"name": "high-rise", "displayName": "High Rise", "effect": "", "generation": 5, "is_main_series": false}, {"name": "honey-gather", "displayName": "Honey Gather", "effect": "The Pok\u00e9mon may pick up Honey after battle.", "generation": 4, "is_main_series": true}, {"name": "hospitality", "displayName": "Hospitality", "effect": "When a Pok\u00e9mon with Hospitality enters a battle, it restores HP for an ally by 25%.", "generation": 9, "is_main_series": true}, {"name": "hot-blooded", "displayName": "Hot Blooded", "effect": "", "generation": 5, "is_main_series": false}, {"name": "huge-power", "displayName": "Huge Power", "effect": "Doubles Attack in battle.", "generation": 3, "is_main_series": true}, {"name": "hunger-switch", "displayName": "Hunger Switch", "effect": "Causes Morpeko to change its form each turn, alternating between Full Belly Mode and Hangry Mode", "generation": 8, "is_main_series": true}, {"name": "hustle", "displayName": "Hustle", "effect": "Strengthens physical moves to inflict 1.5\u00d7 damage, but decreases their accuracy to 0.8\u00d7.", "generation": 3, "is_main_series": true}, {"name": "hydration", "displayName": "Hydration", "effect": "Cures any major status ailment after each turn during rain.", "generation": 4, "is_main_series": true}, {"name": "hyper-cutter", "displayName": "Hyper Cutter", "effect": "Prevents Attack from being lowered by other Pok\u00e9mon.", "generation": 3, "is_main_series": true}, {"name": "ice-body", "displayName": "Ice Body", "effect": "Heals for 1/16 max HP after each turn during hail.  Protects against hail damage.", "generation": 4, "is_main_series": true}, {"name": "ice-face", "displayName": "Ice Face", "effect": "The Pok\u00e9mon\u2019s ice head can take a physical attack as a substitute, but the attack also changes the Pok\u00e9mon\u2019s appearance. The ice will be restored when it snows.", "generation": 8, "is_main_series": true}, {"name": "ice-scales", "displayName": "Ice Scales", "effect": "Halves damage from Special moves.", "generation": 8, "is_main_series": true}, {"name": "illuminate", "displayName": "Illuminate", "effect": "Doubles the wild encounter rate.", "generation": 3, "is_main_series": true}, {"name": "illusion", "displayName": "Illusion", "effect": "Takes the appearance of the last conscious party Pok\u00e9mon upon being sent out until hit by a damaging move.", "generation": 5, "is_main_series": true}, {"name": "immunity", "displayName": "Immunity", "effect": "Prevents poison.", "generation": 3, "is_main_series": true}, {"name": "imposter", "displayName": "Imposter", "effect": "Transforms upon entering battle.", "generation": 5, "is_main_series": true}, {"name": "infiltrator", "displayName": "Infiltrator", "effect": "Bypasses Light Screen, Reflect, and Safeguard.", "generation": 5, "is_main_series": true}, {"name": "innards-out", "displayName": "Innards Out", "effect": "When this Pok\u00e9mon faints from an opponent's move, that opponent takes damage equal to the HP this Pok\u00e9mon had remaining.", "generation": 7, "is_main_series": true}, {"name": "inner-focus", "displayName": "Inner Focus", "effect": "Prevents flinching.", "generation": 3, "is_main_series": true}, {"name": "insomnia", "displayName": "Insomnia", "effect": "Prevents sleep.", "generation": 3, "is_main_series": true}, {"name": "instinct", "displayName": "Instinct", "effect": "", "generation": 5, "is_main_series": false}, {"name": "interference", "displayName": "Interference", "effect": "", "generation": 5, "is_main_series": false}, {"name": "intimidate", "displayName": "Intimidate", "effect": "Lowers opponents' Attack one stage upon entering battle.", "generation": 3, "is_main_series": true}, {"name": "intrepid-sword", "displayName": "Intrepid Sword", "effect": "Boosts Attack in battle.", "generation": 8, "is_main_series": true}, {"name": "iron-barbs", "displayName": "Iron Barbs", "effect": "Damages attacking Pok\u00e9mon for 1/8 their max HP on contact.", "generation": 5, "is_main_series": true}, {"name": "iron-fist", "displayName": "Iron Fist", "effect": "Strengthens punch-based moves to 1.2\u00d7 their power.", "generation": 4, "is_main_series": true}, {"name": "jagged-edge", "displayName": "Jagged Edge", "effect": "", "generation": 5, "is_main_series": false}, {"name": "justified", "displayName": "Justified", "effect": "Raises Attack one stage upon taking damage from a Dark move.", "generation": 5, "is_main_series": true}, {"name": "keen-eye", "displayName": "Keen Eye", "effect": "Prevents accuracy from being lowered.", "generation": 3, "is_main_series": true}, {"name": "klutz", "displayName": "Klutz", "effect": "Prevents the Pok\u00e9mon from using its held item in battle.", "generation": 4, "is_main_series": true}, {"name": "last-bastion", "displayName": "Last Bastion", "effect": "", "generation": 5, "is_main_series": false}, {"name": "leaf-guard", "displayName": "Leaf Guard", "effect": "Protects against major status ailments during strong sunlight.", "generation": 4, "is_main_series": true}, {"name": "levitate", "displayName": "Levitate", "effect": "Evades Ground moves.", "generation": 3, "is_main_series": true}, {"name": "libero", "displayName": "Libero", "effect": "Libero changes the Pok\u00e9mon's type to that of its previously used attack.", "generation": 8, "is_main_series": true}, {"name": "life-force", "displayName": "Life Force", "effect": "", "generation": 5, "is_main_series": false}, {"name": "light-metal", "displayName": "Light Metal", "effect": "Halves the Pok\u00e9mon's weight.", "generation": 5, "is_main_series": true}, {"name": "lightning-rod", "displayName": "Lightning Rod", "effect": "Redirects single-target Electric moves to this Pok\u00e9mon where possible.  Absorbs Electric moves, raising Special Attack one stage.", "generation": 3, "is_main_series": true}, {"name": "limber", "displayName": "Limber", "effect": "Prevents paralysis.", "generation": 3, "is_main_series": true}, {"name": "lingering-aroma", "displayName": "Lingering Aroma", "effect": "Contact changes the attacker's Ability to Lingering Aroma.", "generation": 9, "is_main_series": true}, {"name": "liquid-ooze", "displayName": "Liquid Ooze", "effect": "Damages opponents using leeching moves for as much as they would heal.", "generation": 3, "is_main_series": true}, {"name": "liquid-voice", "displayName": "Liquid Voice", "effect": "Sound-based moves become Water-type.", "generation": 7, "is_main_series": true}, {"name": "long-reach", "displayName": "Long Reach", "effect": "This Pok\u00e9mon's moves do not make contact.", "generation": 7, "is_main_series": true}, {"name": "lullaby", "displayName": "Lullaby", "effect": "", "generation": 5, "is_main_series": false}, {"name": "lunchbox", "displayName": "Lunchbox", "effect": "", "generation": 5, "is_main_series": false}, {"name": "magic-bounce", "displayName": "Magic Bounce", "effect": "Reflects most non-damaging moves back at their user.", "generation": 5, "is_main_series": true}, {"name": "magic-guard", "displayName": "Magic Guard", "effect": "Protects against damage not directly caused by a move.", "generation": 4, "is_main_series": true}, {"name": "magician", "displayName": "Magician", "effect": "Steals the target's held item when the bearer uses a damaging move.", "generation": 6, "is_main_series": true}, {"name": "magma-armor", "displayName": "Magma Armor", "effect": "Prevents freezing.", "generation": 3, "is_main_series": true}, {"name": "magnet-pull", "displayName": "Magnet Pull", "effect": "Prevents Steel opponents from fleeing or switching out.", "generation": 3, "is_main_series": true}, {"name": "marvel-scale", "displayName": "Marvel Scale", "effect": "Increases Defense to 1.5\u00d7 with a major status ailment.", "generation": 3, "is_main_series": true}, {"name": "medic", "displayName": "Medic", "effect": "", "generation": 5, "is_main_series": false}, {"name": "mega-launcher", "displayName": "Mega Launcher", "effect": "Strengthens aura and pulse moves to 1.5\u00d7 their power.", "generation": 6, "is_main_series": true}, {"name": "mega-sol", "displayName": "Mega Sol", "effect": "The Pok\u00e9mon can use its moves as if the weather were harsh sunlight.", "generation": 9, "is_main_series": true}, {"name": "melee", "displayName": "Melee", "effect": "", "generation": 5, "is_main_series": false}, {"name": "merciless", "displayName": "Merciless", "effect": "This Pok\u00e9mon's moves critical hit against poisoned targets.", "generation": 7, "is_main_series": true}, {"name": "mimicry", "displayName": "Mimicry", "effect": "Changes type depending on the terrain.", "generation": 8, "is_main_series": true}, {"name": "minds-eye", "displayName": "Minds Eye", "effect": "The Pok\u00e9mon ignores changes to opponents' evasiveness, its accuracy can't be lowered, and it can hit Ghost types with Normal- and Fighting-type moves.", "generation": 9, "is_main_series": true}, {"name": "minus", "displayName": "Minus", "effect": "Increases Special Attack to 1.5\u00d7 when a friendly Pok\u00e9mon has Plus or Minus.", "generation": 3, "is_main_series": true}, {"name": "mirror-armor", "displayName": "Mirror Armor", "effect": "Reflects any stat-lowering effects.", "generation": 8, "is_main_series": true}, {"name": "misty-surge", "displayName": "Misty Surge", "effect": "When this Pok\u00e9mon enters battle, it changes the terrain to Misty Terrain.", "generation": 7, "is_main_series": true}, {"name": "mold-breaker", "displayName": "Mold Breaker", "effect": "Bypasses targets' abilities if they could hinder or prevent a move.", "generation": 4, "is_main_series": true}, {"name": "mood-maker", "displayName": "Mood Maker", "effect": "", "generation": 5, "is_main_series": false}, {"name": "moody", "displayName": "Moody", "effect": "Raises a random stat two stages and lowers another one stage after each turn.", "generation": 5, "is_main_series": true}, {"name": "motor-drive", "displayName": "Motor Drive", "effect": "Absorbs Electric moves, raising Speed one stage.", "generation": 4, "is_main_series": true}, {"name": "mountaineer", "displayName": "Mountaineer", "effect": "", "generation": 5, "is_main_series": false}, {"name": "moxie", "displayName": "Moxie", "effect": "Raises Attack one stage upon KOing a Pok\u00e9mon.", "generation": 5, "is_main_series": true}, {"name": "multiscale", "displayName": "Multiscale", "effect": "Halves damage taken from full HP.", "generation": 5, "is_main_series": true}, {"name": "multitype", "displayName": "Multitype", "effect": "Changes Arceus's type and form to match its held Plate.", "generation": 4, "is_main_series": true}, {"name": "mummy", "displayName": "Mummy", "effect": "Changes attacking Pok\u00e9mon's abilities to Mummy on contact.", "generation": 5, "is_main_series": true}, {"name": "mycelium-might", "displayName": "Mycelium Might", "effect": "Status moves go last, but are not affected by the opponent's ability.", "generation": 9, "is_main_series": true}, {"name": "natural-cure", "displayName": "Natural Cure", "effect": "Cures any major status ailment upon switching out.", "generation": 3, "is_main_series": true}, {"name": "neuroforce", "displayName": "Neuroforce", "effect": "Increases super-effective damage dealt to 1.25\u00d7.", "generation": 7, "is_main_series": true}, {"name": "neutralizing-gas", "displayName": "Neutralizing Gas", "effect": "Neutralizes abilities of all Pok\u00e9mon in battle.", "generation": 8, "is_main_series": true}, {"name": "no-guard", "displayName": "No Guard", "effect": "Ensures all moves used by and against the Pok\u00e9mon hit.", "generation": 4, "is_main_series": true}, {"name": "nomad", "displayName": "Nomad", "effect": "", "generation": 5, "is_main_series": false}, {"name": "normalize", "displayName": "Normalize", "effect": "Makes the Pok\u00e9mon's moves all act Normal-type.", "generation": 4, "is_main_series": true}, {"name": "nurse", "displayName": "Nurse", "effect": "", "generation": 5, "is_main_series": false}, {"name": "oblivious", "displayName": "Oblivious", "effect": "Prevents infatuation and protects against Captivate.", "generation": 3, "is_main_series": true}, {"name": "omnipotent", "displayName": "Omnipotent", "effect": "", "generation": 5, "is_main_series": false}, {"name": "opportunist", "displayName": "Opportunist", "effect": "Copies stat boosts by the opponent.", "generation": 9, "is_main_series": true}, {"name": "orichalcum-pulse", "displayName": "Orichalcum Pulse", "effect": "Turns the sunlight harsh when entering battle, and boosts Attack while active.", "generation": 9, "is_main_series": true}, {"name": "overcoat", "displayName": "Overcoat", "effect": "Protects against damage from weather.", "generation": 5, "is_main_series": true}, {"name": "overgrow", "displayName": "Overgrow", "effect": "Strengthens Grass moves to inflict 1.5\u00d7 damage at 1/3 max HP or less.", "generation": 3, "is_main_series": true}, {"name": "own-tempo", "displayName": "Own Tempo", "effect": "Prevents confusion.", "generation": 3, "is_main_series": true}, {"name": "parental-bond", "displayName": "Parental Bond", "effect": "Lets the bearer hit twice with damaging moves.  The second hit has half power.", "generation": 6, "is_main_series": true}, {"name": "parry", "displayName": "Parry", "effect": "", "generation": 5, "is_main_series": false}, {"name": "pastel-veil", "displayName": "Pastel Veil", "effect": "Prevents the Pok\u00e9mon and its allies from being poisoned.", "generation": 8, "is_main_series": true}, {"name": "perception", "displayName": "Perception", "effect": "", "generation": 5, "is_main_series": false}, {"name": "perish-body", "displayName": "Perish Body", "effect": "When hit by a move that makes direct contact, the Pok\u00e9mon and the attacker will faint after three turns unless they switch out of battle.", "generation": 8, "is_main_series": true}, {"name": "pickpocket", "displayName": "Pickpocket", "effect": "Steals attacking Pok\u00e9mon's held items on contact.", "generation": 5, "is_main_series": true}, {"name": "pickup", "displayName": "Pickup", "effect": "Picks up other Pok\u00e9mon's used and Flung held items.  May also pick up an item after battle.", "generation": 3, "is_main_series": true}, {"name": "piercing-drill", "displayName": "Piercing Drill", "effect": "When the Pok\u00e9mon uses contact moves, it can hit even targets that are protecting themselves.", "generation": 9, "is_main_series": true}, {"name": "pixilate", "displayName": "Pixilate", "effect": "Turns the bearer's Normal moves into Fairy moves and strengthens them to 1.3\u00d7 their power.", "generation": 6, "is_main_series": true}, {"name": "plus", "displayName": "Plus", "effect": "Increases Special Attack to 1.5\u00d7 when a friendly Pok\u00e9mon has Plus or Minus.", "generation": 3, "is_main_series": true}, {"name": "poison-heal", "displayName": "Poison Heal", "effect": "Heals for 1/8 max HP after each turn when poisoned in place of damage.", "generation": 4, "is_main_series": true}, {"name": "poison-point", "displayName": "Poison Point", "effect": "Has a 30% chance of poisoning attacking Pok\u00e9mon on contact.", "generation": 3, "is_main_series": true}, {"name": "poison-puppeteer", "displayName": "Poison Puppeteer", "effect": "Pok\u00e9mon poisoned by Pecharunt's moves will also become confused.", "generation": 9, "is_main_series": true}, {"name": "poison-touch", "displayName": "Poison Touch", "effect": "Has a 30% chance of poisoning target Pok\u00e9mon upon contact.", "generation": 5, "is_main_series": true}, {"name": "power-construct", "displayName": "Power Construct", "effect": "Transforms 10% or 50% Zygarde into Complete Forme when its HP is below 50%.", "generation": 7, "is_main_series": true}, {"name": "power-nap", "displayName": "Power Nap", "effect": "", "generation": 5, "is_main_series": false}, {"name": "power-of-alchemy", "displayName": "Power Of Alchemy", "effect": "When an ally faints, this Pok\u00e9mon gains its Ability.", "generation": 7, "is_main_series": true}, {"name": "power-spot", "displayName": "Power Spot", "effect": "Just being next to the Pok\u00e9mon powers up moves.", "generation": 8, "is_main_series": true}, {"name": "prankster", "displayName": "Prankster", "effect": "Raises non-damaging moves' priority by one stage.", "generation": 5, "is_main_series": true}, {"name": "pressure", "displayName": "Pressure", "effect": "Increases the PP cost of moves targetting the Pok\u00e9mon by one.", "generation": 3, "is_main_series": true}, {"name": "pride", "displayName": "Pride", "effect": "", "generation": 5, "is_main_series": false}, {"name": "primordial-sea", "displayName": "Primordial Sea", "effect": "Creates heavy rain, which has all the properties of Rain Dance, cannot be replaced, and causes damaging Fire moves to fail.", "generation": 6, "is_main_series": true}, {"name": "prism-armor", "displayName": "Prism Armor", "effect": "Reduces super-effective damage to 0.75\u00d7.", "generation": 7, "is_main_series": true}, {"name": "propeller-tail", "displayName": "Propeller Tail", "effect": "Ignores moves and abilities that draw in moves.", "generation": 8, "is_main_series": true}, {"name": "protean", "displayName": "Protean", "effect": "Changes the bearer's type to match each move it uses.", "generation": 6, "is_main_series": true}, {"name": "protosynthesis", "displayName": "Protosynthesis", "effect": "Raises highest stat in harsh sunlight, or if holding Booster Energy.", "generation": 9, "is_main_series": true}, {"name": "psychic-surge", "displayName": "Psychic Surge", "effect": "When this Pok\u00e9mon enters battle, it changes the terrain to Psychic Terrain.", "generation": 7, "is_main_series": true}, {"name": "punk-rock", "displayName": "Punk Rock", "effect": "Boosts sound-based moves and halves damage from the same moves.", "generation": 8, "is_main_series": true}, {"name": "pure-power", "displayName": "Pure Power", "effect": "Doubles Attack in battle.", "generation": 3, "is_main_series": true}, {"name": "purifying-salt", "displayName": "Purifying Salt", "effect": "Protects from status conditions and halves damage from Ghost-type moves.", "generation": 9, "is_main_series": true}, {"name": "quark-drive", "displayName": "Quark Drive", "effect": "Raises highest stat on Electric Terrain, or if holding Booster Energy.", "generation": 9, "is_main_series": true}, {"name": "queenly-majesty", "displayName": "Queenly Majesty", "effect": "Opposing Pok\u00e9mon cannot use priority attacks.", "generation": 7, "is_main_series": true}, {"name": "quick-draw", "displayName": "Quick Draw", "effect": "Enables the Pok\u00e9mon to move first occasionally.", "generation": 8, "is_main_series": true}, {"name": "quick-feet", "displayName": "Quick Feet", "effect": "Increases Speed to 1.5\u00d7 with a major status ailment.", "generation": 4, "is_main_series": true}, {"name": "rain-dish", "displayName": "Rain Dish", "effect": "Heals for 1/16 max HP after each turn during rain.", "generation": 3, "is_main_series": true}, {"name": "rattled", "displayName": "Rattled", "effect": "Raises Speed one stage upon being hit by a Dark, Ghost, or Bug move.", "generation": 5, "is_main_series": true}, {"name": "receiver", "displayName": "Receiver", "effect": "When an ally faints, this Pok\u00e9mon gains its Ability.", "generation": 7, "is_main_series": true}, {"name": "reckless", "displayName": "Reckless", "effect": "Strengthens recoil moves to 1.2\u00d7 their power.", "generation": 4, "is_main_series": true}, {"name": "refrigerate", "displayName": "Refrigerate", "effect": "Turns the bearer's Normal moves into Ice moves and strengthens them to 1.3\u00d7 their power.", "generation": 6, "is_main_series": true}, {"name": "regenerator", "displayName": "Regenerator", "effect": "Heals for 1/3 max HP upon switching out.", "generation": 5, "is_main_series": true}, {"name": "ripen", "displayName": "Ripen", "effect": "Doubles the effect of berries.", "generation": 8, "is_main_series": true}, {"name": "rivalry", "displayName": "Rivalry", "effect": "Increases damage inflicted to 1.25\u00d7 against Pok\u00e9mon of the same gender, but decreases damage to 0.75\u00d7 against the opposite gender.", "generation": 4, "is_main_series": true}, {"name": "rks-system", "displayName": "Rks System", "effect": "Changes this Pok\u00e9mon's type to match its held Memory.", "generation": 7, "is_main_series": true}, {"name": "rock-head", "displayName": "Rock Head", "effect": "Protects against recoil damage.", "generation": 3, "is_main_series": true}, {"name": "rocky-payload", "displayName": "Rocky Payload", "effect": "Powers up Rock-type moves.", "generation": 9, "is_main_series": true}, {"name": "rough-skin", "displayName": "Rough Skin", "effect": "Damages attacking Pok\u00e9mon for 1/8 their max HP on contact.", "generation": 3, "is_main_series": true}, {"name": "run-away", "displayName": "Run Away", "effect": "Ensures success fleeing from wild battles.", "generation": 3, "is_main_series": true}, {"name": "run-up", "displayName": "Run Up", "effect": "", "generation": 5, "is_main_series": false}, {"name": "sand-force", "displayName": "Sand Force", "effect": "Strengthens Rock, Ground, and Steel moves to 1.3\u00d7 their power during a sandstorm.  Protects against sandstorm damage.", "generation": 5, "is_main_series": true}, {"name": "sand-rush", "displayName": "Sand Rush", "effect": "Doubles Speed during a sandstorm.  Protects against sandstorm damage.", "generation": 5, "is_main_series": true}, {"name": "sand-spit", "displayName": "Sand Spit", "effect": "Creates a sandstorm when hit by an attack.", "generation": 8, "is_main_series": true}, {"name": "sand-stream", "displayName": "Sand Stream", "effect": "Summons a sandstorm that lasts indefinitely upon entering battle.", "generation": 3, "is_main_series": true}, {"name": "sand-veil", "displayName": "Sand Veil", "effect": "Increases evasion to 1.25\u00d7 during a sandstorm.  Protects against sandstorm damage.", "generation": 3, "is_main_series": true}, {"name": "sandpit", "displayName": "Sandpit", "effect": "", "generation": 5, "is_main_series": false}, {"name": "sap-sipper", "displayName": "Sap Sipper", "effect": "Absorbs Grass moves, raising Attack one stage.", "generation": 5, "is_main_series": true}, {"name": "schooling", "displayName": "Schooling", "effect": "Wishiwashi becomes Schooling Form when its HP is 25% or higher.", "generation": 7, "is_main_series": true}, {"name": "scrappy", "displayName": "Scrappy", "effect": "Lets the Pok\u00e9mon's Normal and Fighting moves hit Ghost Pok\u00e9mon.", "generation": 4, "is_main_series": true}, {"name": "screen-cleaner", "displayName": "Screen Cleaner", "effect": "Nullifies effects of Light Screen, Reflect, and Aurora Veil.", "generation": 8, "is_main_series": true}, {"name": "seed-sower", "displayName": "Seed Sower", "effect": "Turns the ground into Grassy Terrain when the Pok\u00e9mon is hit by an attack.", "generation": 9, "is_main_series": true}, {"name": "sequence", "displayName": "Sequence", "effect": "", "generation": 5, "is_main_series": false}, {"name": "serene-grace", "displayName": "Serene Grace", "effect": "Doubles the chance of moves' extra effects occurring.", "generation": 3, "is_main_series": true}, {"name": "shackle", "displayName": "Shackle", "effect": "", "generation": 5, "is_main_series": false}, {"name": "shadow-dash", "displayName": "Shadow Dash", "effect": "", "generation": 5, "is_main_series": false}, {"name": "shadow-shield", "displayName": "Shadow Shield", "effect": "When this Pok\u00e9mon has full HP, regular damage from moves is halved.", "generation": 7, "is_main_series": true}, {"name": "shadow-tag", "displayName": "Shadow Tag", "effect": "Prevents opponents from fleeing or switching out.", "generation": 3, "is_main_series": true}, {"name": "share", "displayName": "Share", "effect": "", "generation": 5, "is_main_series": false}, {"name": "sharpness", "displayName": "Sharpness", "effect": "Powers up slicing moves.", "generation": 9, "is_main_series": true}, {"name": "shed-skin", "displayName": "Shed Skin", "effect": "Has a 33% chance of curing any major status ailment after each turn.", "generation": 3, "is_main_series": true}, {"name": "sheer-force", "displayName": "Sheer Force", "effect": "Strengthens moves with extra effects to 1.3\u00d7 their power, but prevents their extra effects.", "generation": 5, "is_main_series": true}, {"name": "shell-armor", "displayName": "Shell Armor", "effect": "Protects against critical hits.", "generation": 3, "is_main_series": true}, {"name": "shield", "displayName": "Shield", "effect": "", "generation": 5, "is_main_series": false}, {"name": "shield-dust", "displayName": "Shield Dust", "effect": "Protects against incoming moves' extra effects.", "generation": 3, "is_main_series": true}, {"name": "shields-down", "displayName": "Shields Down", "effect": "Transforms this Minior between Core Form and Meteor Form.  Prevents major status ailments and drowsiness while in Meteor Form.", "generation": 7, "is_main_series": true}, {"name": "simple", "displayName": "Simple", "effect": "Doubles the Pok\u00e9mon's stat modifiers.  These doubled modifiers are still capped at -6 or 6 stages.", "generation": 4, "is_main_series": true}, {"name": "skater", "displayName": "Skater", "effect": "", "generation": 5, "is_main_series": false}, {"name": "skill-link", "displayName": "Skill Link", "effect": "Extends two-to-five-hit moves and Triple Kick to their full length every time.", "generation": 4, "is_main_series": true}, {"name": "slow-start", "displayName": "Slow Start", "effect": "Halves Attack and Speed for five turns upon entering battle.", "generation": 4, "is_main_series": true}, {"name": "slush-rush", "displayName": "Slush Rush", "effect": "During Hail, this Pok\u00e9mon has double Speed.", "generation": 7, "is_main_series": true}, {"name": "sniper", "displayName": "Sniper", "effect": "Strengthens critical hits to inflict 3\u00d7 damage rather than 2\u00d7.", "generation": 4, "is_main_series": true}, {"name": "snow-cloak", "displayName": "Snow Cloak", "effect": "Increases evasion to 1.25\u00d7 during hail.  Protects against hail damage.", "generation": 4, "is_main_series": true}, {"name": "snow-warning", "displayName": "Snow Warning", "effect": "Summons hail that lasts indefinitely upon entering battle.", "generation": 4, "is_main_series": true}, {"name": "solar-power", "displayName": "Solar Power", "effect": "Increases Special Attack to 1.5\u00d7 but costs 1/8 max HP after each turn during strong sunlight.", "generation": 4, "is_main_series": true}, {"name": "solid-rock", "displayName": "Solid Rock", "effect": "Decreases damage taken from super-effective moves by 1/4.", "generation": 4, "is_main_series": true}, {"name": "soul-heart", "displayName": "Soul Heart", "effect": "This Pok\u00e9mon's Special Attack rises by one stage every time any Pok\u00e9mon faints.", "generation": 7, "is_main_series": true}, {"name": "soundproof", "displayName": "Soundproof", "effect": "Protects against sound-based moves.", "generation": 3, "is_main_series": true}, {"name": "speed-boost", "displayName": "Speed Boost", "effect": "Raises Speed one stage after each turn.", "generation": 3, "is_main_series": true}, {"name": "spicy-spray", "displayName": "Spicy Spray", "effect": "When the Pok\u00e9mon takes damage from a move, it burns the attacker.", "generation": 9, "is_main_series": true}, {"name": "spirit", "displayName": "Spirit", "effect": "", "generation": 5, "is_main_series": false}, {"name": "sponge", "displayName": "Sponge", "effect": "", "generation": 5, "is_main_series": false}, {"name": "sprint", "displayName": "Sprint", "effect": "", "generation": 5, "is_main_series": false}, {"name": "stakeout", "displayName": "Stakeout", "effect": "This Pok\u00e9mon's moves have double power against Pok\u00e9mon that switched in this turn.", "generation": 7, "is_main_series": true}, {"name": "stall", "displayName": "Stall", "effect": "Makes the Pok\u00e9mon move last within its move's priority bracket.", "generation": 4, "is_main_series": true}, {"name": "stalwart", "displayName": "Stalwart", "effect": "Ignores moves and abilities that draw in moves.", "generation": 8, "is_main_series": true}, {"name": "stamina", "displayName": "Stamina", "effect": "Raises this Pok\u00e9mon's Defense by one stage when it takes damage from a move.", "generation": 7, "is_main_series": true}, {"name": "stance-change", "displayName": "Stance Change", "effect": "Changes Aegislash to Blade Forme before using a damaging move, or Shield Forme before using King\u2019s Shield.", "generation": 6, "is_main_series": true}, {"name": "static", "displayName": "Static", "effect": "Has a 30% chance of paralyzing attacking Pok\u00e9mon on contact.", "generation": 3, "is_main_series": true}, {"name": "steadfast", "displayName": "Steadfast", "effect": "Raises Speed one stage upon flinching.", "generation": 4, "is_main_series": true}, {"name": "stealth", "displayName": "Stealth", "effect": "", "generation": 5, "is_main_series": false}, {"name": "steam-engine", "displayName": "Steam Engine", "effect": "Boosts the Speed stat drastically when the Pok\u00e9mon is hit by a Fire- or Water-type move.", "generation": 8, "is_main_series": true}, {"name": "steelworker", "displayName": "Steelworker", "effect": "This Pok\u00e9mon's Steel moves have 1.5\u00d7 power.", "generation": 7, "is_main_series": true}, {"name": "steely-spirit", "displayName": "Steely Spirit", "effect": "Powers up ally Pok\u00e9mon's Steel-type moves.", "generation": 8, "is_main_series": true}, {"name": "stench", "displayName": "Stench", "effect": "Has a 10% chance of making target Pok\u00e9mon flinch with each hit.", "generation": 3, "is_main_series": true}, {"name": "sticky-hold", "displayName": "Sticky Hold", "effect": "Prevents a held item from being removed by other Pok\u00e9mon.", "generation": 3, "is_main_series": true}, {"name": "storm-drain", "displayName": "Storm Drain", "effect": "Redirects single-target Water moves to this Pok\u00e9mon where possible.  Absorbs Water moves, raising Special Attack one stage.", "generation": 4, "is_main_series": true}, {"name": "strong-jaw", "displayName": "Strong Jaw", "effect": "Strengthens biting moves to 1.5\u00d7 their power.", "generation": 6, "is_main_series": true}, {"name": "sturdy", "displayName": "Sturdy", "effect": "Prevents being KOed from full HP, leaving 1 HP instead.  Protects against the one-hit KO moves regardless of HP.", "generation": 3, "is_main_series": true}, {"name": "suction-cups", "displayName": "Suction Cups", "effect": "Prevents being forced out of battle by other Pok\u00e9mon's moves.", "generation": 3, "is_main_series": true}, {"name": "super-luck", "displayName": "Super Luck", "effect": "Raises moves' critical hit rates one stage.", "generation": 4, "is_main_series": true}, {"name": "supersweet-syrup", "displayName": "Supersweet Syrup", "effect": "Once per battle, when a Pok\u00e9mon with Supersweet Syrup enters the battle, it lowers the evasion stat of all adjacent opponents by one stage. ", "generation": 9, "is_main_series": true}, {"name": "supreme-overlord", "displayName": "Supreme Overlord", "effect": "Attack and Special Attack are boosted for each party Pok\u00e9mon that has been defeated.", "generation": 9, "is_main_series": true}, {"name": "surge-surfer", "displayName": "Surge Surfer", "effect": "Doubles this Pok\u00e9mon's Speed on Electric Terrain.", "generation": 7, "is_main_series": true}, {"name": "swarm", "displayName": "Swarm", "effect": "Strengthens Bug moves to inflict 1.5\u00d7 damage at 1/3 max HP or less.", "generation": 3, "is_main_series": true}, {"name": "sweet-veil", "displayName": "Sweet Veil", "effect": "Prevents friendly Pok\u00e9mon from sleeping.", "generation": 6, "is_main_series": true}, {"name": "swift-swim", "displayName": "Swift Swim", "effect": "Doubles Speed during rain.", "generation": 3, "is_main_series": true}, {"name": "sword-of-ruin", "displayName": "Sword Of Ruin", "effect": "Lowers Defense of all Pok\u00e9mon except itself.", "generation": 9, "is_main_series": true}, {"name": "symbiosis", "displayName": "Symbiosis", "effect": "Passes the bearer's held item to an ally when the ally uses up its item.", "generation": 6, "is_main_series": true}, {"name": "synchronize", "displayName": "Synchronize", "effect": "Copies burns, paralysis, and poison received onto the Pok\u00e9mon that inflicted them.", "generation": 3, "is_main_series": true}, {"name": "tablets-of-ruin", "displayName": "Tablets Of Ruin", "effect": "Lowers Attack of all Pok\u00e9mon except itself.", "generation": 9, "is_main_series": true}, {"name": "tangled-feet", "displayName": "Tangled Feet", "effect": "Doubles evasion when confused.", "generation": 4, "is_main_series": true}, {"name": "tangling-hair", "displayName": "Tangling Hair", "effect": "When this Pok\u00e9mon takes regular damage from a contact move, the attacking Pok\u00e9mon's Speed lowers by one stage.", "generation": 7, "is_main_series": true}, {"name": "technician", "displayName": "Technician", "effect": "Strengthens moves of 60 base power or less to 1.5\u00d7 their power.", "generation": 4, "is_main_series": true}, {"name": "telepathy", "displayName": "Telepathy", "effect": "Protects against friendly Pok\u00e9mon's damaging moves.", "generation": 5, "is_main_series": true}, {"name": "tenacity", "displayName": "Tenacity", "effect": "", "generation": 5, "is_main_series": false}, {"name": "tera-shell", "displayName": "Tera Shell", "effect": "All damage-dealing moves that hit the Pok\u00e9mon when its HP is full will not be very effective.", "generation": 9, "is_main_series": true}, {"name": "tera-shift", "displayName": "Tera Shift", "effect": "When Terapagos enters the battle, it turns into its Terastal Form until the end of the battle. ", "generation": 9, "is_main_series": true}, {"name": "teraform-zero", "displayName": "Teraform Zero", "effect": "As soon as Terapagos assumes its Stellar Form, it will immediately neutralize weather and terrain effects. ", "generation": 9, "is_main_series": true}, {"name": "teravolt", "displayName": "Teravolt", "effect": "Bypasses targets' abilities if they could hinder or prevent moves.", "generation": 5, "is_main_series": true}, {"name": "thermal-exchange", "displayName": "Thermal Exchange", "effect": "Raises Attack when hit by a Fire-type move. Cannot be burned.", "generation": 9, "is_main_series": true}, {"name": "thick-fat", "displayName": "Thick Fat", "effect": "Halves damage from Fire and Ice moves.", "generation": 3, "is_main_series": true}, {"name": "thrust", "displayName": "Thrust", "effect": "", "generation": 5, "is_main_series": false}, {"name": "tinted-lens", "displayName": "Tinted Lens", "effect": "Doubles damage inflicted with not-very-effective moves.", "generation": 4, "is_main_series": true}, {"name": "torrent", "displayName": "Torrent", "effect": "Strengthens Water moves to inflict 1.5\u00d7 damage at 1/3 max HP or less.", "generation": 3, "is_main_series": true}, {"name": "tough-claws", "displayName": "Tough Claws", "effect": "Strengthens moves that make contact to 1.33\u00d7 their power.", "generation": 6, "is_main_series": true}, {"name": "toxic-boost", "displayName": "Toxic Boost", "effect": "Increases Attack to 1.5\u00d7 when poisoned.", "generation": 5, "is_main_series": true}, {"name": "toxic-chain", "displayName": "Toxic Chain", "effect": "May cause bad poisoning when the Pok\u00e9mon hits an opponent with a move.", "generation": 9, "is_main_series": true}, {"name": "toxic-debris", "displayName": "Toxic Debris", "effect": "Scatters poison spikes at the feet of the opposing team when the Pok\u00e9mon takes damage from physical moves.", "generation": 9, "is_main_series": true}, {"name": "trace", "displayName": "Trace", "effect": "Copies an opponent's ability upon entering battle.", "generation": 3, "is_main_series": true}, {"name": "transistor", "displayName": "Transistor", "effect": "Powers up Electric-type moves.", "generation": 8, "is_main_series": true}, {"name": "triage", "displayName": "Triage", "effect": "This Pok\u00e9mon's healing moves have their priority increased by 3.", "generation": 7, "is_main_series": true}, {"name": "truant", "displayName": "Truant", "effect": "Skips every second turn.", "generation": 3, "is_main_series": true}, {"name": "turboblaze", "displayName": "Turboblaze", "effect": "Bypasses targets' abilities if they could hinder or prevent moves.", "generation": 5, "is_main_series": true}, {"name": "unaware", "displayName": "Unaware", "effect": "Ignores other Pok\u00e9mon's stat modifiers for damage and accuracy calculation.", "generation": 4, "is_main_series": true}, {"name": "unburden", "displayName": "Unburden", "effect": "Doubles Speed upon using or losing a held item.", "generation": 4, "is_main_series": true}, {"name": "unnerve", "displayName": "Unnerve", "effect": "Prevents opposing Pok\u00e9mon from eating held Berries.", "generation": 5, "is_main_series": true}, {"name": "unseen-fist", "displayName": "Unseen Fist", "effect": "Contact moves can strike through Protect/Detect.", "generation": 8, "is_main_series": true}, {"name": "vanguard", "displayName": "Vanguard", "effect": "", "generation": 5, "is_main_series": false}, {"name": "vessel-of-ruin", "displayName": "Vessel Of Ruin", "effect": "Lowers Special Attack of all Pok\u00e9mon except itself.", "generation": 9, "is_main_series": true}, {"name": "victory-star", "displayName": "Victory Star", "effect": "Increases moves' accuracy to 1.1\u00d7 for friendly Pok\u00e9mon.", "generation": 5, "is_main_series": true}, {"name": "vital-spirit", "displayName": "Vital Spirit", "effect": "Prevents sleep.", "generation": 3, "is_main_series": true}, {"name": "volt-absorb", "displayName": "Volt Absorb", "effect": "Absorbs Electric moves, healing for 1/4 max HP.", "generation": 3, "is_main_series": true}, {"name": "wandering-spirit", "displayName": "Wandering Spirit", "effect": "Swaps abilities with opponents on contact.", "generation": 8, "is_main_series": true}, {"name": "warm-blanket", "displayName": "Warm Blanket", "effect": "", "generation": 5, "is_main_series": false}, {"name": "water-absorb", "displayName": "Water Absorb", "effect": "Absorbs Water moves, healing for 1/4 max HP.", "generation": 3, "is_main_series": true}, {"name": "water-bubble", "displayName": "Water Bubble", "effect": "Halves damage from Fire moves, doubles damage of Water moves, and prevents burns.", "generation": 7, "is_main_series": true}, {"name": "water-compaction", "displayName": "Water Compaction", "effect": "Raises this Pok\u00e9mon's Defense by two stages when it's hit by a Water move.", "generation": 7, "is_main_series": true}, {"name": "water-veil", "displayName": "Water Veil", "effect": "Prevents burns.", "generation": 3, "is_main_series": true}, {"name": "wave-rider", "displayName": "Wave Rider", "effect": "", "generation": 5, "is_main_series": false}, {"name": "weak-armor", "displayName": "Weak Armor", "effect": "Raises Speed and lowers Defense by one stage each upon being hit by a physical move.", "generation": 5, "is_main_series": true}, {"name": "well-baked-body", "displayName": "Well Baked Body", "effect": "Immune to Fire-type moves, and Defense is sharply boosted.", "generation": 9, "is_main_series": true}, {"name": "white-smoke", "displayName": "White Smoke", "effect": "Prevents stats from being lowered by other Pok\u00e9mon.", "generation": 3, "is_main_series": true}, {"name": "wimp-out", "displayName": "Wimp Out", "effect": "This Pok\u00e9mon automatically switches out when its HP drops below half.", "generation": 7, "is_main_series": true}, {"name": "wind-power", "displayName": "Wind Power", "effect": "When hit by a wind move, the power of the next Electric-type move it uses is doubled.", "generation": 9, "is_main_series": true}, {"name": "wind-rider", "displayName": "Wind Rider", "effect": "Gives immunity to wind moves, and causes the Pok\u00e9mon's Attack to increase by one stage when hit by one.", "generation": 9, "is_main_series": true}, {"name": "wonder-guard", "displayName": "Wonder Guard", "effect": "Protects against damaging moves that are not super effective.", "generation": 3, "is_main_series": true}, {"name": "wonder-skin", "displayName": "Wonder Skin", "effect": "Lowers incoming non-damaging moves' base accuracy to exactly 50%.", "generation": 5, "is_main_series": true}, {"name": "zen-mode", "displayName": "Zen Mode", "effect": "Changes Darmanitan's form after each turn depending on its HP: Zen Mode below 50% max HP, and Standard Mode otherwise.", "generation": 5, "is_main_series": true}, {"name": "zero-to-hero", "displayName": "Zero To Hero", "effect": "Transforms into its Hero Form when switching out.", "generation": 9, "is_main_series": true}]}
+{
+  "count": 313,
+  "abilities": [
+    {
+      "name": "adaptability",
+      "displayName": "Adaptability",
+      "effect": "Increases the same-type attack bonus from 1.5× to 2×.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "aerilate",
+      "displayName": "Aerilate",
+      "effect": "Turns the bearer's Normal moves into Flying moves and strengthens them to 1.3× their power.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "aftermath",
+      "displayName": "Aftermath",
+      "effect": "Damages the attacker for 1/4 its max HP when knocked out by a contact move.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "air-lock",
+      "displayName": "Air Lock",
+      "effect": "Negates all effects of weather, but does not prevent the weather itself.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "analytic",
+      "displayName": "Analytic",
+      "effect": "Strengthens moves to 1.3× their power when moving last.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "anger-point",
+      "displayName": "Anger Point",
+      "effect": "Raises Attack to the maximum of six stages upon receiving a critical hit.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "anger-shell",
+      "displayName": "Anger Shell",
+      "effect": "When the Pokémon's HP drops below half, Anger Shell lowers its Defense and Special Defense but its Attack, Special Attack and Speed are raised.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "anticipation",
+      "displayName": "Anticipation",
+      "effect": "Notifies all trainers upon entering battle if an opponent has a super-effective move, Self-Destruct, Explosion, or a one-hit KO move.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "arena-trap",
+      "displayName": "Arena Trap",
+      "effect": "Prevents opponents from fleeing or switching out.  Eluded by Flying-types and Pokémon in the air.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "armor-tail",
+      "displayName": "Armor Tail",
+      "effect": "Prevents the opponent from using any moves that have priority, such as Quick Attack.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "aroma-veil",
+      "displayName": "Aroma Veil",
+      "effect": "Protects allies against moves that affect their mental state.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "as-one-glastrier",
+      "displayName": "As One Glastrier",
+      "effect": "Combines the effects of Unnerve and Chilling Neigh.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "as-one-spectrier",
+      "displayName": "As One Spectrier",
+      "effect": "Combines the effects of Unnerve and Grim Neigh.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "aura-break",
+      "displayName": "Aura Break",
+      "effect": "Makes Dark Aura and Fairy Aura weaken moves of their respective types.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "bad-dreams",
+      "displayName": "Bad Dreams",
+      "effect": "Damages sleeping opponents for 1/8 their max HP after each turn.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "ball-fetch",
+      "displayName": "Ball Fetch",
+      "effect": "If the Pokémon is not holding an item, it will fetch the Poké Ball from the first failed throw of the battle.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "battery",
+      "displayName": "Battery",
+      "effect": "Ally Pokémon's moves have their power increased to 1.3×.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "battle-armor",
+      "displayName": "Battle Armor",
+      "effect": "Protects against critical hits.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "battle-bond",
+      "displayName": "Battle Bond",
+      "effect": "Transforms this Pokémon into Ash-Greninja after fainting an opponent.  Water Shuriken's power is 20 and always hits three times.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "beads-of-ruin",
+      "displayName": "Beads Of Ruin",
+      "effect": "Lowers Special Defense of all Pokémon except itself.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "beast-boost",
+      "displayName": "Beast Boost",
+      "effect": "Raises this Pokémon's highest stat by one stage when it faints another Pokémon.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "berserk",
+      "displayName": "Berserk",
+      "effect": "Raises this Pokémon's Special Attack by one stage every time its HP drops below half.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "big-pecks",
+      "displayName": "Big Pecks",
+      "effect": "Protects against Defense drops.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "blaze",
+      "displayName": "Blaze",
+      "effect": "Strengthens Fire moves to inflict 1.5× damage at 1/3 max HP or less.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "bulletproof",
+      "displayName": "Bulletproof",
+      "effect": "Protects against bullet, ball, and bomb-based moves.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "cheek-pouch",
+      "displayName": "Cheek Pouch",
+      "effect": "Restores HP upon eating a Berry, in addition to the Berry's effect.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "chilling-neigh",
+      "displayName": "Chilling Neigh",
+      "effect": "Boosts Attack after knocking out a Pokémon.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "chlorophyll",
+      "displayName": "Chlorophyll",
+      "effect": "Doubles Speed during strong sunlight.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "clear-body",
+      "displayName": "Clear Body",
+      "effect": "Prevents stats from being lowered by other Pokémon.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "cloud-nine",
+      "displayName": "Cloud Nine",
+      "effect": "Negates all effects of weather, but does not prevent the weather itself.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "color-change",
+      "displayName": "Color Change",
+      "effect": "Changes type to match when hit by a damaging move.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "comatose",
+      "displayName": "Comatose",
+      "effect": "This Pokémon always  acts as though it were Asleep.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "commander",
+      "displayName": "Commander",
+      "effect": "Goes inside the mouth of an ally Dondozo if one is on the field.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "competitive",
+      "displayName": "Competitive",
+      "effect": "Raises Special Attack by two stages upon having any stat lowered.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "compound-eyes",
+      "displayName": "Compound Eyes",
+      "effect": "Increases moves' accuracy to 1.3×.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "contrary",
+      "displayName": "Contrary",
+      "effect": "Inverts stat changes.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "corrosion",
+      "displayName": "Corrosion",
+      "effect": "This Pokémon can inflict poison on Poison and Steel Pokémon.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "costar",
+      "displayName": "Costar",
+      "effect": "Copies ally's stat changes on entering battle.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "cotton-down",
+      "displayName": "Cotton Down",
+      "effect": "When Ignores moves and abilities that draw in moves.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "cud-chew",
+      "displayName": "Cud Chew",
+      "effect": "Causes the Pokémon to reuse an already consumed Berry at the end of the next turn.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "curious-medicine",
+      "displayName": "Curious Medicine",
+      "effect": "Resets all stat changes upon entering battlefield.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "cursed-body",
+      "displayName": "Cursed Body",
+      "effect": "Has a 30% chance of Disabling any move that hits the Pokémon.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "cute-charm",
+      "displayName": "Cute Charm",
+      "effect": "Has a 30% chance of infatuating attacking Pokémon on contact.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "damp",
+      "displayName": "Damp",
+      "effect": "Prevents Self-Destruct, Explosion, and Aftermath from working while the Pokémon is in battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "dancer",
+      "displayName": "Dancer",
+      "effect": "Whenever another Pokémon uses a dance move, this Pokémon will use the same move immediately afterwards.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "dark-aura",
+      "displayName": "Dark Aura",
+      "effect": "Strengthens Dark moves to 1.33× their power for all friendly and opposing Pokémon.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "dauntless-shield",
+      "displayName": "Dauntless Shield",
+      "effect": "Boosts Defense in battle.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "dazzling",
+      "displayName": "Dazzling",
+      "effect": "Opposing Pokémon cannot use priority attacks.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "defeatist",
+      "displayName": "Defeatist",
+      "effect": "Halves Attack and Special Attack at 50% max HP or less.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "defiant",
+      "displayName": "Defiant",
+      "effect": "Raises Attack two stages upon having any stat lowered.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "delta-stream",
+      "displayName": "Delta Stream",
+      "effect": "Creates a mysterious air current, which cannot be replaced and causes moves to never be super effective against Flying Pokémon.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "desolate-land",
+      "displayName": "Desolate Land",
+      "effect": "Creates extremely harsh sunlight, which has all the properties of Sunny Day, cannot be replaced, and causes damaging Water moves to fail.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "disguise",
+      "displayName": "Disguise",
+      "effect": "Prevents the first instance of battle damage.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "download",
+      "displayName": "Download",
+      "effect": "Raises the attack stat corresponding to the opponents' weaker defense one stage upon entering battle.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "dragonize",
+      "displayName": "Dragonize",
+      "effect": "The Pokémon's Normal-type moves become Dragon-type moves and their power is boosted by 20%.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "dragons-maw",
+      "displayName": "Dragons Maw",
+      "effect": "Powers up Dragon-type moves.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "drizzle",
+      "displayName": "Drizzle",
+      "effect": "Summons rain that lasts indefinitely upon entering battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "drought",
+      "displayName": "Drought",
+      "effect": "Summons strong sunlight that lasts indefinitely upon entering battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "dry-skin",
+      "displayName": "Dry Skin",
+      "effect": "Causes 1/8 max HP in damage each turn during strong sunlight, but heals for 1/8 max HP during rain.  Increases damage from Fire moves to 1.25×, but absorbs Water moves, healing for 1/4 max HP.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "early-bird",
+      "displayName": "Early Bird",
+      "effect": "Makes sleep pass twice as quickly.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "earth-eater",
+      "displayName": "Earth Eater",
+      "effect": "Restores HP when hit by a Ground-type move.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "eelevate",
+      "displayName": "Eelevate",
+      "effect": "The Pokémon floats off the ground, making it immune to Ground-type moves, as well as the Spikes, Toxic Spikes, and Sticky Web statuses. When the Pokémon knocks out a target with an attack, its highest stat is boosted by 1 stage.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "effect-spore",
+      "displayName": "Effect Spore",
+      "effect": "Has a 30% chance of inflcting either paralysis, poison, or sleep on attacking Pokémon on contact.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "electric-surge",
+      "displayName": "Electric Surge",
+      "effect": "When this Pokémon enters battle, it changes the terrain to Electric Terrain.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "electromorphosis",
+      "displayName": "Electromorphosis",
+      "effect": "When hit by an attack, the power of the next Electric-type move it uses is doubled.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "embody-aspect",
+      "displayName": "Embody Aspect",
+      "effect": "Embody Aspect boosts a particular stat, depending on the form of a Terastallized Ogerpon",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "emergency-exit",
+      "displayName": "Emergency Exit",
+      "effect": "This Pokémon automatically switches out when its HP drops below half.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "fairy-aura",
+      "displayName": "Fairy Aura",
+      "effect": "Strengthens Fairy moves to 1.33× their power for all friendly and opposing Pokémon.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "filter",
+      "displayName": "Filter",
+      "effect": "Decreases damage taken from super-effective moves by 1/4.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "fire-mane",
+      "displayName": "Fire Mane",
+      "effect": "Boosts the power of the Pokémon's Fire-type moves by 50%.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "flame-body",
+      "displayName": "Flame Body",
+      "effect": "Has a 30% chance of burning attacking Pokémon on contact.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "flare-boost",
+      "displayName": "Flare Boost",
+      "effect": "Increases Special Attack to 1.5× when burned.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "flash-fire",
+      "displayName": "Flash Fire",
+      "effect": "Protects against Fire moves.  Once one has been blocked, the Pokémon's own Fire moves inflict 1.5× damage until it leaves battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "flower-gift",
+      "displayName": "Flower Gift",
+      "effect": "Increases friendly Pokémon's Attack and Special Defense to 1.5× during strong sunlight.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "flower-veil",
+      "displayName": "Flower Veil",
+      "effect": "Protects friendly Grass Pokémon from having their stats lowered by other Pokémon.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "fluffy",
+      "displayName": "Fluffy",
+      "effect": "Damage from contact moves is halved.  Damage from Fire moves is doubled.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "forecast",
+      "displayName": "Forecast",
+      "effect": "Changes Castform's type and form to match the weather.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "forewarn",
+      "displayName": "Forewarn",
+      "effect": "Reveals the opponents' strongest move upon entering battle.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "friend-guard",
+      "displayName": "Friend Guard",
+      "effect": "Decreases all direct damage taken by friendly Pokémon to 0.75×.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "frisk",
+      "displayName": "Frisk",
+      "effect": "Reveals an opponent's held item upon entering battle.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "full-metal-body",
+      "displayName": "Full Metal Body",
+      "effect": "Other Pokémon cannot lower this Pokémon's stats.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "fur-coat",
+      "displayName": "Fur Coat",
+      "effect": "Halves damage from physical attacks.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "gale-wings",
+      "displayName": "Gale Wings",
+      "effect": "Raises Flying moves' priority by one stage.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "galvanize",
+      "displayName": "Galvanize",
+      "effect": "This Pokémon's Normal moves are Electric and have their power increased to 1.2×.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "gluttony",
+      "displayName": "Gluttony",
+      "effect": "Makes the Pokémon eat any held Berry triggered by low HP below 1/2 its max HP.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "good-as-gold",
+      "displayName": "Good As Gold",
+      "effect": "Gives immunity to status moves.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "gooey",
+      "displayName": "Gooey",
+      "effect": "Lowers attacking Pokémon's Speed by one stage on contact.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "gorilla-tactics",
+      "displayName": "Gorilla Tactics",
+      "effect": "Boosts the Pokémon's Attack stat but only allows the use of the first selected move.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "grass-pelt",
+      "displayName": "Grass Pelt",
+      "effect": "Boosts Defense while Grassy Terrain is in effect.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "grassy-surge",
+      "displayName": "Grassy Surge",
+      "effect": "When this Pokémon enters battle, it changes the terrain to Grassy Terrain.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "grim-neigh",
+      "displayName": "Grim Neigh",
+      "effect": "Boosts Special Attack after knocking out a Pokémon.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "guard-dog",
+      "displayName": "Guard Dog",
+      "effect": "Boosts Attack if intimidated, and prevents being forced to switch out.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "gulp-missile",
+      "displayName": "Gulp Missile",
+      "effect": "If a Cramorant with Gulp Missile uses Surf or Dive, it catches prey and changes its form depending on its remaining HP.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "guts",
+      "displayName": "Guts",
+      "effect": "Increases Attack to 1.5× with a major status ailment.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "hadron-engine",
+      "displayName": "Hadron Engine",
+      "effect": "Creates an Electric Terrain when entering battle, and boosts Special Attack while active.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "harvest",
+      "displayName": "Harvest",
+      "effect": "Has a 50% chance of restoring a used Berry after each turn if the Pokémon has held no items in the meantime.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "healer",
+      "displayName": "Healer",
+      "effect": "Has a 30% chance of curing each adjacent ally of any major status ailment after each turn.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "heatproof",
+      "displayName": "Heatproof",
+      "effect": "Halves damage from Fire moves and burns.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "heavy-metal",
+      "displayName": "Heavy Metal",
+      "effect": "Doubles the Pokémon's weight.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "honey-gather",
+      "displayName": "Honey Gather",
+      "effect": "The Pokémon may pick up Honey after battle.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "hospitality",
+      "displayName": "Hospitality",
+      "effect": "When a Pokémon with Hospitality enters a battle, it restores HP for an ally by 25%.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "huge-power",
+      "displayName": "Huge Power",
+      "effect": "Doubles Attack in battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "hunger-switch",
+      "displayName": "Hunger Switch",
+      "effect": "Causes Morpeko to change its form each turn, alternating between Full Belly Mode and Hangry Mode",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "hustle",
+      "displayName": "Hustle",
+      "effect": "Strengthens physical moves to inflict 1.5× damage, but decreases their accuracy to 0.8×.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "hydration",
+      "displayName": "Hydration",
+      "effect": "Cures any major status ailment after each turn during rain.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "hyper-cutter",
+      "displayName": "Hyper Cutter",
+      "effect": "Prevents Attack from being lowered by other Pokémon.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "ice-body",
+      "displayName": "Ice Body",
+      "effect": "Heals for 1/16 max HP after each turn during hail.  Protects against hail damage.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "ice-face",
+      "displayName": "Ice Face",
+      "effect": "The Pokémon’s ice head can take a physical attack as a substitute, but the attack also changes the Pokémon’s appearance. The ice will be restored when it snows.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "ice-scales",
+      "displayName": "Ice Scales",
+      "effect": "Halves damage from Special moves.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "illuminate",
+      "displayName": "Illuminate",
+      "effect": "Doubles the wild encounter rate.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "illusion",
+      "displayName": "Illusion",
+      "effect": "Takes the appearance of the last conscious party Pokémon upon being sent out until hit by a damaging move.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "immunity",
+      "displayName": "Immunity",
+      "effect": "Prevents poison.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "imposter",
+      "displayName": "Imposter",
+      "effect": "Transforms upon entering battle.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "infiltrator",
+      "displayName": "Infiltrator",
+      "effect": "Bypasses Light Screen, Reflect, and Safeguard.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "innards-out",
+      "displayName": "Innards Out",
+      "effect": "When this Pokémon faints from an opponent's move, that opponent takes damage equal to the HP this Pokémon had remaining.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "inner-focus",
+      "displayName": "Inner Focus",
+      "effect": "Prevents flinching.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "insomnia",
+      "displayName": "Insomnia",
+      "effect": "Prevents sleep.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "intimidate",
+      "displayName": "Intimidate",
+      "effect": "Lowers opponents' Attack one stage upon entering battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "intrepid-sword",
+      "displayName": "Intrepid Sword",
+      "effect": "Boosts Attack in battle.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "iron-barbs",
+      "displayName": "Iron Barbs",
+      "effect": "Damages attacking Pokémon for 1/8 their max HP on contact.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "iron-fist",
+      "displayName": "Iron Fist",
+      "effect": "Strengthens punch-based moves to 1.2× their power.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "justified",
+      "displayName": "Justified",
+      "effect": "Raises Attack one stage upon taking damage from a Dark move.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "keen-eye",
+      "displayName": "Keen Eye",
+      "effect": "Prevents accuracy from being lowered.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "klutz",
+      "displayName": "Klutz",
+      "effect": "Prevents the Pokémon from using its held item in battle.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "leaf-guard",
+      "displayName": "Leaf Guard",
+      "effect": "Protects against major status ailments during strong sunlight.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "levitate",
+      "displayName": "Levitate",
+      "effect": "Evades Ground moves.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "libero",
+      "displayName": "Libero",
+      "effect": "Libero changes the Pokémon's type to that of its previously used attack.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "light-metal",
+      "displayName": "Light Metal",
+      "effect": "Halves the Pokémon's weight.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "lightning-rod",
+      "displayName": "Lightning Rod",
+      "effect": "Redirects single-target Electric moves to this Pokémon where possible.  Absorbs Electric moves, raising Special Attack one stage.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "limber",
+      "displayName": "Limber",
+      "effect": "Prevents paralysis.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "lingering-aroma",
+      "displayName": "Lingering Aroma",
+      "effect": "Contact changes the attacker's Ability to Lingering Aroma.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "liquid-ooze",
+      "displayName": "Liquid Ooze",
+      "effect": "Damages opponents using leeching moves for as much as they would heal.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "liquid-voice",
+      "displayName": "Liquid Voice",
+      "effect": "Sound-based moves become Water-type.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "long-reach",
+      "displayName": "Long Reach",
+      "effect": "This Pokémon's moves do not make contact.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "magic-bounce",
+      "displayName": "Magic Bounce",
+      "effect": "Reflects most non-damaging moves back at their user.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "magic-guard",
+      "displayName": "Magic Guard",
+      "effect": "Protects against damage not directly caused by a move.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "magician",
+      "displayName": "Magician",
+      "effect": "Steals the target's held item when the bearer uses a damaging move.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "magma-armor",
+      "displayName": "Magma Armor",
+      "effect": "Prevents freezing.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "magnet-pull",
+      "displayName": "Magnet Pull",
+      "effect": "Prevents Steel opponents from fleeing or switching out.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "marvel-scale",
+      "displayName": "Marvel Scale",
+      "effect": "Increases Defense to 1.5× with a major status ailment.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "mega-launcher",
+      "displayName": "Mega Launcher",
+      "effect": "Strengthens aura and pulse moves to 1.5× their power.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "mega-sol",
+      "displayName": "Mega Sol",
+      "effect": "The Pokémon can use its moves as if the weather were harsh sunlight.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "merciless",
+      "displayName": "Merciless",
+      "effect": "This Pokémon's moves critical hit against poisoned targets.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "mimicry",
+      "displayName": "Mimicry",
+      "effect": "Changes type depending on the terrain.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "minds-eye",
+      "displayName": "Minds Eye",
+      "effect": "The Pokémon ignores changes to opponents' evasiveness, its accuracy can't be lowered, and it can hit Ghost types with Normal- and Fighting-type moves.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "minus",
+      "displayName": "Minus",
+      "effect": "Increases Special Attack to 1.5× when a friendly Pokémon has Plus or Minus.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "mirror-armor",
+      "displayName": "Mirror Armor",
+      "effect": "Reflects any stat-lowering effects.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "misty-surge",
+      "displayName": "Misty Surge",
+      "effect": "When this Pokémon enters battle, it changes the terrain to Misty Terrain.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "mold-breaker",
+      "displayName": "Mold Breaker",
+      "effect": "Bypasses targets' abilities if they could hinder or prevent a move.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "moody",
+      "displayName": "Moody",
+      "effect": "Raises a random stat two stages and lowers another one stage after each turn.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "motor-drive",
+      "displayName": "Motor Drive",
+      "effect": "Absorbs Electric moves, raising Speed one stage.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "moxie",
+      "displayName": "Moxie",
+      "effect": "Raises Attack one stage upon KOing a Pokémon.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "multiscale",
+      "displayName": "Multiscale",
+      "effect": "Halves damage taken from full HP.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "multitype",
+      "displayName": "Multitype",
+      "effect": "Changes Arceus's type and form to match its held Plate.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "mummy",
+      "displayName": "Mummy",
+      "effect": "Changes attacking Pokémon's abilities to Mummy on contact.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "mycelium-might",
+      "displayName": "Mycelium Might",
+      "effect": "Status moves go last, but are not affected by the opponent's ability.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "natural-cure",
+      "displayName": "Natural Cure",
+      "effect": "Cures any major status ailment upon switching out.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "neuroforce",
+      "displayName": "Neuroforce",
+      "effect": "Increases super-effective damage dealt to 1.25×.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "neutralizing-gas",
+      "displayName": "Neutralizing Gas",
+      "effect": "Neutralizes abilities of all Pokémon in battle.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "no-guard",
+      "displayName": "No Guard",
+      "effect": "Ensures all moves used by and against the Pokémon hit.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "normalize",
+      "displayName": "Normalize",
+      "effect": "Makes the Pokémon's moves all act Normal-type.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "oblivious",
+      "displayName": "Oblivious",
+      "effect": "Prevents infatuation and protects against Captivate.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "opportunist",
+      "displayName": "Opportunist",
+      "effect": "Copies stat boosts by the opponent.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "orichalcum-pulse",
+      "displayName": "Orichalcum Pulse",
+      "effect": "Turns the sunlight harsh when entering battle, and boosts Attack while active.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "overcoat",
+      "displayName": "Overcoat",
+      "effect": "Protects against damage from weather.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "overgrow",
+      "displayName": "Overgrow",
+      "effect": "Strengthens Grass moves to inflict 1.5× damage at 1/3 max HP or less.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "own-tempo",
+      "displayName": "Own Tempo",
+      "effect": "Prevents confusion.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "parental-bond",
+      "displayName": "Parental Bond",
+      "effect": "Lets the bearer hit twice with damaging moves.  The second hit has half power.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "pastel-veil",
+      "displayName": "Pastel Veil",
+      "effect": "Prevents the Pokémon and its allies from being poisoned.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "perish-body",
+      "displayName": "Perish Body",
+      "effect": "When hit by a move that makes direct contact, the Pokémon and the attacker will faint after three turns unless they switch out of battle.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "pickpocket",
+      "displayName": "Pickpocket",
+      "effect": "Steals attacking Pokémon's held items on contact.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "pickup",
+      "displayName": "Pickup",
+      "effect": "Picks up other Pokémon's used and Flung held items.  May also pick up an item after battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "piercing-drill",
+      "displayName": "Piercing Drill",
+      "effect": "When the Pokémon uses contact moves, it can hit even targets that are protecting themselves.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "pixilate",
+      "displayName": "Pixilate",
+      "effect": "Turns the bearer's Normal moves into Fairy moves and strengthens them to 1.3× their power.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "plus",
+      "displayName": "Plus",
+      "effect": "Increases Special Attack to 1.5× when a friendly Pokémon has Plus or Minus.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "poison-heal",
+      "displayName": "Poison Heal",
+      "effect": "Heals for 1/8 max HP after each turn when poisoned in place of damage.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "poison-point",
+      "displayName": "Poison Point",
+      "effect": "Has a 30% chance of poisoning attacking Pokémon on contact.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "poison-puppeteer",
+      "displayName": "Poison Puppeteer",
+      "effect": "Pokémon poisoned by Pecharunt's moves will also become confused.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "poison-touch",
+      "displayName": "Poison Touch",
+      "effect": "Has a 30% chance of poisoning target Pokémon upon contact.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "power-construct",
+      "displayName": "Power Construct",
+      "effect": "Transforms 10% or 50% Zygarde into Complete Forme when its HP is below 50%.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "power-of-alchemy",
+      "displayName": "Power Of Alchemy",
+      "effect": "When an ally faints, this Pokémon gains its Ability.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "power-spot",
+      "displayName": "Power Spot",
+      "effect": "Just being next to the Pokémon powers up moves.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "prankster",
+      "displayName": "Prankster",
+      "effect": "Raises non-damaging moves' priority by one stage.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "pressure",
+      "displayName": "Pressure",
+      "effect": "Increases the PP cost of moves targetting the Pokémon by one.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "primordial-sea",
+      "displayName": "Primordial Sea",
+      "effect": "Creates heavy rain, which has all the properties of Rain Dance, cannot be replaced, and causes damaging Fire moves to fail.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "prism-armor",
+      "displayName": "Prism Armor",
+      "effect": "Reduces super-effective damage to 0.75×.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "propeller-tail",
+      "displayName": "Propeller Tail",
+      "effect": "Ignores moves and abilities that draw in moves.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "protean",
+      "displayName": "Protean",
+      "effect": "Changes the bearer's type to match each move it uses.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "protosynthesis",
+      "displayName": "Protosynthesis",
+      "effect": "Raises highest stat in harsh sunlight, or if holding Booster Energy.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "psychic-surge",
+      "displayName": "Psychic Surge",
+      "effect": "When this Pokémon enters battle, it changes the terrain to Psychic Terrain.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "punk-rock",
+      "displayName": "Punk Rock",
+      "effect": "Boosts sound-based moves and halves damage from the same moves.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "pure-power",
+      "displayName": "Pure Power",
+      "effect": "Doubles Attack in battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "purifying-salt",
+      "displayName": "Purifying Salt",
+      "effect": "Protects from status conditions and halves damage from Ghost-type moves.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "quark-drive",
+      "displayName": "Quark Drive",
+      "effect": "Raises highest stat on Electric Terrain, or if holding Booster Energy.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "queenly-majesty",
+      "displayName": "Queenly Majesty",
+      "effect": "Opposing Pokémon cannot use priority attacks.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "quick-draw",
+      "displayName": "Quick Draw",
+      "effect": "Enables the Pokémon to move first occasionally.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "quick-feet",
+      "displayName": "Quick Feet",
+      "effect": "Increases Speed to 1.5× with a major status ailment.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "rain-dish",
+      "displayName": "Rain Dish",
+      "effect": "Heals for 1/16 max HP after each turn during rain.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "rattled",
+      "displayName": "Rattled",
+      "effect": "Raises Speed one stage upon being hit by a Dark, Ghost, or Bug move.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "receiver",
+      "displayName": "Receiver",
+      "effect": "When an ally faints, this Pokémon gains its Ability.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "reckless",
+      "displayName": "Reckless",
+      "effect": "Strengthens recoil moves to 1.2× their power.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "refrigerate",
+      "displayName": "Refrigerate",
+      "effect": "Turns the bearer's Normal moves into Ice moves and strengthens them to 1.3× their power.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "regenerator",
+      "displayName": "Regenerator",
+      "effect": "Heals for 1/3 max HP upon switching out.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "ripen",
+      "displayName": "Ripen",
+      "effect": "Doubles the effect of berries.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "rivalry",
+      "displayName": "Rivalry",
+      "effect": "Increases damage inflicted to 1.25× against Pokémon of the same gender, but decreases damage to 0.75× against the opposite gender.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "rks-system",
+      "displayName": "Rks System",
+      "effect": "Changes this Pokémon's type to match its held Memory.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "rock-head",
+      "displayName": "Rock Head",
+      "effect": "Protects against recoil damage.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "rocky-payload",
+      "displayName": "Rocky Payload",
+      "effect": "Powers up Rock-type moves.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "rough-skin",
+      "displayName": "Rough Skin",
+      "effect": "Damages attacking Pokémon for 1/8 their max HP on contact.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "run-away",
+      "displayName": "Run Away",
+      "effect": "Ensures success fleeing from wild battles.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "sand-force",
+      "displayName": "Sand Force",
+      "effect": "Strengthens Rock, Ground, and Steel moves to 1.3× their power during a sandstorm.  Protects against sandstorm damage.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "sand-rush",
+      "displayName": "Sand Rush",
+      "effect": "Doubles Speed during a sandstorm.  Protects against sandstorm damage.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "sand-spit",
+      "displayName": "Sand Spit",
+      "effect": "Creates a sandstorm when hit by an attack.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "sand-stream",
+      "displayName": "Sand Stream",
+      "effect": "Summons a sandstorm that lasts indefinitely upon entering battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "sand-veil",
+      "displayName": "Sand Veil",
+      "effect": "Increases evasion to 1.25× during a sandstorm.  Protects against sandstorm damage.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "sap-sipper",
+      "displayName": "Sap Sipper",
+      "effect": "Absorbs Grass moves, raising Attack one stage.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "schooling",
+      "displayName": "Schooling",
+      "effect": "Wishiwashi becomes Schooling Form when its HP is 25% or higher.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "scrappy",
+      "displayName": "Scrappy",
+      "effect": "Lets the Pokémon's Normal and Fighting moves hit Ghost Pokémon.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "screen-cleaner",
+      "displayName": "Screen Cleaner",
+      "effect": "Nullifies effects of Light Screen, Reflect, and Aurora Veil.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "seed-sower",
+      "displayName": "Seed Sower",
+      "effect": "Turns the ground into Grassy Terrain when the Pokémon is hit by an attack.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "serene-grace",
+      "displayName": "Serene Grace",
+      "effect": "Doubles the chance of moves' extra effects occurring.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "shadow-shield",
+      "displayName": "Shadow Shield",
+      "effect": "When this Pokémon has full HP, regular damage from moves is halved.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "shadow-tag",
+      "displayName": "Shadow Tag",
+      "effect": "Prevents opponents from fleeing or switching out.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "sharpness",
+      "displayName": "Sharpness",
+      "effect": "Powers up slicing moves.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "shed-skin",
+      "displayName": "Shed Skin",
+      "effect": "Has a 33% chance of curing any major status ailment after each turn.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "sheer-force",
+      "displayName": "Sheer Force",
+      "effect": "Strengthens moves with extra effects to 1.3× their power, but prevents their extra effects.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "shell-armor",
+      "displayName": "Shell Armor",
+      "effect": "Protects against critical hits.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "shield-dust",
+      "displayName": "Shield Dust",
+      "effect": "Protects against incoming moves' extra effects.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "shields-down",
+      "displayName": "Shields Down",
+      "effect": "Transforms this Minior between Core Form and Meteor Form.  Prevents major status ailments and drowsiness while in Meteor Form.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "simple",
+      "displayName": "Simple",
+      "effect": "Doubles the Pokémon's stat modifiers.  These doubled modifiers are still capped at -6 or 6 stages.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "skill-link",
+      "displayName": "Skill Link",
+      "effect": "Extends two-to-five-hit moves and Triple Kick to their full length every time.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "slow-start",
+      "displayName": "Slow Start",
+      "effect": "Halves Attack and Speed for five turns upon entering battle.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "slush-rush",
+      "displayName": "Slush Rush",
+      "effect": "During Hail, this Pokémon has double Speed.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "sniper",
+      "displayName": "Sniper",
+      "effect": "Strengthens critical hits to inflict 3× damage rather than 2×.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "snow-cloak",
+      "displayName": "Snow Cloak",
+      "effect": "Increases evasion to 1.25× during hail.  Protects against hail damage.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "snow-warning",
+      "displayName": "Snow Warning",
+      "effect": "Summons hail that lasts indefinitely upon entering battle.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "solar-power",
+      "displayName": "Solar Power",
+      "effect": "Increases Special Attack to 1.5× but costs 1/8 max HP after each turn during strong sunlight.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "solid-rock",
+      "displayName": "Solid Rock",
+      "effect": "Decreases damage taken from super-effective moves by 1/4.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "soul-heart",
+      "displayName": "Soul Heart",
+      "effect": "This Pokémon's Special Attack rises by one stage every time any Pokémon faints.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "soundproof",
+      "displayName": "Soundproof",
+      "effect": "Protects against sound-based moves.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "speed-boost",
+      "displayName": "Speed Boost",
+      "effect": "Raises Speed one stage after each turn.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "spicy-spray",
+      "displayName": "Spicy Spray",
+      "effect": "When the Pokémon takes damage from a move, it burns the attacker.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "stakeout",
+      "displayName": "Stakeout",
+      "effect": "This Pokémon's moves have double power against Pokémon that switched in this turn.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "stall",
+      "displayName": "Stall",
+      "effect": "Makes the Pokémon move last within its move's priority bracket.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "stalwart",
+      "displayName": "Stalwart",
+      "effect": "Ignores moves and abilities that draw in moves.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "stamina",
+      "displayName": "Stamina",
+      "effect": "Raises this Pokémon's Defense by one stage when it takes damage from a move.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "stance-change",
+      "displayName": "Stance Change",
+      "effect": "Changes Aegislash to Blade Forme before using a damaging move, or Shield Forme before using King’s Shield.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "static",
+      "displayName": "Static",
+      "effect": "Has a 30% chance of paralyzing attacking Pokémon on contact.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "steadfast",
+      "displayName": "Steadfast",
+      "effect": "Raises Speed one stage upon flinching.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "steam-engine",
+      "displayName": "Steam Engine",
+      "effect": "Boosts the Speed stat drastically when the Pokémon is hit by a Fire- or Water-type move.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "steelworker",
+      "displayName": "Steelworker",
+      "effect": "This Pokémon's Steel moves have 1.5× power.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "steely-spirit",
+      "displayName": "Steely Spirit",
+      "effect": "Powers up ally Pokémon's Steel-type moves.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "stench",
+      "displayName": "Stench",
+      "effect": "Has a 10% chance of making target Pokémon flinch with each hit.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "sticky-hold",
+      "displayName": "Sticky Hold",
+      "effect": "Prevents a held item from being removed by other Pokémon.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "storm-drain",
+      "displayName": "Storm Drain",
+      "effect": "Redirects single-target Water moves to this Pokémon where possible.  Absorbs Water moves, raising Special Attack one stage.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "strong-jaw",
+      "displayName": "Strong Jaw",
+      "effect": "Strengthens biting moves to 1.5× their power.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "sturdy",
+      "displayName": "Sturdy",
+      "effect": "Prevents being KOed from full HP, leaving 1 HP instead.  Protects against the one-hit KO moves regardless of HP.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "suction-cups",
+      "displayName": "Suction Cups",
+      "effect": "Prevents being forced out of battle by other Pokémon's moves.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "super-luck",
+      "displayName": "Super Luck",
+      "effect": "Raises moves' critical hit rates one stage.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "supersweet-syrup",
+      "displayName": "Supersweet Syrup",
+      "effect": "Once per battle, when a Pokémon with Supersweet Syrup enters the battle, it lowers the evasion stat of all adjacent opponents by one stage. ",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "supreme-overlord",
+      "displayName": "Supreme Overlord",
+      "effect": "Attack and Special Attack are boosted for each party Pokémon that has been defeated.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "surge-surfer",
+      "displayName": "Surge Surfer",
+      "effect": "Doubles this Pokémon's Speed on Electric Terrain.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "swarm",
+      "displayName": "Swarm",
+      "effect": "Strengthens Bug moves to inflict 1.5× damage at 1/3 max HP or less.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "sweet-veil",
+      "displayName": "Sweet Veil",
+      "effect": "Prevents friendly Pokémon from sleeping.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "swift-swim",
+      "displayName": "Swift Swim",
+      "effect": "Doubles Speed during rain.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "sword-of-ruin",
+      "displayName": "Sword Of Ruin",
+      "effect": "Lowers Defense of all Pokémon except itself.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "symbiosis",
+      "displayName": "Symbiosis",
+      "effect": "Passes the bearer's held item to an ally when the ally uses up its item.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "synchronize",
+      "displayName": "Synchronize",
+      "effect": "Copies burns, paralysis, and poison received onto the Pokémon that inflicted them.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "tablets-of-ruin",
+      "displayName": "Tablets Of Ruin",
+      "effect": "Lowers Attack of all Pokémon except itself.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "tangled-feet",
+      "displayName": "Tangled Feet",
+      "effect": "Doubles evasion when confused.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "tangling-hair",
+      "displayName": "Tangling Hair",
+      "effect": "When this Pokémon takes regular damage from a contact move, the attacking Pokémon's Speed lowers by one stage.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "technician",
+      "displayName": "Technician",
+      "effect": "Strengthens moves of 60 base power or less to 1.5× their power.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "telepathy",
+      "displayName": "Telepathy",
+      "effect": "Protects against friendly Pokémon's damaging moves.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "tera-shell",
+      "displayName": "Tera Shell",
+      "effect": "All damage-dealing moves that hit the Pokémon when its HP is full will not be very effective.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "tera-shift",
+      "displayName": "Tera Shift",
+      "effect": "When Terapagos enters the battle, it turns into its Terastal Form until the end of the battle. ",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "teraform-zero",
+      "displayName": "Teraform Zero",
+      "effect": "As soon as Terapagos assumes its Stellar Form, it will immediately neutralize weather and terrain effects. ",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "teravolt",
+      "displayName": "Teravolt",
+      "effect": "Bypasses targets' abilities if they could hinder or prevent moves.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "thermal-exchange",
+      "displayName": "Thermal Exchange",
+      "effect": "Raises Attack when hit by a Fire-type move. Cannot be burned.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "thick-fat",
+      "displayName": "Thick Fat",
+      "effect": "Halves damage from Fire and Ice moves.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "tinted-lens",
+      "displayName": "Tinted Lens",
+      "effect": "Doubles damage inflicted with not-very-effective moves.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "torrent",
+      "displayName": "Torrent",
+      "effect": "Strengthens Water moves to inflict 1.5× damage at 1/3 max HP or less.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "tough-claws",
+      "displayName": "Tough Claws",
+      "effect": "Strengthens moves that make contact to 1.33× their power.",
+      "generation": 6,
+      "is_main_series": true
+    },
+    {
+      "name": "toxic-boost",
+      "displayName": "Toxic Boost",
+      "effect": "Increases Attack to 1.5× when poisoned.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "toxic-chain",
+      "displayName": "Toxic Chain",
+      "effect": "May cause bad poisoning when the Pokémon hits an opponent with a move.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "toxic-debris",
+      "displayName": "Toxic Debris",
+      "effect": "Scatters poison spikes at the feet of the opposing team when the Pokémon takes damage from physical moves.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "trace",
+      "displayName": "Trace",
+      "effect": "Copies an opponent's ability upon entering battle.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "transistor",
+      "displayName": "Transistor",
+      "effect": "Powers up Electric-type moves.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "triage",
+      "displayName": "Triage",
+      "effect": "This Pokémon's healing moves have their priority increased by 3.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "truant",
+      "displayName": "Truant",
+      "effect": "Skips every second turn.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "turboblaze",
+      "displayName": "Turboblaze",
+      "effect": "Bypasses targets' abilities if they could hinder or prevent moves.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "unaware",
+      "displayName": "Unaware",
+      "effect": "Ignores other Pokémon's stat modifiers for damage and accuracy calculation.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "unburden",
+      "displayName": "Unburden",
+      "effect": "Doubles Speed upon using or losing a held item.",
+      "generation": 4,
+      "is_main_series": true
+    },
+    {
+      "name": "unnerve",
+      "displayName": "Unnerve",
+      "effect": "Prevents opposing Pokémon from eating held Berries.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "unseen-fist",
+      "displayName": "Unseen Fist",
+      "effect": "Contact moves can strike through Protect/Detect.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "vessel-of-ruin",
+      "displayName": "Vessel Of Ruin",
+      "effect": "Lowers Special Attack of all Pokémon except itself.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "victory-star",
+      "displayName": "Victory Star",
+      "effect": "Increases moves' accuracy to 1.1× for friendly Pokémon.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "vital-spirit",
+      "displayName": "Vital Spirit",
+      "effect": "Prevents sleep.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "volt-absorb",
+      "displayName": "Volt Absorb",
+      "effect": "Absorbs Electric moves, healing for 1/4 max HP.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "wandering-spirit",
+      "displayName": "Wandering Spirit",
+      "effect": "Swaps abilities with opponents on contact.",
+      "generation": 8,
+      "is_main_series": true
+    },
+    {
+      "name": "water-absorb",
+      "displayName": "Water Absorb",
+      "effect": "Absorbs Water moves, healing for 1/4 max HP.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "water-bubble",
+      "displayName": "Water Bubble",
+      "effect": "Halves damage from Fire moves, doubles damage of Water moves, and prevents burns.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "water-compaction",
+      "displayName": "Water Compaction",
+      "effect": "Raises this Pokémon's Defense by two stages when it's hit by a Water move.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "water-veil",
+      "displayName": "Water Veil",
+      "effect": "Prevents burns.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "weak-armor",
+      "displayName": "Weak Armor",
+      "effect": "Raises Speed and lowers Defense by one stage each upon being hit by a physical move.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "well-baked-body",
+      "displayName": "Well Baked Body",
+      "effect": "Immune to Fire-type moves, and Defense is sharply boosted.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "white-smoke",
+      "displayName": "White Smoke",
+      "effect": "Prevents stats from being lowered by other Pokémon.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "wimp-out",
+      "displayName": "Wimp Out",
+      "effect": "This Pokémon automatically switches out when its HP drops below half.",
+      "generation": 7,
+      "is_main_series": true
+    },
+    {
+      "name": "wind-power",
+      "displayName": "Wind Power",
+      "effect": "When hit by a wind move, the power of the next Electric-type move it uses is doubled.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "wind-rider",
+      "displayName": "Wind Rider",
+      "effect": "Gives immunity to wind moves, and causes the Pokémon's Attack to increase by one stage when hit by one.",
+      "generation": 9,
+      "is_main_series": true
+    },
+    {
+      "name": "wonder-guard",
+      "displayName": "Wonder Guard",
+      "effect": "Protects against damaging moves that are not super effective.",
+      "generation": 3,
+      "is_main_series": true
+    },
+    {
+      "name": "wonder-skin",
+      "displayName": "Wonder Skin",
+      "effect": "Lowers incoming non-damaging moves' base accuracy to exactly 50%.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "zen-mode",
+      "displayName": "Zen Mode",
+      "effect": "Changes Darmanitan's form after each turn depending on its HP: Zen Mode below 50% max HP, and Standard Mode otherwise.",
+      "generation": 5,
+      "is_main_series": true
+    },
+    {
+      "name": "zero-to-hero",
+      "displayName": "Zero To Hero",
+      "effect": "Transforms into its Hero Form when switching out.",
+      "generation": 9,
+      "is_main_series": true
+    }
+  ]
+}

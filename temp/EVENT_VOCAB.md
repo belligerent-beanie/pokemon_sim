@@ -1068,3 +1068,17 @@ source of truth (commits are local-only until pushed).
   are not blocked). Fixed.
 - **dauntless-shield**: confirmed correct as-is (once-per-battle +1 Def on switch-in via
   the `shieldBoost` flag, matches source exactly). No change.
+
+## Non-mainline abilities removed from the catalog entirely, 2026-08-31
+
+Rather than tracking the 60 Conquest-only (`is_main_series: false`) abilities in a
+separate out-of-scope file, they were removed outright from
+`temp/ability-editor/ability_cache.json` (373 → 313 abilities) so the editor UI and any
+future verification pass never surfaces them at all. In the process, 9 of them
+(aqua-boost, black-hole, bodyguard, bonanza, calming, celebrate, climber, confidence,
+conqueror) were found to have been marked "done" in the checkpoint tracker purely
+because they fell alphabetically inside the batch-1 range (adaptability–dancer) — they
+were never actually reviewed. Removed from abilities_done.txt along with the rest.
+Checkpoint totals now reconcile exactly: 75 done + 238 todo = 313 (the full trimmed
+catalog). Moves and the curated status list were checked and have no non-mainline
+entries to begin with.
