@@ -1301,3 +1301,31 @@ post non-mainline removal); moves 1 done / 894 todo; statuses 93/93 done.
   does). Also clarified the target-selection rule: scans backward from the last
   party slot for the first non-fainted Pokémon positioned after the holder,
   which can unusually mean disguising as another already-active ally to its right.
+
+## Verification pass: run 8, 2026-08-31 (imposter–iron-fist)
+
+- **imposter**: confirmed correct (auto/unconditional Transform into the directly-
+  opposite foe). Added a note: not blocked from being copied via Skill Swap (only
+  Role Play/Receiver/Entrainment/Trace are blocked) -- it just doesn't immediately
+  transform when gained that way, only on a real switch-in.
+- **infiltrator**: ADDED the missing Substitute bypass (move.infiltrates is checked
+  directly in substitute-hit logic, separate from the sound-move/bypasssub path) --
+  this entry previously only listed the three screens. Safeguard is left in the
+  description per historical listings but flagged as unconfirmed against this
+  particular abilities.ts cache.
+- **innards-out**: confirmed correct in substance. Added a note on the Dynamax
+  scaling (uses getUndynamaxedHP, so a Dynamaxed holder's counter-damage is based
+  on its non-Dynamaxed HP) and multi-hit/spread totalDamage accumulation.
+- **inner-focus**: MISSING AN ENTIRE SECOND EFFECT before this pass -- only had the
+  flinch-block. ADDED the Intimidate-specific Atk-drop block (a separate, narrower
+  onTryBoost hook that only nulls Intimidate by name, unlike Hyper Cutter/Clear
+  Body which block Atk drops from any source).
+- **intimidate**: ADDED the missing Substitute immunity -- a target with an active
+  Substitute is completely unaffected (shown as an immunity), not merely a fizzled
+  Atk-drop attempt. Also noted it's gated to adjacent foes (Triples-relevant only).
+- **intrepid-sword**: confirmed correct as-is (Atk +1 exactly once per battle via a
+  persistent per-Pokémon flag). No change.
+- **iron-barbs**: CORRECTED the contact counter-damage from "13%" to the exact 1/8
+  (12.5%) max HP -- same rounding-error class as Ice Body/Dry Skin.
+- **iron-fist**: confirmed correct (×1.2-ish punch-move boost). Added a note that
+  the exact multiplier is 4915/4096 (≈1.2001), not the literal fraction "1.2".

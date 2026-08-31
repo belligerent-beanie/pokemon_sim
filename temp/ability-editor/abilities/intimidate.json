@@ -16,7 +16,11 @@
             },
             {
               "key": "note",
-              "val": "affects every opposing Pokémon currently on the field (both, in a double battle) — a one-time switch-in effect, not a persistent side condition"
+              "val": "affects every opposing Pokémon currently on the field (both, in a double battle) — a one-time switch-in effect, not a persistent side condition Only affects foes adjacent to the holder's position (matters in Triples; irrelevant in Singles/Doubles where all foes are adjacent)."
+            },
+            {
+              "key": "fail_if",
+              "val": "the target has an active Substitute (Substitute blocks the Attack drop entirely -- shown as an immunity, not a fizzled attempt)"
             }
           ]
         }

@@ -12,11 +12,15 @@
           "params": [
             {
               "key": "damage",
-              "val": "13% max HP"
+              "val": "1/8 (12.5%) max HP"
             },
             {
               "key": "fail_if",
               "val": "the incoming move does not make contact"
+            },
+            {
+              "key": "note",
+              "val": "CORRECTED from \"13%\" -- verified against Showdown data/abilities.ts (ironbarbs): damage is source.baseMaxhp/8, exactly 12.5%, not 13%. Same class of rounding error as Ice Body's heal and Dry Skin's earlier fix."
             }
           ]
         }

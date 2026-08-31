@@ -21,6 +21,32 @@
           ]
         }
       ]
+    },
+    {
+      "condition": {
+        "type": "on_stat_change",
+        "params": []
+      },
+      "events": [
+        {
+          "target": "self",
+          "priority": 0,
+          "params": [
+            {
+              "key": "effect",
+              "val": "blocks Attack from being lowered specifically by Intimidate"
+            },
+            {
+              "key": "fail_if",
+              "val": "the incoming stat-lowering effect is not Intimidate itself (unlike Hyper Cutter/Clear Body, this does NOT block Attack drops from other sources -- only Intimidate)"
+            },
+            {
+              "key": "note",
+              "val": "MISSING ENTIRELY before this pass -- verified against Showdown data/abilities.ts (innerfocus): a second onTryBoost hook exists purely to null out Intimidate's Atk drop by name (effect.name === 'Intimidate'), narrower in scope than the flinch-blocking effect this entry already had."
+            }
+          ]
+        }
+      ]
     }
   ],
   "custom_desc": ""

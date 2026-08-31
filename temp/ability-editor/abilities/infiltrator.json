@@ -12,7 +12,11 @@
           "params": [
             {
               "key": "tag",
-              "val": "the holder's moves bypass Reflect, Light Screen, Aurora Veil, and Safeguard on the target's side"
+              "val": "the holder's moves bypass Reflect, Light Screen, Aurora Veil, and Substitute on the target's side (also ignores Safeguard per historical listings, though that specific interaction isn't present in this Showdown abilities.ts cache to directly re-confirm)"
+            },
+            {
+              "key": "note",
+              "val": "ADDED Substitute after re-verifying against Showdown source: sets move.infiltrates = true, which is checked directly in the substitute-hit logic (separate from the sound-move/bypasssub-flag path) as well as in each screen condition's damage-reduction check."
             }
           ]
         }

@@ -17,6 +17,10 @@
             {
               "key": "fail_if",
               "val": "the move is not flagged as punch-based"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (ironfist): confirmed punch-flagged-move boost; exact multiplier is 4915/4096 (≈1.2001), \"×1.2\" is a very close rounded description, not the literal fraction."
             }
           ]
         }

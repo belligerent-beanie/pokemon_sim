@@ -17,6 +17,10 @@
             {
               "key": "note",
               "val": "automatic and unconditional version of the move Transform"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (imposter): flagged failroleplay/noreceiver/noentrain/notrace (Role Play/Receiver/Entrainment/Trace can't touch it), but NOT failskillswap -- it CAN be given to another Pokémon via Skill Swap, it just doesn't immediately trigger a transform when gained that way (only on an actual onSwitchIn event). Same non-trigger applies if the holder gains it when Neutralizing Gas leaves the field."
             }
           ]
         }

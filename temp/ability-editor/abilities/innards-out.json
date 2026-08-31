@@ -13,6 +13,10 @@
             {
               "key": "damage",
               "val": "exactly the HP the holder had remaining immediately before fainting"
+            },
+            {
+              "key": "note",
+              "val": "verified against Showdown data/abilities.ts (innardsout): uses target.getUndynamaxedHP(damage), so if the holder is Dynamaxed the counter-damage is scaled back down to its non-Dynamaxed HP equivalent rather than the inflated Dynamax HP amount. For multi-hit/spread moves that aren't smartTarget, the move's accumulated totalDamage is added in too."
             }
           ]
         }
